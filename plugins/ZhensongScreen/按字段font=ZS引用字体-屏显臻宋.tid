@@ -1,0 +1,11 @@
+code-body: yes
+created: 20250508033829841
+modified: 20250508033842229
+tags: 字体 $:/tags/Stylesheet
+title: 按字段font=ZS引用字体-屏显臻宋
+
+<$list filter="[font[ZS]]"> 
+[data-tiddler-title^="<$view field=title/>"] .tc-tiddler-body {
+  font-family: "屏显臻宋";
+}
+</$list>
