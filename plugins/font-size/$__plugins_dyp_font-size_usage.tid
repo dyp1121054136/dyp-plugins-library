@@ -1,0 +1,7 @@
+created: 20250503160157118
+modified: 20250503161453646
+tags: 
+title: $:/plugins/dyp/font-size/usage
+type: text/vnd.tiddlywiki
+
+每点击一次按钮，条目内文字增加或减少 `0.5px` 大小，最小字号 `14px`，最大字号 `26px`

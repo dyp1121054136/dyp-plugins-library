@@ -1,0 +1,26 @@
+caption: − + 字号
+created: 20250501140118016
+description: 调整页面整体字号大小
+list: 26px 25.5px 25px 24.5px 24px 23.5px 23px 22.5px 22px 21.5px 21px 20.5px 20px 19.5px 19px 18.5px 18px 17.5px 17px 16.5px 16px 15.5px 15px 14.5px 14px
+modified: 20250503161453646
+tags: 页面字号 $:/tags/PageControls 按钮
+title: $:/dyp/Buttons/font-size
+
+<$wikify name="fontUp" text="""
+<$list filter="[{$:/themes/tiddlywiki/vanilla/metrics/bodyfontsize}previous[$:/dyp/Buttons/font-size]]" emptyMessage="26px"/>
+""">
+<$wikify name="fontDown" text="""
+<$list filter="[{$:/themes/tiddlywiki/vanilla/metrics/bodyfontsize}next[$:/dyp/Buttons/font-size]]" emptyMessage="14px"/>
+""">
+<$button class="tc-btn-invisible" tooltip="减少字体大小">
+<$action-setfield $tiddler="$:/themes/tiddlywiki/vanilla/metrics/bodyfontsize" text=<<fontDown>>/>
+<$action-setfield $tiddler="$:/themes/tiddlywiki/vanilla/metrics/bodylineheight" text="1.2"/>
+{{$:/core/images/zoom-out}}
+</$button>
+<$button class="tc-btn-invisible" tooltip="增加字体大小">
+<$action-setfield $tiddler="$:/themes/tiddlywiki/vanilla/metrics/bodyfontsize" text=<<fontUp>>/>
+<$action-setfield $tiddler="$:/themes/tiddlywiki/vanilla/metrics/bodylineheight" text="1.2"/>
+{{$:/core/images/zoom-in}}
+</$button>
+</$wikify>
+</$wikify>

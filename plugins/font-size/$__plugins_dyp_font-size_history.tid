@@ -1,0 +1,8 @@
+created: 20250503160206782
+modified: 20250503161453646
+tags: 
+title: $:/plugins/dyp/font-size/history
+type: text/vnd.tiddlywiki
+
+; v.0.0.2  2025-05-04
+修复图标在不同主题下颜色和大小的适配问题
