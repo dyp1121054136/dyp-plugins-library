@@ -1,7 +1,7 @@
 {
     "created": "20250428175156122",
     "title": "$:/plugins/dyp/code-comment-button",
-    "stability": "STABILITY_1_EXPERIMENTAL",
+    "stability": "STABILITY_2_STABLE",
     "tags": "",
     "modified": "20250428180325110",
     "version": "0.0.1",
