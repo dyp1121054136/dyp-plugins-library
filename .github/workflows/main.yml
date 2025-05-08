@@ -1,49 +1,31 @@
-name: Node.js CI  
-  
-on:  
-  push:  
-    branches: [ master ]  
-  workflow_dispatch:  # 添加手动触发事件  
-  
-jobs:  
-  build:  
-    runs-on: ubuntu-latest  
-    steps:  
-      - uses: actions/checkout@v2  
-        with:  
-          submodules: 'recursive'  
-      - name: Setup Node.js  
-        uses: actions/setup-node@v2  
-        with:  
-          node-version: '12.x'  
-      - run: npm install tiddlywiki  
-      - run: mkdir -p node_modules/tiddlywiki/plugins/dyp/  
-      - run: cp -r plugins/* node_modules/tiddlywiki/plugins/dyp/  
-        
-      # 创建 tiddlywiki.info 文件，指定中文语言  
-      - run: |  
-        echo '{  
-          "plugins": [  
-            "tiddlywiki/tiddlyweb",  
-            "tiddlywiki/filesystem"  
-          ],  
-          "languages": ["zh-Hans"],  
-          "build": {  
-            "library": ["--rendertiddler", "$:/plugins/tiddlywiki/pluginlibrary/library.template.html", "index.html", "text/plain"],  
-            "gui": ["--rendertiddler", "$:/core/save/all", "index.html", "text/plain"]  
-          }  
-        }' > tiddlywiki.info  
-        
-      # 构建插件库和GUI  
-      - run: ./node_modules/.bin/tiddlywiki . --output output/library --build library  
-      - run: ./node_modules/.bin/tiddlywiki . --output output --build gui  
-        
-      # 部署到GitHub Pages  
-      - name: Deploy to GitHub Pages  
-        if: success()  
-        uses: crazy-max/ghaction-github-pages@v2  
-        with:  
-          target_branch: gh-pages  
-          build_dir: output  
-        env:  
+name: Node.js CI
+
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:  # 添加手动触发事件
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: 'recursive'
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '12.x'
+      - run: npm install tiddlywiki
+      - run: mkdir -p node_modules/tiddlywiki/plugins/dyp/
+      - run: cp -r plugins/* node_modules/tiddlywiki/plugins/dyp/
+      - run: ./node_modules/.bin/tiddlywiki . --output output/library --build library
+      - run: ./node_modules/.bin/tiddlywiki . --output output --build gui
+      - name: Deploy to GitHub Pages
+        if: success()
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          target_branch: gh-pages
+          build_dir: output
+        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
