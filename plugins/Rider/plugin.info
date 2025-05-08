@@ -1,0 +1,13 @@
+{
+    "created": "20250502163700437",
+    "title": "$:/plugins/dyp/Rider",
+    "stability": "STABILITY_2_STABLE",
+    "modified": "20250502164036629",
+    "version": "0.0.1",
+    "name": "Rider",
+    "description": "可编辑嵌套引用条目",
+    "author": "dyp",
+    "list": "readme usage",
+    "plugin-type": "plugin",
+    "packaged-by": "Gatha on 3rd 五月 2025, 00:40:44"
+}
