@@ -16,7 +16,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '12.x'
-      - run: npm install tiddlywiki
+      - run: npm install tiddlywiki --init zh-Hans
       - run: mkdir -p node_modules/tiddlywiki/plugins/dyp/
       - run: cp -r plugins/* node_modules/tiddlywiki/plugins/dyp/
       - run: ./node_modules/.bin/tiddlywiki .  --output output/library --build library
