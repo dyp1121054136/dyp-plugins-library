@@ -3,10 +3,11 @@
 	"plugins": [
 		"tiddlywiki/pluginlibrary"
 	],
-  "languages": [  
-    "zh-Hans"  // 简体中文  
-    // 或者使用 "zh-Hant" 繁体中文  
-  ],  
+    "languages": [
+        "es-ES",
+        "fr-FR",
+        "en-EN"
+    ]
 	"themes": [
                 "tiddlywiki/vanilla",
                 "tiddlywiki/snowwhite"
