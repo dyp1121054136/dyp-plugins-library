@@ -1,0 +1,13 @@
+{
+    "created": "20250501130143453",
+    "title": "$:/plugins/dyp/sticky-toolbars",
+    "stability": "STABILITY_2_STABLE",
+    "modified": "20250501130749688",
+    "name": "sticky-toolbars",
+    "description": "粘性编辑器工具栏",
+    "author": "dyp",
+    "version": "0.0.1",
+    "list": "readme usage",
+    "plugin-type": "plugin",
+    "packaged-by": "Gatha on 1st 五月 2025, 21:08:42"
+}
