@@ -1,0 +1,13 @@
+{
+    "created": "20250501144553531",
+    "title": "$:/plugins/dyp/font-size",
+    "stability": "STABILITY_2_STABLE",
+    "modified": "20250503161453646",
+    "version": "0.0.2",
+    "name": "font-size",
+    "description": "修改页面字号",
+    "author": "dyp",
+    "list": "readme usage history",
+    "packaged-by": "Gatha on 4th 五月 2025, 00:15:10",
+    "plugin-type": "plugin"
+}
