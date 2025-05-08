@@ -1,0 +1,14 @@
+{
+    "created": "20250322005757525",
+    "title": "$:/plugins/dyp/FZYUEKZJW-H",
+    "stability": "STABILITY_2_STABLE",
+    "tags": "",
+    "modified": "20250322010314750",
+    "description": "FZYUEKZJW-H",
+    "name": "Font",
+    "author": "dyp",
+    "version": "0.0.1",
+    "list": "readme usage",
+    "plugin-type": "plugin",
+    "packaged-by": "Gatha on 22nd 三月 2025, 09:04:18"
+}
