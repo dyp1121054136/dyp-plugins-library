@@ -3,7 +3,6 @@
 	"plugins": [
 		"tiddlywiki/pluginlibrary"
 	],
-        "languages": ["zh-Hans"],
 	"themes": [
                 "tiddlywiki/vanilla",
                 "tiddlywiki/snowwhite"
