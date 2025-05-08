@@ -1,0 +1,116 @@
+caption: Whitespace主题
+created: 20250506090306223
+modified: 20250506115913735
+tags: $:/tags/ControlPanel/Appearance
+title: $:/themes/dyp/Whitespace/config
+
+\define wsconfig(name) $:/config/Whitespace/$name$
+\define config-base() $:/config/SideBar/Visibility/
+\define config-title-sidebar()
+$(config-base)$$(currentTiddler)$
+\end
+\define drop-actions()
+<$action-listops $tiddler="$:/tags/SideBar" $subfilter="+[insertbefore:currentTiddler<actionTiddler>]"/>
+\end
+
+<style>
+.tc-control-panel table input[type="radio"] { width: auto; }
+.ws-select-button {
+    display: inline-flex;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    border: 1px solid <<colour primary>>;
+}
+.ws-disabled-btn {
+    background: <<colour muted-background>>;
+}
+.ws-enabled-btn {
+    background: <<colour primary>>;
+}
+</style>
+
+<table width="99%">
+<tr>
+<td>
+侧边栏宽度：
+</td>
+<td>
+<$edit-text tiddler="$:/themes/tiddlywiki/vanilla/metrics/sidebarwidth" tag="input" placeholder="350px" default=""/>
+</td>
+</tr>
+<tr>
+<td>
+条目宽度：
+</td>
+<td>
+<$edit-text tiddler="$:/themes/tiddlywiki/vanilla/metrics/tiddlerwidth" tag="input" placeholder="100%" default=""/>
+</td>
+</tr>
+<tr>
+<td>
+侧边栏顶部按钮区域高度：
+</td>
+<td>
+<$edit-text tiddler="$:/w/config/jd-sidebar-top-buttons-height" tag="input" placeholder="42px" default=""/>
+</td>
+</tr>
+<tr>
+<td>
+侧边栏上内边距：
+</td>
+<td>
+<$edit-text tiddler="$:/w/config/jd-sidebar-top-padding" tag="input" placeholder="39px" default=""/>
+</td>
+</tr>
+<tr>
+<td>
+限制侧边栏卡片高度：
+</td>
+<td>
+<$checkbox tiddler=<<wsconfig SidebarHeight>> field="text" checked="limit" unchecked="full" default="limit"/>
+<$list filter="[[$:/config/Whitespace/SidebarHeight]text[limit]]"><$edit-text tiddler=<<wsconfig SidebarHeight>> field="height" tag="input" placeholder="300px"/></$list>
+</td>
+</tr>
+<tr>
+<td>
+可见滚动条：
+</td>
+<td>
+<$checkbox tiddler=<<wsconfig scrollbar-style>> field="text" checked="visible" unchecked="invisible" default="visible"/>
+</td>
+</tr>
+<tr>
+<td>
+显示网站标题和副标题：
+</td>
+<td>
+<$checkbox tiddler=<<wsconfig show-sitetitle>> field="text" checked="yes" unchecked="no" default="yes"/>
+</td>
+</tr>
+<tr>
+<td>
+悬停时显示按钮：
+</td>
+<td>
+<$checkbox tiddler=<<wsconfig Spacious>> field="text" checked="yes" unchecked="no" default="yes"/>
+</td>
+</tr>
+<tr>
+<td>
+应用主题到条目编辑模式：
+</td>
+<td>
+<$checkbox tiddler=<<wsconfig ThemeEditFrame>> field="text" checked="yes" unchecked="no" default="yes"/>
+</td>
+</tr>
+<tr>
+<td>
+侧边栏位置：
+</td>
+<td>
+<$radio tiddler=<<wsconfig "sidebar">> value="left"> 左边</$radio><br>
+<$radio tiddler=<<wsconfig "sidebar">> value="right"> 右边</$radio>
+</td>
+</tr>
+</table>
