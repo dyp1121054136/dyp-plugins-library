@@ -1,0 +1,13 @@
+{
+    "created": "20250503145023794",
+    "title": "$:/plugins/dyp/WikiText-highlight",
+    "stability": "STABILITY_2_STABLE",
+    "modified": "20250503150558259",
+    "version": "0.0.1",
+    "name": "WikiText-highlight",
+    "description": "wiki语言高亮",
+    "author": "dyp",
+    "list": "readme usage",
+    "packaged-by": "Gatha on 3rd 五月 2025, 23:07:23",
+    "plugin-type": "plugin"
+}
