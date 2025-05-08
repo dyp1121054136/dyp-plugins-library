@@ -1,0 +1,10 @@
+created: 20250508054947583
+modified: 20250508055025572
+tags: 
+title: $:/plugins/dyp/STDongGuanTi/usage
+type: text/vnd.tiddlywiki
+
+!!!! ''字体用法：''
+1、对整个wiki生效：打开 [[$:/ControlPanel]] ，在外观-主题调整-设置-字型文本框内，最前面添加 `"上图东观体-常规",`；
+
+2、对单个条目生效：添加字段 `font`，字段内容 `SD`。

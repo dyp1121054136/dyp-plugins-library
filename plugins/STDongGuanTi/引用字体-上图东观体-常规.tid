@@ -1,0 +1,12 @@
+code-body: yes
+created: 20250508055032971
+modified: 20250508055047190
+tags: 字体 $:/tags/Stylesheet
+title: 引用字体-上图东观体-常规
+
+@font-face {
+	font-family: "上图东观体-常规";
+	font-style: normal;
+	font-weight: 400;
+	src: local("上图东观体-常规"), url(<<datauri "上图东观体-常规.woff2">>) format("woff2");
+}
