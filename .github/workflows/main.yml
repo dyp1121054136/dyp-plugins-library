@@ -3,36 +3,29 @@ name: Node.js CI
 on:
   push:
     branches: [ master ]
-  workflow_dispatch:
-    # 添加输入参数，例如是否进行强制部署
-    inputs:
-      force_deploy:
-        description: 'Force deploy even if there are no changes'
-        required: false
-        default: 'false'
+  workflow_dispatch:  # 添加手动触发事件
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-      with:
-        submodules: 'recursive'
-        token: ${{ secrets.GITHUB_PAT }}
-    - name: Build Library
-      uses: actions/setup-node@v2
-      with:
-        node-version: '12.x'
-    - run: npm install tiddlywiki
-    - run: mkdir -p nodemodules/tiddlywiki/plugins/dyp/
-    - run: cp -r plugins/ nodemodules/tiddlywiki/plugins/dyp/
-    - run: ./nodemodules/.bin/tiddlywiki . --output output/library --build library
-    - run: ./nodemodules/.bin/tiddlywiki . --output output --build gui
-    - name: Deploy to GitHub Pages
-      if: success()
-      uses: crazy-max/ghaction-github-pages@v2
-      with:
-        targetbranch: gh-pages
-        builddir: output
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_PAT }}
+      - uses: actions/checkout@v2
+        with:
+          submodules: 'recursive'
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '12.x'
+      - run: npm install tiddlywiki
+      - run: mkdir -p node_modules/tiddlywiki/plugins/dyp/
+      - run: cp -r plugins/* node_modules/tiddlywiki/plugins/dyp/
+      - run: ./node_modules/.bin/tiddlywiki . --output output/library --build library
+      - run: ./node_modules/.bin/tiddlywiki . --output output --build gui
+      - name: Deploy to GitHub Pages
+        if: success()
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          target_branch: gh-pages
+          build_dir: output
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
