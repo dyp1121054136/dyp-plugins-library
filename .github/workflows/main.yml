@@ -9,14 +9,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           submodules: 'recursive'
       - name: Setup Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
-          node-version: '12.x'
-      - run: npm install tiddlywiki --init zh-Hans
+          node-version: '22'
+      - run: npm install tiddlywiki
       - run: mkdir -p node_modules/tiddlywiki/plugins/dyp/
       - run: cp -r plugins/* node_modules/tiddlywiki/plugins/dyp/
       - run: ./node_modules/.bin/tiddlywiki .  --output output/library --build library
