@@ -1,0 +1,14 @@
+{
+    "created": "20250323094622675",
+    "title": "$:/plugins/dyp/MapleMono",
+    "stability": "STABILITY_2_STABLE",
+    "tags": "",
+    "modified": "20250507031609379",
+    "version": "0.0.2",
+    "name": "Font",
+    "description": "MapleMono",
+    "author": "dyp",
+    "list": "readme usage",
+    "packaged-by": "Gatha on 7th 五月 2025, 11:16:46",
+    "plugin-type": "plugin"
+}
