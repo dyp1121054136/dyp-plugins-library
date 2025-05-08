@@ -22,16 +22,19 @@ jobs:
         
       # 创建 tiddlywiki.info 文件，指定中文语言  
       - run: |  
-          echo '{  
-            "plugins": [],  
-            "languages": ["zh-Hans"],  
-            "build": {  
-              "library": ["--rendertiddler", "$:/plugins/tiddlywiki/pluginlibrary/library.template.html", "index.html", "text/plain"],  
-              "gui": ["--rendertiddler", "$:/core/save/all", "index.html", "text/plain"]  
-            }  
-          }' > tiddlywiki.info  
-            
-      # 构建插件库和GUI，使用中文语言  
+        echo '{  
+          "plugins": [  
+            "tiddlywiki/tiddlyweb",  
+            "tiddlywiki/filesystem"  
+          ],  
+          "languages": ["zh-Hans"],  
+          "build": {  
+            "library": ["--rendertiddler", "$:/plugins/tiddlywiki/pluginlibrary/library.template.html", "index.html", "text/plain"],  
+            "gui": ["--rendertiddler", "$:/core/save/all", "index.html", "text/plain"]  
+          }  
+        }' > tiddlywiki.info  
+        
+      # 构建插件库和GUI  
       - run: ./node_modules/.bin/tiddlywiki . --output output/library --build library  
       - run: ./node_modules/.bin/tiddlywiki . --output output --build gui  
         
