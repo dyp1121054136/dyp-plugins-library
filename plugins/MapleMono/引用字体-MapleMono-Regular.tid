@@ -1,0 +1,12 @@
+code-body: yes
+created: 20250323094541918
+modified: 20250507030922649
+tags: 字体 $:/tags/Stylesheet
+title: 引用字体-MapleMono-Regular
+
+@font-face {
+	font-family: "MapleMono-Regular";
+	font-style: normal;
+	font-weight: 400;
+	src: local("MapleMono-Regular"), url(<<datauri "MapleMono-Regular.woff2">>) format("woff2");
+}

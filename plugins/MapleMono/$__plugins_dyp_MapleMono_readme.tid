@@ -1,0 +1,27 @@
+created: 20250323094204851
+modified: 20250507031642270
+tags: 
+title: $:/plugins/dyp/MapleMono/readme
+type: text/vnd.tiddlywiki
+
+; MapleMono 连笔版（默认）V7.2  (2025-04-29更新)
+
+https://github.com/subframe7536/maple-font/blob/variable/README_CN.md
+
+''在线预览''
+
+https://font.subf.dev/zh-cn/playground/
+
+https://chinese-font.netlify.app/zh-cn/fonts/maple-mono-cn/MapleMono-CN-Regular
+
+''字体介绍''
+
+Maple Mono 是一款开源等宽字体，专注于优化您的编码体验。
+
+V7 是一个完全重制版本，提供了可变字体格式和字体工程源文件，重新设计了超过一半的字形，并提供更智能的连字。
+
+''特性''
+
+* ✨ 可变 - 无限的字体粗细，以及手工微调的斜体字形。
+* ☁️ 丝滑 - 圆角，独特的 @ $ % & Q -> 字形，以及手写风格的斜体 f i j k l x y。
+* 💪 实用 - 大量的智能连字。

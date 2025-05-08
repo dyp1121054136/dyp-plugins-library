@@ -1,0 +1,11 @@
+code-body: yes
+created: 20250323094740637
+modified: 20250507030922649
+tags: 字体 $:/tags/Stylesheet
+title: 按字段font=M引用字体-MapleMono-Regular
+
+<$list filter="[font[M]]"> 
+[data-tiddler-title^="<$view field=title/>"] .tc-tiddler-body {
+  font-family: "MapleMono-Regular";
+}
+</$list>
