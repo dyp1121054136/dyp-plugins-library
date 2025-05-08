@@ -1,0 +1,23 @@
+created: 20250430140955833
+modified: 20250506015955327
+tags: 
+title: $:/plugins/dyp/mulu/usage
+type: text/vnd.tiddlywiki
+
+!!!! ''目录使用方法''
+"""
+添加标签 `目录` 或 `册` `卷` `章` `节`
+或添加字段 `mulu` 字段内容 `yes`
+
+注：
+1、以0开头的标题，在查看模式下前缀数值才会自动隐藏；
+2、和 `$:/plugins/oeyoews/title-caption` 插件冲突；
+3、如果有caption则显示caption，否则显示原标题，同时去除前缀编号数字；
+如果原标题前缀带数字，请在编号-符号后加一个空格隔开，避免正则表达式把带有重要信息的数字给删除了
+
+相关系统条目
+系统标签丸模板 [[$:/core/ui/TagTemplate]] （未改）
+系统标签丸弹出标题模板 [[$:/core/ui/ListItemTemplate]] （已改）
+系统标签丸弹出下拉列表模板 [[$:/core/macros/list]] （已改）
+系统标签丸模板 [[$:/core/macros/tag]] （已改）
+"""

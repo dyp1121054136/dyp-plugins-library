@@ -1,0 +1,14 @@
+created: 20250506010402294
+modified: 20250506020051025
+tags: 
+title: $:/plugins/dyp/mulu/history
+type: text/vnd.tiddlywiki
+
+; 0.0.4  2025-05-06
+
+修复与 [[日志|$:/plugins/xp/diary]] 插件的冲突，确保目录正则表达式不会匹配以“年”、“月”或“日”结尾的条目标题
+
+```regex
+define mulu1() ^\b\d+(-\d+)?\b(?![年月日])-
+define mulu2() ^\b\d+(-\d+)?\b(?![年月日])
+```
