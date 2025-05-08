@@ -1,0 +1,11 @@
+code-body: yes
+created: 20250322005936941
+modified: 20250322005949860
+tags: 字体 $:/tags/Stylesheet
+title: 按字段font=ZH引用字体-FZYUEKZJW-H
+
+<$list filter="[font[ZH]]"> 
+[data-tiddler-title^="<$view field=title/>"] .tc-tiddler-body {
+  font-family: "FZYUEKZJW-H";
+}
+</$list>

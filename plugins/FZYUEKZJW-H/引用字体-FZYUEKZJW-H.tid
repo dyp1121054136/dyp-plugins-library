@@ -1,0 +1,12 @@
+code-body: yes
+created: 20250322005908750
+modified: 20250322005922179
+tags: 字体 $:/tags/Stylesheet
+title: 引用字体-FZYUEKZJW-H
+
+@font-face {
+	font-family: "FZYUEKZJW-H";
+	font-style: normal;
+	font-weight: 400;
+	src: local("FZYUEKZJW-H"), url(<<datauri "FZYUEKZJW-H.woff2">>) format("woff2");
+}
