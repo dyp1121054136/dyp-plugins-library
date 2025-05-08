@@ -1,0 +1,13 @@
+{
+    "created": "20250430140752418",
+    "title": "$:/plugins/dyp/mulu",
+    "stability": "STABILITY_1_EXPERIMENTAL",
+    "modified": "20250506020103171",
+    "version": "0.0.4",
+    "name": "Mulu",
+    "list": "readme usage history",
+    "description": "自动添加目录和上下翻页",
+    "author": "dyp",
+    "packaged-by": "Gatha on 6th 五月 2025, 10:01:08",
+    "plugin-type": "plugin"
+}
