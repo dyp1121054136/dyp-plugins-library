@@ -1,0 +1,13 @@
+{
+    "created": "20250506110729299",
+    "title": "$:/plugins/dyp/copy-title-text",
+    "stability": "STABILITY_2_STABLE",
+    "modified": "20250506110936738",
+    "version": "0.0.1",
+    "name": "copy-title-text",
+    "description": "复制当前条目标题内容",
+    "author": "dyp",
+    "list": "readme usage",
+    "plugin-type": "plugin",
+    "packaged-by": "Gatha on 6th 五月 2025, 19:10:06"
+}
