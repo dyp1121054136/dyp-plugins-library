@@ -1,0 +1,13 @@
+{
+    "created": "20250501164309556",
+    "title": "$:/plugins/dyp/ResourceHanRoundedCN-Regular",
+    "stability": "STABILITY_2_STABLE",
+    "modified": "20250502102051399",
+    "version": "0.0.1",
+    "name": "Font",
+    "description": "ResourceHanRoundedCN-Regular",
+    "author": "dyp",
+    "list": "readme usage",
+    "packaged-by": "Gatha on 2nd 五月 2025, 18:20:53",
+    "plugin-type": "plugin"
+}
