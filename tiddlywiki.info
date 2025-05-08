@@ -2,7 +2,7 @@
 	"description": "TiddlyWiki Plugin Library",
 	"plugins": [
 		"tiddlywiki/pluginlibrary",
-		"$:/plugins/tiddlywiki/highlight-legacy"
+		"tiddlywiki/highlight"
 	],
 	"themes": [
                 "tiddlywiki/vanilla",
