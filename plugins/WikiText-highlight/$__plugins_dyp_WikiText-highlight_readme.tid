@@ -1,0 +1,13 @@
+created: 20250503145111658
+modified: 20250503150708961
+tags: 
+title: $:/plugins/dyp/WikiText-highlight/readme
+type: text/vnd.tiddlywiki
+
+; wiki语言高亮
+
+"""
+需要确保先安装了插件
+[[$:/plugins/tiddlywiki/highlight]]
+否则报错
+"""

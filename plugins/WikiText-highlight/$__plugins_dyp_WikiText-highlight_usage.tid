@@ -1,0 +1,32 @@
+created: 20250503145118986
+modified: 20250503150702369
+tags: 
+title: $:/plugins/dyp/WikiText-highlight/usage
+type: text/vnd.tiddlywiki
+
+使用 `tw`，`tid`，`tiddlywiki` 或者 `wikitext` 作为代码块限定符，例如：
+
+```tw
+ ```tw
+ wikitext内容
+ ```
+```
+
+或者
+
+```tw
+ ```tid
+ wikitext内容
+ ```
+```
+
+进阶使用技巧：
+
+修改 [[Utility|$:/plugins/kookma/utility]] 中的 [[$:/plugins/kookma/utility/viewtemplates/source-toggle-button]]
+
+
+```tw
+<$transclude $variable="code" language={{{ [{!!title}get[type]else[tw]] }}} src={{!!text}} />
+```
+
+注：新版 [[$:/plugins/kookma/utility]] 插件记得勾选 `Show toolbar controls on shadow tiddlers`，不然无法编辑系统文件
