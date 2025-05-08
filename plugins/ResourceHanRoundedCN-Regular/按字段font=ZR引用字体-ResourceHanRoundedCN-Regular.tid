@@ -1,0 +1,11 @@
+code-body: yes
+created: 20250501164053283
+modified: 20250502102028383
+tags: 字体 $:/tags/Stylesheet
+title: 按字段font=ZR引用字体-ResourceHanRoundedCN-Regular
+
+<$list filter="[font[ZR]]"> 
+[data-tiddler-title^="<$view field=title/>"] .tc-tiddler-body {
+  font-family: "ResourceHanRoundedCN-Regular";
+}
+</$list>

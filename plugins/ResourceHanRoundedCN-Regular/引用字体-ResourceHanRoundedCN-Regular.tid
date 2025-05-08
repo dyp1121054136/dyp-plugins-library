@@ -1,0 +1,12 @@
+code-body: yes
+created: 20250501164047531
+modified: 20250502102028383
+tags: 字体 $:/tags/Stylesheet
+title: 引用字体-ResourceHanRoundedCN-Regular
+
+@font-face {
+	font-family: "ResourceHanRoundedCN-Regular";
+	font-style: normal;
+	font-weight: 400;
+	src: local("ResourceHanRoundedCN-Regular"), url(<<datauri "ResourceHanRoundedCN-Regular.woff2">>) format("woff2");
+}
