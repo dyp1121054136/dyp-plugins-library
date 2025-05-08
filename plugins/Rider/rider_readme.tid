@@ -1,0 +1,21 @@
+caption: readme
+modified: 20240405112521740
+tags: rider插件
+title: rider/readme
+
+''This plugin is not extensively tested. Back up any data you don't want to lose. That applies even if you aren't going to try this plugin.''
+
+''Rider'' is a small ~TiddlyWiki plugin for transcluding tiddlers with some in-place editing capability. 
+
+''Demo:'' https://clutterstack.github.io/can-tw/rider
+
+''~TiddlyWiki:'' https://tiddlywiki.com
+
+''~TiddlyWiki at ~GitHub:'' https://github.com/Jermolene/TiddlyWiki5
+
+The ''Rider'' plugin exposes one macro: the ''rider'' macro, which transcludes a tiddler with a limited interface for editing in-place.
+
+!! Parameter
+
+;tiddler
+: The title of the tiddler to transclude

@@ -1,0 +1,17 @@
+created: 20250502163917556
+modified: 20250502164005124
+tags: 
+title: $:/plugins/dyp/Rider/usage
+type: text/vnd.tiddlywiki
+
+; 写法
+
+```
+<$transclude $variable="rider" tiddler="条目名称"/>
+```
+
+或
+
+```
+<<rider 条目名称>>
+```

@@ -1,0 +1,16 @@
+created: 20200816201603099
+modified: 20240405113432786
+tags: Rider可编辑嵌套引用条目
+title: Style tweaks toggle
+type: text/vnd.tiddlywiki
+
+<$button>
+    <$list filter='[[Rider demo stylesheet tweaks]!tag[$:/tags/Stylesheet]]'>
+        <$action-listops $tiddler='Rider demo stylesheet tweaks' $tags='$:/tags/Stylesheet'/>
+Apply stylesheet tweaks
+    </$list>
+    <$list filter='[[Rider demo stylesheet tweaks]tag[$:/tags/Stylesheet]]'>
+        <$action-listops $tiddler='Rider demo stylesheet tweaks' $tags='-[[$:/tags/Stylesheet]]'/>
+Remove stylesheet tweaks
+    </$list>
+</$button>

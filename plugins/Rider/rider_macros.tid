@@ -1,0 +1,84 @@
+created: 20240405113140387
+modified: 20240419035138933
+tags: $:/tags/Macro rider插件
+title: rider/macros
+
+\whitespace trim
+\define rider-editstatetid() <<qualify '$:/state/can/rider/edit/$(currentTiddler)$'>>
+
+\define rider(tiddler)
+	<$list filter="[[$tiddler$]]">
+		<<rider-template>>
+	</$list>
+\end
+
+\define rider-template()
+<$vars editstatetid=$(rider-editstatetid)$ >
+<div class="rider" >
+	<div class="rider-top">	
+		<<rider-ctl>><<rider-submit-button>>
+	</div>
+	<<rider-text>>
+</div>
+</$vars>
+\end
+
+\define rider-text()
+<$reveal type="nomatch" stateTitle=<<editstatetid>> stateField=editstate text="edit" tag=div>
+<$transclude field="text" mode="block"/>
+</$reveal>
+<$reveal type="match" stateTitle=<<editstatetid>> stateField=editstate text="edit" tag=div class="rider-text">
+	<$keyboard tag="div" class="tc-can-keyboard" key="cmd-enter" actions="<<rider-submitedit-actions>>" >
+	<$keyboard tag="div" class="tc-can-keyboard" key="((save-tiddler))" actions="<<rider-submitedit-actions>>" >
+	<$keyboard tag="div" class="tc-can-keyboard" key="((cancel-edit-tiddler))" actions="<<rider-canceledit-actions>>">
+		<$transclude tiddler="$:/core/ui/EditTemplate/body/editor" mode="inline"/>
+	</$keyboard></$keyboard></$keyboard>
+</$reveal>
+\end
+
+\define rider-ctl()
+<div class="rider-ctl">
+	<<rider-title>>
+	<<rider-edit-button>>
+	<<rider-cancel-button>>
+</div>
+\end
+
+\define rider-cancel-button()
+<$button tag="div" class="rider-button tc-btn-invisible" tooltip="取消修改" aria-label="Cancel text edit">
+<$reveal type="match" stateTitle=<<editstatetid>> stateField=editstate text="edit">
+	<<rider-canceledit-actions>>
+	{{rider/escape.svg}}
+</$reveal>
+</$button>
+\end
+
+\define rider-edit-button()
+<$button tag="div" class="rider-button tc-btn-invisible" tooltip="编辑" aria-label="Click to toggle text edit">
+<$reveal type="nomatch" stateTitle=<<editstatetid>> stateField=editstate text="edit">
+	<<rider-startedit-actions>>
+	{{$:/core/images/edit-button}}
+</$reveal>
+</$button>
+\end
+
+\define rider-submit-button()
+<$button tag="div" class="rider-submit rider-button tc-btn-invisible" tooltip="确认修改" aria-label="Submit changes">
+<$reveal type="match" stateTitle=<<editstatetid>> stateField=editstate text="edit">
+	<<rider-submitedit-actions>>
+	{{rider/fastarrow.svg}}
+</$reveal>
+</$button>
+\end
+
+\define rider-link()
+<$draggable tiddler=<<currentTiddler>> >
+<$button class="rider-button tc-btn-invisible" to={{!!title}} tooltip="条目链接" aria-label="Open tiddler in story">{{rider/fish-water.svg}}</$button>
+</$draggable>
+\end
+
+\define rider-title()
+<$draggable tiddler=<<currentTiddler>> class="rider-title">
+<$button class="rider-button tc-btn-invisible" to={{!!title}} tooltip="打开引用条目" aria-label="Tiddler link"><$text text=<<currentTiddler>>/>
+</$button></$draggable>
+\end

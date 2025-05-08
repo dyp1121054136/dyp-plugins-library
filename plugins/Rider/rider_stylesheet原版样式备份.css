@@ -1,0 +1,82 @@
+.rider { 
+  display: grid; 
+  grid-template-columns: 8fr auto; 
+  grid-template-rows: auto;
+  border-right: 1px solid <<colour tiddler-info-border>>;
+  padding: 0.4em 0.4em 0.4em 0;
+  margin: 0;
+  margin-top: -1em;
+}
+
+.rider-top {
+  grid-column: 1/3;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin: 0 -0.4em -0.4em 0;
+}
+
+.rider-title {
+  font-size: 0.8em; 
+  margin-right: 0.4em; 
+}
+
+.rider-button span.tc-reveal {
+  vertical-align: middle; 
+}
+
+.rider-button.rider-submit {
+  grid-column: 2/3;
+}
+
+.rider-text {
+  grid-column: 1/3;
+}
+
+.rider-text > :first-child, .rider > div.tc-reveal > :first-child {
+  margin-top: 0;
+}
+
+.rider-text > :last-child, .rider > div.tc-reveal > :last-child {
+  margin-bottom: 0;
+}
+
+.rider-textarea {
+  width: 100%;
+}
+
+.rider-ctl {
+  display: flex;
+  flex-direction: row;
+}
+
+
+a:hover.rider-title { 
+  color: inherit; 
+  text-decoration: none; 
+}
+
+a.rider-title { 
+  color: #aaaaaa; 
+  align-self: flex-end;
+}
+
+.rider-button {
+  color: #aaaaaa;
+}
+
+.rider-button:hover {
+  color: #333333;
+}
+
+.rider-button svg {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto; 
+  fill: #cccccc;
+}
+
+.rider-button:hover svg {
+  fill: #333333;
+}

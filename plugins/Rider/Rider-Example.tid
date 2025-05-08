@@ -1,0 +1,20 @@
+created: 20200815221315347
+modified: 20240419033706389
+tags: Rider可编辑嵌套引用条目
+title: Rider-Example
+type: text/vnd.tiddlywiki
+
+''示例1：''
+<<code src:"""<<rider "Rider-A wanderer">>
+""" language:"tw">>
+
+''结果1 （编辑请点击右上角的<<.icon $:/core/images/edit-button>>图标）:''
+<<rider "Rider-A wanderer">>
+
+''示例2：''
+尝试再嵌套另一个条目：
+<<code src:"""<<rider "A tiddler to nest riders">>
+""" language:"tw">>
+
+''结果2:''
+<<rider "A tiddler to nest riders">>

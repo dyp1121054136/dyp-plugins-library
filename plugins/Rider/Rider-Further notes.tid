@@ -1,0 +1,10 @@
+created: 20200815222118671
+modified: 20240405072816461
+tags: Rider可编辑嵌套引用条目
+title: Rider-Further notes
+type: text/vnd.tiddlywiki
+
+* There is ''no undo'', nor is there a confirmation when submitting or abandoning changes.
+* Enabling the Editor Toolbar activates a lot of functionality in the editor, beyond the obvious formatting, including [[excising text into a new tiddler|https://tiddlywiki.com/#Using%20Excise]] and editor operation plugins like Saq Imtiaz's freaky-fun [[Editor Autolists|https://saqimtiaz.github.io/sq-tw/editor-autolists.html]], which is also demoed in [[Dave Gifford's Stroll|https://giffmex.org/stroll/goodies.html#Outliner]].
+* The text editor preview mode is not implemented within the ''rider'' plugin.
+* Nesting any sort of transclusion opens the possibility of recursion errors.

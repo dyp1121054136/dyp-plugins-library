@@ -1,0 +1,25 @@
+created: 20200815222134543
+modified: 20240405072809446
+tags: Rider可编辑嵌套引用条目
+title: Rider-Interacting with the transcluded tiddler
+type: text/vnd.tiddlywiki
+
+!!Activating an editor for the transcluded tiddler 
+
+''Mouse:'' Click on the text of the transcluded tiddler, or the <<.icon $:/core/images/edit-button>> icon.
+
+!!Saving changes to the tiddler 
+
+''Mouse:'' Click the <<.icon $:/plugins/can/rider/fastarrow.svg>> icon.
+
+''Keyboard:'' <kbd>Cmd+Enter</kbd> or <kbd>Ctrl+Enter</kbd> (unless the `((save-tiddler))` shortcut has been changed)
+
+!!Abandoning changes to the tiddler and closing the interface
+
+''Mouse:'' Click the <<.icon $:/plugins/can/rider/escape.svg>> icon.
+
+''Keyboard:''  <kbd>Escape</kbd> (unless the `((cancel-edit-tiddler))` keyboard shortcut has been changed)
+
+!!Opening the transcluded tiddler in the Story River
+
+''Mouse:'' Click the title link at the top right of the transcluded tiddler.

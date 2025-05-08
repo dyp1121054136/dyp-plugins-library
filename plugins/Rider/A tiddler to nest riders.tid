@@ -1,0 +1,11 @@
+created: 20200815222311899
+modified: 20240405073325656
+tags: Rider可编辑嵌套引用条目
+title: A tiddler to nest riders
+type: text/vnd.tiddlywiki
+
+Here is some text belonging to [[A tiddler to nest riders]].
+
+<<rider "Third level rider">>
+
+The above sentence was text belonging to [[Third level rider]]

@@ -1,0 +1,17 @@
+created: 20200816183607993
+modified: 20240405075056468
+tags: Rider可编辑嵌套引用条目
+title: Rider-Styling
+type: text/vnd.tiddlywiki
+
+The ''rider'' plugin has no explicitly-configurable options, but, this being ~TiddlyWiki, users can override CSS rules to suit their preferences.
+
+As a demonstration, the demo wiki contains the tiddler [[Rider demo stylesheet tweaks]], which gives some sample CSS rules for an alternate look. This tiddler can, of course, be edited to achieve the desired result.
+
+The following button toggles the <<.tag '~$:/tags/Stylesheet'>> tag on [[Rider demo stylesheet tweaks]], to compare default and custom styling: 
+
+{{Style tweaks toggle}}
+
+Here is the example tiddler again:
+
+<<rider Rider-Example>>

@@ -1,0 +1,13 @@
+modified: 20240405112521724
+tags: $:/tags/Macro rider插件
+title: rider/action-macros
+type: text/vnd.tiddlywiki
+
+\define rider-toggle-edit() <$action-setfield $tiddler=<<editstatetid>> editstate="edit"/>
+\define rider-toggle-view() <$action-setfield $tiddler=<<editstatetid>> editstate="view"/>
+
+\define rider-startedit-actions() <<rider-toggle-edit>><$action-setfield $tiddler=<<editstatetid>> text={{!!text}}/>
+
+\define rider-submitedit-actions() <$action-deletetiddler $tiddler=<<editstatetid>>/><$action-sendmessage $message='tm-auto-save-wiki'/>
+
+\define rider-canceledit-actions() <$action-setfield text={{$(editstatetid)$}} $timestamp='no'/><<rider-toggle-view>>

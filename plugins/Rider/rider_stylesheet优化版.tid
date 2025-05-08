@@ -1,0 +1,65 @@
+created: 20200507184921957
+creator: chris
+modified: 20240504163916645
+tags: $:/tags/Stylesheet rider插件
+title: rider/stylesheet优化版
+
+.rider {
+  display: block; 
+  border-right: 1px solid <<colour tiddler-info-border>>; /* 右边框 */
+  margin-top: 0; /* 调整外边距以避免重叠 */
+  margin-bottom: 1em;
+  padding-right: 5px; /* 增加右内边距避免右边框重叠 */
+}
+
+.rider-top {
+  display: flex;
+  justify-content: flex-end; /* 靠右对齐 */
+  align-items: flex-end; 
+  gap: 20px; /* 增加取消确认按钮间距 */
+}
+
+.rider-title {
+  font-size: 0.8em;
+  margin-right: 0.4em;
+  color: #aaaaaa;
+  align-self: flex-end;
+  text-decoration: none;
+}
+
+.rider-title:hover {
+  color: #333333;
+  text-decoration: none; /* 防止悬停时出现下划线 */
+}
+
+.rider-button {
+  color: #aaaaaa;
+}
+
+.rider-button:hover,
+.rider-button:hover svg {
+  color: #333333;
+  fill: #333333; /* 同时更改svg颜色填充 */
+}
+
+.rider-button svg {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
+  fill: #cccccc;
+}
+
+.rider-text > *,
+.rider > div.tc-reveal > * {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+
+.rider-textarea {
+  width: 100%;
+}
+
+.rider-ctl {
+  display: flex;
+  flex-direction: row;
+}

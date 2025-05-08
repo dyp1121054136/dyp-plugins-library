@@ -1,0 +1,11 @@
+created: 20200816183500381
+modified: 20240504165604011
+tags: Rider可编辑嵌套引用条目
+title: Rider demo stylesheet tweaks
+type: text/vnd.tiddlywiki
+
+.rider {
+    background: #DEB88732;
+    padding: 0.4em;
+    border: 1px solid maroon;
+}

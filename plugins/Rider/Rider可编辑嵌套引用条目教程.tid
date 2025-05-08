@@ -1,0 +1,33 @@
+created: 20200815214430341
+modified: 20240504163527950
+tags: Rider可编辑嵌套引用条目 教程
+title: Rider可编辑嵌套引用条目教程
+type: text/vnd.tiddlywiki
+
+<<code src:"""<$transclude $variable="rider" tiddler="条目名称"/>
+""" language:"tw">>
+<<code src:"""<<rider 条目名称>>
+""" language:"tw">>
+
+''This plugin is not extensively tested. Back up any data you don't want to lose. That applies even if you aren't going to try this plugin.''
+
+''Rider'' is a small [[TiddlyWiki|https://tiddlywiki.com]] plugin for transcluding tiddlers with some in-place editing capability.
+
+The ''Rider'' plugin exposes one macro: ''rider''. The ''rider'' macro takes one parameter:
+
+;tiddler
+: The title of the tiddler to transclude
+
+!!Example (in a transcluded tiddler)
+
+<<rider Rider-Example>>
+
+The <<.def rider>> macro follows your [[TiddlyWiki|https://tiddlywiki.com]]'s [[Control Panel|$:/ControlPanel]] settings as to whether or not to show the Editor Toolbar.
+
+''Further reading:''
+
+* [[Interacting with the transcluded tiddler|Rider-Interacting with the transcluded tiddler]]
+* [[Styling|Rider-Styling]]
+* [[Further notes|Rider-Further notes]]
+* [[Changelog|Rider-Changelog]]
+* [[Acknowledgements|Rider-Acknowledgements]]

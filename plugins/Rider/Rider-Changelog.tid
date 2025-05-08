@@ -1,0 +1,12 @@
+created: 20200816152848666
+modified: 20240405072615446
+tags: Rider可编辑嵌套引用条目
+title: Rider-Changelog
+type: text/vnd.tiddlywiki
+
+''16 August 2020 - Rider plugin v0.0.2''
+
+* Remove "click-text-to-edit" button to fix broken text selection
+* Remove negative right margin on `.rider` elements to make styling less brittle
+* Make edit button an edit/cancel toggle and move submit button to below editor
+* Add demonstration of custom CSS styling
