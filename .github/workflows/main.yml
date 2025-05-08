@@ -19,8 +19,8 @@ jobs:
       - run: npm install tiddlywiki
       - run: mkdir -p node_modules/tiddlywiki/plugins/dyp/
       - run: cp -r plugins/* node_modules/tiddlywiki/plugins/dyp/
-      - run: ./node_modules/.bin/tiddlywiki . --output output/library --build library
-      - run: ./node_modules/.bin/tiddlywiki . --output output --build gui
+      - run: ./node_modules/.bin/tiddlywiki .  --load languages/zh-Hans --output output/library --build library
+      - run: ./node_modules/.bin/tiddlywiki .  --load languages/zh-Hans --output output --build gui
       - name: Deploy to GitHub Pages
         if: success()
         uses: crazy-max/ghaction-github-pages@v2
