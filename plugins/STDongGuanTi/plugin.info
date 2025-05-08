@@ -1,0 +1,14 @@
+{
+    "created": "20250508054817479",
+    "title": "$:/plugins/dyp/STDongGuanTi",
+    "stability": "STABILITY_2_STABLE",
+    "modified": "20250508055217375",
+    "version": "0.0.1",
+    "name": "Font",
+    "author": "dyp",
+    "description": "上图东观体 STDongGuanTi",
+    "list": "readme usage",
+    "source": "https://www.library.sh.cn/special/dongguanti/",
+    "plugin-type": "plugin",
+    "packaged-by": "Gatha on 8th 五月 2025, 13:52:24"
+}
