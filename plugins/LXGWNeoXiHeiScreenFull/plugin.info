@@ -1,0 +1,13 @@
+{
+    "created": "20250502060527099",
+    "title": "$:/plugins/dyp/LXGWNeoXiHeiScreenFull",
+    "stability": "STABILITY_2_STABLE",
+    "modified": "20250502094225721",
+    "version": "0.0.4",
+    "name": "Font",
+    "description": "LXGWNeoXiHeiScreenFull",
+    "author": "dyp",
+    "list": "readme usage",
+    "packaged-by": "Gatha on 2nd 五月 2025, 17:42:28",
+    "plugin-type": "plugin"
+}
