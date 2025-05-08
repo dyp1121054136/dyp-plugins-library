@@ -1,0 +1,33 @@
+created: 20250501130552352
+modified: 20250501130717448
+tags: $:/tags/Stylesheet 粘性编辑器工具栏
+title: $:/PSaT/sticky-toolbars/styles
+
+.tc-tiddler-preview {
+  overflow: visible;
+}.tc-editor-toolbar {
+	position: -webkit-sticky;
+	position: -moz-sticky;
+	position: -o-sticky;
+	position: -ms-sticky;
+	position: sticky;
+	top: 35px;
+    background: #ffffff; 
+	z-index: 500;
+}.sticky-footer{
+   position: sticky;
+   bottom: 0;
+   padding: 0 5px 5px 0;
+   background: transparent;
+	z-index: 500;
+}/* 因已使用了标题吸顶不需要再设置 */
+/* .tc-tiddler-title {
+	position: -webkit-sticky;
+	position: -moz-sticky;
+	position: -o-sticky;
+	position: -ms-sticky;
+	position: sticky;
+	top: 30px;
+	background: #ffffff;
+	z-index: 500;
+} */
