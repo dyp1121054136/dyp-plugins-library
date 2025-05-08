@@ -1,0 +1,17 @@
+created: 20240416014104348
+modified: 20250506150631739
+tags: 筛选器下拉菜单
+title: 编辑记录和历史记录
+
+<<tabs "
+[[$:/core/ui/SideBar/Open2]]
+[[筛选器下拉菜单折叠目录列表]]
+[[筛选器下拉菜单子条目列表]]
+[[筛选器下拉菜单标签丸]]
+[[最近编辑的条目-时间精确到秒]]
+[[$:/core/ui/SideBar/Recent2]]
+[[$:/PSaT/history-sidebar]]
+" 
+"$:/PSaT/history-sidebar"
+"$:/state/history-tab"
+>>

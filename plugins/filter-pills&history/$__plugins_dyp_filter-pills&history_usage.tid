@@ -1,0 +1,16 @@
+created: 20250506123908612
+modified: 20250506150631739
+tags: 
+title: $:/plugins/dyp/filter-pills&history/usage
+type: text/vnd.tiddlywiki
+
+
+```tw
+<<filter-pill "[tag[筛选公式]]" 筛选器名称>>
+```
+
+
+<<filter-pill "[tag[筛选器下拉菜单]]" 筛选器下拉菜单>>
+
+# 直接导出筛选的条目按钮已修复；
+# 小技巧：可反向使用，点击搜索，然后可快速删除筛选器中列出的条目。

@@ -1,0 +1,6 @@
+created: 20250506141937318
+modified: 20250506150631739
+tags: $:/tags/FilterDropdown 筛选器下拉菜单
+title: $:/PSaT/filter-pills/heading
+
+<span style="padding: 0 0 0  1em;" title="Pill is draggable with result as payload">List ''<$text text=<<filter>>/>'' {{$:/core/images/info-button}}</span><hr>
