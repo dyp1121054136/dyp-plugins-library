@@ -3,7 +3,13 @@ name: Node.js CI
 on:
   push:
     branches: [ master ]
-  workflowdispatch:
+  workflow_dispatch:
+    # 添加输入参数，例如是否进行强制部署
+    inputs:
+      force_deploy:
+        description: 'Force deploy even if there are no changes'
+        required: false
+        default: 'false'
 
 jobs:
   build:
