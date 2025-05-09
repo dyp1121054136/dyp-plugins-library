@@ -1,0 +1,14 @@
+{
+    "created": "20250509071950917",
+    "title": "$:/plugins/dyp/HYYueGuangWuW",
+    "stability": "STABILITY_2_STABLE",
+    "modified": "20250509072025105",
+    "version": "0.0.1",
+    "name": "Font",
+    "author": "dyp",
+    "description": "HYYueGuangWuW",
+    "source": "https://www.hanyi.com.cn/productdetail.php?id=7313",
+    "list": "readme usage",
+    "plugin-type": "plugin",
+    "packaged-by": "Gatha on 9th 五月 2025, 15:29:36"
+}
