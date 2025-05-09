@@ -1,0 +1,12 @@
+code-body: yes
+created: 20250509072117835
+modified: 20250509072159298
+tags: 字体 $:/tags/Stylesheet
+title: 引用字体-HYYueGuangWuW
+
+@font-face {
+	font-family: "HYYueGuangWuW";
+	font-style: normal;
+	font-weight: 400;
+	src: local("HYYueGuangWuW"), url(<<datauri "HYYueGuangWuW.woff2">>) format("woff2");
+}

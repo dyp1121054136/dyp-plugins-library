@@ -1,0 +1,10 @@
+created: 20250509072034669
+modified: 20250509072102583
+tags: 
+title: $:/plugins/dyp/HYYueGuangWuW/usage
+type: text/vnd.tiddlywiki
+
+!!!! ''字体用法：''
+1、对整个wiki生效：打开 [[$:/ControlPanel]] ，在外观-主题调整-设置-字型文本框内，最前面添加 `"HYYueGuangWuW",`；
+
+2、对单个条目生效：添加字段 `font`，字段内容 `YG`。
