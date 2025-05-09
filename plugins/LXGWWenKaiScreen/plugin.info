@@ -1,0 +1,14 @@
+{
+    "created": "20240511082137864",
+    "title": "$:/plugins/dyp/LXGWWenKaiScreen",
+    "stability": "STABILITY_2_STABLE",
+    "modified": "20250505151436824",
+    "version": "0.0.4",
+    "name": "Font",
+    "author": "dyp",
+    "description": "LXGWWenKaiScreen",
+    "source": "https://github.com/lxgw/LxgwWenKai-Screen",
+    "list": "readme usage",
+    "plugin-type": "plugin",
+    "packaged-by": "Gatha on 5th 五月 2025, 15:14:36"
+}
