@@ -81,3 +81,29 @@ tiddlywiki.info 中增加
 {github 用户名}.github.io/{仓库名}
 
 示例：dyp1121054136.github.io/dyp-plugins-library
+
+
+## 其他技巧：
+
+1、想要预装tiddlywiki官方插件，可以修改tiddlywiki.info文件，插件名格式为"tiddlywiki/插件名"，用英文逗号隔开多个插件
+
+示例：
+
+```
+	"plugins": [
+		"tiddlywiki/pluginlibrary",
+		"tiddlywiki/highlight"
+	],
+```
+
+tiddlywiki官方插件库：https://github.com/TiddlyWiki/TiddlyWiki5/tree/master/plugins/tiddlywiki
+
+2、个人常用配置和新条目可以上传到 gui 文件夹
+
+可以直接上传json文件
+
+例如：
+网站标题
+网站副标题
+$__SiteTitle.json
+$__SiteSubtitle.json
