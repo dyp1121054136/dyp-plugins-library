@@ -5,8 +5,8 @@ modified: 20250506015955327
 tags: 按钮 目录工具
 title: $:/core/ui/Buttons/last-page-bottom
 
-\define mulu1()  ^\b\d+(-\d+)?\b-
-\define mulu2()  ^\b\d+(-\d+)?\b
+\define mulu1()  ^\b\d+(-\d+)?\b(?![年月日])-
+\define mulu2()  ^\b\d+(-\d+)?\b(?![年月日])
 \define mulu0() 
 
 <span class="lian caption-title">
