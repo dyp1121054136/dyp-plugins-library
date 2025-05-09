@@ -1,5 +1,7 @@
 放置在“plugins”插件文件夹中的插件将自动托管在此仓库的 GitHub Pages 站点上，提交到 master 分支将自动更新库。
 
+## 步骤：
+
 1、复制此模板并新建仓库
 https://github.com/mklauber/tw5-plugins-template
 
@@ -63,7 +65,9 @@ tiddlywiki.info 中增加
 
 新建文件gui/$__language.json
 
+```
 [{"created":"20250508112256704","text":"$:/languages/zh-Hans","title":"$:/language","modified":"20250508112643825"}]
+```
 
 6、修改master分支中的内容会自动部署gh-pages分支，如果没有，可以手动部署
 
