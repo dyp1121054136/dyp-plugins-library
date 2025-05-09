@@ -103,7 +103,6 @@ tiddlywiki官方插件库：https://github.com/TiddlyWiki/TiddlyWiki5/tree/maste
 可以直接上传json文件
 
 例如：
-网站标题
-网站副标题
-$__SiteTitle.json
-$__SiteSubtitle.json
+网站标题、网站副标题
+
+$__SiteTitle.json、$__SiteSubtitle.json
