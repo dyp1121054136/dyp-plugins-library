@@ -1,4 +1,6 @@
-放置在“plugins”插件文件夹中的插件将自动托管在此仓库的 GitHub Pages 站点上，提交到 master 分支将自动更新库。
+## 功能：
+
+放置在“plugins”插件文件夹中的tiddlywiki插件将自动托管在此仓库的 GitHub Pages 站点上，提交到 master 分支将自动更新tiddlywiki插件库。
 
 ## 步骤：
 
@@ -15,7 +17,7 @@ url: https://{github 用户名}.github.io/{仓库名}/library/index.html
 
 3、新建github动作配置文件.github/workflows/main.yml
 
-```
+```yaml
 name: Node.js CI
 
 on:
