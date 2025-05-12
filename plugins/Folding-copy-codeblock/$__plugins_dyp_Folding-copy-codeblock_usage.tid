@@ -1,0 +1,29 @@
+created: 20250512121657469
+modified: 20250512135548014
+tags: 
+title: $:/plugins/dyp/Folding-copy-codeblock/usage
+type: text/vnd.tiddlywiki
+
+写法：
+
+```
+<<code src:"""内容
+""" language:"tw" caption:"小标题">>
+```
+
+或
+
+```
+<<code src:"条目标题" language:"代码语言(不填则默认为tw)" caption:"小标题">>
+```
+
+或
+
+```
+<<$codeblock   
+  caption:"小标题"   
+  language:"代码语言(不填则默认为tw)"   
+  code:"内容"   
+  open:"open"  
+>>  
+```

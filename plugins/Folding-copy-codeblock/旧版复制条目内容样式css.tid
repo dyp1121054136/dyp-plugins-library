@@ -1,0 +1,30 @@
+created: 20250510074554891
+modified: 20250512135548014
+tags: $:/tags/Stylesheet 备份 代码块折叠按钮
+title: 旧版复制条目内容样式css
+
+.bottom-details {
+	opacity: 0;
+	font-size:0.9em;
+	display: inline;
+	cursor: pointer;
+	padding: 10px 0;
+	transition: 0.3s;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+  background: rgba(0, 0, 0, 0); 
+  border: none; 
+ -webkit-tap-highlight-color: transparent; /* 去除移动端点击高亮 */
+  box-shadow: none; /* 去除盒阴影 */
+  color: transparent;
+}
+
+.bottom-details:hover{
+	opacity:0;
+}
+
+details[open] .bottom-details {
+	opacity:0;
+}

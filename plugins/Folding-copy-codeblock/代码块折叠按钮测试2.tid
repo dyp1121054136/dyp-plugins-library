@@ -1,0 +1,11 @@
+created: 20250510035446080
+modified: 20250512135548014
+tags: 代码块折叠按钮
+title: 代码块折叠按钮测试2
+
+<<$codeblock   
+  caption:"示例CSS代码"   
+  language:"css"   
+  code:".example { color: red; }"   
+  open:"open"  
+>>  

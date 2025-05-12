@@ -1,0 +1,42 @@
+created: 20250512121641643
+modified: 20250512135548014
+tags: 
+title: $:/plugins/dyp/Folding-copy-codeblock/readme
+type: text/vnd.tiddlywiki
+
+; 折叠复制代码块
+
+1、需要搭配以下2个插件使用：
+
+[[$:/plugins/kookma/utility]] 和 [[$:/plugins/yaisog/single-tiddler-view]]
+
+2、[[Utility新版插件|$:/plugins/kookma/utility]]
+
+$:/plugins/kookma/utility/procedures/code
+
+`$:/tags/Global` 改成 `$:/tags/Macro`
+`xml` 改成 `tw`
+
+可以显示源代码，并使用单条目浏览模式，但丢失复制按钮
+
+[[$:/plugins/kookma/utility/viewtemplates/source-toggle-button]]
+
+`title` 改为 `显示/隐藏条目原内容`
+
+添加样式 `<span class="bottom-details">Source</span>`
+
+语言修改为tw `language={{{ [{!!title}get[type]else[tw]] }}}`
+
+<<code src:"""\define show-tiddler-source(open:"")
+<details title="显示/隐藏条目原内容" $open$>
+<summary><span class="bottom-details">Source</span></summary>
+<$transclude $variable="code" language={{{ [{!!title}get[type]else[tw]] }}} src={{!!text}} />
+</details>
+\end
+""" language:"tw">>
+
+3、其他设置
+
+设置-Utility，勾选 `Show toolbar controls on shadow tiddlers` 和 `Show source button on the tiddlers`
+
+外观-视图模式，选 `minimal`，布局选 `SingleTiddlerView`
