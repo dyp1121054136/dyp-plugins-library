@@ -1,0 +1,137 @@
+created: 20250512075733365
+modified: 20250512083333303
+tags: $:/tags/Stylesheet 样式 条目悬浮大纲
+title: 条目悬浮大纲缩进样式css
+type: text/vnd.tiddlywiki
+
+.gk0wk-tiddlertoc-h1 {
+  padding-left: 0;
+}
+
+.gk0wk-tiddlertoc-h2 {
+  padding-left: 0.4em;
+}
+
+.gk0wk-tiddlertoc-h3 {
+  padding-left: 0.8em;
+}
+
+.gk0wk-tiddlertoc-h4 {
+  padding-left: 1.2em;
+}
+
+.gk0wk-tiddlertoc-h5 {
+  padding-left: 1.6em;
+}
+
+.gk0wk-tiddlertoc-h6 {
+  padding-left: 2em;
+}
+
+.gk0wk-tiddlertoc-empty {
+  color: #888888;
+  user-select: none;
+}
+
+.gk0wk-tiddlertoc-h1,
+.gk0wk-tiddlertoc-h2,
+.gk0wk-tiddlertoc-h3,
+.gk0wk-tiddlertoc-h4,
+.gk0wk-tiddlertoc-h5,
+.gk0wk-tiddlertoc-h6 {
+  user-select: none;
+  cursor: pointer;
+  transition: all 0ms;
+}
+
+.gk0wk-tiddlertoc-h1:hover,
+.gk0wk-tiddlertoc-h2:hover,
+.gk0wk-tiddlertoc-h3:hover,
+.gk0wk-tiddlertoc-h4:hover,
+.gk0wk-tiddlertoc-h5:hover,
+.gk0wk-tiddlertoc-h6:hover {
+  color: #333333;
+}
+
+.gk0wk-tiddlertoc-viewbuttonpopup {
+  border-radius: 3px;
+  background: #f4f4f4;
+  width: min(90vw, 300px);
+  
+-webkit-box-shadow: #00000070 0 2px 6px;
+	-moz-box-shadow: #00000070 0 2px 6px;
+		box-shadow: #00000070 0 2px 6px;
+
+  filter: contrast(90%);
+  padding: 0;
+  overflow-y: auto;
+  max-height: 80vh;
+}
+
+.gk0wk-tiddlertoc-viewbuttonpopup-h1 {
+  padding-left: 13px;
+}
+
+.gk0wk-tiddlertoc-viewbuttonpopup-h2 {
+  padding-left: calc(13px + 0.4em);
+}
+
+.gk0wk-tiddlertoc-viewbuttonpopup-h3 {
+  padding-left: calc(13px + 0.8em);
+}
+
+.gk0wk-tiddlertoc-viewbuttonpopup-h4 {
+  padding-left: calc(13px + 1.2em);
+}
+
+.gk0wk-tiddlertoc-viewbuttonpopup-h5 {
+  padding-left: calc(13px + 1.6em);
+}
+
+.gk0wk-tiddlertoc-viewbuttonpopup-h6 {
+  padding-left: calc(13px + 2em);
+}
+
+.gk0wk-tiddlertoc-viewbuttonpopup-empty {
+  color: #888888;
+  user-select: none;
+  font-size: 18px;
+  line-height: 1em;
+  padding: 20px;
+  text-align: center;
+  margin: 0 !important;
+}
+
+.gk0wk-tiddlertoc-viewbuttonpopup-h1,
+.gk0wk-tiddlertoc-viewbuttonpopup-h2,
+.gk0wk-tiddlertoc-viewbuttonpopup-h3,
+.gk0wk-tiddlertoc-viewbuttonpopup-h4,
+.gk0wk-tiddlertoc-viewbuttonpopup-h5,
+.gk0wk-tiddlertoc-viewbuttonpopup-h6 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1em;
+  margin: 0 !important;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 6px;
+  user-select: none;
+  cursor: pointer;
+  background: transparent;
+  opacity: 0.7;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  transition: all 0ms;
+}
+
+.gk0wk-tiddlertoc-viewbuttonpopup-h1:hover,
+.gk0wk-tiddlertoc-viewbuttonpopup-h2:hover,
+.gk0wk-tiddlertoc-viewbuttonpopup-h3:hover,
+.gk0wk-tiddlertoc-viewbuttonpopup-h4:hover,
+.gk0wk-tiddlertoc-viewbuttonpopup-h5:hover,
+.gk0wk-tiddlertoc-viewbuttonpopup-h6:hover {
+  opacity: 1;
+  background: #ffffff;
+  color: #333333;
+}

@@ -1,0 +1,22 @@
+caption: {{$:/core/images/floating-outline}} 条目悬浮大纲
+created: 20250512033547540
+description: 条目悬浮大纲
+modified: 20250512054946934
+tags: 按钮 $:/tags/ViewToolbar 条目悬浮大纲
+title: $:/core/ui/Buttons/open-floating-outline
+
+\whitespace trim
+
+<$set value={{{ [<currentTiddler>addprefix[$:/temp/open-floating-outline]] }}} name="open-floating-outlineTiddler">
+<$button popup=<<open-floating-outlineTiddler>> tooltip="打开/关闭条目悬浮大纲" class=<<tv-config-toolbar-class>>>
+<$list filter="[<tv-config-toolbar-icons>match[yes]]">{{$:/core/images/floating-outline}}</$list>
+<$list filter="[<tv-config-toolbar-text>match[yes]]"><span class="tc-btn-text">打开/关闭条目悬浮大纲</span></$list>
+</$button>
+<$reveal type="popup" state=<<open-floating-outlineTiddler>> position="belowleft" tag="div" class="tc-popup-keep">
+
+<div class="open-floating-outline-body">
+<$transclude tiddler="条目悬浮大纲弹窗内容"/>
+</div>
+
+</$reveal>
+</$set>

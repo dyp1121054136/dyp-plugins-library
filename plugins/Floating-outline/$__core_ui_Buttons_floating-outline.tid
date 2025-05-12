@@ -1,0 +1,16 @@
+caption: {{$:/core/images/floating-outline}} 开启/关闭编辑器条目悬浮大纲
+created: 20250512055133788
+description: 开启/关闭条目悬浮大纲
+modified: 20250512062024364
+tags: 按钮 $:/tags/PageControls 条目悬浮大纲
+title: $:/core/ui/Buttons/floating-outline
+
+<$button class="tc-btn-invisible" tooltip="开启/关闭条目悬浮大纲">
+<$action-listops $tiddler="条目悬浮大纲查看模板" $tags="+[toggle[$:/tags/ViewTemplate]]"/>
+
+<$list filter="[<tv-config-toolbar-icons>match[yes]]">{{$:/core/images/floating-outline|22px}}</$list><$list filter="[<tv-config-toolbar-text>match[yes]]">
+<span class="tc-btn-text">
+开启/关闭条目悬浮大纲
+</span></$list>
+
+</$button>

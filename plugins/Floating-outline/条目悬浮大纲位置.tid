@@ -1,0 +1,55 @@
+created: 20250512063437343
+modified: 20250512065619077
+tags: 条目悬浮大纲
+title: 条目悬浮大纲位置
+
+<span class="tc-btn-invisible floating-outline-button">{{||$:/core/ui/Buttons/floating-outline}}</span>
+
+<style>
+.center-align {
+  text-align: left; /* 靠左对齐 */
+  vertical-align: middle; /* 垂直居中对齐 */
+}
+
+.outline input[type="text"] {
+  box-sizing: border-box;
+  width: 4em;
+  padding: 1px;
+  border: 1px solid #000;
+}
+</style>
+
+<table width="99%">
+<tr>
+<td class="center-align">
+距离上：
+</td>
+<td class="center-align">
+<span class="outline">
+<$edit-text tiddler="条目悬浮大纲样式css" field="floating-outline-top" tag="input" placeholder="" default="20"/> px
+</span>
+</td>
+</tr>
+<tr>
+<td class="center-align">
+距离左：
+</td>
+<td class="center-align">
+<span class="outline">
+<$edit-text tiddler="条目悬浮大纲样式css" field="floating-outline-left" tag="input" placeholder="" default=""/> px
+</span>
+</td>
+</tr>
+<tr>
+<td class="center-align">
+距离右：
+</td>
+<td class="center-align">
+<span class="outline">
+<$edit-text tiddler="条目悬浮大纲样式css" field="floating-outline-right" tag="input" placeholder="" default=""/> px
+</span>
+</td>
+</tr>
+</table>
+
+注：距离左右不能同时设置，设置左右时清空另一个的数值

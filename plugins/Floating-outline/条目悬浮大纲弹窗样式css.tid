@@ -1,0 +1,39 @@
+created: 20250512054833805
+modified: 20250512055428251
+tags: 样式 $:/tags/Stylesheet 条目悬浮大纲
+title: 条目悬浮大纲弹窗样式css
+type: text/vnd.tiddlywiki
+
+.open-floating-outline-body {
+  padding: 10px 20px;
+  background-color: <<colour tiddler-background>>;
+  min-width: 250px; /* 默认宽度 */
+  border-radius: 8px;  /* 圆角 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 阴影 */
+  font-size: 16px; /* 字体大小 */
+  overflow-y: auto;
+  max-height: 80vh;
+  scrollbar-width: thin; /* 自定义滚动条样式 */
+  position: relative; /* 为.sticky-tabs提供定位上下文 */
+  -webkit-tap-highlight-color: transparent; /* 去除移动端点击高亮 */
+}
+
+/* 自定义Webkit内核浏览器的滚动条样式 */
+.open-history-body::-webkit-scrollbar {
+  width: 6px; /* 设置滚动条宽度 */
+  height: 6px; /* 设置滚动条高度 */
+}
+
+.open-floating-outline-body::-webkit-scrollbar-thumb {
+  background-color: transparent; /* 设置滚动滑块的背景颜色 */
+  border-radius: 3px; /* 设置滚动滑块的圆角 */
+}
+
+.open-floating-outline-body::-webkit-scrollbar-thumb:hover {
+  background-color: <<colour primary>>; /* 鼠标悬停时滚动滑块的颜色 */
+}
+
+/* 下拉菜单悬停背景颜色 */
+.open-floating-outline-body .tc-drop-down a:hover {
+  background-color: <<colour primary>>; /* 鼠标悬停时的背景颜色 */
+}

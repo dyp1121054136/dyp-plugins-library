@@ -1,0 +1,7 @@
+created: 20250512031913472
+modified: 20250512081000009
+tags: 条目悬浮大纲
+title: 条目悬浮大纲弹窗内容
+
+<$link to{{!!title}}></$link>
+<$page-toc tiddler=<<currentTiddler>> emptyMessage="该条目无大纲" class="" headerClassPrefix="gk0wk-tiddlertoc-viewbuttonpopup-" />

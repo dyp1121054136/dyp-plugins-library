@@ -1,0 +1,10 @@
+created: 20250512053635500
+modified: 20250512095348856
+tags: 条目悬浮大纲
+title: 条目悬浮大纲查看模板
+
+<div class="floating-outline">
+
+<span class="tc-btn-invisible floating-outline-button">{{||引用开关条目悬浮大纲按钮}}</span> <$link to{{!!title}}></$link>
+<$page-toc tiddler=<<currentTiddler>> emptyMessage="该条目无大纲" class="" headerClassPrefix="gk0wk-tiddlertoc-viewbuttonpopup-" />
+</div>

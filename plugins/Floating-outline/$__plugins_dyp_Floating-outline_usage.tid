@@ -1,0 +1,9 @@
+created: 20250512070325134
+modified: 20250512095126462
+tags: 
+title: $:/plugins/dyp/Floating-outline/usage
+type: text/vnd.tiddlywiki
+
+如果修改缩进不生效，需要移除 [[$:/plugins/Gk0Wk/page-toc/style.css]] 的 `$:/tags/Stylesheet` 标签
+
+应用 [[条目悬浮大纲缩进样式css]]
