@@ -7,7 +7,7 @@
     "name": "Folding-copy-codeblock",
     "description": "折叠复制代码块",
     "author": "dyp",
-    "dependents": $:/plugins/kookma/utility, $:/plugins/yaisog/single-tiddler-view,
+    "dependents": "$:/plugins/kookma/utility, $:/plugins/yaisog/single-tiddler-view",
     "list": "readme usage",
     "packaged-by": "Gatha on 12th 五月 2025, 22:03:00",
     "plugin-type": "plugin"
