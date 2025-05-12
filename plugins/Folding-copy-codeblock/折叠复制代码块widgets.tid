@@ -1,0 +1,33 @@
+code-body: yes
+created: 20250510033455301
+modified: 20250512135713490
+tags: 代码块折叠按钮 $:/tags/Macro
+title: 折叠复制代码块widgets
+type: text/vnd.tiddlywiki
+
+\widget $codeblock(code, language, caption, open:"")  
+<$let displayLanguage={{{ [<language>removeprefix[text/]removeprefix[application/]] }}}>  
+<details open class="codeblock-details" $open$>  
+<summary class="codeblock-details">
+<span class="copy-codeblock"> 
+<%if [<language>!is[blank]] %>  
+<span class="codeblock-language codeblock-hover"><<language>></span>  
+<%endif%>  
+<%if [<caption>!is[blank]] %> 
+<span class="codeblock-caption codeblock-hover"><<caption>></span>  
+<%endif%>  
+<%if [<code>!is[blank]] %>
+<$button tooltip="复制内容" class="tc-btn-invisible codeblock-copy-button"> {{$:/core/images/copy-codeblock|20px}}  
+<$action-sendmessage $message="tm-copy-to-clipboard" $param=<<code>> successNotification="复制成功消息提示"/>  
+</$button>  
+<%endif%> 
+</span>
+</summary>
+<blockquote class="codeblock-blockquote">
+<div class="codeblock-code">  
+<$genesis $type="$codeblock" $remappable="no" code=<<code>> language=<<language>>/>  
+</div>
+</blockquote>
+</details>  
+</$let>  
+\end  

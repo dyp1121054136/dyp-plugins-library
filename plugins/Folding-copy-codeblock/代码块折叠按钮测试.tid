@@ -1,0 +1,26 @@
+created: 20250510031700316
+modified: 20250512143531103
+tags: 代码块折叠按钮
+title: 代码块折叠按钮测试
+
+正文1
+
+```css
+/* 代码块样式 */
+pre {
+  margin-top: -0em;
+  margin-bottom: -0em;
+  margin-left: 0em;
+  margin-right: 0em;
+  padding: 2px 2px 2px 2px; /* 内边距上右下左 */
+  border-radius: 3px;
+}
+```
+
+正文2
+
+源代码
+
+[[source按钮|$:/plugins/kookma/utility/viewtemplates/source-toggle-button]]
+
+[[代码块复制|折叠复制代码块widgets]]
