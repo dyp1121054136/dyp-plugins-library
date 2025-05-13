@@ -1,0 +1,25 @@
+{
+
+    "created": "20250513141336715",
+
+    "title": "$:/plugins/dyp/cursor-Purple-Gem-Flowers",
+
+    "stability": "STABILITY_2_STABLE",
+
+    "modified": "20250513141559490",
+
+    "version": "0.0.1",
+
+    "name": "cursor-Purple-Gem-Flowers",
+
+    "description": "鼠标光标-紫色宝石花",
+
+    "author": "dyp",
+
+    "list": "readme usage",
+
+    "packaged-by": "Gatha on 13th 五月 2025, 22:17:37",
+
+    "plugin-type": "plugin"
+
+}
