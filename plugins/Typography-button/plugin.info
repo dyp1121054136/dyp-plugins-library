@@ -1,0 +1,13 @@
+{
+    "created": "20250513014328587",
+    "title": "$:/plugins/dyp/Typography-button",
+    "stability": "STABILITY_2_STABLE",
+    "modified": "20250513014505122",
+    "version": "0.0.1",
+    "name": "Typography-button",
+    "description": "一键排版按钮",
+    "author": "dyp",
+    "list": "readme usage",
+    "plugin-type": "plugin",
+    "packaged-by": "Gatha on 13th 五月 2025, 09:45:11"
+}
