@@ -1,0 +1,13 @@
+code-body: yes
+created: 20250513063923598
+modified: 20250513070653496
+tags: $:/tags/Stylesheet 可爱鼠标特效
+title: 可爱鼠标特效样式css
+
+body {
+	cursor: url(<<datauri "img202201071208706.png">>), auto;
+}
+
+.tc-table-of-contents, .tc-tag-label, button, a, input[type="submit"] {
+	cursor: url(<<datauri "img202201071205091.png">>), auto!important;
+}
