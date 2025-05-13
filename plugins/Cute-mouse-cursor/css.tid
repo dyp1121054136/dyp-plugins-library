@@ -8,6 +8,6 @@ body {
 	cursor: url(<<datauri "img202201071208706.png">>), auto;
 }
 
-.tc-table-of-contents, .tc-tag-label, button, a, input[type="submit"] {
+.tc-table-of-contents, .tc-tag-label, button, a, input[type="submit"], .copy-codeblock {
 	cursor: url(<<datauri "img202201071205091.png">>), auto!important;
 }
