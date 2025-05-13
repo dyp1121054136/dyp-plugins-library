@@ -1,0 +1,41 @@
+caption: 部分编辑自定义样式-圆角背景002
+created: 20240413132612041
+modified: 20250513005452152
+tags: $:/tags/Section/Theme 部分编辑样式 样式 部分编辑 调色板
+title: $:/plugins/kookma/section/styles/themes/yuanjiao-002
+type: text/css
+
+.se-section {
+  font-family: "FZYUEKZJW-H", "ResourceHanRoundedCN-Regular";
+  padding:.25em 1em;
+  border: none; /* 去除边框 */
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: none;
+  background-color: #f7f9ec; /* 护眼背景颜色 */
+  border-radius: 8px; /* 圆角设置 */
+  margin-bottom: 10px; /* 两个部分编辑框的间距 */
+  line-height: 1.5; /* 行高 */
+}
+
+.se-sectionheader button {
+  padding-bottom: 10px; /* 折叠按钮的高度 */
+  flex-direction: row;
+  justify-content: flex-start;
+  border: none; /* 去除边框 */
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: none;
+}
+
+.se-sectionheader button svg {
+  display: none
+}
+
+.se-sectionbody {
+  margin-left: 0;
+  margin-top:-50px; /* 编辑框向上移动 */
+}
+
+.se-section-toolbar button{
+  opacity: 0;
+  transition: opacity 0.3s ease; /* 平滑过渡 */
+}

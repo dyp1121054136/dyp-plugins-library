@@ -1,0 +1,20 @@
+created: 20240104030711968
+modified: 20240111121817676
+tags: 部分编辑样式
+title: 部分编辑透明样式说明
+
+"""
+插件 [[$:/plugins/kookma/section]]
+样式 [[$:/plugins/kookma/section/styles/themes/touming]]
+
+打开[[$:/ControlPanel]]，设置-Section Editor
+Choose Local Editor：`Use Tiddlywiki main editor` `Turn on editor toolbar` 两项打勾
+
+Section appearance：
+Section style：选 `部分编辑自定义样式-透明`
+Number of levels：`5`
+
+条目添加字段 `se-type`，字段内容留空。
+
+[[部分编辑透明样式示例]]
+"""

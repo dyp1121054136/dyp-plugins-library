@@ -1,0 +1,24 @@
+caption: {{$:/core/images/se-type}} 部分编辑
+created: 20240111091905082
+description: 开启/关闭部分编辑模式section editor
+modified: 20250513005514800
+tags: 按钮 $:/tags/ViewToolbar 部分编辑
+title: $:/core/ui/Buttons/se-type
+
+<$button class="tc-btn-invisible" tooltip="开启/关闭部分编辑模式">
+<$list filter="[<currentTiddler>has:field[se-type]]">
+<$action-deletefield $field="se-type"/>
+</$list>
+<$list filter="[<currentTiddler>!has:field[se-type]]">
+<$action-setfield $field="se-type" $value=""/>
+</$list>
+
+<$list filter="[<currentTiddler>field:br[2]]">
+<$action-setfield $field="br" $value="no"/>
+</$list>
+<$list filter="[<currentTiddler>field:br[no]]">
+<$action-setfield $field="br" $value="2"/>
+</$list>
+
+<$list filter="[<tv-config-toolbar-icons>match[yes]]">{{$:/core/images/se-type}}</$list><$list filter="[<tv-config-toolbar-text>match[yes]]"><span class="tc-btn-text">开启/关闭部分编辑模式</span></$list>
+</$button>

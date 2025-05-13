@@ -1,0 +1,28 @@
+caption: {{$:/core/images/se-type}} 添加一个标题内容
+condition: [<targetTiddler>!has[type]] [<targetTiddler>type[text/vnd.tiddlywiki]]
+created: 20240313080934680
+description: 添加一个标题内容
+icon: $:/core/images/se-type
+modified: 20250513004112696
+shortcuts: ((se-type))
+tags: $:/tags/EditorToolbar 按钮 部分编辑 添加一个标题内容
+title: $:/core/ui/EditorToolbar/se-type
+
+<$vars timestamp=<<now "YYYY-0MM-0DD 0hh:0mm:0ss">>>
+<$action-sendmessage
+	$message="tm-edit-text-operation"
+	$param="wrap-selection"
+	prefix={{{ [[!!!! '']addsuffix<timestamp>addsuffix['']addsuffix[
+"""
+
+]] }}}
+	suffix={{{ [[
+"""]] }}}
+/>
+</$vars>
+
+<!-- 
+时间戳
+timestamp=<<now "YYYY0MM0DD0hh0mm0ssXXX">>
+YYYY-0MM-0DD 0hh:0mm:0ss
+ -->
