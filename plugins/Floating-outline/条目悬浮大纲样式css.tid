@@ -7,8 +7,8 @@ tags: 条目悬浮大纲 $:/tags/Stylesheet 样式
 title: 条目悬浮大纲样式css
 
 .floating-outline {
-  min-width: 150px; /* 默认宽度 */
-  max-width: 200px; /* 最大宽度 */
+  min-width: 200px; /* 默认宽度 */
+  max-width: 250px; /* 最大宽度 */
   background-color: #ffffff;
   border-radius: 8px;  /* 圆角 */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 阴影 */
