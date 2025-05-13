@@ -1,0 +1,14 @@
+{
+    "created": "20250513004538629",
+    "title": "$:/plugins/dyp/section-edit-style-button",
+    "stability": "STABILITY_2_STABLE",
+    "modified": "20250513005601504",
+    "version": "0.0.1",
+    "name": "section-edit-style-button",
+    "description": "部分编辑美化和快捷按钮",
+    "author": "dyp",
+    "dependents": "$:/plugins/kookma/section",
+    "list": "readme usage",
+    "packaged-by": "Gatha on 13th 五月 2025, 08:56:32",
+    "plugin-type": "plugin"
+}
