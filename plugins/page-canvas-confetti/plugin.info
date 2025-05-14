@@ -1,0 +1,13 @@
+{
+    "created": "20250514113846483",
+    "title": "$:/plugins/dyp/page-canvas-confetti",
+    "stability": "STABILITY_2_STABLE",
+    "modified": "20250514114140482",
+    "version": "0.0.1",
+    "name": "page-canvas-confetti",
+    "description": "页面特效-雪花",
+    "author": "dyp",
+    "list": "readme usage history",
+    "packaged-by": "",
+    "plugin-type": "plugin"
+}
