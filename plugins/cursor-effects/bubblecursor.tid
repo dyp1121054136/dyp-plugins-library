@@ -1,0 +1,12 @@
+code-body: yes
+created: 20250514031028640
+modified: 20250514033425993
+tags: $:/tags/RawMarkup
+title: 引用鼠标特效-bubbleCursor
+
+  <!-- 初始化bubbleCursor效果 -->  
+  <script>  
+    window.addEventListener("load", (event) => {  
+      new cursoreffects.bubbleCursor();  
+    });  
+  </script>
