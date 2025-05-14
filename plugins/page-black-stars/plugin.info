@@ -1,0 +1,13 @@
+{
+    "created": "20250514135919415",
+    "title": "$:/plugins/dyp/page-black-stars",
+    "stability": "STABILITY_2_STABLE",
+    "modified": "20250514140026622",
+    "version": "0.0.1",
+    "name": "page-black-stars",
+    "description": "动态背景-黑夜星空",
+    "author": "dyp",
+    "list": "readme usage history",
+    "packaged-by": "Gatha on 14th 五月 2025, 22:00:34",
+    "plugin-type": "plugin"
+}
