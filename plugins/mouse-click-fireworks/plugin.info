@@ -1,14 +1,14 @@
 {
-    "created": "20250514073326106",
+    "created": "20250514081132530",
     "title": "$:/plugins/dyp/mouse-click-fireworks",
     "stability": "STABILITY_2_STABLE",
     "tags": "",
-    "modified": "20250514074252584",
+    "modified": "20250514081341408",
     "version": "0.0.1",
     "name": "mouse-click-fireworks",
     "description": "博客园鼠标点击烟花特效",
     "author": "dyp",
     "list": "readme usage",
-    "packaged-by": "Gatha on 14th 五月 2025, 15:46:15",
+    "packaged-by": "Gatha on 14th 五月 2025, 16:13:48",
     "plugin-type": "plugin"
 }
