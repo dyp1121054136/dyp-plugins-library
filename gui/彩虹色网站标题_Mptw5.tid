@@ -1,0 +1,18 @@
+created: 20250515084747364
+modified: 20250515084809069
+tags: $:/tags/Stylesheet
+title: 彩虹色网站标题 Mptw5
+type: text/css
+
+/*
+  Rainbow title because why not.
+  CSS borrowed from http://neotw.tiddlyhost.com/
+  Delete this if you don't like it or it looks bad with your
+  color scheme.
+*/
+.tc-sidebar-header .tc-site-title {
+  background: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
+  -webkit-background-clip: text;
+  color: transparent !important;
+  display: inline-block; /* Limit the width of the element so the gradient looks good */  
+}
