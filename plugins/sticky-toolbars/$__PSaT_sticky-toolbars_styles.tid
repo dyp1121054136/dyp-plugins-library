@@ -12,7 +12,7 @@ title: $:/PSaT/sticky-toolbars/styles
 	position: -ms-sticky;
 	position: sticky;
 	top: 35px;
-    background: #ffffff; 
+    background: <<colour tiddler-editor-background>>; 
 	z-index: 500;
 }.sticky-footer{
    position: sticky;
