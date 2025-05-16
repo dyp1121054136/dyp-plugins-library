@@ -1,0 +1,20 @@
+code-body: yes
+created: 20250516014001356
+modified: 20250516020346675
+tags: $:/tags/RawMarkupWikified/BottomBody 页面背景
+title: 引用背景-double-bubble-dark样式css
+
+`<style>`
+.double-bubble-dark-background{
+    position:fixed;
+    inset:0;
+    background-repeat:repeat;
+    background-position:center;
+    background-size: auto;
+    background-image:url(<<datauri "double-bubble-dark.png">>);
+    bottom: 0;
+    left: 0; /* 确保从左边开始，覆盖整个宽度 */
+    width: 100vw; /* 使用视口宽度，包括滚动条 */
+    z-index: -1; /* 确保背景在最底层 */
+}
+`</style><i class="double-bubble-dark-background"/>`
