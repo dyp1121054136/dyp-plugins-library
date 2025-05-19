@@ -102,7 +102,7 @@ tiddler-editor-fields-odd:
 tiddler-info-background: <<colour tiddler-background>>
 tiddler-info-border: <<colour tiddler-info-background>>
 tiddler-info-tab-background: <<colour tab-background-selected>>
-tiddler-link-background: transparent
+tiddler-link-background: white
 tiddler-link-foreground: <<colour primary>>
 tiddler-subtitle-foreground: <<colour muted-foreground>>
 tiddler-title-foreground: <<colour foreground>>
