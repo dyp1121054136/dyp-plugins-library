@@ -1,0 +1,14 @@
+{
+    "created": "20250520065036106",
+    "title": "$:/plugins/dyp/cursor-Genshin-Nahida",
+    "stability": "STABILITY_2_STABLE",
+    "tags": "",
+    "modified": "20250520065304743",
+    "version": "0.0.1",
+    "name": "cursor-Genshin-Nahida",
+    "description": "纳西妲概念鼠标指针样式-绿色系",
+    "author": "dyp",
+    "list": "readme usage",
+    "packaged-by": "Gatha on 20th 五月 2025, 14:53:28",
+    "plugin-type": "plugin"
+}
