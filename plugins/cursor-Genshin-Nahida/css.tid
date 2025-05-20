@@ -10,7 +10,11 @@ body {
 }
 
 /* 设置链接的指针光标 */
-a, .tc-table-of-contents, .tc-tag-label, button, .tc-image-button, .tc-tiny-gap-left, .tc-btn-invisible {
+a, .tc-table-of-contents, .tc-tag-label, button, .tc-image-button, .tc-tiny-gap-left, .tc-btn-invisible,
+input[type="submit"],
+.copy-codeblock, .bottom-details,
+.jd-sidebar-column-header,
+{
   cursor: url(<<datauri "STMC Genshin Nahida 01 Normal Alternative 32.png">>), pointer;
 }
 
