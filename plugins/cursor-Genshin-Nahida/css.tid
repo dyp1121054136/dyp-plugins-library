@@ -1,0 +1,26 @@
+code-body: yes
+created: 20250516143020201
+modified: 20250520064758428
+tags: 鼠标光标 $:/tags/Stylesheet
+title: 纳西妲概念鼠标指针样式css
+
+/* 设置整个页面的默认光标 */
+body {
+  cursor: url(<<datauri "STMC Genshin Nahida 01 Normal.png">>), auto;
+}
+
+/* 设置链接的指针光标 */
+a, .tc-table-of-contents, .tc-tag-label, button, .tc-image-button, .tc-tiny-gap-left, .tc-btn-invisible {
+  cursor: url(<<datauri "STMC Genshin Nahida 01 Normal Alternative 32.png">>), pointer;
+}
+
+/* 设置文本输入框的文本编辑光标 偏移16px */
+input[type="text"], input[type="search"], textarea, code, .tc-edit-texteditor  {
+  cursor: url(<<datauri "STMC Genshin Nahida 06 Beam.png">>) 16 16, text;
+}
+
+/* 设置可移动元素的光标 静态生效 移动时未生效*/
+.tc-droppable .tc-tiddlylink-resolves
+ {
+  cursor: url(<<datauri "STMC Genshin Nahida 13 Move.png">>), move;
+}
