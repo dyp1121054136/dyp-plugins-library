@@ -1,0 +1,8 @@
+created: 20250520022102786
+modified: 20250520022909182
+tags: $:/tags/Stylesheet 样式
+title: wiki语言高亮代码块背景颜色css
+
+.hljs {
+  background-color: <<colour pre-background>>;
+}
