@@ -14,6 +14,7 @@ a, .tc-table-of-contents, .tc-tag-label, button, .tc-image-button, .tc-tiny-gap-
 input[type="submit"],
 .copy-codeblock, .bottom-details,
 .jd-sidebar-column-header,
+.tc-image-button
 {
   cursor: url(<<datauri "STMC Genshin Nahida 01 Normal Alternative 32.png">>), pointer;
 }
