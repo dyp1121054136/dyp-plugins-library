@@ -3,7 +3,7 @@
     "title": "$:/plugins/dyp/Floating-outline",
     "stability": "STABILITY_2_STABLE",
     "modified": "20250512100503031",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "name": "Floating-outline",
     "description": "条目悬浮大纲",
     "author": "dyp",
