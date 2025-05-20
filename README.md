@@ -108,3 +108,7 @@ tiddlywiki官方插件库：https://github.com/TiddlyWiki/TiddlyWiki5/tree/maste
 网站标题、网站副标题
 
 $__SiteTitle.json、$__SiteSubtitle.json
+
+## Deepwiki AI 分析本仓库：
+
+https://deepwiki.com/dyp1121054136/dyp-plugins-library
