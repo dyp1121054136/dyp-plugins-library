@@ -19,7 +19,7 @@ input[type="submit"],
 }
 
 /* 设置文本输入框的文本编辑光标 偏移16px */
-input[type="text"], input[type="search"], textarea, code, .tc-edit-texteditor  {
+input[type="text"], input[type="search"], textarea, code, .tc-edit-texteditor, td input  {
   cursor: url(<<datauri "STMC Genshin Nahida 06 Beam.png">>) 16 16, text;
 }
 
