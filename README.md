@@ -109,6 +109,13 @@ tiddlywiki官方插件库：https://github.com/TiddlyWiki/TiddlyWiki5/tree/maste
 
 $__SiteTitle.json、$__SiteSubtitle.json
 
+3、禁用自动部署，只需注释掉 push 触发器，只保留 workflow_dispatch 手动触发器
+
+```yaml
+  # push:  
+  #   branches: [ master ]
+```
+
 ## Deepwiki AI 分析本仓库：
 
 https://deepwiki.com/dyp1121054136/dyp-plugins-library
