@@ -26,7 +26,7 @@ input[type="text"], input[type="search"], textarea, code, .tc-edit-texteditor, t
 }
 
 /* 设置可移动元素的光标 静态生效 移动时未生效*/
-.tc-tiddler body .tc-droppable .tc-tiddlylink-resolves
+.tc-tiddler-body .tc-droppable .tc-tiddlylink-resolves
  {
   cursor: url(<<datauri "STMC Genshin Nahida 13 Move.png">>), move;
 }
