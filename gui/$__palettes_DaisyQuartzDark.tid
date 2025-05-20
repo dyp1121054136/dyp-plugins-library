@@ -93,7 +93,7 @@ tiddler-background: #35393C
 tiddler-border: <<colour tiddler-background>>
 tiddler-controls-foreground-hover: #C1BA8C
 tiddler-controls-foreground-selected: #d2cdac
-tiddler-controls-foreground: #746d3f
+tiddler-controls-foreground: #635d36
 tiddler-editor-background: <<colour background>>
 tiddler-editor-border-image: #ffffff
 tiddler-editor-border: <<colour pre-background>>
