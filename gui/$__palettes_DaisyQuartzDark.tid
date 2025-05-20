@@ -3,7 +3,7 @@ color-scheme: dark
 created: 20240820134349441
 description: based on Vanilla
 list: #35393C #434748 #656356 #C1BA8C #EFE6AB
-modified: 20250519065106878
+modified: 20250520031614218
 name: Daisy Quartz (Dark)
 tags: $:/tags/Palette
 title: $:/palettes/DaisyQuartzDark
@@ -54,7 +54,7 @@ notification-background: #656356
 notification-border: <<colour notification-background>>
 page-background: #434748
 pre-background: #1E1E1E
-pre-border: <<colour pre-background>>
+pre-border: <<colour primary>>
 selection-background: 
 selection-foreground: 
 select-tag-background: 
