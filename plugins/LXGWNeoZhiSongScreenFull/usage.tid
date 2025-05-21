@@ -1,0 +1,10 @@
+created: 20240202021122935
+modified: 20250521015939630
+tags: 
+title: $:/plugins/dyp/LXGWNeoZhiSongScreenFull/usage
+type: text/vnd.tiddlywiki
+
+!!!! ''字体用法：''
+1、对整个wiki生效：打开 [[$:/ControlPanel]] ，在外观-主题调整-设置-字型文本框内，最前面添加 `"LXGWNeoZhiSongScreenFull",`；
+
+2、对单个条目生效：添加字段 `font`，字段内容 `S`。
