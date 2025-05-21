@@ -8,7 +8,7 @@
     "author": "dyp",
     "dependents": "$:/plugins/tiddlywiki/jszip",
     "description": "筛选器下拉菜单和历史记录",
-    "list": "readme usage",
+    "list": "readme usage history",
     "packaged-by": "Gatha on 6th 五月 2025, 23:07:10",
     "plugin-type": "plugin"
 }
