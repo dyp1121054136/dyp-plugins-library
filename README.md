@@ -116,6 +116,8 @@ $__SiteTitle.json、$__SiteSubtitle.json
   #   branches: [ master ]
 ```
 
+4、字体插件有未知bug，如果字体不生效，可能是安装的时候woff2文件打包状态被破坏了，修改条目类型为 application/font-woff2 或 font/woff2，可使字体重新生效
+
 ## Deepwiki AI 分析本仓库：
 
 https://deepwiki.com/dyp1121054136/dyp-plugins-library
