@@ -1,0 +1,56 @@
+created: 20250521083435681
+modified: 20250521124135824
+tags: 导出文件夹zip $:/tags/Macro
+title: 导出条目按钮macro修改版
+
+\function exportButtonFilename(baseFilename)
+[<baseFilename>] [<extension>] +[join[]]
+\end
+
+\procedure myexportButton(exportFilter:"[!is[system]sort[title]]",lingoBase,baseFilename:"tiddlers")
+\whitespace trim
+<$let hint={{{ [<lingoBase>addsuffix[Hint]get[text]] }}}
+	caption={{{  [<lingoBase>addsuffix[Caption]get[text]] }}}
+>
+	<span class="tc-popup-keep">
+		<$button popup=<<qualify "$:/state/popup/export">>
+			tooltip="导出所有筛选的条目"
+			aria-label=<<caption>>
+			class=<<tv-config-toolbar-class>>
+			selectedClass="tc-selected"
+			dragFilter=<<exportFilter>>
+		>
+			<%if [<tv-config-toolbar-icons>match[yes]] %>
+				{{$:/core/images/export-button}}
+			<%endif%>
+			<%if [<tv-config-toolbar-text>match[yes]] %>
+				<span class="tc-btn-text"><$text text=<<caption>>/></span>
+			<%endif%>
+<span style="margin-left: 0.2em;">导出所有筛选的条目</span>
+		</$button>
+	</span>
+</$let>
+<$reveal state=<<qualify "$:/state/popup/export">> type="popup" position="below" animate="yes">
+	<div class="tc-drop-down">
+		<$set name="count" value={{{ [subfilter<exportFilter>count[]] }}}>
+			<$list filter="[all[shadows+tiddlers]tag[$:/tags/Exporter]]">
+				<$list filter="[<currentTiddler>has[condition]subfilter{!!condition}limit[1]] ~[<currentTiddler>!has[condition]then[true]]"
+					variable="ignore"
+				>
+					<$button class="tc-btn-invisible">
+						<$action-sendmessage $message="tm-download-file"
+							$param=<<currentTiddler>>
+							exportFilter=<<exportFilter>>
+							filename={{{ [<baseFilename>addsuffix{!!extension}] }}}
+						/>
+						<$action-deletetiddler $tiddler=<<qualify "$:/state/popup/export">>/>
+						<$transclude field="description"/>
+					</$button>
+				</$list>
+			</$list>
+		</$set>
+	</div>
+</$reveal>
+\end
+
+<!-- $:/tags/Macro -->

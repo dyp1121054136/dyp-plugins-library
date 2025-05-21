@@ -1,0 +1,39 @@
+created: 20250521073428163
+list-after: $:/PSaT/filter-pills/export-button
+modified: 20250521130049502
+tags: $:/tags/FilterDropdown 筛选器下拉菜单 导出文件夹zip
+title: $:/PSaT/filter-pills/export-folder-zip
+
+\whitespace trim
+\define folder-zip1()  /|\:|\"|\||\?|\*|\^|\<|\>|\\
+\define folder-zip2()  \s+
+\define folder-zip0() _
+\define suffix-folder-zip() .tid
+
+<$button class="tc-btn-invisible" tooltip="导出文件夹zip">
+{{$:/core/images/export-folder-zip}}
+<span style="margin-left: 0.2em;">导出文件夹zip</span>
+
+<$action-sendmessage $message="tm-zip-create" $param="$:/temp/filter-pills/_ZipTiddler"/>
+
+	<$list filter="[subfilter<filter>]" >
+		<$action-sendmessage 
+			$message="tm-zip-render-file" 
+			$param="$:/temp/filter-pills/_ZipTiddler"
+			filename={{{ [<currentTiddler>search-replace:g:regexp<folder-zip1>,<folder-zip0>search-replace:g:regexp<folder-zip2>,<folder-zip0>addsuffix[.tid]] }}} 
+			tiddler=<<currentTiddler>> 
+			template="$:/core/templates/tid-tiddler"
+		/>
+	</$list>	
+
+<$action-sendmessage $message="tm-zip-download" $param="$:/temp/filter-pills/_ZipTiddler" tiddler=<<filter>> filename=<<currentTiddler>>/>
+</$button>
+
+<!--
+baseFilename=<<currentTiddler>>表示导出文件名为当前条目标题
+
+<$action-sendmessage $message="tm-zip-create" $param=<<filter>>/>
+<$action-sendmessage $message="tm-zip-download" $param="MyZipTiddler" filename="myzipfile.zip"/>
+
+<$list filter="[subfilter<filter>]" template="$:/PSaT/filter-pills/ListItem"/>
+-->

@@ -1,0 +1,28 @@
+created: 20200728083941254
+modified: 20250521130338502
+tags: $:/tags/AdvancedSearch/FilterButton 导出文件夹zip
+title: 导出文件夹zip-搜索栏
+
+\define renderContent()
+\define folder-zip1()  /|\:|\"|\||\?|\*|\^|\<|\>|\\
+\define folder-zip2()  \s+
+\define folder-zip0() _
+\define suffix-folder-zip() .tid
+
+  <$action-sendmessage $message="tm-zip-create" $param="$:/temp/_ZipTiddler"/>
+  <$list filter={{$:/temp/advancedsearch}}>
+    <$action-sendmessage $message="tm-zip-render-file" $param="$:/temp/_ZipTiddler" filename={{{ [<currentTiddler>search-replace:g:regexp<folder-zip1>,<folder-zip0>search-replace:g:regexp<folder-zip2>,<folder-zip0>addsuffix[.tid]] }}} tiddler=<<currentTiddler>> template="$:/core/templates/tid-tiddler"/>
+  </$list>
+  <$action-sendmessage $message="tm-zip-download" $param="$:/temp/_ZipTiddler" filename="tiddlers.zip"/>
+\end
+
+<$button actions=<<renderContent>>  class="tc-btn-invisible" tooltip="导出文件夹zip">
+  {{$:/core/images/export-folder-zip}}
+</$button>
+
+<$transclude $variable="list-links" filter={{$:/temp/export-as-zip-filter}}/>
+
+<!-- 
+重命名为英文
+filename={{{ [<currentTiddler>slugify[]addsuffix[.tid]] }}}
+ -->
