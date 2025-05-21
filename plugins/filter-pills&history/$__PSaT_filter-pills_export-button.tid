@@ -5,7 +5,7 @@ tags: $:/tags/FilterDropdown 筛选器下拉菜单
 title: $:/PSaT/filter-pills/export-button
 
 \whitespace trim
-<$transclude $variable="exportButton" exportFilter=<<filter>> lingoBase="$:/language/Buttons/ExportTiddlers/" baseFilename=<<currentTiddler>>/>
+<$transclude $variable="myexportButton" exportFilter=<<filter>> lingoBase="$:/language/Buttons/ExportTiddlers/" baseFilename=<<currentTiddler>>/>
 <!--
 baseFilename=<<currentTiddler>>表示导出文件名为当前条目标题
 -->
