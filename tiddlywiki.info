@@ -3,7 +3,7 @@
 	"plugins": [
 		"tiddlywiki/pluginlibrary",
 		"tiddlywiki/highlight",
-		"tiddlywiki/jszip",
+		"tiddlywiki/jszip"
 	],
 	"themes": [
                 "tiddlywiki/vanilla",
