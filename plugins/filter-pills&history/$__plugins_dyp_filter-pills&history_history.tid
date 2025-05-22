@@ -3,7 +3,7 @@ modified: 20250521130835574
 tags: 筛选器下拉菜单
 title: $:/plugins/dyp/filter-pills&history/history
 
-0.0.2 2025-05-21
+; v.0.0.2 2025-05-21
 
 新增导出多个tid格式单条目到文件夹zip
 
