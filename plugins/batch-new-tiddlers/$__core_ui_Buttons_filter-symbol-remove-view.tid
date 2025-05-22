@@ -1,0 +1,25 @@
+caption: {{$:/core/images/filter-symbol-remove}} 批量移除筛选器符号-查看模式
+created: 20240427023226298
+description: 批量移除筛选器符号
+modified: 20240427023453852
+tags: 按钮 批量添加筛选器符号 $:/tags/ViewToolbar 批量移除筛选器符号
+title: $:/core/ui/Buttons/filter-symbol-remove-view
+
+\whitespace trim
+<$button class="tc-btn-invisible" tooltip="批量移除筛选器符号">
+<$list filter="[<tv-config-toolbar-icons>match[yes]]">
+{{$:/core/images/filter-symbol-remove|20px}}
+</$list>
+<$list filter="[<tv-config-toolbar-text>match[yes]]">
+<span class="tc-btn-text">
+<$text text=批量移除筛选器符号/>
+</span>
+</$list>
+
+<$let
+	lbr="
+" pre="[[" suf="]]">
+<$action-setfield $field="text" $value={{{ [{!!text}splitregexp[\n]]+[removeprefix<pre>]+[removesuffix<suf>]+[join<lbr>] }}}
+/>
+</$let>
+</$button>

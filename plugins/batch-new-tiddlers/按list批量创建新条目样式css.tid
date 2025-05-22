@@ -1,0 +1,81 @@
+created: 20240425174040446
+modified: 20240427143142382
+tags: 按list批量创建新条目 样式 $:/tags/Stylesheet
+title: 按list批量创建新条目样式css
+type: text/css
+
+.list-tids {
+  resize: none; /* 防止用户调整大小 */
+  /* 设置边框样式 */
+  border: 1px solid #ddd; /* 细边框，颜色浅灰 */
+  border-radius: 3px; /* 小的边框圆角 */
+
+  /* 设置尺寸 */
+  width: 90%; 
+  height: 100px;
+
+  /* 设置内边距 */
+  padding: 8px;
+
+  /* 调整背景和文字颜色 */
+  background-color: #fff; /* 背景颜色为白色 */
+  color: #333; /* 文字颜色为深灰 */
+
+  /* 鼠标悬停和获取焦点时的样式 */
+  &:hover, &:focus {
+    border-color: #bcbcbc; /* 边框颜色稍微加深 */
+    outline: none; /* 去除轮廓线，保持简洁 */
+  }
+
+  /* 去掉默认的滚动条，但保留滚动功能 */
+  overflow-y: auto; /* 仅当内容超出容器高度时显示滚动条 */
+  scrollbar-width: none; /* Firefox 隐藏滚动条 */
+
+  /* Chrome, Safari 和 Opera 隐藏滚动条 */
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+}
+
+.list-tids-btn-all {
+  float: right;
+  display: flex; 
+  justify-content: flex-end; /* 靠右对齐 */
+  align-items: center; /* 垂直居中对齐 */
+  white-space: nowrap; /* 防止容器内部内容换行 */
+  gap: 20px; /* 设置按钮之间的间隔 */
+  margin-right: 10%;
+}
+
+.list-tids-btn {
+  opacity: 0.5;
+  transition: opacity 0.3s ease; /* 平滑过渡 */
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: none;
+}
+
+.list-tids-btn:hover {
+  opacity: 1;
+}
+
+.list-tids-btn-all-left {
+  display: inline-block; /* 或者使用 inline-flex */
+  white-space: nowrap; /* 防止容器内部内容换行 */
+  vertical-align: middle; /* 上下居中对齐 */
+}
+
+.list-tids-btn-all-left > * {
+  display: inline-block; /* 子元素也使用内联块元素 */
+  text-align: left;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.list-tids-btn-all-left > *:first-child {
+  padding-left: 20px; /* 第一个元素左边距为0 */
+}
+
+.list-tids-btn-all-left > *:last-child {
+  padding-right: 0; /* 最后一个元素右边距为0 */
+}

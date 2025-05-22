@@ -1,0 +1,27 @@
+caption: {{$:/core/images/filter-symbol-remove}} 批量移除筛选器符号-编辑模式
+condition: [<targetTiddler>type[]] [<targetTiddler>get[type]prefix[text/]] +[first[]]
+created: 20240427023008733
+description: 批量移除筛选器符号
+icon: $:/core/images/filter-symbol-remove
+modified: 20240427023115454
+tags: $:/tags/EditorToolbar 按钮 批量添加筛选器符号 批量移除筛选器符号
+title: $:/core/ui/Buttons/filter-symbol-remove-edit
+
+\define temp() $:/temp/filter-symbol-remove
+\define blank-line() \n
+
+<$let
+	lbr="
+" pre="[[" suf="]]">
+<$action-sendmessage
+	$message="tm-edit-text-operation"
+	$param="save-all"
+	tiddler=<<temp>>
+/>
+<$action-sendmessage
+	$message="tm-edit-text-operation"
+	$param="replace-all"
+	text={{{ [<temp>get[text]splitregexp[\n]] +[removeprefix<pre>]+[removesuffix<suf>]+[join<lbr>] }}}
+/>
+<$action-deletetiddler $tiddler=<<temp>> />
+</$let>

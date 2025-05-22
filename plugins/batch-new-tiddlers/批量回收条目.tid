@@ -1,0 +1,22 @@
+created: 20240427104023223
+modified: 20240427104331109
+tags: 按list批量创建新条目 删除
+title: 批量回收条目
+
+<$set name="deleteList" value={{批量创建条目标题newList}}>
+
+<$button class="tc-btn-invisible" tooltip=批量回收条目>
+{{$:/core/images/deleteList|20px}}
+
+<$action-confirm $message="确认批量回收条目？" $prompt={{删除条目是否弹出确认提示}}>
+
+<$list filter="[enlist<deleteList>]" variable="deleteList-tid">
+
+<$transclude $variable="list-move-to-trashbin" tiddler=<<deleteList-tid>> />
+
+</$list>
+
+</$action-confirm>
+
+</$button>
+</$set>

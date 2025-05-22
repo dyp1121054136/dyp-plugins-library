@@ -1,0 +1,11 @@
+created: 20240427023625854
+modified: 20240427054846349
+tags: 按钮 批量添加筛选器符号
+title: 追加字段-工具栏
+
+<span class="list-tids-btn-all-left">
+<span class="list-tids-btn">{{||追加字段mulu=yes}}</span>
+<span class="list-tids-btn">{{||追加字段br=2}}</span>
+<span class="list-tids-btn">{{||批量清空追加字段}}</span>
+<span class="list-tids-btn">{{||批量删除字段}}</span>
+</span>

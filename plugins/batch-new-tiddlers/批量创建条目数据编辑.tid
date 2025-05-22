@@ -1,0 +1,23 @@
+created: 20240425105442987
+modified: 20240429074847464
+tags: 按list批量创建新条目
+title: 批量创建条目数据编辑
+
+{{||按list批量创建新条目按钮-不打开}}
+
+[[教程|按list批量创建新条目教程]]
+
+[[条目标题newList：|批量创建条目标题newList]] {{||条目标题newList-工具栏}}
+<$edit-text tiddler="批量创建条目标题newList" field="text" tag="textarea" class="list-tids" placeholder=""/>
+
+[[条目标签tagList：|批量创建条目标签tagList]] {{||条目标签tagList-工具栏}}
+<$edit-text tiddler="批量创建条目标签tagList" field="text" tag="textarea" class="list-tids" placeholder=""/>
+
+追加字段：{{||追加字段-工具栏}}
+
+[[字段名称：|批量创建条目字段fieldnameList源数据]] {{||条目字段fieldnameList-工具栏}}
+<$edit-text tiddler="批量创建条目字段fieldnameList源数据" field="text" tag="textarea" class="list-tids" placeholder="" default=""/>
+
+[[字段内容：|批量创建条目字段内容fieldvalueList源数据]] {{||条目字段内容fieldvalueList-工具栏}}
+<$edit-text tiddler="批量创建条目字段内容fieldvalueList源数据" field="text" tag="textarea" class="list-tids" placeholder="" default=""/>
+{{||按list批量创建新条目按钮-不打开}}

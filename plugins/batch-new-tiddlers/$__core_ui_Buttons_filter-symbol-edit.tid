@@ -1,0 +1,27 @@
+caption: {{$:/core/images/filter-symbol}} 批量添加筛选器符号-编辑模式
+condition: [<targetTiddler>type[]] [<targetTiddler>get[type]prefix[text/]] +[first[]]
+created: 20240426015558291
+description: 批量添加筛选器符号
+icon: $:/core/images/filter-symbol
+modified: 20240427023125463
+tags: $:/tags/EditorToolbar 按钮 批量添加筛选器符号
+title: $:/core/ui/Buttons/filter-symbol-edit
+
+\define temp() $:/temp/filter-symbol
+\define blank-line() \n
+
+<$let
+	lbr="
+" pre="[[" suf="]]">
+<$action-sendmessage
+	$message="tm-edit-text-operation"
+	$param="save-all"
+	tiddler=<<temp>>
+/>
+<$action-sendmessage
+	$message="tm-edit-text-operation"
+	$param="replace-all"
+	text={{{ [<temp>get[text]splitregexp[\n]] +[addprefix<pre>]+[addsuffix<suf>]+[join<lbr>] }}}
+/>
+<$action-deletetiddler $tiddler=<<temp>> />
+</$let>

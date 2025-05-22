@@ -1,0 +1,21 @@
+caption: {{$:/core/images/newList}} 批量新建条目
+created: 20240427062913857
+description: 批量新建条目
+modified: 20240427063444592
+tags: 按list批量创建新条目 按钮 $:/tags/PageControls
+title: $:/core/ui/Buttons/create-multiple-tids
+
+\whitespace trim
+<$button class="tc-btn-invisible" tooltip="批量新建条目">
+<$list filter="[<tv-config-toolbar-icons>match[yes]]">
+{{$:/core/images/newList|22px}}
+</$list>
+<$list filter="[<tv-config-toolbar-text>match[yes]]">
+<span class="tc-btn-text">
+<$text text=批量新建条目/>
+</span>
+</$list>
+
+<$action-navigate $to="批量创建条目数据编辑"/>
+
+</$button>

@@ -1,0 +1,25 @@
+created: 20240425175543137
+modified: 20240427022648202
+tags: 按list批量创建新条目 按钮
+title: 批量追加字段按钮
+
+<$button class="tc-btn-invisible" tooltip=批量追加字段>
+<$list filter="[<tv-config-toolbar-icons>match[yes]]">
+{{$:/core/images/fieldList|20px}}
+</$list>
+<$list filter="[<tv-config-toolbar-text>match[yes]]">
+<span class="tc-btn-text">
+<$text text=批量追加字段/>
+</span>
+</$list>
+
+<$action-setfield $tiddler="批量创建条目字段fieldnameList" $field="list" $value={{{ [[批量创建条目字段fieldnameList源数据]get[text]]}}}
+/>
+
+<$action-setfield $tiddler="批量创建条目字段内容fieldvalueList" $field="list" $value={{{ [[批量创建条目字段内容fieldvalueList源数据]get[text]]}}}
+/>
+
+<$list filter="[enlist<newList>]" variable="newTitle">
+<$action-setmultiplefields $tiddler=<<newTitle>> $fields="[list[批量创建条目字段fieldnameList]]" $values="[list[批量创建条目字段内容fieldvalueList]]" />
+</$list>
+</$button>

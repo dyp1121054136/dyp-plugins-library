@@ -1,0 +1,19 @@
+created: 20240427024315163
+modified: 20240427030655808
+tags: 清空 按list批量创建新条目
+title: 追加字段mulu=yes
+
+<$button class="tc-btn-invisible" tooltip="追加字段mulu=yes">
+<$list filter="[<tv-config-toolbar-icons>match[yes]]">
+mulu=yes
+</$list>
+<$list filter="[<tv-config-toolbar-text>match[yes]]">
+<span class="tc-btn-text">
+<$text text="追加字段mulu=yes"/>
+</span>
+</$list>
+
+<$action-listops $tiddler=批量创建条目字段fieldnameList源数据 $field="text" $subfilter="mulu"/>
+<$action-listops $tiddler=批量创建条目字段内容fieldvalueList源数据 $field="text" $subfilter="yes"/>
+
+</$button>

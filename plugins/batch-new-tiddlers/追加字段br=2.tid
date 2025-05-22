@@ -1,0 +1,19 @@
+created: 20240427030416579
+modified: 20240427030651273
+tags: 清空 按list批量创建新条目
+title: 追加字段br=2
+
+<$button class="tc-btn-invisible" tooltip="追加字段br=2">
+<$list filter="[<tv-config-toolbar-icons>match[yes]]">
+br=2
+</$list>
+<$list filter="[<tv-config-toolbar-text>match[yes]]">
+<span class="tc-btn-text">
+<$text text="追加字段br=2"/>
+</span>
+</$list>
+
+<$action-listops $tiddler=批量创建条目字段fieldnameList源数据 $field="text" $subfilter="br"/>
+<$action-listops $tiddler=批量创建条目字段内容fieldvalueList源数据 $field="text" $subfilter="2"/>
+
+</$button>

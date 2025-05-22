@@ -1,0 +1,21 @@
+created: 20240425175504353
+modified: 20240427111508184
+tags: 按list批量创建新条目 按钮
+title: 批量新建条目按钮
+
+\whitespace trim
+<$button class="tc-btn-invisible" tooltip=批量创建条目>
+<$list filter="[<tv-config-toolbar-icons>match[yes]]">
+{{$:/core/images/newList|22px}}
+</$list>
+<$list filter="[<tv-config-toolbar-text>match[yes]]">
+<span class="tc-btn-text">
+<$text text=批量创建条目/>
+</span>
+</$list>
+
+<$list filter="[enlist<newList>]" variable="newTitle">
+<$action-createtiddler $basetitle=<<newTitle>>
+/>
+</$list>
+</$button>

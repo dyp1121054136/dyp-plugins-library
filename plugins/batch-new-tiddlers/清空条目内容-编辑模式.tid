@@ -1,0 +1,25 @@
+created: 20240427011003874
+modified: 20240427013447096
+tags: $:/tags/Macro 清空 宏 按list批量创建新条目
+title: 清空条目内容-编辑模式
+
+\define clear-text(src,class:"tc-btn-invisible list-tids-btn",style,tooltip)
+\whitespace trim
+
+<$button class=<<__class__>> style=<<__style__>> tooltip=<<__tooltip__>>>
+<$list filter="[<tv-config-toolbar-icons>match[yes]]">
+{{$:/core/images/clear|22px}}
+</$list>
+<$list filter="[<tv-config-toolbar-text>match[yes]]">
+<span class="tc-btn-text">
+<$text text=清空/>
+</span>
+</$list>
+
+<$action-setfield $tiddler=<<__src__>> $field="text" $value=""/>
+
+</$button>
+
+\end
+
+<$transclude $variable="clear-text" src="清空条目内容测试" tooltip=清空条目内容/>

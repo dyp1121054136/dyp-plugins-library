@@ -1,0 +1,21 @@
+created: 20240427051108957
+modified: 20240427105629545
+tags: 按list批量创建新条目 删除
+title: 批量删除标签
+
+<$set name="deleteList" value={{批量创建条目标题newList}}>
+<span class="tc-btn-text">
+<$button class="tc-btn-invisible" tooltip=批量删除标签>
+{{$:/core/images/deleteList|20px}}
+
+<$action-confirm $message="确认批量删除标签？" $prompt={{删除标签是否弹出确认提示}}>
+
+<$list filter="[enlist<deleteList>]" variable="deleteList-tid">
+<$action-listops $tiddler=<<deleteList-tid>> $field="tags" $subfilter="+[remove[批量创建条目标签tagList]get[text]]"/>
+</$list>
+
+</$action-confirm>
+
+</$button>
+</span>
+</$set>

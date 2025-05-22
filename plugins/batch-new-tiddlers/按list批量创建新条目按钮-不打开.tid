@@ -1,0 +1,15 @@
+created: 20240425112717662
+modified: 20240427142708942
+tags: 测试 按list批量创建新条目
+title: 按list批量创建新条目按钮-不打开
+
+<span class="list-tids-btn-all">
+<$set name="newList" value={{批量创建条目标题newList}}>
+<span class="list-tids-btn">{{||批量新建条目按钮}}</span>
+<span class="list-tids-btn">{{||批量追加标签按钮}}</span>
+<span class="list-tids-btn">{{||批量追加字段按钮}}</span>
+<span class="list-tids-btn">{{||批量清空条目内容}}</span>
+<span class="list-tids-btn">{{||批量删除条目}}</span>
+<span class="list-tids-btn">{{||批量回收条目}}</span>
+</$set>
+</span>

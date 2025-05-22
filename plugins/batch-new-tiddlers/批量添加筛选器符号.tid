@@ -1,0 +1,10 @@
+created: 20240426015927425
+modified: 20240426020123557
+tags: 导出
+title: 批量添加筛选器符号
+
+<<filter-pill "
+[tag[批量添加筛选器符号]][[批量添加筛选器符号]]
+[[$:/core/modules/editor/operations/text/save-all.js]]
+[[$:/core/images/newList]]
+" 批量添加筛选器符号>>

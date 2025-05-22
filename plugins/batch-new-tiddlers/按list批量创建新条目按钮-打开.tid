@@ -1,0 +1,23 @@
+created: 20240425092625795
+modified: 20240426000914897
+tags: 测试 按list批量创建新条目
+title: 按list批量创建新条目按钮-打开
+
+<$set name="newList" value={{批量创建条目标题newList}}>
+
+<$button class="tc-btn-invisible" tooltip=批量创建条目>
+<$list filter="[<tv-config-toolbar-icons>match[yes]]">
+{{$:/core/images/new-button}}
+</$list>
+<$list filter="[<tv-config-toolbar-text>match[yes]]">
+<span class="tc-btn-text">
+<$text text=批量创建条目/>
+</span>
+</$list>
+
+<$list filter="[enlist<newList>]" variable="newTitle">
+<$action-sendmessage $message="tm-new-tiddler" title=<<newTitle>> tags={{批量创建条目标签tagList}} text="" br="2"/>
+</$list>
+
+</$button>
+</$set>

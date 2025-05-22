@@ -1,0 +1,15 @@
+created: 20240425101902051
+modified: 20240427105457937
+tags: 导出
+title: 按list批量创建新条目
+
+<<filter-pill "
+[tag[按list批量创建新条目]]
+[[按list批量创建新条目]]
+[tag[批量添加筛选器符号]][[批量添加筛选器符号]]
+[[$:/core/modules/editor/operations/text/save-all.js]]
+[tag[清空]][[清空]]
+[tag[删除]]
+" 按list批量创建新条目>>
+
+（含JavaScript需保存刷新生效）

@@ -1,0 +1,26 @@
+created: 20240427023543806
+modified: 20240427023611454
+tags: 清空 按list批量创建新条目
+title: 批量清空追加字段
+
+<$set name="clearList" value="
+[[批量创建条目字段fieldnameList源数据]]
+[[批量创建条目字段内容fieldvalueList源数据]]
+">
+
+<$button class="tc-btn-invisible" tooltip=批量清空追加字段>
+<$list filter="[<tv-config-toolbar-icons>match[yes]]">
+{{$:/core/images/clear|22px}}
+</$list>
+<$list filter="[<tv-config-toolbar-text>match[yes]]">
+<span class="tc-btn-text">
+<$text text=批量清空追加字段/>
+</span>
+</$list>
+
+<$list filter="[enlist<clearList>]" variable="clearList-tid">
+<$action-setfield $tiddler=<<clearList-tid>> $field="text" $value=""/>
+</$list>
+</$button>
+
+</$set>

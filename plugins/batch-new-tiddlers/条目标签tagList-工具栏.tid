@@ -1,0 +1,56 @@
+created: 20240426025241069
+modified: 20240427132548353
+tags: 按钮 批量添加筛选器符号
+title: 条目标签tagList-工具栏
+
+<span class="list-tids-btn-all-left">
+
+<span class="list-tids-btn">
+<$button class="tc-btn-invisible" tooltip="条目标签tagList-批量添加筛选器符号">
+<$list filter="[<tv-config-toolbar-icons>match[yes]]">
+{{$:/core/images/filter-symbol|20px}}
+</$list>
+<$list filter="[<tv-config-toolbar-text>match[yes]]">
+<span class="tc-btn-text">
+<$text text=条目标签tagList-批量添加筛选器符号/>
+</span>
+</$list>
+
+<$let
+	lbr="
+" pre="[[" suf="]]">
+
+<$action-setfield $tiddler="批量创建条目标签tagList" $field="text" $value={{{ [[批量创建条目标签tagList]get[text]splitregexp[\n]]+[addprefix<pre>]+[addsuffix<suf>]+[join<lbr>] }}}
+/>
+
+</$let>
+</$button>
+</span>
+
+<span class="list-tids-btn">
+<$button class="tc-btn-invisible" tooltip="条目标签tagList-批量移除筛选器符号">
+<$list filter="[<tv-config-toolbar-icons>match[yes]]">
+{{$:/core/images/filter-symbol-remove|20px}}
+</$list>
+<$list filter="[<tv-config-toolbar-text>match[yes]]">
+<span class="tc-btn-text">
+<$text text=条目标签tagList-批量移除筛选器符号/>
+</span>
+</$list>
+
+<$let
+	lbr="
+" pre="[[" suf="]]">
+
+<$action-setfield $tiddler="批量创建条目标签tagList" $field="text" $value={{{ [[批量创建条目标签tagList]get[text]splitregexp[\n]]+[removeprefix<pre>]+[removesuffix<suf>]+[join<lbr>] }}}
+/>
+
+</$let>
+</$button>
+</span>
+
+<$transclude $variable="clear-text" src="批量创建条目标签tagList" tooltip=清空条目标签tagList/>
+
+<span class="list-tids-btn">{{||批量删除标签}}</span>
+
+</span>
