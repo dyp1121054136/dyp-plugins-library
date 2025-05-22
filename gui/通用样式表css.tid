@@ -91,7 +91,9 @@ a {
   transition: color 0.3s; /* 平滑过渡效果 */
 }
 
-a:hover {
+.tc-tiddler-body a:hover,
+.jd-sidebar a:hover
+ {
   color: ;
   filter: opacity(75%); /* 透明度 */
 }
