@@ -24,8 +24,18 @@ type: text/vnd.tiddlywiki
 }
 
 /* 鼠标悬停在滚动滑块上时的样式 */
-::-webkit-scrollbar-thumb:hover {
+/* ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(270deg, <<colour primary>> 20%, white 20%, <<colour primary>> 20%, white 100%);
+} */
+
+/* 竖滚动条滑块悬停样式 */
+::-webkit-scrollbar-thumb:vertical:hover {
+  background: linear-gradient(270deg, <<colour primary>> 20%, white 20%, <<colour primary>> 20%, white 100%);
+}
+
+/* 横滚动条滑块悬停样式 颜色渐变从上到下180deg 从下到上0deg */
+::-webkit-scrollbar-thumb:horizontal:hover {
+  background: linear-gradient(0deg, <<colour primary>> 20%, white 20%, <<colour primary>> 20%, white 100%);
 }
 
 /* 滚动箭头按钮样式 */
