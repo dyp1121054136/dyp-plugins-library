@@ -1,6 +1,6 @@
 .lian a {
   /* color: #808080; */ /* 低饱和度的灰色 */
-  color: black;
+  color: <<colour foreground>>; 
   opacity: 0.6;
   transition: opacity 0.3s ease; /* 平滑过渡 */
   -webkit-tap-highlight-color: transparent;
@@ -10,7 +10,7 @@
 
 .lian a:link {
   /* color: #808080; */ /* 未访问的链接，保持一致 */
-  color: black;
+  color: <<colour foreground>>; 
   opacity: 0.6;
   transition: opacity 0.3s ease; /* 平滑过渡 */
 }
@@ -21,7 +21,7 @@
 
 .lian a:hover {
   /* color: #A9A9A9; */ /* 鼠标悬停时的链接，稍浅的低饱和度灰色 */
-  color: black;
+  color: <<colour foreground>>; 
   opacity: 1;
 }
 
