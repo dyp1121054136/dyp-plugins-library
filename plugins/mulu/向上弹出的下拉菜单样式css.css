@@ -70,7 +70,8 @@
 
 /* 选中链接时样式 */
 .dropdown-content-mulu a:hover {
-  background-color: #f1f1f1;
+  color: <<colour background>>;
+  background-color: <<colour foreground>>;
 }
 
 .dropbtn-mulu {
