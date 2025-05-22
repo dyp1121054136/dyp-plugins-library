@@ -1,0 +1,14 @@
+code-body: yes
+created: 20240429012807086
+modified: 20250522121626986
+tags: $:/tags/Stylesheet 根据字段内容动态应用样式 临时编辑
+title: 根据字段in=2段首缩进
+
+<$list filter="[in[2]]"> 
+[data-tiddler-title^="<$view field=title/>"] .tc-tiddler-body {
+  font-family: "FZYUEKZJW-H";
+  text-align: justify; /* 两端对齐 */
+  text-indent: 2em;  /* 段首缩进 */
+  line-height: 1.5; /* 行高*/
+  letter-spacing: 0em; /* 增加字符间距 */
+</$list>
