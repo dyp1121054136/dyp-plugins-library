@@ -1,0 +1,18 @@
+created: 20220816192518240
+modified: 20250522034335701
+tags: 样式 $:/tags/Stylesheet
+title: tc-tiddler-frame背景
+type: text/css
+
+.tc-tiddler-frame { 
+  border-radius: 10px; /* 条目背景添加圆角 */
+  /* background-color: white; */
+}
+
+.tc-tiddler-edit-frame .tc-editor-toolbar {
+  /* background: #E3E7CB; */
+}
+
+.tc-tiddler-title {
+  /* background-color: white; */ /* 与tc-tiddler-frame一致 */
+}
