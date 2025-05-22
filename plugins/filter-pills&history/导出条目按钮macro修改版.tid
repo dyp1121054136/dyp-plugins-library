@@ -26,7 +26,7 @@ title: 导出条目按钮macro修改版
 			<%if [<tv-config-toolbar-text>match[yes]] %>
 				<span class="tc-btn-text"><$text text=<<caption>>/></span>
 			<%endif%>
-<span style="margin-left: 0.2em;">导出所有筛选的条目</span>
+<span style="margin-left: 0.25em;">导出所有筛选的条目</span>
 		</$button>
 	</span>
 </$let>
