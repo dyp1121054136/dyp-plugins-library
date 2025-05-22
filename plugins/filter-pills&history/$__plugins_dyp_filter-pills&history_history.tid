@@ -11,6 +11,8 @@ title: $:/plugins/dyp/filter-pills&history/history
 
 关键代码如下：
 
+[[$:/PSaT/filter-pills/export-folder-zip]]
+
 * 替换所有文件系统不安全的字符（/, :, ", |, ?, *, ^, <, >, \）为下划线
 * 替换所有空白字符为下划线
 * 添加.tid扩展名
