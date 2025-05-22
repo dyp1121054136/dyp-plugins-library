@@ -59,7 +59,7 @@
 }
 
 .dropdown-content-mulu a {
-  color: black; 
+  color: <<colour foreground>>; 
   padding: 2px 6px;
   text-decoration: none;
   display: block;
