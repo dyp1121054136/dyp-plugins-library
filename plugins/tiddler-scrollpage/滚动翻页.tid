@@ -1,0 +1,19 @@
+created: 20240516121356879
+modified: 20250522112706790
+tags: 导出
+title: 滚动翻页
+
+<<filter-pill "[tag[滚动翻页]][[滚动翻页]]
+" 条目内滚动翻页>>
+
+（含JavaScript需保存刷新生效）
+
+[[滚动翻页动作代码]]
+
+[[条目内滚动翻页配置]]
+
+[[条目内滚动翻页测试]]
+
+[[tb-rl竖排文字测试]]
+
+[[$:/modules/startup/scrollpage.js]]
