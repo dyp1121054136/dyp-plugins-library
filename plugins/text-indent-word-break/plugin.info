@@ -1,0 +1,16 @@
+{
+    "title": "$:/plugins/dyp/text-indent-word-break",
+    "version": "0.0.1",
+    "stability": "STABILITY_2_STABLE",
+    "name": "text-indent-word-break",
+    "description": "根据字段内容动态应用样式",
+    "author": "dyp",
+    "source": "",
+    "list": "readme usage history",
+    "plugin-priority": "",
+    "parent-plugin": "",
+    "dependents": "",
+    "plugin-type": "plugin",
+    "core-version": "5.3.7-prerelease",
+    "packaged-by": "Gatha on 22nd 五月 2025, 20:20:32"
+}
