@@ -1,8 +1,8 @@
-## 功能：
+#### 功能：
 
 放置在“plugins”插件文件夹中的tiddlywiki插件将自动托管在此仓库的 GitHub Pages 站点上，提交到 master 分支将自动更新tiddlywiki插件库。
 
-## 步骤：
+#### 步骤：
 
 1、复制此模板并新建仓库
 https://github.com/mklauber/tw5-plugins-template
@@ -85,7 +85,7 @@ tiddlywiki.info 中增加
 示例：dyp1121054136.github.io/dyp-plugins-library
 
 
-## 其他技巧：
+#### 其他技巧：
 
 1、想要预装tiddlywiki官方插件，可以修改tiddlywiki.info文件，插件名格式为"tiddlywiki/插件名"，用英文逗号隔开多个插件
 
@@ -118,6 +118,6 @@ $__SiteTitle.json、$__SiteSubtitle.json
 
 4、字体插件有未知bug，如果字体不生效，可能是安装的时候woff2文件打包状态被破坏了，修改条目类型为 application/font-woff2 或 font/woff2，可使字体重新生效
 
-## Deepwiki AI 分析本仓库：
+#### Deepwiki AI 分析本仓库：
 
 https://deepwiki.com/dyp1121054136/dyp-plugins-library
