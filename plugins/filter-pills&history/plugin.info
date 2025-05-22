@@ -3,7 +3,7 @@
     "title": "$:/plugins/dyp/filter-pills&history",
     "stability": "STABILITY_2_STABLE",
     "modified": "20250506150631739",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "name": "filter-pills&history",
     "author": "dyp",
     "dependents": "$:/plugins/tiddlywiki/jszip",
