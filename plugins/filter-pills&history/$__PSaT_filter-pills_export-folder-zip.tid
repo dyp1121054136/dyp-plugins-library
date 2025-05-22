@@ -12,7 +12,7 @@ title: $:/PSaT/filter-pills/export-folder-zip
 
 <$button class="tc-btn-invisible" tooltip="导出文件夹zip">
 {{$:/core/images/export-folder-zip}}
-<span style="margin-left: 0.2em;">导出文件夹zip</span>
+<span style="margin-left: 0.25em;">导出文件夹zip</span>
 
 <$action-sendmessage $message="tm-zip-create" $param="$:/temp/filter-pills/_ZipTiddler"/>
 
