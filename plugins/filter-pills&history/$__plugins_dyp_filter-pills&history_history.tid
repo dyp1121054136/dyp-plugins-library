@@ -3,6 +3,10 @@ modified: 20250521130835574
 tags: 筛选器下拉菜单
 title: $:/plugins/dyp/filter-pills&history/history
 
+; v.0.0.3 2025-05-22
+
+历史记录弹窗背景颜色随主题条目背景颜色变化
+
 ; v.0.0.2 2025-05-21
 
 * 优化按钮排版；
