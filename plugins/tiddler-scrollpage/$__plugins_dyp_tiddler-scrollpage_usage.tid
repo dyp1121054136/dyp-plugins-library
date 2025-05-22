@@ -4,3 +4,107 @@ tags:
 title: $:/plugins/dyp/tiddler-scrollpage/usage
 type: text/vnd.tiddlywiki
 
+; 滚动翻页动作代码
+
+上一页：
+
+```tw
+<$action-sendmessage $message="tm-scrollpage" direction="prev" scrollTime="0"/>
+```
+
+下一页：
+
+```tw
+<$action-sendmessage $message="tm-scrollpage" direction="next" scrollTime="0"/>
+```
+
+向左翻页：
+
+```tw
+<$action-sendmessage $message="tm-scrollpage" direction="left" scrollTime="0"/>
+```
+
+向右翻页：
+
+```tw
+<$action-sendmessage $message="tm-scrollpage" direction="right" scrollTime="0"/>
+```
+
+滚动到带特定css类名的位置（类名无需再加.）：
+
+```tw
+<$action-sendmessage $message="tm-scrollpage" targetElement="css类名" scrollTime="0"/>
+```
+
+无动画：
+
+```tw
+scrollTime="0"
+```
+
+在指定类名的容器内滚动（类名需加.）：
+
+```tw
+scrollContainerSelector=".tc-scrollpage"
+```
+
+滚动距离：（不设置滚动距离数值则默认为100）
+
+滚动距离-根据视窗高度：
+
+```tw
+scrollDistance="100vh"
+```
+
+滚动距离-根据视窗宽度：
+
+```tw
+scrollDistance="100vw"
+```
+
+滚动到容器内顶部、底部、最左边、最右边：
+
+```tw
+direction="top"
+direction="bottom"
+direction="leftMost-tb-rl"
+direction="rightMost-tb-rl"
+```
+
+增加额外滚动行数：
+
+```tw
+extraLines="1"
+```
+
+增加额外滚动字符数（可以是0，正数、负数、小数）：
+
+```tw
+extraChars="-1"
+```
+
+进阶用法-跳转到可滚动容器内css类名位置，代码参考：
+
+不在容器内：
+
+```tw
+<$list filter="[<currentTiddler>!has:field[scrollpage]]">
+<$action-sendmessage $message="tm-scrollpage" targetElement="css类名" scrollTime="0"/>
+</$list>
+```
+
+在容器内：
+
+```tw
+<$list filter="[<currentTiddler>field:scrollpage[yes]]">
+<$action-sendmessage $message="tm-scrollpage" scrollContainerSelector=".tc-scrollpage" targetElement="css类名" scrollTime="0"/>
+</$list>
+```
+
+已实现增加上下偏移量：
+
+```tw
+<$action-sendmessage $message="tm-scrollpage" targetElement="css类名" scrollTime="0"  offset="-10em"/>
+
+<$action-sendmessage $message="tm-scrollpage" scrollContainerSelector=".tc-scrollpage" targetElement="css类名" scrollTime="0"  offset="-25em"/>
+```
