@@ -1,6 +1,6 @@
 .open-history-body {
   padding: 10px 20px;
-  background-color: white; /* 原<<colour tiddler-background>> */
+  background-color: <<colour tiddler-background>>;
   min-width: 250px; /* 默认宽度 */
   border-radius: 8px;  /* 圆角 */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 阴影 */
