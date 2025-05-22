@@ -5,6 +5,20 @@ title: $:/plugins/dyp/filter-pills&history/history
 
 0.0.2 2025-05-21
 
-新增导出多个单条目tid格式到文件夹zip
+新增导出多个tid格式单条目到文件夹zip
 
 需要安装依赖插件 [[$:/plugins/tiddlywiki/jszip]]
+
+关键代码如下：
+
+* 替换所有文件系统不安全的字符（/, :, ", |, ?, *, ^, <, >, \）为下划线
+* 替换所有空白字符为下划线
+* 添加.tid扩展名
+
+```tw
+\define folder-zip1()  /|\:|\"|\||\?|\*|\^|\<|\>|\\
+\define folder-zip2()  \s+
+\define folder-zip0() _
+
+filename={{{ [<currentTiddler>search-replace:g:regexp<folder-zip1>,<folder-zip0>search-replace:g:regexp<folder-zip2>,<folder-zip0>addsuffix[.tid]] }}}
+```
