@@ -1,0 +1,11 @@
+created: 20150409181359332
+modified: 20240501031412512
+tags: $:/tags/Stylesheet 正则表达式查找替换
+title: $:/searchNreplace/styles
+type: text/css
+
+  /* .tc-edit-controls */ {
+  border: 1px solid #cccccc;
+  border-top: 0px;
+  padding: 4px 8px 4px 8px;
+}
