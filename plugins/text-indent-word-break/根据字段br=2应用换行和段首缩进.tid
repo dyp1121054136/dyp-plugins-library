@@ -5,7 +5,9 @@ tags: $:/tags/Stylesheet 根据字段内容动态应用样式 html转纯文本 �
 title: 根据字段br=2应用换行和段首缩进
 
 <$list filter="[br[2]]"> 
-[data-tiddler-title^="<$view field=title/>"] .tc-tiddler-body {
+[data-tiddler-title^="<$view field=title/>"] .tc-tiddler-body,
+[data-tiddler-title^="<$view field=title/>"] .tc-scollpage 
+{
   font-family: "FZYUEKZJW-H";
   text-align: justify; /* 两端对齐 */
   text-indent: 2em;  /* 段首缩进 */
@@ -22,7 +24,12 @@ title: 根据字段br=2应用换行和段首缩进
 [data-tiddler-title^="<$view field=title/>"] .tc-tiddler-body h3, 
 [data-tiddler-title^="<$view field=title/>"] .tc-tiddler-body h4,
 [data-tiddler-title^="<$view field=title/>"] .tc-tiddler-body h5, 
-[data-tiddler-title^="<$view field=title/>"] .tc-tiddler-body h6 {
+[data-tiddler-title^="<$view field=title/>"] .tc-tiddler-body h6,
+[data-tiddler-title^="<$view field=title/>"] .tc-scollpage h3, 
+[data-tiddler-title^="<$view field=title/>"] .tc-scollpage h4,
+[data-tiddler-title^="<$view field=title/>"] .tc-scollpage h5, 
+[data-tiddler-title^="<$view field=title/>"] .tc-scollpage h6
+{
   text-indent: 0em;  /* 取消小标题段首缩进 */
   text-align: left; /* 靠左对齐 */
   font-weight: 500; /* 略微加粗 */
