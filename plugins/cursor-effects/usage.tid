@@ -4,3 +4,4 @@ tags:
 title: $:/plugins/dyp/cursor-effects/usage
 type: text/vnd.tiddlywiki
 
+[[browser.js]] 和 [[bubblecursor]] 添加标签 `$:/tags/RawMarkup`，保存后刷新生效
