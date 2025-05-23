@@ -12,4 +12,4 @@ v.0.0.2 2025-05-23
 <div class="tc-scrollpage"><$transclude mode="block"><$transclude tiddler="$:/language/MissingTiddler/Hint"/></$transclude></div>
 ```
 
-2、修复添加tc-scrollpage容器后内容位置改变的问题
+2、修复添加tc-scrollpage容器后条目内容位置改变的问题
