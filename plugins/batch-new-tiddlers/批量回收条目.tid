@@ -6,7 +6,7 @@ title: 批量回收条目
 <$set name="deleteList" value={{批量创建条目标题newList}}>
 
 <$button class="tc-btn-invisible" tooltip=批量回收条目>
-{{$:/core/images/deleteList|20px}}
+{{$:/core/images/deleteList-trashbin|20px}}
 
 <$action-confirm $message="确认批量回收条目？" $prompt={{删除条目是否弹出确认提示}}>
 
