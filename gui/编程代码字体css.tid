@@ -1,9 +1,0 @@
-created: 20250507201414862
-modified: 20250515094456726
-tags: 样式 $:/tags/Stylesheet
-title: 编程代码字体css
-type: text/css
-
-pre, code {
-  font-family: "FiraCode-Regular", "ResourceHanRoundedCN-Regular"; /* 英文字体，中文字体 */
-}
