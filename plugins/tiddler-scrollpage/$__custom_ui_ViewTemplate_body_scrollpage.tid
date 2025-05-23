@@ -5,7 +5,7 @@ tags: 级联 滚动翻页
 title: $:/custom/ui/ViewTemplate/body/scrollpage
 
 \whitespace trim
-<div class="tc-scrollpage"><$transclude><$transclude tiddler="$:/language/MissingTiddler/Hint"/></$transclude></div>
+<div class="tc-scrollpage"><$transclude mode="block"><$transclude tiddler="$:/language/MissingTiddler/Hint"/></$transclude></div>
 
 <!-- 条目内到顶按钮 -->
 <span class="scrollpage-button-tb">
