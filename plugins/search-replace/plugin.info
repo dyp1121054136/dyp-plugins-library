@@ -1,0 +1,16 @@
+{
+    "title": "$:/plugins/dyp/search-replace",
+    "version": "0.0.1",
+    "stability": "STABILITY_2_STABLE",
+    "name": "search-replace",
+    "description": "正则表达式查找替换",
+    "author": "dyp",
+    "source": "",
+    "list": "readme usage history",
+    "plugin-priority": "",
+    "parent-plugin": "",
+    "dependents": "",
+    "plugin-type": "plugin",
+    "core-version": "5.3.7-prerelease",
+    "packaged-by": "Gatha on 23rd 五月 2025, 09:28:58"
+}
