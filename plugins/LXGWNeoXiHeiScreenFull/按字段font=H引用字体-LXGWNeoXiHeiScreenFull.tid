@@ -1,0 +1,11 @@
+code-body: yes
+created: 20240202015517105
+modified: 20250523082205638
+tags: 字体 $:/tags/Stylesheet
+title: 按字段font=H引用字体-LXGWNeoXiHeiScreenFull
+
+<$list filter="[font[H]]"> 
+[data-tiddler-title^="<$view field=title/>"] .tc-tiddler-body {
+  font-family: "LXGWNeoXiHeiScreenFull";
+}
+</$list>
