@@ -6,8 +6,10 @@ type: text/vnd.tiddlywiki
 
 v.0.0.2 2025-05-23
 
-[[$:/custom/ui/ViewTemplate/body/scrollpage]] 添加 `mode="block"`，以兼容wikitext语法
+1、[[$:/custom/ui/ViewTemplate/body/scrollpage]] 添加 `mode="block"`，以兼容wikitext语法；
 
 ```tw
 <div class="tc-scrollpage"><$transclude mode="block"><$transclude tiddler="$:/language/MissingTiddler/Hint"/></$transclude></div>
 ```
+
+2、修复添加tc-scrollpage容器后内容位置改变的问题
