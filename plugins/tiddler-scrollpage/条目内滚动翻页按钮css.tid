@@ -8,6 +8,7 @@ type: text/css
   text-indent: 0em;
   position: relative;
   overflow-y: auto; /* 允许垂直滚动 */
+  margin-top: -1em; /* 添加tc-scrollpage容器后内容位置不变 */
 }
 
 .tc-scrollpage::-webkit-scrollbar {
