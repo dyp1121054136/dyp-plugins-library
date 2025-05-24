@@ -5,3 +5,13 @@ title: $:/plugins/dyp/contextmenu-highlight&bookmark/readme
 type: text/vnd.tiddlywiki
 
 ; 右键增强菜单-高亮和书签等
+
+本插件修改自以下两个插件：
+
+context-menu-plugin
+
+https://context-menu-plugin.tiddlyhost.com/
+
+Context menu selection add-in
+
+https://fastfreddy.gitlab.io/context-menu-selection-add-in/
