@@ -42,7 +42,7 @@ type:
   display: flex; 
   flex-direction: column; /* 子元素垂直排列，即从上到下 */
   justify-content: flex-start; /* 子元素在容器顶部对齐 */
-  background-color: #ffffff; /* 背景颜色设置为白色 */
+  background-color: <<colour tiddler-background>>; /* 跟随条目背景颜色变化 */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
   border-radius: 8px; /* 添加圆角，半径为8px */
 }
