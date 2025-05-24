@@ -10,11 +10,11 @@ type:
 }
 
 .bk-color {
-  color: <<colour code-foreground>>; /* red */
+  color: <<colour stability-deprecated>>; /* red */
 }
 
 .bk-color svg{
-  fill: <<colour code-foreground>>; /* red */
+  fill: <<colour stability-deprecated>>; /* red */
 }
 
 .bks-color, 
