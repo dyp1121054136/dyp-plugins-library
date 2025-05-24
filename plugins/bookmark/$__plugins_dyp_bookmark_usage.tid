@@ -4,3 +4,15 @@ tags:
 title: $:/plugins/dyp/bookmark/usage
 type: text/vnd.tiddlywiki
 
+条目内书签写法示例：
+
+```tw
+书签锚点 `<<bookmark 1>>`
+书签跳转按钮 `<<abookmark 1>>`
+书签汇总 `<<showbookmarks>>`
+```
+
+注：
+
+# 同一个条目中number变量不可以重复，可以用中英文纯文本；
+# 不能有空格或特殊符号，不然无法跳转。
