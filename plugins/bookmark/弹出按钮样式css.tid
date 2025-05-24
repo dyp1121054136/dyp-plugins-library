@@ -2,10 +2,10 @@ created: 20240403020622191
 modified: 20240412052214666
 tags: $:/tags/Stylesheet 弹出内容 书签
 title: 弹出按钮样式css
-type: text/css
+type: 
 
 .bookmarks-body {
-  background: white;
+  background: <<colour tiddler-background>>;
   margin-left: 10px;
   padding-right: 20px;
   min-width: 180px; /* 默认宽度 */
