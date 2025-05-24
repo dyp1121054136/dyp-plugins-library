@@ -5,12 +5,12 @@ title: 按list批量创建新条目按钮排版样式css
 type: text/css
 
 .list-tids-btn-all {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 10px; /* 设置元素之间的间距 */
-  padding-right: 10px; /* 确保第一排元素不会紧贴容器边缘 */
-  z-index: 999;
+  float: right;
+  display: flex; 
+  justify-content: flex-end; /* 靠右对齐 */
+  white-space: nowrap; /* 防止容器内部内容换行 */
+  gap: 20px; /* 设置按钮之间的间隔 */
+  margin-right: 10%;
 }
 
 /* 定义大屏宽度 */
@@ -26,17 +26,13 @@ type: text/css
 /* 媒体查询，大屏 */
 @media (min-width: 768px) {
 .list-tids-btn-all {
-  position: absolute;
-  top: 15%;
-  right: 12%;
+
 }
 }
 
 /* 媒体查询，小屏 */
 @media (max-width: 767px) {
 .list-tids-btn-all {
-  position: absolute;
-  top: 15%;
-  right: 6%;
+
 }
 }
