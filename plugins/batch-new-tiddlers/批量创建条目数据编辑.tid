@@ -20,4 +20,3 @@ title: 批量创建条目数据编辑
 
 [[字段内容：|批量创建条目字段内容fieldvalueList源数据]] {{||条目字段内容fieldvalueList-工具栏}}
 <$edit-text tiddler="批量创建条目字段内容fieldvalueList源数据" field="text" tag="textarea" class="list-tids" placeholder="" default=""/>
-{{||按list批量创建新条目按钮-不打开}}
