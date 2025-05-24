@@ -43,6 +43,7 @@ type: text/css
   transition: opacity 0.3s ease; /* 平滑过渡 */
   -webkit-tap-highlight-color: transparent;
   box-shadow: none;
+  font-size: 130%;
 }
 
 .list-tids-btn:hover {
