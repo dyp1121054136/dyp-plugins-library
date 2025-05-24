@@ -1,0 +1,16 @@
+{
+    "title": "$:/plugins/dyp/bookmark",
+    "version": "0.0.1",
+    "stability": "STABILITY_2_STABLE",
+    "name": "bookmark",
+    "description": "条目内可跳转书签",
+    "author": "dyp",
+    "source": "",
+    "list": "readme usage history",
+    "plugin-priority": "",
+    "parent-plugin": "",
+    "dependents": "$:/plugins/dyp/tiddler-scrollpage,$:/plugins/dyp/contextmenu-highlight&bookmark",
+    "plugin-type": "plugin",
+    "core-version": "5.3.7-prerelease",
+    "packaged-by": "Gatha on 24th 五月 2025, 19:39:42"
+}
