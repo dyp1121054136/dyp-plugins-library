@@ -2,7 +2,7 @@ created: 20240402042014681
 modified: 20240519130634530
 tags: 书签 $:/tags/Stylesheet
 title: 书签样式css
-type: text/css
+type: 
 
 .bookmark-anchor {
   position: relative;
@@ -10,11 +10,11 @@ type: text/css
 }
 
 .bk-color {
-  color: red;
+  color: <<colour code-foreground>>; /* red */
 }
 
 .bk-color svg{
-  fill: red;
+  fill: <<colour code-foreground>>; /* red */
 }
 
 .bks-color, 
