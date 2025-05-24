@@ -4,7 +4,7 @@ tags:
 title: $:/plugins/dyp/contextmenu-highlight&bookmark/usage
 type: text/vnd.tiddlywiki
 
-[[$:/plugins/ahanniga/context-menu/view-template]]
+1、[[$:/plugins/ahanniga/context-menu/view-template]]
 
 删除text内容
 
@@ -15,3 +15,5 @@ type: text/vnd.tiddlywiki
 则右键菜单不生效
 
 注：按住 <kbd>Ctrl</kbd> 键点击右键会显示原右键菜单。
+
+2、[[$:/config/tiddlercontextmenu/quick-editfix]] 很有用，选中文字后可以在查看模式下修改错别字、增加或替换文字内容等，修改完成后按回车键提交，手机端也生效。目前只有单行输入框，不建议一次性修改太多内容。
