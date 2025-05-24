@@ -4,3 +4,14 @@ tags:
 title: $:/plugins/dyp/contextmenu-highlight&bookmark/usage
 type: text/vnd.tiddlywiki
 
+[[$:/plugins/ahanniga/context-menu/view-template]]
+
+删除text内容
+
+```tw
+<$contextMenu>
+```
+
+则右键菜单不生效
+
+注：按住 <kbd>Ctrl</kbd> 键点击右键会显示原右键菜单。
