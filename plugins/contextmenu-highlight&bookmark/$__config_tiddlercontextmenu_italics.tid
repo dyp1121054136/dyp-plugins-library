@@ -1,0 +1,11 @@
+caption: 斜体
+created: 20220923155138058
+icon: $:/core/images/italic
+markup-prefix: //
+markup-suffix: //
+modified: 20250524084444655
+tags: $:/tags/tiddlercontextmenu
+title: $:/config/tiddlercontextmenu/italics
+tm-message: tm-markup
+
+hide

@@ -1,0 +1,11 @@
+caption: 标题 1
+created: 20220925123315561
+icon: $:/core/images/heading-1
+markup-prefix: \n\n! 
+markup-suffix: \n\n
+modified: 20250524084444655
+tags: $:/tags/tiddlercontextmenu
+title: $:/config/tiddlercontextmenu/heading1
+tm-message: tm-markup
+
+hide

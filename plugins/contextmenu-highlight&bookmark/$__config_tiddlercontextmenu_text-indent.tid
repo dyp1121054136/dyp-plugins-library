@@ -1,0 +1,11 @@
+caption: 换行并段首缩进两字符
+created: 20240113045657244
+icon: $:/core/images/text-indent
+markup-prefix: \n　　
+markup-suffix: 
+modified: 20250524084444656
+tags: $:/tags/tiddlercontextmenu
+title: $:/config/tiddlercontextmenu/text-indent
+tm-message: tm-markup
+
+hide
