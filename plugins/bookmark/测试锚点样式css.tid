@@ -1,0 +1,14 @@
+created: 20240504101701583
+modified: 20240505053706712
+tags: $:/tags/Stylesheet 样式 延时动作
+title: 测试锚点样式css
+type: text/css
+
+.test-anchor {
+  position: relative;
+  top: -10em; /* 相对于当前位置向上移动 */
+}
+
+.test-anchor-color {
+  color: red;
+}
