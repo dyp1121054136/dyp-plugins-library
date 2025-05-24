@@ -38,16 +38,6 @@ type: text/css
   }
 }
 
-.list-tids-btn-all {
-  float: right;
-  display: flex; 
-  justify-content: flex-end; /* 靠右对齐 */
-  align-items: center; /* 垂直居中对齐 */
-  white-space: nowrap; /* 防止容器内部内容换行 */
-  gap: 20px; /* 设置按钮之间的间隔 */
-  margin-right: 10%;
-}
-
 .list-tids-btn {
   opacity: 0.5;
   transition: opacity 0.3s ease; /* 平滑过渡 */
