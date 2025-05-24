@@ -5,7 +5,7 @@ title: 条目内滚动翻页按钮css
 type: text/css
 
 .tc-scrollpage {
-  text-indent: 0em;
+  text-indent: ;
   position: relative;
   overflow-y: auto; /* 允许垂直滚动 */
   margin-top: -1em; /* 添加tc-scrollpage容器后内容位置不变 */
