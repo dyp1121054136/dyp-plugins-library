@@ -1,0 +1,42 @@
+created: 20250524010314909
+modified: 20250524010606387
+tags: 按list批量创建新条目 样式 $:/tags/Stylesheet
+title: 按list批量创建新条目按钮排版样式css
+type: text/css
+
+.list-tids-btn-all {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px; /* 设置元素之间的间距 */
+  padding-right: 10px; /* 确保第一排元素不会紧贴容器边缘 */
+  z-index: 999;
+}
+
+/* 定义大屏宽度 */
+.large-screen {
+  width: 1000px;
+}
+
+/* 定义小屏宽度 */
+.small-screen {
+  width: 350px;
+}
+
+/* 媒体查询，大屏 */
+@media (min-width: 768px) {
+.list-tids-btn-all {
+  position: absolute;
+  top: 15%;
+  right: 12%;
+}
+}
+
+/* 媒体查询，小屏 */
+@media (max-width: 767px) {
+.list-tids-btn-all {
+  position: absolute;
+  top: 15%;
+  right: 6%;
+}
+}
