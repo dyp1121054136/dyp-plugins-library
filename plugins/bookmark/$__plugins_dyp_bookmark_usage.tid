@@ -6,11 +6,11 @@ type: text/vnd.tiddlywiki
 
 条目内书签写法示例：
 
-```tw
+"""
 书签锚点 `<<bookmark 1>>`
 书签跳转按钮 `<<abookmark 1>>`
 书签汇总 `<<showbookmarks>>`
-```
+"""
 
 注：
 
