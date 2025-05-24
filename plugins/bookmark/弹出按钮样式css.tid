@@ -36,7 +36,7 @@ type:
 }
 
 .bookmark-item:hover {
-  background-color: #e7e7e7;
+  background-color: <<colour primary>>;
 }
 
 /* 添加间距 */
