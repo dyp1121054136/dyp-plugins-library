@@ -30,7 +30,7 @@ type:
   background-color: <<colour tiddler-background>>;
   border: 1px solid <<colour pre-border>>;
   text-decoration: none;
-  color: #333;
+  color: <<colour foreground>>;
   transition: background-color 0.3s;
   margin-bottom: 0.5em;
 }
