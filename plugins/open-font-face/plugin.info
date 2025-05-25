@@ -1,0 +1,16 @@
+{
+    "title": "$:/plugins/dyp/open-font-face",
+    "version": "0.0.1",
+    "stability": "STABILITY_2_STABLE",
+    "name": "open-font-face",
+    "description": "开启关闭引用字体",
+    "author": "dyp",
+    "source": "",
+    "list": "readme usage history",
+    "plugin-priority": "",
+    "parent-plugin": "",
+    "dependents": "",
+    "plugin-type": "plugin",
+    "core-version": "5.3.7-prerelease",
+    "packaged-by": "Gatha on 26th 五月 2025, 01:06:43"
+}
