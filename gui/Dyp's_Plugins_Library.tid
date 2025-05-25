@@ -1,0 +1,13 @@
+caption: Dyp's Plugins Library
+created: 20250428155345134
+filter: [plugin-type[plugin]] -$:/core
+modified: 20250525172033340
+tags: $:/tags/PluginLibrary
+title: Dyp's Plugins Library
+url: https://dyp1121054136.github.io/dyp-plugins-library/library/index.html
+
+把这个插件库 [[Dyp's Plugins Library]] 拖入其他wiki进行安装
+
+源代码：
+
+https://github.com/dyp1121054136/dyp-plugins-library
