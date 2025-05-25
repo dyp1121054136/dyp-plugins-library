@@ -11,7 +11,7 @@ title: 引用背景-tiddlywiki-background样式css
     background-repeat:repeat;
     background-position:center;
     background-size: auto;
-    background-image:url(<$transclude $variable="datauri" title={{tiddlywiki-background}} $output="text/plain"/>);
+    background-image:url(<$transclude $variable="datauri" title="0c44732b26484d30a7a0fdc14c0fc7db.jpg" $output="text/plain"/>);
     bottom: 0;
     left: 0; /* 确保从左边开始，覆盖整个宽度 */
     width: 100vw; /* 使用视口宽度，包括滚动条 */
