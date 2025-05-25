@@ -15,3 +15,5 @@ https://context-menu-plugin.tiddlyhost.com/
 Context menu selection add-in
 
 https://fastfreddy.gitlab.io/context-menu-selection-add-in/
+
+书签功能需要安装两个依赖插件 [[条目内滚动翻页|$:/plugins/dyp/tiddler-scrollpage]] 和 [[条目内可跳转书签|$:/plugins/dyp/bookmark]]
