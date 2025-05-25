@@ -5,7 +5,7 @@ modified: 20250525170200731
 tags: 按钮 字体
 title: $:/core/ui/Buttons/font-face
 
-<$list filter="all[shadows][prefix[引用字体-]]">  
+<$list filter="[all[shadows]prefix[引用字体-]]">
   
 <$button class="tc-btn-invisible" tooltip="开启/关闭引用字体">  
 <$action-listops $tiddler=<<currentTiddler>> $tags="+[toggle[$:/tags/Stylesheet]]"/>  
