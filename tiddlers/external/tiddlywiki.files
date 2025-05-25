@@ -1,0 +1,19 @@
+{  
+    "directories": [  
+        {  
+            "path": "../../files/images/",  
+            "filesRegExp": "^.*\\.(?:jpg|jpeg|png|gif)$",  
+            "isTiddlerFile": false,  
+            "searchSubdirectories": true,  
+            "fields": {  
+                "title": {"source": "basename-uri-decoded"},  
+                "created": {"source": "created"},  
+                "modified": {"source": "modified"},  
+                "type": "image/jpeg",  
+                "tags": {"source": "subdirectories"},  
+                "text": "",  
+                "_canonical_uri": {"source": "filepath", "prefix": "https://raw.githubusercontent.com/dyp1121054136/dyp-plugins-library/refs/heads/master/files/images/"}  
+            }  
+        }  
+    ]  
+}
