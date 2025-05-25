@@ -1,0 +1,32 @@
+caption: {{$:/core/images/font-face}} 开启/关闭引用字体
+created: 20250525155641332
+description: 开启/关闭引用字体
+modified: 20250525170200731
+tags: 按钮 字体
+title: $:/core/ui/Buttons/font-face
+
+<$list filter="[prefix[引用字体-]]">  
+  
+<$button class="tc-btn-invisible" tooltip="开启/关闭引用字体">  
+<$action-listops $tiddler=<<currentTiddler>> $tags="+[toggle[$:/tags/Stylesheet]]"/>  
+  
+<!-- 无标签时图标 -->  
+<$list filter="[<currentTiddler>!tag[$:/tags/Stylesheet]]">  
+    {{$:/core/images/font-face-no|22px}}    
+</$list>
+
+<!-- 有标签时图标 -->  
+<$list filter="[<currentTiddler>tag[$:/tags/Stylesheet]]">  
+    {{$:/core/images/font-face|22px}}    
+</$list>
+
+<$list filter="[<tv-config-toolbar-text>match[yes]]">  
+<span class="tc-btn-text">  
+开启/关闭引用字体  
+</span></$list>  
+  
+</$button>  
+  
+<$link to=<<currentTiddler>>><<currentTiddler>></$link>
+
+</$list>
