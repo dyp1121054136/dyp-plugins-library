@@ -21,6 +21,8 @@ jobs:
       - run: cp -r plugins/* node_modules/tiddlywiki/plugins/dyp/
       - run: ./node_modules/.bin/tiddlywiki .  --output output/library --build library
       - run: ./node_modules/.bin/tiddlywiki .  --output output --build gui
+      - run: ./node_modules/.bin/tiddlywiki .  --output output --build externalimages
+      - run: ./node_modules/.bin/tiddlywiki . --output output --build index
       - name: Deploy to GitHub Pages
         if: success()
         uses: crazy-max/ghaction-github-pages@v2
