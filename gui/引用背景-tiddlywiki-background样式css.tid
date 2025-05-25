@@ -1,0 +1,20 @@
+code-body: yes
+created: 20250516014001356
+modified: 20250525043856967
+tags: $:/tags/RawMarkupWikified/BottomBody 页面背景
+title: 引用背景-tiddlywiki-background样式css
+
+`<style>`
+.tiddlywiki-background{
+    position:fixed;
+    inset:0;
+    background-repeat:repeat;
+    background-position:center;
+    background-size: auto;
+    background-image:url(<$transclude $variable="datauri" title={{tiddlywiki-background}} $output="text/plain"/>);
+    bottom: 0;
+    left: 0; /* 确保从左边开始，覆盖整个宽度 */
+    width: 100vw; /* 使用视口宽度，包括滚动条 */
+    z-index: -1; /* 确保背景在最底层 */
+}
+`</style><i class="tiddlywiki-background"/>`
