@@ -9,6 +9,7 @@
     "author": "dyp",
     "dependents": "$:/plugins/tiddlywiki/highlight",
     "list": "readme usage",
+    "source": "https://github.com/dyp1121054136/dyp-plugins-library",
     "packaged-by": "Gatha on 3rd 五月 2025, 23:07:23",
     "plugin-type": "plugin"
 }
