@@ -8,6 +8,7 @@
     "description": "可编辑嵌套引用条目",
     "author": "dyp",
     "list": "readme usage",
+    "source": "https://github.com/dyp1121054136/dyp-plugins-library",
     "plugin-type": "plugin",
     "packaged-by": "Gatha on 3rd 五月 2025, 00:40:44"
 }
