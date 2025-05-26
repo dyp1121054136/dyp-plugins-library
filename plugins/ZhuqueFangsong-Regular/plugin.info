@@ -1,0 +1,16 @@
+{
+    "title": "$:/plugins/dyp/ZhuqueFangsong-Regular",
+    "version": "0.0.1",
+    "stability": "STABILITY_1_EXPERIMENTAL",
+    "name": "Font",
+    "description": "ZhuqueFangsong-Regular",
+    "author": "dyp",
+    "list": "readme usage",
+    "source": "https://www.hanyi.com.cn/productdetail.php?id=7313",
+    "plugin-priority": "",
+    "parent-plugin": "",
+    "dependents": "",
+    "plugin-type": "plugin",
+    "core-version": "5.3.7-prerelease",
+    "packaged-by": "Gatha on 26th 五月 2025, 16:14:40"
+}
