@@ -1,4 +1,4 @@
-caption: {{$:/core/images/tc-scrollpage}} 开启/关闭条目内上下滚动按钮
+caption: {{$:/core/images/tc-scrollpage-no}} 开启/关闭条目内上下滚动按钮
 created: 20240516170853355
 modified: 20240517010916568
 tags: $:/tags/ViewToolbar 按钮 滚动翻页
