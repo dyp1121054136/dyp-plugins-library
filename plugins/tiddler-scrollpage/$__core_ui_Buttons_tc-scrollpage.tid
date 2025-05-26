@@ -11,5 +11,16 @@ title: $:/core/ui/Buttons/tc-scrollpage
 <$list filter="[<currentTiddler>!has:field[scrollpage]]">
 <$action-setfield $field="scrollpage" $value="yes"/>
 </$list>
-<$list filter="[<tv-config-toolbar-icons>match[yes]]">{{$:/core/images/tc-scrollpage|30px}}</$list><$list filter="[<tv-config-toolbar-text>match[yes]]"><span class="tc-btn-text">开启/关闭条目内上下滚动</span></$list>
+
+<!-- 有scrollpage字段时图标 -->
+<$list filter="[<currentTiddler>has:field[scrollpage]]">
+{{$:/core/images/tc-scrollpage|30px}}
+</$list>
+
+<!-- 无scrollpage字段时图标 -->
+<$list filter="[<currentTiddler>!has:field[scrollpage]]">
+{{$:/core/images/tc-scrollpage-no|30px}}
+</$list>
+
+<$list filter="[<tv-config-toolbar-text>match[yes]]"><span class="tc-btn-text">开启/关闭条目内上下滚动</span></$list>
 </$button>
