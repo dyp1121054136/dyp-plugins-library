@@ -4,7 +4,7 @@ modified: 20250522121614923
 tags: $:/tags/Stylesheet 根据字段内容动态应用样式 样式 临时编辑
 title: 根据字段br=0应用换行
 
-<$list filter="[br[0]]"> 
+<$list filter="[all[tiddlers+shadows]field:br[0]]">
 [data-tiddler-title^="<$view field=title/>"] .tc-tiddler-body {
   font-family: "FZYUEKZJW-H";
   text-align: justify; /* 两端对齐 */
