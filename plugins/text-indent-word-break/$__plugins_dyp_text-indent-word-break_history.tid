@@ -4,3 +4,10 @@ tags:
 title: $:/plugins/dyp/text-indent-word-break/history
 type: text/vnd.tiddlywiki
 
+v.0.0.2 2025-05-26
+
+优化了筛选器公式，样式对影子条目也生效，示例
+
+```tw
+<$list filter="[all[tiddlers+shadows]field:br[2]]">
+```
