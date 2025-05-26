@@ -8,6 +8,7 @@
     "description": "复制当前条目标题内容",
     "author": "dyp",
     "list": "readme usage",
+    "source": "https://github.com/dyp1121054136/dyp-plugins-library",
     "plugin-type": "plugin",
     "packaged-by": "Gatha on 6th 五月 2025, 19:10:06"
 }
