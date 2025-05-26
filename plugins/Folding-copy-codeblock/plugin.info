@@ -9,6 +9,7 @@
     "author": "dyp",
     "dependents": "$:/plugins/kookma/utility, $:/plugins/yaisog/single-tiddler-view",
     "list": "readme usage",
+    "source": "https://github.com/dyp1121054136/dyp-plugins-library",
     "packaged-by": "Gatha on 12th 五月 2025, 22:03:00",
     "plugin-type": "plugin"
 }
