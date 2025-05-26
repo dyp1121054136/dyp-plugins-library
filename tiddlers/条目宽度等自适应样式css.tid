@@ -1,0 +1,28 @@
+created: 20250526115712795
+modified: 20250526131733333
+tags: 条目宽度等自适应 $:/tags/Stylesheet 样式
+title: 条目宽度等自适应样式css
+
+/* 较小屏幕尺寸 - 故事左侧150px，右侧1200px */  
+@media (min-width: 1200px) and (max-width: 1569px) {  
+    .tc-story-river {  
+        left: 150px;  
+        width: calc(1200px - 150px);  
+    }  
+      
+    .tc-sidebar-scrollable {  
+        left: 1200px;  
+    }  
+}  
+  
+/* 较大屏幕尺寸 - 故事左侧500px，右侧1570px */  
+@media (min-width: 1570px) {  
+    .tc-story-river {  
+        left: 500px;  
+        width: calc(1570px - 500px);  
+    }  
+      
+    .tc-sidebar-scrollable {  
+        left: 1570px;  
+    }  
+}
