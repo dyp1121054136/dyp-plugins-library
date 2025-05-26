@@ -8,6 +8,7 @@
     "author": "dyp",
     "version": "0.0.1",
     "list": "readme usage",
+    "source": "https://github.com/dyp1121054136/dyp-plugins-library",
     "plugin-type": "plugin",
     "packaged-by": "Gatha on 1st 五月 2025, 21:08:42"
 }
