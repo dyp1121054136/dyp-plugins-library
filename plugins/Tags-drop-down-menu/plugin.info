@@ -8,6 +8,7 @@
     "name": "Tags-drop-down-menu",
     "description": "标签下拉菜单",
     "list": "readme usage history",
+    "source": "https://github.com/dyp1121054136/dyp-plugins-library",
     "plugin-type": "plugin",
     "packaged-by": "Gatha on 6th 五月 2025, 23:22:16"
 }
