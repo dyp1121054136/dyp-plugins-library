@@ -1,0 +1,7 @@
+caption: {{$:/language/SideBar/Recent/Caption}}
+created: 20250526114802737
+modified: 20250526114803803
+tags: 
+title: $:/core/ui/SideBar/Recent
+
+<$transclude $variable="timeline" format={{$:/language/RecentChanges/DateFormat}} limit={{$:/config/RecentLimit}}/>
