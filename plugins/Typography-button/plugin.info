@@ -7,7 +7,8 @@
     "name": "Typography-button",
     "description": "一键排版按钮",
     "author": "dyp",
-    "list": "readme usage",
+    "list": "readme usage history",
+    "source": "https://github.com/dyp1121054136/dyp-plugins-library",
     "plugin-type": "plugin",
     "packaged-by": "Gatha on 13th 五月 2025, 09:45:11"
 }
