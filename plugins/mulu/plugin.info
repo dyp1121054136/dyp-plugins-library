@@ -6,6 +6,7 @@
     "version": "0.0.6",
     "name": "Mulu",
     "list": "readme usage history",
+    "source": "https://github.com/dyp1121054136/dyp-plugins-library",
     "description": "自动添加目录和上下翻页",
     "author": "dyp",
     "packaged-by": "Gatha on 6th 五月 2025, 10:01:08",
