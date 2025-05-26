@@ -8,7 +8,8 @@
     "name": "Button",
     "author": "dyp",
     "source": "",
-    "list": "readme",
+    "list": "readme usage history",
+    "source": "https://github.com/dyp1121054136/dyp-plugins-library",
     "packaged-by": "Gatha on 29th 四月 2025, 02:03:51",
     "description": "Code comment button",
     "plugin-type": "plugin"
