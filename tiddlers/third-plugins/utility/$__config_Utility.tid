@@ -1,0 +1,11 @@
+created: 20250505030956346
+modified: 20250505031034584
+title: $:/config/Utility
+type: application/json
+
+{
+    "source-toggle-button": "show",
+    "toolbar-controls-on-shadows": "show",
+    "tw-version": "hide",
+    "extended-subtitle": "hide"
+}
