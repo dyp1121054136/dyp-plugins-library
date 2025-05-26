@@ -4,7 +4,7 @@ modified: 20250322123442086
 tags: $:/tags/Stylesheet 根据字段内容动态应用样式 html转纯文本 临时编辑
 title: 根据字段br=2应用换行和段首缩进
 
-<$list filter="[br[2]]"> 
+<$list filter="[all[tiddlers+shadows]field:br[2]]">
 [data-tiddler-title^="<$view field=title/>"] .tc-tiddler-body,
 [data-tiddler-title^="<$view field=title/>"] .tc-scollpage 
 {
