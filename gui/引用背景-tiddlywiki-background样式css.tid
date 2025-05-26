@@ -11,7 +11,7 @@ title: 引用背景-tiddlywiki-background样式css
     background-repeat: no-repeat; /* 不重复背景图片 */
     background-position:center; /* 背景图片居中显示 */
     background-size: cover; /* 背景图片覆盖整个屏幕 */
-    background-image:url(<$transclude $variable="datauri" title="0c44732b26484d30a7a0fdc14c0fc7db.jpg" $output="text/plain"/>);
+    background-image:url(<$transclude $variable="datauri" title="0c44732b26484d30a7a0fdc14c0fc7db" $output="text/plain"/>);
     bottom: 0;
     left: 0; /* 确保从左边开始，覆盖整个宽度 */
     width: 100vw; /* 使用视口宽度，包括滚动条 */
