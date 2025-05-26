@@ -4,6 +4,10 @@ tags:
 title: $:/plugins/dyp/tiddler-scrollpage/history
 type: text/vnd.tiddlywiki
 
+v.0.0.3 2025-05-26
+
+开启条目内上下滚动状态时图标变成黄色，增加识别度
+
 v.0.0.2 2025-05-23
 
 1、[[$:/custom/ui/ViewTemplate/body/scrollpage]] 添加 `mode="block"`，以兼容wikitext语法；
