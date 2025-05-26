@@ -8,6 +8,7 @@
     "description": "修改页面字号",
     "author": "dyp",
     "list": "readme usage history",
+    "source": "https://github.com/dyp1121054136/dyp-plugins-library",
     "packaged-by": "Gatha on 4th 五月 2025, 00:15:10",
     "plugin-type": "plugin"
 }
