@@ -4,3 +4,6 @@ tags:
 title: $:/plugins/dyp/text-indent-word-break/usage
 type: text/vnd.tiddlywiki
 
+* 根据字段 `br=2` 应用换行和段首缩进两字符；
+* 根据字段 `br=0` 应用换行；
+* 根据字段 `in=2` 应用段首缩进两字符
