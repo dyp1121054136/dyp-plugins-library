@@ -100,7 +100,7 @@ tiddlywiki.info 中增加
 
 tiddlywiki官方插件库：https://github.com/TiddlyWiki/TiddlyWiki5/tree/master/plugins/tiddlywiki
 
-2、个人常用配置和新条目可以上传到 gui 文件夹
+2、个人常用配置和新条目可以上传到 `gui` 或 `tiddlers` 文件夹，可以创建其他子文件夹
 
 可以直接上传json文件
 
