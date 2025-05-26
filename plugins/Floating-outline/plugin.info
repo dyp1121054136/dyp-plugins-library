@@ -9,6 +9,7 @@
     "author": "dyp",
     "dependents": "$:/plugins/Gk0Wk/page-toc",
     "list": "readme usage",
+    "source": "https://github.com/dyp1121054136/dyp-plugins-library",
     "packaged-by": "Gatha on 12th 五月 2025, 18:08:28",
     "plugin-type": "plugin"
 }
