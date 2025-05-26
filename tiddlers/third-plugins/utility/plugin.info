@@ -1,0 +1,16 @@
+{
+    "title": "$:/plugins/kookma/utility",
+    "version": "3.2.2",
+    "stability": "STABILITY_2_STABLE",
+    "name": "Utility",
+    "description": "Small tools for authors and developers",
+    "author": "Mohammad Rahmani",
+    "source": "https://github.com/kookma/TW-Utility",
+    "list": "readme license history",
+    "plugin-priority": "",
+    "parent-plugin": "",
+    "dependents": "",
+    "plugin-type": "plugin",
+    "core-version": ">5.3.5",
+    "packaged-by": "Gatha on 26th 五月 2025, 10:13:33"
+}
