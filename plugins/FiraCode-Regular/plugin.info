@@ -8,6 +8,7 @@
     "description": "FiraCode-Regular",
     "author": "dyp",
     "list": "readme usage",
+    "source": "https://github.com/dyp1121054136/dyp-plugins-library",
     "plugin-type": "plugin",
     "packaged-by": "Gatha on 29th 一月 2024, 16:20:50"
 }
