@@ -122,6 +122,106 @@ woff2字体条目类型已修改为 `application/octet-stream` (一种MIME类型
 
 为了加快网站响应速度，部分不常用的字体已禁用，前缀为“引用字体-”的条目 `$:/tags/Stylesheet` 标签已移除，可重新加上 `$:/tags/Stylesheet` 标签使之生效
 
+5、自动用uri引用github仓库在线图片
+
+tiddlywiki.info
+
+```json
+{
+	"description": "TiddlyWiki Plugin Library",
+	"plugins": [
+		"tiddlywiki/pluginlibrary",
+		"tiddlywiki/highlight",
+		"tiddlywiki/jszip"
+	],
+	"themes": [
+                "tiddlywiki/vanilla",
+                "tiddlywiki/snowwhite"
+	],
+	"languages": [
+                "zh-Hans"
+	],
+	"includeWikis": [
+	],
+	"build": {
+                "externalimages": [    
+                        "--save", "[is[image]]", "images",  
+                        "--setfield", "[is[image]]", "_canonical_uri", "$:/core/templates/canonical-uri-external-image", "text/plain",  
+                        "--setfield", "[is[image]]", "text", "", "text/plain",  
+                        "--render", "$:/core/save/all", "index.html", "text/plain"],
+		"library": [
+			"--makelibrary","$:/UpgradeLibrary",
+   			"--savelibrarytiddlers","$:/UpgradeLibrary","[prefix[$:/]] -[prefix[$:/plugins/tiddlywiki/]] -[prefix[$:/themes/tiddlywiki/]] -[prefix[$:/languages/]] -[[$:/plugins/tiddlywiki/upgrade]] -[[$:/plugins/tiddlywiki/translators]] -[[$:/plugins/tiddlywiki/pluginlibrary]] -[[$:/plugins/tiddlywiki/jasmine]]","recipes/library/tiddlers/","$:/UpgradeLibrary/List",
+   			"--savetiddler","$:/UpgradeLibrary/List","recipes/library/tiddlers.json",
+			"--rendertiddler","$:/plugins/tiddlywiki/pluginlibrary/library.template.html","index.html","text/plain"],
+		"gui": ["--load","gui/",
+			"--rendertiddler","$:/core/save/all","index.html","text/plain"]
+	}
+}
+```
+
+记得修改图片uri指向路径前缀到自己仓库
+tiddlers/external/tiddlywiki.files
+
+```json
+{  
+    "directories": [  
+        {  
+            "path": "../../files/images/",  
+            "filesRegExp": "^.*\\.(?:jpg|jpeg|png|gif)$",  
+            "isTiddlerFile": false,  
+            "searchSubdirectories": true,  
+            "fields": {  
+                "title": {"source": "basename-uri-decoded"},  
+                "created": {"source": "created"},  
+                "modified": {"source": "modified"},  
+                "type": "image/jpeg",  
+                "tags": {"source": "subdirectories"},  
+                "text": "",  
+                "_canonical_uri": {"source": "filepath", "prefix": "https://raw.githubusercontent.com/dyp1121054136/dyp-plugins-library/refs/heads/master/files/images/"}  
+            }  
+        }  
+    ]  
+}
+```
+
+.github/workflows/main.yml
+
+```yml
+name: Node.js CI  
+  
+on:  
+  # push:  
+  #   branches: [ master ]  
+  workflow_dispatch:  # 添加手动触发事件
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: 'recursive'
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install tiddlywiki
+      - run: mkdir -p node_modules/tiddlywiki/plugins/dyp/
+      - run: cp -r plugins/* node_modules/tiddlywiki/plugins/dyp/
+      - run: ./node_modules/.bin/tiddlywiki .  --output output --build externalimages
+      - run: ./node_modules/.bin/tiddlywiki .  --output output/library --build library
+      - run: ./node_modules/.bin/tiddlywiki .  --output output --build gui
+      - name: Deploy to GitHub Pages
+        if: success()
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          target_branch: gh-pages
+          build_dir: output
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+
 ### Deepwiki AI 分析本仓库：
 
 https://deepwiki.com/dyp1121054136/dyp-plugins-library
