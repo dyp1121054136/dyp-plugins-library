@@ -116,7 +116,11 @@ $__SiteTitle.json、$__SiteSubtitle.json
   #   branches: [ master ]
 ```
 
-4、字体插件有未知bug，如果字体不生效，可能是安装的时候woff2文件打包状态被破坏了，修改条目类型为 application/font-woff2 或 font/woff2 或 application/octet-stream (一种MIME类型，通用的二进制文件类型)，可使字体重新生效
+4、关于字体
+
+woff2字体条目类型已修改为 `application/octet-stream` (一种MIME类型，通用的二进制文件类型)；
+
+为了加快网站响应速度，部分不常用的字体已禁用，前缀为“引用字体-”的条目 `$:/tags/Stylesheet` 标签已移除，可重新加上 `$:/tags/Stylesheet` 标签使之生效
 
 ### Deepwiki AI 分析本仓库：
 
