@@ -1,7 +1,7 @@
 {
     "title": "$:/plugins/dyp/ZhuqueFangsong-Regular",
     "version": "0.0.1",
-    "stability": "STABILITY_1_EXPERIMENTAL",
+    "stability": "STABILITY_2_STABLE",
     "name": "Font",
     "description": "ZhuqueFangsong-Regular",
     "author": "dyp",
