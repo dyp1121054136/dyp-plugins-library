@@ -16,5 +16,8 @@ title: 引用背景-tiddlywiki-background样式css
     left: 0; /* 确保从左边开始，覆盖整个宽度 */
     width: 100vw; /* 使用视口宽度，包括滚动条 */
     z-index: -1; /* 确保背景在最底层 */
+    background-position: center; /* 背景图片居中显示 */
+    background-size: cover; /* 背景图片覆盖整个屏幕 */
+    height: 100vh; /* 使用视口高度 */
 }
 `</style><i class="tiddlywiki-background"/>`
