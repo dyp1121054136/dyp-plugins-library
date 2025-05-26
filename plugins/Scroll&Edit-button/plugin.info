@@ -8,7 +8,8 @@
     "name": "Button",
     "description": "上下滚动加条目底部编辑按钮",
     "author": "dyp",
-    "list": "readme usage",
+    "list": "readme usage history",
+    "source": "https://github.com/dyp1121054136/dyp-plugins-library",
     "plugin-type": "plugin",
     "packaged-by": "Gatha on 29th 四月 2025, 21:58:53"
 }
