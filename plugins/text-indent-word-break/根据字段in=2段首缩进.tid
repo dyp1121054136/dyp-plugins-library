@@ -4,7 +4,7 @@ modified: 20250522121626986
 tags: $:/tags/Stylesheet 根据字段内容动态应用样式 临时编辑
 title: 根据字段in=2段首缩进
 
-<$list filter="[in[2]]"> 
+<$list filter="[all[tiddlers+shadows]field:in[2]]">
 [data-tiddler-title^="<$view field=title/>"] .tc-tiddler-body {
   font-family: "FZYUEKZJW-H";
   text-align: justify; /* 两端对齐 */
