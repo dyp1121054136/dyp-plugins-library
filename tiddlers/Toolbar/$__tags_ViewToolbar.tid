@@ -1,0 +1,5 @@
+created: 20250526111155445
+list: $:/core/ui/Buttons/top-bottom $:/core/ui/Buttons/tc-scrollpage $:/core/ui/Buttons/open-history $:/core/ui/Buttons/info $:/core/ui/Buttons/new-here $:/core/ui/Buttons/new-journal-here $:/core/ui/Buttons/clone $:/core/ui/Buttons/export-tiddler $:/core/ui/Buttons/permalink $:/core/ui/Buttons/permaview $:/core/ui/Buttons/open-window $:/core/ui/Buttons/close-others $:/core/ui/Buttons/fold-others $:/core/ui/Buttons/fold $:/core/ui/Buttons/copy-text $:/core/ui/Buttons/copy-title $:/plugins/kookma/utility/ui/Buttons/draggable-link $:/core/ui/Buttons/filter-symbol-remove-view $:/core/ui/Buttons/filter-symbol-view $:/core/ui/Buttons/fold-bar $:/core/ui/Buttons/open-floating-outline $:/core/ui/Buttons/se-type $:/PSaT/tag-indicator/button $:/plugins/ajh/favorites/template 弹出内容按钮 $:/core/ui/Buttons/clear-highlights $:/core/ui/Buttons/search-replace $:/core/ui/Buttons/delete $:/core/ui/Buttons/more-tiddler-actions $:/core/ui/Buttons/edit $:/core/ui/Buttons/close
+modified: 20250526111408644
+title: $:/tags/ViewToolbar
+
