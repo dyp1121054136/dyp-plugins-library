@@ -1,0 +1,16 @@
+{
+    "title": "$:/plugins/Gk0Wk/CPL-Repo",
+    "version": "2025.03.29",
+    "stability": "",
+    "name": "CPL Repo",
+    "description": "Essential and powerful plugin manager and library",
+    "author": "Gk0Wk",
+    "source": "",
+    "list": "readme tree",
+    "plugin-priority": "",
+    "parent-plugin": "",
+    "dependents": "",
+    "plugin-type": "plugin",
+    "core-version": "5.3.7-prerelease",
+    "packaged-by": "Gatha on 26th 五月 2025, 09:27:37"
+}
