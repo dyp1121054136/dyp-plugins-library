@@ -1,6 +1,6 @@
 {
     "title": "$:/plugins/dyp/text-indent-word-break",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "stability": "STABILITY_2_STABLE",
     "name": "text-indent-word-break",
     "description": "根据字段内容动态应用样式",
