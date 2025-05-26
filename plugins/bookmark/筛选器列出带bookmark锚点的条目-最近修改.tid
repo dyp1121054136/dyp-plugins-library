@@ -3,7 +3,7 @@ modified: 20240510145326782
 tags: 延时动作 书签
 title: 筛选器列出带bookmark锚点的条目-最近修改
 
-<$list filter="[field:anchor[yes]!is[system]!sort[modified]limit[10]]">
+<$list filter="[all[tiddlers+shadows]field:anchor[yes]!is[system]!sort[modified]limit[10]]">
 <$set value={{{ [<currentTiddler>addprefix[$:/temp/open-anchor]] }}} name="open-anchorTiddler">
 <span class="toanchor-btn">
 <$button popup=<<open-anchorTiddler>> tooltip="打开锚点汇总" class=<<tv-config-toolbar-class>>>
