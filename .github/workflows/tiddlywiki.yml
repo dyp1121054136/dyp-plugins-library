@@ -1,4 +1,4 @@
-name: Node.js CI
+name: 部署tiddlywiki
 
 on:
   # push:
