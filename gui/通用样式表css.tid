@@ -97,3 +97,7 @@ a {
   color: ;
   filter: opacity(75%); /* 透明度 */
 }
+
+a.tc-tiddlylink.tc-tiddlylink-missing {
+  padding: 0 5px;
+}
