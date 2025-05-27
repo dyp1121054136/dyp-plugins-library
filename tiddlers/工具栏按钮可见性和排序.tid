@@ -1,0 +1,35 @@
+br: 0
+created: 20250526110909373
+modified: 20250527054108116
+tags: 备忘
+title: 工具栏按钮可见性和排序
+
+按钮可见性配置：所有以 $:/config/ViewToolbarButtons/Visibility/ 开头的条目
+页面控制按钮配置：所有以 $:/config/PageControlButtons/Visibility/ 开头的条目
+编辑工具栏：$:/config/EditToolbarButtons/Visibility/ 开头的条目
+编辑器工具栏：$:/config/EditorToolbarButtons/Visibility/ 开头的条目
+
+页面工具栏（Page Controls）
+标签：$:/tags/PageControls
+
+查看工具栏（View Toolbar）
+标签：$:/tags/ViewToolbar
+
+编辑工具栏（Edit Toolbar）
+标签：$:/tags/EditToolbar
+
+编辑器工具栏（Editor Toolbar）
+标签：$:/tags/EditorToolbar
+
+工具栏按钮的实现机制
+在ViewTemplate的标题部分可以看到查看工具栏按钮的加载机制：
+
+这里通过过滤器 [all[shadows+tiddlers]tag[$:/tags/ViewToolbar]!has[draft.of]] 来获取所有标记为查看工具栏的按钮，并结合可见性配置来决定是否显示。
+
+<<filter-pill "[prefix[$:/config/ViewToolbarButtons/Visibility/]][[$:/tags/ViewToolbar]]" 查看工具栏>>
+
+<<filter-pill "[prefix[$:/config/PageControlButtons/Visibility/]][[$:/tags/PageControls]]" 页面工具栏>>
+
+<<filter-pill "[prefix[$:/config/EditToolbarButtons/Visibility/]][[$:/tags/EditToolbar]]" 编辑工具栏>>
+
+<<filter-pill "[prefix[$:/config/EditorToolbarButtons/Visibility/]][[$:/tags/EditorToolbar]]" 编辑器工具栏>>
