@@ -1,7 +1,7 @@
 caption: {{$:/core/images/music}} 打开音乐歌词设置
 created: 20240526020833163
 description: 打开音乐歌词设置
-modified: 20240526020930212
+modified: 20250527132903278
 tags: 按钮 $:/tags/PageControls 音乐
 title: $:/core/ui/Buttons/music
 
