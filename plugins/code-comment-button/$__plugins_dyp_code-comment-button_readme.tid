@@ -4,4 +4,10 @@ tags:
 title: $:/plugins/dyp/code-comment-button/readme
 type: text/vnd.tiddlywiki
 
-两个快捷输入代码注释符号的小按钮
+; 3个快捷输入代码注释符号的小按钮
+
+```tw
+/*  */
+<!--  -->
+// 
+```
