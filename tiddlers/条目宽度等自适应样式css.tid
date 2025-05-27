@@ -15,11 +15,11 @@ title: 条目宽度等自适应样式css
     }  
 }  
   
-/* 较大屏幕尺寸 - 故事左侧500px，右侧1570px */  
+/* 较大屏幕尺寸 - 故事左侧500px或450px，右侧1570px */  
 @media (min-width: 1570px) {  
     .tc-story-river {  
-        left: 500px;  
-        width: calc(1570px - 500px);  
+        left: 450px;  
+        width: calc(1570px - 450px);  
     }  
       
     .tc-sidebar-scrollable {  
