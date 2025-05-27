@@ -1,18 +1,18 @@
-caption: HTML注释
+caption: JavaScript注释
 condition: [<targetTiddler>type[]] [<targetTiddler>get[type]prefix[text/]] [<targetTiddler>get[type]match[application/javascript]] [<targetTiddler>get[type]match[application/json]] [<targetTiddler>get[type]match[application/x-tiddler-dictionary]] [<targetTiddler>get[type]match[image/svg+xml]] +[first[]]
-created: 20240313041604280
-description: 添加一个HTML注释
-modified: 20250527114953334
-shortcuts: ((HTML))
+created: 20250527114152646
+description: 添加一个JavaScript注释
+modified: 20250527114545581
+shortcuts: ((JavaScript))
 tags: $:/tags/EditorToolbar 按钮 代码注释
-title: $:/core/ui/EditorToolbar/HTML
+title: $:/core/ui/EditorToolbar/JavaScript
 
 <$button class="tc-btn-invisible" style="font-size: 0.6em;">
 <$action-sendmessage
 	$message="tm-edit-text-operation"
 	$param="wrap-selection"
-	prefix={{{[[<!-- ]] }}}
-	suffix={{{[[ -->]] }}}
+	prefix={{{[[// ]] }}}
+	suffix={{{[[]] }}}
 />
-<$text text="<!--  -->"/>
+<$text text="//"/>
 </$button>

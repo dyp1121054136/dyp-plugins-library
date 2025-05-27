@@ -1,8 +1,8 @@
 caption: CSS注释
-condition: [<targetTiddler>type[]] [<targetTiddler>get[type]prefix[text/]] +[first[]]
+condition: [<targetTiddler>type[]] [<targetTiddler>get[type]prefix[text/]] [<targetTiddler>get[type]match[application/javascript]] [<targetTiddler>get[type]match[application/json]] [<targetTiddler>get[type]match[application/x-tiddler-dictionary]] [<targetTiddler>get[type]match[image/svg+xml]] +[first[]]
 created: 20240313040827751
 description: 添加一个CSS注释
-modified: 20250428180307724
+modified: 20250527121011246
 shortcuts: ((CSS))
 tags: $:/tags/EditorToolbar 按钮 代码注释
 title: $:/core/ui/EditorToolbar/CSS
