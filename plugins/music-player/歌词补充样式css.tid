@@ -1,0 +1,61 @@
+created: 20240525152617409
+left-mobile: 0
+left-pc: 20
+lrc-center: center
+lrc-height: 30
+lrc-width: 300
+modified: 20250527094931642
+nolrc: block
+scale-mobile: 1.3
+scale-pc: 1.5
+tags: 音乐 样式 $:/tags/Stylesheet
+title: 歌词补充样式css
+top-mobile: 0
+top-pc: 93
+
+/* 等比放大歌词栏 */
+.aplayer .aplayer-lrc {
+  transform-origin: top left; /* 设置放大原点为左上角 */
+  font-family: "FZYUEKZJW-H";
+  display: {{!!nolrc}};
+}
+
+/* 定义大屏宽度 */
+.large-screen {
+  width: 1000px;
+}
+/* 定义小屏宽度 */
+.small-screen {
+  width: 350px;
+}
+
+/* 媒体查询，大屏 */
+@media (min-width: 768px) {
+.aplayer .aplayer-lrc {
+  transform: scale({{!!scale-pc}}); /* 将容器放大多少倍 */
+  top: {{!!top-pc}}%; /* 将歌词向下移动 */
+  padding-left: {{!!left-pc}}%; /* 将歌词向右移动 */
+}
+}
+
+/* 媒体查询，小屏 */
+@media (max-width: 767px) {
+.aplayer .aplayer-lrc {
+  transform: scale({{!!scale-mobile}}); /* 将容器放大多少倍 */
+  top: {{!!top-mobile}}%; /* 将歌词向下移动 */
+  padding-left: {{!!left-mobile}}%; /* 将歌词向右移动 */
+}
+}
+
+.aplayer .aplayer-lrc  {
+  display: block; /* 确保歌词显示 */
+  text-align: {{!!lrc-center}}; /* 歌词对齐方式 */
+  overflow: hidden; /* 如果歌词内容超出容器高度，超出部分将被隐藏 */
+  max-width: {{!!lrc-width}}px;
+  height: {{!!lrc-height}}px; /* 歌词容器高度 */
+  padding-top: calc({{!!lrc-height}}px / 2);
+}
+
+.aplayer .aplayer-lrc p.aplayer-lrc-current {
+  font-size: 13px;
+}

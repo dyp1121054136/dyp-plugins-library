@@ -1,0 +1,20 @@
+created: 20240525133703645
+modified: 20250527132020703
+tags: 音乐
+title: 引用网易云音乐歌单示例
+
+```tw
+`<meting-js 
+        id="6686195297"
+        server="netease"
+        order="random" 
+        type="playlist" 
+        fixed="true" 
+        preload="auto"
+        loop="all"
+        mutex="true"
+
+        list-olded="true"
+>`
+`</meting-js>`
+```

@@ -1,0 +1,83 @@
+created: 20250527123045032
+modified: 20250527130910759
+revision: 0
+tags: $:/tags/Stylesheet 音乐
+title: aplayer音乐播放器歌词样式css
+
+/* 歌词 */
+.aplayer .aplayer-lrc:before {
+  top: 0px;
+  height:10%;
+  background:linear-gradient(180deg,transparent,transparent);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#00ffffff",endColorstr="#ccffffff",GradientType=0)}
+
+.aplayer .aplayer-lrc:after,.aplayer .aplayer-lrc:before {
+  position: absolute;
+  z-index:1;
+  display: block;
+  overflow:hidden;
+  width:100%;
+  content:" "}
+
+.aplayer .aplayer-lrc:after {
+  bottom: 0px;
+  height: 33%;
+  background: linear-gradient(180deg,transparent 0,transparent));
+ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#00ffffff",endColorstr="#ccffffff",GradientType=0)}
+
+.aplayer .aplayer-lrc p {
+  font-size: 12px;color: <<colour foreground>>;
+  line-height: 16px!important;
+  height: 16px!important;
+  padding: 0!important;
+  margin: 0!important;
+  transition: all .5s ease-out;
+  opacity:.4;
+  overflow: hidden;
+}
+
+.aplayer .aplayer-lrc p.aplayer-lrc-current {
+  opacity:1;
+  overflow:visible;
+  height:auto!important;
+  min-height: 16px;
+}
+
+.aplayer .aplayer-lrc.aplayer-lrc-hide {
+  display: none
+}
+
+.aplayer .aplayer-lrc .aplayer-lrc-contents {
+  width:100%;
+  transition:all .5s ease-out;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select:text;
+  user-select:text;
+  cursor:default
+}
+
+.aplayer .aplayer-list {
+  overflow: auto;
+  transition: all .5s ease;
+  will-change: height;
+  display: none;
+  overflow: hidden;
+}
+
+.aplayer.aplayer-fixed .aplayer-lrc {
+  display: block;
+  position: fixed;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  margin: 0;
+  z-index: 98;
+  pointer-events: none;
+  text-shadow: -0.2px -0.2px 0 #fff;
+}
+
+.aplayer.aplayer-fixed .aplayer-lrc: after,.aplayer.aplayer-fixed .aplayer-lrc: before {
+  display: none;
+}
+
+/* 歌词 */

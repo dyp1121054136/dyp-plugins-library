@@ -1,0 +1,109 @@
+created: 20240525152740998
+modified: 20250527131817328
+tags: 音乐
+title: 音乐歌词设置
+
+给条目 [[$:/plugins/dyp/music-player/settings]] 添加标签 `$:/tags/RawMarkupWikified/BottomBody`，保存wiki后刷新生效
+
+<table width="99%">
+<tr>
+<td>
+是否显示歌词:
+</td>
+<td>
+<$checkbox tiddler="歌词补充样式css" field="nolrc" checked="block" unchecked="none!important" default="block"/>
+</td>
+</tr>
+<tr>
+<td>
+歌词是否居中:
+</td>
+<td>
+<$checkbox tiddler="歌词补充样式css" field="lrc-center" checked="center" unchecked="left" default="center"/>
+</td>
+</tr>
+</table>
+
+<style>
+.center-align {
+  text-align: left; /* 靠左对齐 */
+  vertical-align: middle; /* 垂直居中对齐 */
+}
+
+.lrc input[type="text"] {
+  box-sizing: border-box;
+  width: 2em;
+  padding: 1px;
+  border: 1px solid #000;
+}
+</style>
+
+<table width="99%">
+<tr>
+<td class="center-align">
+歌词容器高度:
+</td>
+<td class="center-align">
+<span class="lrc">
+<$edit-text tiddler="歌词补充样式css" field="lrc-height" tag="input" placeholder="50" default=""/> px
+</span>
+</td>
+</tr>
+<tr>
+<td class="center-align">
+歌词容器宽度:
+</td>
+<td class="center-align">
+<span class="lrc">
+<$edit-text tiddler="歌词补充样式css" field="lrc-width" tag="input" placeholder="300" default=""/> px
+</span>
+</td>
+</tr>
+</table>
+
+<table width="99%">
+<tr>
+<td class="center-align">
+电脑端容器放大倍数:
+</td>
+<td class="center-align">
+<span class="lrc">
+<$edit-text tiddler="歌词补充样式css" field="scale-pc" tag="input" placeholder="1.5" default=""/></span>
+</td>
+</tr>
+<tr>
+<td class="center-align">
+移动端容器放大倍数:
+</td>
+<td class="center-align">
+<span class="lrc">
+<$edit-text tiddler="歌词补充样式css" field="scale-mobile" tag="input" placeholder="1.3" default=""/>
+</span>
+</td>
+</tr>
+</table>
+
+<table width="99%">
+<tr>
+<td class="center-align">
+电脑端歌词位置:
+</td>
+<td class="center-align">
+<span class="lrc">
+<$edit-text tiddler="歌词补充样式css" field="top-pc" tag="input" placeholder="50" default=""/></span>
+<span class="lrc">
+<$edit-text tiddler="歌词补充样式css" field="left-pc" tag="input" placeholder="30" default=""/></span>
+</td>
+</tr>
+<tr>
+<td class="center-align">
+移动端歌词位置:
+</td>
+<td class="center-align">
+<span class="lrc">
+<$edit-text tiddler="歌词补充样式css" field="top-mobile" tag="input" placeholder="1" default=""/></span>
+<span class="lrc">
+<$edit-text tiddler="歌词补充样式css" field="left-mobile" tag="input" placeholder="1" default=""/></span>
+</td>
+</tr>
+</table>

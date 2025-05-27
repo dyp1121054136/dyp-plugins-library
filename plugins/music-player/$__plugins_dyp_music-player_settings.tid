@@ -1,0 +1,53 @@
+code-body: yes
+created: 20250527131758024
+modified: 20250527131909336
+tagging: after
+tags: $:/tags/RawMarkupWikified/BottomBody 音乐
+title: $:/plugins/dyp/music-player/settings
+type: text/vnd.tiddlywiki
+
+<!-- 
+relative link: https://ftzzloo.com/hexo-add-aplayer-plugins/ 
+-->
+
+<!-- 
+option: lrc-type="0" 
+description: disable show lrc -->
+
+<!--
+option:  theme="cyan" 
+description: change theme color to cyan
+-->
+
+<!--
+option: server="netease"
+descrition: chose music platform to "netease"
+-->
+
+<!-- 
+option: order="random"  
+des: music player order is random
+-->
+
+<!-- 
+option: id="3218667513"
+des: chose music id
+-->
+
+`<meting-js 
+        id="6686195297"
+        server="netease"
+        order="random" 
+        type="playlist" 
+        fixed="true" 
+        preload="auto"
+        loop="all"
+        mutex="true"
+
+        list-olded="true"
+>`
+`</meting-js>`
+
+<!-- 
+$:/tags/RawMarkupWikified/BottomBody
+ -->
