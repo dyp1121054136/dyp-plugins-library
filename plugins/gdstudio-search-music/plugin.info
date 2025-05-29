@@ -1,0 +1,16 @@
+{
+    "title": "$:/plugins/dyp/gdstudio-search-music",
+    "version": "0.0.1",
+    "stability": "STABILITY_2_STABLE",
+    "name": "gdstudio-search-music",
+    "description": "GD音乐库在线听歌",
+    "author": "dyp",
+    "source": "https://github.com/dyp1121054136/dyp-plugins-library",
+    "list": "readme usage history",
+    "plugin-priority": "",
+    "parent-plugin": "",
+    "dependents": "",
+    "plugin-type": "plugin",
+    "core-version": "5.3.7-prerelease",
+    "packaged-by": "Gatha on 29th 五月 2025, 14:31:49"
+}
