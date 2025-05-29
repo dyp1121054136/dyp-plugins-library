@@ -52,6 +52,7 @@ LyricDisplayWidget.prototype.parseLyrics = function() {
     return lyricText.split('\n')
         .map(function(line) {
             var match = line.match(/^\[([0-9]{2}):([0-9]{2})\.([0-9]{1,9})\]\s*(.*)$/);
+            if (!match) return null;
             
             var timeInSeconds = parseInt(match[1]) * 60 + parseInt(match[2]) + parseInt(match[3]) / Math.pow(10, match[3].length);
             return {
