@@ -72,7 +72,7 @@ LyricSyncWidget.prototype.parseLyrics = function() {
     var lyricText = this.wiki.getTiddlerText(this.lyricTiddler, "");
     return lyricText.split('\n')
         .map(function(line) {
-            var match = line.match(/^\[(\d{2}):(\d{2})\.(\d{2})\]\s*(.*)$/);
+            var match = line.match(/^\[(\d{2}):(\d{2})\.(\d{1,9})\]\s*(.*)$/);
             if (!match) return null;
             
             var timeInSeconds = parseInt(match[1]) * 60 + parseInt(match[2]) + parseInt(match[3]) / 100;
