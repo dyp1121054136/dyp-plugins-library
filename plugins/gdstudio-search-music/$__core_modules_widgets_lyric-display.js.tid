@@ -51,10 +51,9 @@ LyricDisplayWidget.prototype.parseLyrics = function() {
     var lyricText = this.wiki.getTiddlerText(this.lyricTiddler, "");
     return lyricText.split('\n')
         .map(function(line) {
-            var match = line.match(/^\[(\d{2}):(\d{2})\.(\d{2})\]\s*(.*)$/);
-            if (!match) return null;
+            var match = line.match(/^\[([0-9]{2}):([0-9]{2})\.([0-9]{1,9})\]\s*(.*)$/);
             
-            var timeInSeconds = parseInt(match[1]) * 60 + parseInt(match[2]) + parseInt(match[3]) / 100;
+            var timeInSeconds = parseInt(match[1]) * 60 + parseInt(match[2]) + parseInt(match[3]) / Math.pow(10, match[3].length);
             return {
                 time: timeInSeconds,
                 text: match[4]
