@@ -1,0 +1,12 @@
+created: 20250528150435056
+modified: 20250528150718799
+tags: gdstudio
+title: 关闭gdstudio音乐播放器
+
+<$button class="tc-btn-invisible" tooltip="关闭播放器">✕   
+<$action-setfield $tiddler="$:/state/gdstudio-api/track-id" text=""/>          
+<$action-setfield $tiddler="$:/state/gdstudio-api/pic-id" text=""/>          
+<$action-setfield $tiddler="$:/state/gdstudio-api/lyric-id" text=""/>          
+<$action-setfield $tiddler="$:/state/gdstudio-api/cover-url" text=""/>          
+<$action-setfield $tiddler="$:/state/gdstudio-api/lyric" text=""/>          
+</$button>    

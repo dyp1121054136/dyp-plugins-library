@@ -1,0 +1,21 @@
+code-body: yes
+created: 20250528053957388
+modified: 20250528132403692
+tags: 音乐 $:/tags/Macro gdstudio
+title: gdstudio音乐api宏macro
+
+\define gdstudio-search(music-source, keyword, page-length, page-num)  
+https://music-api.gdstudio.xyz/api.php?types=search&source=$music-source$&name=$keyword$&count=$page-length$&pages=$page-num$  
+\end
+
+\define gdstudio-music(music-source, track-id, br)  
+https://music-api.gdstudio.xyz/api.php?types=url&source=$music-source$&id=$track-id$&br=$br$
+\end
+
+\define gdstudio-cover(music-source, pic-id, size)  
+https://music-api.gdstudio.xyz/api.php?types=pic&source=$music-source$&id=$pic-id$&size=$size$
+\end
+
+\define gdstudio-lyric(music-source, lyric-id)  
+https://music-api.gdstudio.xyz/api.php?types=lyric&source=$music-source$&id=$lyric-id$
+\end

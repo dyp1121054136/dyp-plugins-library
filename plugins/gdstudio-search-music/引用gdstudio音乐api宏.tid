@@ -1,0 +1,73 @@
+created: 20250528054914528
+modified: 20250528132403681
+tags: 音乐 gdstudio
+title: 引用gdstudio音乐api宏
+
+<<gdstudio-search "netease" "夜梦记" "20" "1">>  
+
+<$transclude $variable="gdstudio-search" music-source="netease" keyword="夜梦记" page-length="20", page-num="1"/>
+
+<<gdstudio-music "netease" "1824959449" "320">>
+
+<$transclude $variable="gdstudio-music" music-source="netease" track-id="1824959449" br="320"/>
+
+<<gdstudio-cover "netease" "6626756582138305" "300">>
+
+<$transclude $variable="gdstudio-cover" music-source="netease" pic-id="6626756582138305" size="300"/>
+
+<<gdstudio-lyric "netease" "1824959449">>
+
+<$transclude $variable="gdstudio-lyric" music-source="netease" lyric-id="1824959449"/>
+
+搜索音乐
+
+```tw
+<<gdstudio-search "netease" "夜梦记" "20" "1">>
+```
+
+```tw
+<$transclude $variable="gdstudio-search" music-source="netease" keyword=“夜梦记” page-length="20", page-num="1"/>
+```
+
+获取歌曲链接
+
+```tw
+<<gdstudio-music "netease" "1824959449" "320">>
+```
+
+```tw
+<$transclude $variable="gdstudio-music" music-source="netease" track-id=“1824959449” br="320"/>
+```
+
+获取海报链接
+
+```tw
+<<gdstudio-cover "netease" "6626756582138305" "300">>
+```
+
+```tw
+<$transclude $variable="gdstudio-cover" music-source="netease" pic-id="6626756582138305" size="300"/>
+```
+
+获取歌词链接
+
+```tw
+<<gdstudio-lyric "netease" "1824959449">>
+```
+
+```tw
+<$transclude $variable="gdstudio-lyric" music-source="netease" lyric-id="1824959449"/>
+```
+
+```tw
+$:/state/gdstudio-api/searchResults
+$:/state/gdstudio-api/music-source
+$:/state/gdstudio-api/keyword
+$:/state/gdstudio-api/page-length
+$:/state/gdstudio-api/page-num
+$:/state/gdstudio-api/track-id
+$:/state/gdstudio-api/br
+$:/state/gdstudio-api/pic-id
+$:/state/gdstudio-api/size
+$:/state/gdstudio-api/lyric-id
+```

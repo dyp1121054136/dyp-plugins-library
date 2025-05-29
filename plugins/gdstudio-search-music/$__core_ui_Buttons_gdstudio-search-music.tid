@@ -1,0 +1,21 @@
+caption: {{$:/core/images/gdstudio-search-music}} 打开搜索音乐
+created: 20250529061651198
+description: 打开搜索音乐
+modified: 20250529062624832
+tags: 按钮 $:/tags/PageControls gdstudio
+title: $:/core/ui/Buttons/gdstudio-search-music
+
+\whitespace trim
+<$button tooltip="打开搜索音乐" class=<<tv-config-toolbar-class>>>
+<$list filter="[<tv-config-toolbar-icons>match[yes]]">
+{{$:/core/images/gdstudio-search-music|22px}}
+</$list>
+<$list filter="[<tv-config-toolbar-text>match[yes]]">
+<span class="tc-btn-text">
+<$text text=打开搜索音乐/>
+</span>
+</$list>
+
+<$action-navigate $to="gdstudio-搜索音乐"/>
+
+</$button>

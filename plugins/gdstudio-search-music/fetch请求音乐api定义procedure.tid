@@ -1,0 +1,47 @@
+created: 20250528055416875
+modified: 20250528132403684
+tags: 音乐 $:/tags/Macro gdstudio
+title: fetch请求音乐api定义procedure
+
+\procedure gdstudio-search-output()  
+<$action-setfield $tiddler="$:/state/gdstudio-api/searchResults" text=<<data>>/>  
+\end
+
+\procedure gdstudio-search-http-get()  
+	<$action-sendmessage  
+		$message="tm-http-request"  
+		url="https://music-api.gdstudio.xyz/api.php"  
+		query-types="search"  
+		query-source={{$:/state/gdstudio-api/music-source}}  
+		query-name={{$:/state/gdstudio-api/keyword}}  
+		query-count={{$:/state/gdstudio-api/page-length}}  
+		query-pages={{$:/state/gdstudio-api/page-num}}  
+		bind-status=status  
+		bind-progress=progress  
+		method="GET"  
+		oncompletion=<<gdstudio-search-output>>  
+	/>  
+\end
+
+音乐源：<$select tiddler="$:/state/gdstudio-api/music-source" default="netease">  
+<option value="netease">网易云音乐 (netease)</option>  
+<option value="tencent">QQ音乐 (tencent)</option>  
+<option value="tidal">Tidal</option>  
+<option value="spotify">Spotify</option>  
+<option value="ytmusic">YouTube Music</option>  
+<option value="qobuz">Qobuz</option>  
+<option value="joox">JOOX</option>  
+<option value="deezer">Deezer</option>  
+<option value="migu">咪咕音乐 (migu)</option>  
+<option value="kugou">酷狗音乐 (kugou)</option>  
+<option value="kuwo">酷我音乐 (kuwo)</option>  
+<option value="ximalaya">喜马拉雅 (ximalaya)</option>  
+</$select>
+<br/>
+关键词：<$edit-text tiddler="$:/state/gdstudio-api/keyword" default="夜梦记" tag="input"/>
+<br/>
+每页数量：<$edit-text tiddler="$:/state/gdstudio-api/page-length" default="20" tag="input"/>
+<br/>
+页码：<$edit-text tiddler="$:/state/gdstudio-api/page-num" default="1" tag="input"/>
+<br/>
+<$button actions=<<gdstudio-search-http-get>>>搜索</$button>

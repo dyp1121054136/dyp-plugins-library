@@ -1,0 +1,40 @@
+created: 20250528070630390
+modified: 20250529022038331
+tags: 音乐 gdstudio
+title: 优化后的歌曲列表-与播放器集成
+
+调试信息：- track-id: <$view tiddler="$:/state/gdstudio-api/track-id"/> - music-source: <$view tiddler="$:/state/gdstudio-api/music-source"/>
+
+- music-url: <$view tiddler="$:/state/gdstudio-api/music-url"/>
+
+<!-- 显示搜索结果中的所有歌曲 -->  
+<$list filter="[{$:/state/gdstudio-api/searchResults}jsonindexes[]]">    
+  <div class="gdstudio-song-item">    
+    <div style="flex: 1;">    
+      <h4 style="margin: 0 0 5px 0;"><$text text={{{ [{$:/state/gdstudio-api/searchResults}jsonget<currentTiddler>,[name]] }}}/></h4>    
+      <span style="color: #666; font-size: 0.9em;">    
+        <$text text={{{ [{$:/state/gdstudio-api/searchResults}jsonget<currentTiddler>,[artist]] }}}/>    
+        - <$text text={{{ [{$:/state/gdstudio-api/searchResults}jsonget<currentTiddler>,[album]] }}}/>    
+      </span>    
+    </div>
+
+<$button class="tc-btn-invisible gdstudio-button" tooltip="播放">  
+  <!-- 先清空之前的URL状态 -->  
+  <$action-setfield $tiddler="$:/state/gdstudio-api/music-url" text=""/>  
+  <$action-setfield $tiddler="$:/state/gdstudio-api/cover-url" text=""/>  
+    
+  <!-- 然后设置新的ID -->  
+  <$action-setfield $tiddler="$:/state/gdstudio-api/track-id" text={{{ [{$:/state/gdstudio-api/searchResults}jsonget<currentTiddler>,[id]] }}}/>        
+  <$action-setfield $tiddler="$:/state/gdstudio-api/pic-id" text={{{ [{$:/state/gdstudio-api/searchResults}jsonget<currentTiddler>,[pic_id]] }}}/>        
+  <$action-setfield $tiddler="$:/state/gdstudio-api/lyric-id" text={{{ [{$:/state/gdstudio-api/searchResults}jsonget<currentTiddler>,[lyric_id]] }}}/>  
+    
+  <!-- 最后调用获取procedures -->  
+  <<gdstudio-get-music-url>>    
+  <<gdstudio-get-cover-url>>  
+  <<gdstudio-get-lyric-url>>  
+  <<gdstudio-get-lyric-text>>  
+  {{$:/core/images/gdstudio-play-music}}      
+</$button>
+
+  </div>    
+</$list>

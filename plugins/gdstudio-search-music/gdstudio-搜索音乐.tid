@@ -1,0 +1,15 @@
+created: 20250528064705795
+modified: 20250529061510252
+tags: 音乐 gdstudio
+title: gdstudio-搜索音乐
+
+<$transclude tiddler="音乐搜索界面优化版"/>
+
+<br/>
+
+<$transclude tiddler="优化后的歌曲列表-与播放器集成"/>
+
+<!-- 
+无需再次引用，音乐播放器已固定在页面上
+<$transclude tiddler="添加HTML5音频播放器"/> 
+-->

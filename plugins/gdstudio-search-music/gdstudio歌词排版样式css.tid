@@ -1,0 +1,37 @@
+created: 20250528142454456
+modified: 20250529061215643
+tags: gdstudio 样式 $:/tags/Stylesheet
+title: gdstudio歌词排版样式css
+
+.lyric-body {
+  font-family: "FZYUEKZJW-H";
+  text-align: center; /* 文字水平居中 */
+  line-height: 1.5; /* 行高 */
+  letter-spacing: 0em; /* 增加字符间距 */
+
+  /* 硬式换行 */
+  word-break: normal;
+  word-wrap: break-word;
+  white-space: pre-line; /* 连续的空白字符合并成一个空格 */
+
+  height: 90px; 
+  overflow-y: auto; 
+  margin: 5px 0; 
+  font-size: 1em; 
+
+  -ms-overflow-style: none; /* IE和Edge */
+  scrollbar-width: none; /* Firefox */
+  overflow: auto; /* 保持滚动功能 */
+
+  background-color: transparent;
+  position: fixed;
+  top: ;
+  left: 10px;
+  bottom: 80px;
+
+  min-width: 300px;
+}
+
+.lyric-body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}

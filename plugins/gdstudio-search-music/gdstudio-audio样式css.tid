@@ -1,0 +1,53 @@
+created: 20250529043602077
+modified: 20250529062050246
+tags: gdstudio 样式 $:/tags/Stylesheet
+title: gdstudio-audio样式css
+
+/* 以下样式是针对 WebKit/Blink 浏览器（Chrome, Safari, Edge）的默认控件美化 */
+/* 注意：这些选择器在不同浏览器或版本中可能有细微差异，且不保证完全兼容所有浏览器 */
+
+.gdstudio-audio audio::-webkit-media-controls-panel {
+    background-color: <<colour tiddler-background>>; /* 控件面板背景色 */
+}
+
+.gdstudio-audio audio::-webkit-media-controls-mute-button,
+.gdstudio-audio audio::-webkit-media-controls-play-button,
+.gdstudio-audio audio::-webkit-media-controls-timeline-container,
+.gdstudio-audio audio::-webkit-media-controls-rewind-button,
+.gdstudio-audio audio::-webkit-media-controls-return-to-realtime-button,
+.gdstudio-audio audio::-webkit-media-controls-toggle-closed-captions-button {
+    background-color: <<colour tiddler-background>>; /* 按钮背景色 */
+}
+
+.gdstudio-audio audio::-webkit-media-controls-mute-button:hover,
+.gdstudio-audio audio::-webkit-media-controls-play-button:hover,
+.gdstudio-audio audio::-webkit-media-controls-rewind-button:hover,
+.gdstudio-audio audio::-webkit-media-controls-return-to-realtime-button:hover,
+.gdstudio-audio audio::-webkit-media-controls-toggle-closed-captions-button:hover {
+    background-color: transparent; /* 按钮悬停色 */
+}
+
+.gdstudio-audio audio::-webkit-media-controls-timeline-container {
+    background-color: transparent; /* 进度条背景色 */
+}
+
+.gdstudio-audio audio::-webkit-media-controls-current-time-display,
+.gdstudio-audio audio::-webkit-media-controls-time-remaining-display {
+    color: <<colour foreground>>; /* 时间显示文字颜色 */
+    font-size: 14px; /* 时间显示字体大小 */
+}
+
+.gdstudio-audio {
+  display: inline-block;
+  width: auto; /* 确保宽度自动调整 */
+  position: relative;
+  top: -45px; /* 向上移动 -50px */
+  left: 60px; /* 向右移动 180px */
+  /* 等比缩小 */
+  transform: scale(0.8);
+
+  /* 注意：scale 会缩放元素及其所有内容，包括可能的阴影等。
+           如果需要保持元素占据的原有空间（视觉上看起来缩小了，但位置不变），
+           需要添加 transform-origin: 0 0; 或 transform-origin: left top; */
+  transform-origin: left top; /* 缩放以左上角为基准点 */
+}

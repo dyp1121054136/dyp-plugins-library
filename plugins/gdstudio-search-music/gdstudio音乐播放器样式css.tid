@@ -1,0 +1,100 @@
+created: 20250528143453713
+modified: 20250529061046619
+tags: gdstudio 样式 $:/tags/Stylesheet
+title: gdstudio音乐播放器样式css
+
+.gdstudio-music-body {
+  background-color: <<colour tiddler-background>>;
+  z-index: 0;
+}
+
+.gdstudio-music-player {
+  position: fixed;
+  bottom: -60px;
+  left: 0;
+  max-width: 200px; / 设置最大宽度 /
+  width: 100%; / 宽度占满可用空间 /
+  background-color: <<colour tiddler-background>>;
+  padding: 10px;
+  margin: 0 auto; / 水平居中 /
+  transform: translateX(50%); / 向右偏移自身宽度的50% /
+  white-space: nowrap; / 防止内容换行 /
+  overflow-x: auto; / 水平滚动条 /
+  scrollbar-width: none; / 隐藏滚动条 /
+  -ms-overflow-style: none; / IE和Edge /
+}
+
+.gdstudio-music-player::-webkit-scrollbar {
+display: none; / Chrome, Safari, Opera /
+}
+
+.gdstudio-music-name {
+  font-size: 0.8em;
+  background-color: transparent;
+  position: relative;
+  top: -20px;
+  left: 0px;
+  z-index: 999;
+  height: 0.8em;
+}
+
+.gdstudio-cover {
+  display: flex; 
+  align-items: center; 
+  gap: 15px;
+  background-color: <<colour tiddler-background>>;
+  width: 300px;
+}
+
+.gdstudio-button {
+  opacity: 0.5;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.gdstudio-button:hover {
+  opacity: 1;
+}
+
+.gdstudio-song-item {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 10px; 
+  border-bottom: 
+  1px solid <<colour foreground>>;
+}
+
+.gdstudio-cover button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* 定义大屏宽度 */
+.large-screen {
+  width: 1000px;
+}
+
+/* 定义小屏宽度 */
+.small-screen {
+  width: 350px;
+}
+
+/* 媒体查询，大屏 */
+@media (min-width: 768px) {
+.gdstudio-song-item {
+  margin: 0 5%; /* 添加左右边距 */
+}
+}
+
+/* 媒体查询，小屏 */
+@media (max-width: 767px) {
+.gdstudio-song-item {
+  margin: 0 10%; /* 添加左右边距 */
+}
+}

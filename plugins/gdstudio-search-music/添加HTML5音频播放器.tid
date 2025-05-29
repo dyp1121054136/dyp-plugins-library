@@ -1,0 +1,37 @@
+created: 20250528070536184
+modified: 20250529060535909
+tags: 音乐 gdstudio $:/tags/PageTemplate
+title: 添加HTML5音频播放器
+
+<$transclude tiddler="去除歌词时间戳"/>
+<div class="gdstudio-music-body">
+
+<div class="gdstudio-music-player">     
+  <$reveal state="$:/state/gdstudio-api/track-id" type="nomatch" text="">          
+    <div class="gdstudio-cover">          
+      <!-- 专辑封面 -->    
+        <$image     
+          source={{$:/state/gdstudio-api/cover-url}}     
+          width="60"     
+          height="60"     
+          style="border-radius: 4px; object-fit: cover;"    
+          alt="专辑封面"    
+        />
+
+<div class="gdstudio-music-name">
+<$text text={{{ [{$:/state/gdstudio-api/searchResults}jsonget[{$:/state/gdstudio-api/track-id}],[name]] }}}/> - <$text text={{{ [{$:/state/gdstudio-api/searchResults}jsonget[{$:/state/gdstudio-api/track-id}],[artist]] }}}/>
+</div>
+</div>
+
+<div class="gdstudio-audio">    
+<$reveal state="$:/state/gdstudio-api/music-url" type="nomatch" text="">  
+<audio controls autoplay onerror="console.error('Audio loading failed')" key={{$:/state/gdstudio-api/track-id}}>                
+     <source src={{$:/state/gdstudio-api/music-url}} type="audio/mpeg">                
+     您的浏览器不支持音频播放                
+</audio>  
+</$reveal>  
+</div>
+
+  </$reveal>          
+</div>
+</div>

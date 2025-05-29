@@ -1,0 +1,24 @@
+code-body: yes
+created: 20250528074622054
+modified: 20250529015811407
+tags: 音乐 $:/tags/Macro gdstudio
+title: 获取音乐url并播放定义procedure
+
+\procedure gdstudio-get-music-url()    
+	<$action-sendmessage    
+		$message="tm-http-request"    
+		url="https://music-api.gdstudio.xyz/api.php"    
+		query-types="url"    
+		query-source={{$:/state/gdstudio-api/music-source}}    
+		query-id={{$:/state/gdstudio-api/track-id}}    
+		query-br="320"    
+		method="GET"    
+		oncompletion=<<gdstudio-extract-music-url>>    
+	/>    
+\end  
+  
+\procedure gdstudio-extract-music-url()      
+	<$list filter="[<data>jsonget[url]!is[blank]]" variable="url">  
+		<$action-setfield $tiddler="$:/state/gdstudio-api/music-url" text=<<url>>/>  
+	</$list>  
+\end
