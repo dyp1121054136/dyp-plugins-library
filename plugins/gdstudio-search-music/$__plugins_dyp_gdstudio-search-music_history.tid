@@ -4,3 +4,17 @@ tags:
 title: $:/plugins/dyp/gdstudio-search-music/history
 type: text/vnd.tiddlywiki
 
+; v.0.0.2 2025-05-29
+
+新增动态歌词功能，主要依赖两个新增 `widget`：
+
+[[$:/core/modules/widgets/lyric-sync.js]]
+
+[[$:/core/modules/widgets/lyric-display.js]]
+
+```tw
+<!-- 添加歌词同步功能 -->
+<$lyric-sync lyric-tiddler="$:/state/gdstudio-api/lyric" audio-selector="audio">
+<$lyric-display lyric-tiddler="$:/state/gdstudio-api/lyric" show-lines="5"/>
+</$lyric-sync>
+```
