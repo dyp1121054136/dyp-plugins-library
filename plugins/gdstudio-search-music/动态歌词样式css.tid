@@ -1,0 +1,31 @@
+created: 20250529133611940
+modified: 20250529150936526
+tags: 动态歌词 $:/tags/Stylesheet gdstudio
+title: 动态歌词样式css
+
+.lyric-display-container {
+  text-align: center;
+  padding: 20px;
+  max-height: 200px;
+  overflow: hidden;
+  position: fixed;
+  top: ;
+  left: 10px;
+  bottom: 80px;
+  min-width: 300px;
+  font-family: ""; /* "FZYUEKZJW-H"; */
+  line-height: 1em;
+}
+
+.lyric-line {
+  padding: 5px 0;
+  transition: all 0.3s ease;
+  opacity: 0.6;
+}
+
+.lyric-current {
+  opacity: 1;
+  font-weight: bold;
+  color: <<colour primary>>;
+  font-size: 1.1em;
+}

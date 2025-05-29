@@ -1,0 +1,127 @@
+created: 20250529133321082
+modified: 20250529144406776
+module-type: widget
+tags: 动态歌词 gdstudio
+title: $:/core/modules/widgets/lyric-sync.js
+type: application/javascript
+
+/*\
+title: $:/core/modules/widgets/lyric-sync.js
+type: application/javascript
+module-type: widget
+
+歌词同步widget
+\*/
+
+"use strict";
+
+var Widget = require("$:/core/modules/widgets/widget.js").widget;
+
+var LyricSyncWidget = function(parseTreeNode,options) {
+    this.initialise(parseTreeNode,options);
+};
+
+LyricSyncWidget.prototype = new Widget();
+
+LyricSyncWidget.prototype.render = function(parent,nextSibling) {
+    this.parentDomNode = parent;
+    this.computeAttributes();
+    this.execute();
+    
+    var domNode = this.document.createElement("div");
+    domNode.className = "lyric-sync-container";
+    
+    this.renderChildren(domNode,null);
+    
+    parent.insertBefore(domNode,nextSibling);
+    this.domNodes.push(domNode);
+    
+    this.initLyricSync();
+};
+
+LyricSyncWidget.prototype.execute = function() {
+    this.lyricTiddler = this.getAttribute("lyric-tiddler");
+    this.currentLineState = this.getAttribute("current-line-state", "$:/state/gdstudio-api/current-lyric-line");
+    this.makeChildWidgets();
+};
+
+LyricSyncWidget.prototype.initLyricSync = function() {
+    this.parsedLyrics = this.parseLyrics();
+    this.lastLineIndex = -1;
+    this.bindToAudioElement();
+};
+
+LyricSyncWidget.prototype.bindToAudioElement = function() {
+    var self = this;
+    if (this.audioEventsBound || !$tw.browser) return;
+    
+    this.timeUpdateHandler = function(event) {
+        if (event.target.tagName && event.target.tagName.toLowerCase() === 'audio') {
+            self.updateCurrentLyric(event.target.currentTime);
+        }
+    };
+    
+    document.addEventListener('timeupdate', this.timeUpdateHandler, {passive: true, capture: true});
+    document.addEventListener('seeked', this.timeUpdateHandler, {passive: true, capture: true});
+    this.audioEventsBound = true;
+};
+
+LyricSyncWidget.prototype.parseLyrics = function() {
+    if (!this.lyricTiddler) return [];
+    
+    var lyricText = this.wiki.getTiddlerText(this.lyricTiddler, "");
+    return lyricText.split('\n')
+        .map(function(line) {
+            var match = line.match(/^\[(\d{2}):(\d{2})\.(\d{2})\]\s*(.*)$/);
+            if (!match) return null;
+            
+            var timeInSeconds = parseInt(match[1]) * 60 + parseInt(match[2]) + parseInt(match[3]) / 100;
+            return {
+                time: timeInSeconds,
+                text: match[4]
+            };
+        })
+        .filter(Boolean)
+        .sort(function(a, b) { return a.time - b.time; });
+};
+
+LyricSyncWidget.prototype.updateCurrentLyric = function(currentTime) {
+    var currentLineIndex = -1;
+    
+    for (var i = 0; i < this.parsedLyrics.length; i++) {
+        if (this.parsedLyrics[i].time <= currentTime) {
+            currentLineIndex = i;
+        } else {
+            break;
+        }
+    }
+    
+    if (this.lastLineIndex !== currentLineIndex) {
+        this.lastLineIndex = currentLineIndex;
+        this.wiki.addTiddler({
+            title: this.currentLineState,
+            text: currentLineIndex.toString()
+        });
+    }
+};
+
+LyricSyncWidget.prototype.removeFromDocument = function() {
+    if (this.audioEventsBound && $tw.browser) {
+        document.removeEventListener('timeupdate', this.timeUpdateHandler, {passive: true, capture: true});
+        document.removeEventListener('seeked', this.timeUpdateHandler, {passive: true, capture: true});
+        this.audioEventsBound = false;
+        this.timeUpdateHandler = null;
+    }
+    Widget.prototype.removeFromDocument.call(this);
+};
+
+LyricSyncWidget.prototype.refresh = function(changedTiddlers) {
+    var changedAttributes = this.computeAttributes();
+    if (changedAttributes["lyric-tiddler"] || changedTiddlers[this.lyricTiddler]) {
+        this.refreshSelf();
+        return true;
+    }
+    return this.refreshChildren(changedTiddlers);
+};
+
+exports["lyric-sync"] = LyricSyncWidget;
