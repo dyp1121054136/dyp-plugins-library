@@ -32,6 +32,6 @@ title: 动态歌词样式css
 .lyric-current {  
     opacity: 1;  
     font-weight: bold;  
-    color: #5797d8;  
+    color: <<colour primary>>;  
     font-size: 1.1em;  
 }
