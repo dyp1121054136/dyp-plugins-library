@@ -1,0 +1,13 @@
+created: 20250530105433654
+modified: 20250530144228373
+tags: 音乐播放器 gdstudio $:/tags/PageTemplate
+title: 调用自定义播放器
+
+<$gdstudio-audio         
+    cover-url={{$:/state/gdstudio-api/cover-url}}      
+    music-url={{$:/state/gdstudio-api/music-url}}      
+    song-name={{{ [{$:/state/gdstudio-api/searchResults}jsonget[{$:/state/gdstudio-api/track-id}],[name]] }}}      
+    artist={{{ [{$:/state/gdstudio-api/searchResults}jsonget[{$:/state/gdstudio-api/track-id}],[artist]] }}}      
+    width="320px"         
+    progress-height="8px"  
+/>
