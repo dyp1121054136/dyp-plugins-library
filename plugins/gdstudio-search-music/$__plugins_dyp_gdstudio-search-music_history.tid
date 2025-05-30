@@ -4,11 +4,18 @@ tags:
 title: $:/plugins/dyp/gdstudio-search-music/history
 type: text/vnd.tiddlywiki
 
+; v.0.0.4 2025-05-30
+
+音乐播放器audio组件完全重构，新增滚动唱片式海报动画，新增widget：
+
+[[$:/core/modules/widgets/gdstudio-audio.js]]
+
 ; v.0.0.3 2025-05-30
 
 # 优化动态歌词滚动动画，平滑过渡；
 # 优化歌词排版，过长则省略，不换行；
-# 优化音乐播放器歌曲歌手名排版，过长则省略，不换行。
+# 优化音乐播放器歌曲歌手名排版，过长则省略，不换行；
+# 手机端歌词显示在页面顶部，只显示一行。
 
 ; v.0.0.2 2025-05-29
 
