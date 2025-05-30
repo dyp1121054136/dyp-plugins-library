@@ -3,29 +3,30 @@ modified: 20250529150936526
 tags: 动态歌词 $:/tags/Stylesheet gdstudio
 title: 动态歌词样式css
 
-.lyric-display-container {
-  text-align: center;
-  padding: 20px;
-  max-height: 200px;
-  overflow: hidden;
-  position: fixed;
-  top: ;
-  left: 10px;
-  bottom: 80px;
-  min-width: 300px;
-  font-family: ""; /* "FZYUEKZJW-H"; */
-  line-height: 1em;
-}
-
-.lyric-line {
-  padding: 5px 0;
-  transition: all 0.3s ease;
-  opacity: 0.6;
-}
-
-.lyric-current {
-  opacity: 1;
-  font-weight: bold;
-  color: <<colour primary>>;
-  font-size: 1.1em;
+.lyric-display-container {  
+    text-align: center;  
+    padding: 20px;  
+    max-height: 150px;  
+    overflow: hidden;  
+    position: fixed;  
+    top: auto;  
+    left: 10px;  
+    bottom: 80px;  
+    min-width: 300px;  
+    font-family: "FZYUEKZJW-H";  
+}  
+  
+.lyric-line {  
+    padding: 2px 0; /* 紧凑的 padding */  
+    transition: all 0.3s ease;  
+    opacity: 0.6;  
+    height: 1.4em;  /* 紧凑但足够的行高 */  
+    line-height: 1.4em; /* 与高度保持一致 */  
+}  
+  
+.lyric-current {  
+    opacity: 1;  
+    font-weight: bold;  
+    color: #5797d8;  
+    font-size: 1.1em;  
 }
