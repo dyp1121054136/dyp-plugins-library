@@ -1,0 +1,228 @@
+created: 20250530105337366
+modified: 20250530142302885
+tags: 音乐播放器 样式 $:/tags/Stylesheet gdstudio
+title: 自定义音乐播放器样式css
+
+.gdstudio-mini-player {
+  display: flex;
+  align-items: center;
+  background: <<colour tiddler-background>>;
+  border: 1px solid <<colour tiddler-background>>;
+  border-radius: 48px;
+  padding: 4px;
+  width: 280px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: fixed;
+  bottom: 5px;
+  left: 5px;
+  height: 60px;
+}
+
+.gdstudio-mini-cover {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  margin-right: 5px;
+  flex-shrink: 0;
+}
+
+.gdstudio-mini-cover-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.gdstudio-mini-cover-img.spinning {
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* 修改后的播放按钮 - 完全透明 */
+.gdstudio-mini-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background: transparent; /* 完全透明背景 */
+  color: rgba(255, 255, 255, 0.9); /* 高对比度白色文字 */
+  border: none; /* 移除边框 */
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  text-shadow: 0 0 2px rgba(0,0,0,0.8); /* 添加阴影增强可见性 */
+}
+
+.gdstudio-mini-play-btn:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  color: rgba(255, 255, 255, 1);
+  text-shadow: 0 0 3px rgba(0,0,0,0.9);
+}
+
+.gdstudio-mini-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.gdstudio-music-name {
+  font-size: 0.8em;
+  font-weight: 500;
+  color: <<colour foreground>>;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;  
+}
+
+.gdstudio-mini-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+
+.gdstudio-progress-section {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+}
+
+.gdstudio-time {
+  font-size: 0.8em;
+  color: <<colour foreground>>;
+  min-width: 60px;
+  transform: translateY(-2.5px); /* 向上移动 */
+}
+
+.gdstudio-progress {
+  flex: 1;
+  height: 6px;
+  background: #bbb;
+  border-radius: 3px;
+  overflow: hidden;
+  opacity: 0.3;
+  cursor: pointer;
+  position: relative;
+}
+
+.gdstudio-progress-fill {
+  height: 100%;
+  background: #5797d8;
+  width: 0%;
+  transition: width 0.1s ease;
+}
+
+/* 分离的静音按钮 */
+.gdstudio-mute-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  background: transparent;
+  border: none;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #bbb;
+  transition: all 0.2s ease;
+}
+
+.gdstudio-mute-btn:hover {
+    background: #bbb;
+    color: #ffffff;
+}
+
+/* 分离的音量按钮 */
+.gdstudio-volume-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  background: transparent;
+  border: none;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #bbb;
+  transition: all 0.2s ease;
+  transform: translateX(-10px); /* 向左移动 */
+}
+
+.gdstudio-volume-btn:hover {
+    background: #bbb;
+    color: #ffffff;
+}
+
+.gdstudio-volume-panel {
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    background: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    padding: 8px 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(4px);
+    transition: all 0.2s ease;
+    z-index: 1000;
+}
+
+.gdstudio-volume-panel.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.gdstudio-volume-slider {
+    writing-mode: bt-lr;
+    -webkit-appearance: slider-vertical;
+    width: 20px;
+    height: 80px;
+    background: #bbb;
+    outline: none;
+    opacity: 0.3;
+    transition: opacity 0.2s;
+}
+
+.gdstudio-volume-slider:hover {
+    opacity: 1;
+}
+
+.gdstudio-volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #5797d8;
+  cursor: pointer;
+}
+
+.gdstudio-volume-slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #5797d8;
+  cursor: pointer;
+  border: none;
+}

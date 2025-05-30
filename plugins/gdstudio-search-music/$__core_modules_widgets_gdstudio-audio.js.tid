@@ -1,0 +1,407 @@
+created: 20250530105155960
+modified: 20250530130618574
+module-type: widget
+tags: gdstudio 音乐播放器
+title: $:/core/modules/widgets/gdstudio-audio.js
+type: application/javascript
+
+/*\
+title: $:/core/modules/widgets/gdstudio-audio.js
+type: application/javascript
+module-type: widget
+
+GDStudio Audio Widget - 迷你音频播放器
+\*/
+
+"use strict";
+
+var Widget = require("$:/core/modules/widgets/widget.js").widget;
+
+var GDStudioAudioWidget = function(parseTreeNode,options) {
+    this.initialise(parseTreeNode,options);
+};
+
+GDStudioAudioWidget.prototype = new Widget();
+
+GDStudioAudioWidget.prototype.execute = function() {
+    // 基本属性
+    this.coverUrl = this.getAttribute("cover-url", "");
+    this.musicUrl = this.getAttribute("music-url", "");
+    this.songName = this.getAttribute("song-name", "未知歌曲");
+    this.artist = this.getAttribute("artist", "未知歌手");
+    this.playerWidth = this.getAttribute("width", "280px");
+    this.progressHeight = this.getAttribute("progress-height", "6px");
+    
+    // 图标大小控制
+    this.iconSize = this.getAttribute("icon-size", "24px");
+    this.playIconSize = this.getAttribute("play-icon-size", this.iconSize);
+    this.pauseIconSize = this.getAttribute("pause-icon-size", this.iconSize);
+    this.muteIconSize = this.getAttribute("mute-icon-size", this.iconSize);
+    this.unmuteIconSize = this.getAttribute("unmute-icon-size", this.iconSize);
+    this.volumeIconSize = this.getAttribute("volume-icon-size", this.iconSize);
+    
+    // 图标条目引用
+    this.playIconTiddler = this.getAttribute("play-icon", "");
+    this.pauseIconTiddler = this.getAttribute("pause-icon", "");
+    this.muteIconTiddler = this.getAttribute("mute-icon", "");
+    this.unmuteIconTiddler = this.getAttribute("unmute-icon", "");
+    this.volumeIconTiddler = this.getAttribute("volume-icon", "");
+    
+    // 默认文本图标
+    this.defaultPlayIcon = "▶";
+    this.defaultPauseIcon = "⏸";
+    this.defaultMuteIcon = "🔇";
+    this.defaultUnmuteIcon = "🔊";
+    this.defaultVolumeIcon = "🎵";
+    
+    this.makeChildWidgets();
+};
+
+// 解析图标引用，支持 {{tiddler|size}} 语法
+GDStudioAudioWidget.prototype.parseIconReference = function(iconRef) {
+    if (!iconRef) return { tiddler: "", size: "" };
+    
+    // 检查是否是 {{tiddler|size}} 格式
+    var match = iconRef.match(/^\{\{([^|]+)(?:\|([^}]+))?\}\}$/);
+    if (match) {
+        return {
+            tiddler: match[1],
+            size: match[2] || ""
+        };
+    }
+    
+    // 普通的 tiddler 引用
+    return {
+        tiddler: iconRef,
+        size: ""
+    };
+};
+
+GDStudioAudioWidget.prototype.getIconContent = function(iconRef, defaultIcon, defaultSize) {
+    var parsed = this.parseIconReference(iconRef);
+    var tiddlerTitle = parsed.tiddler;
+    var iconSize = parsed.size || defaultSize;
+    
+    if (!tiddlerTitle) {
+        return defaultIcon;
+    }
+    
+    var tiddler = this.wiki.getTiddler(tiddlerTitle);
+    if (!tiddler || !tiddler.fields.text) {
+        return defaultIcon;
+    }
+    
+    var text = tiddler.fields.text;
+    
+    // 如果包含参数定义或变量引用，需要进行 wikify 处理
+    if (text.indexOf('\\parameters') !== -1 || text.indexOf('<<') !== -1) {
+        try {
+            // 解析文本为 parse tree
+            var parseTreeNode = this.wiki.parseText("text/vnd.tiddlywiki", text, {
+                parseAsInline: false
+            });
+            
+            // 创建渲染 widget
+            var renderWidget = this.wiki.makeWidget(parseTreeNode, {
+                parentWidget: this,
+                document: this.document
+            });
+            
+            // 设置大小参数
+            renderWidget.setVariable("size", iconSize);
+            
+            // 渲染到临时容器
+            var container = this.document.createElement("div");
+            renderWidget.render(container, null);
+            
+            // 返回渲染后的 HTML
+            return container.innerHTML;
+        } catch (e) {
+            console.error("Error rendering icon:", tiddlerTitle, e);
+            return defaultIcon;
+        }
+    }
+    
+    // 对于简单的 SVG，直接返回并设置大小
+    if (text.indexOf('<svg') !== -1 && iconSize) {
+        // 尝试在 SVG 中设置 width 和 height
+        var svgWithSize = text.replace(/<svg([^>]*)>/i, function(match, attrs) {
+            // 移除现有的 width 和 height 属性
+            attrs = attrs.replace(/\s*(width|height)\s*=\s*["'][^"']*["']/gi, '');
+            return '<svg' + attrs + ' width="' + iconSize + '" height="' + iconSize + '">';
+        });
+        return svgWithSize;
+    }
+    
+    return text;
+};
+
+// 创建统一的空白海报背景
+GDStudioAudioWidget.prototype.createDefaultCover = function() {
+    // 创建一个简单的灰色背景，而不是显示错误图片
+    return "data:image/svg+xml;charset=utf-8," + encodeURIComponent(
+    );
+};
+
+GDStudioAudioWidget.prototype.render = function(parent,nextSibling) {
+    var self = this;
+    this.parentDomNode = parent;
+    this.computeAttributes();
+    this.execute();
+    
+    // 创建主容器
+    var playerDiv = this.document.createElement("div");
+    playerDiv.className = "gdstudio-mini-player";
+    if(this.playerWidth !== "280px") playerDiv.style.width = this.playerWidth;
+    
+    // 海报容器
+    var coverContainer = this.document.createElement("div");
+    coverContainer.className = "gdstudio-mini-cover";
+    
+    var coverImg = this.document.createElement("img");
+    // 使用统一的默认背景而不是错误图片
+    coverImg.src = this.coverUrl || this.createDefaultCover();
+    coverImg.className = "gdstudio-mini-cover-img";
+    
+    // 添加错误处理，确保显示统一背景
+    coverImg.addEventListener("error", function() {
+        coverImg.src = self.createDefaultCover();
+    });
+    
+    var playButton = this.document.createElement("button");
+    playButton.className = "gdstudio-mini-play-btn";
+    playButton.innerHTML = this.getIconContent(this.playIconTiddler, this.defaultPlayIcon, this.playIconSize);
+    
+    coverContainer.appendChild(coverImg);
+    coverContainer.appendChild(playButton);
+    
+    // 信息区
+    var infoSection = this.document.createElement("div");
+    infoSection.className = "gdstudio-mini-info";
+    
+    var musicName = this.document.createElement("div");
+    musicName.className = "gdstudio-music-name";
+    musicName.textContent = this.songName + " - " + this.artist;
+    
+    // 控制区
+    var controls = this.document.createElement("div");
+    controls.className = "gdstudio-mini-controls";
+    
+    var progressSection = this.document.createElement("div");
+    progressSection.className = "gdstudio-progress-section";
+    
+    var timeDisplay = this.document.createElement("span");
+    timeDisplay.className = "gdstudio-time";
+    timeDisplay.textContent = "0:00/0:00";
+    
+    var progressBar = this.document.createElement("div");
+    progressBar.className = "gdstudio-progress";
+    if(this.progressHeight !== "6px") progressBar.style.height = this.progressHeight;
+    
+    var progressFill = this.document.createElement("div");
+    progressFill.className = "gdstudio-progress-fill";
+    progressBar.appendChild(progressFill);
+    
+    progressSection.appendChild(timeDisplay);
+    progressSection.appendChild(progressBar);
+    
+    // 分离的静音按钮
+    var muteBtn = this.document.createElement("button");
+    muteBtn.className = "gdstudio-mute-btn";
+    muteBtn.innerHTML = this.getIconContent(this.unmuteIconTiddler, this.defaultUnmuteIcon, this.unmuteIconSize);
+    
+    // 分离的音量按钮
+    var volumeBtn = this.document.createElement("button");
+    volumeBtn.className = "gdstudio-volume-btn";
+    volumeBtn.innerHTML = this.getIconContent(this.volumeIconTiddler, this.defaultVolumeIcon, this.volumeIconSize);
+    
+    var volumePanel = this.document.createElement("div");
+    volumePanel.className = "gdstudio-volume-panel";
+    
+    var volumeSlider = this.document.createElement("input");
+    volumeSlider.type = "range";
+    volumeSlider.min = "0";
+    volumeSlider.max = "100";
+    volumeSlider.value = "50";
+    volumeSlider.className = "gdstudio-volume-slider";
+    volumePanel.appendChild(volumeSlider);
+    
+    controls.appendChild(progressSection);
+    controls.appendChild(muteBtn);
+    controls.appendChild(volumeBtn);
+    controls.appendChild(volumePanel);
+    
+    infoSection.appendChild(musicName);
+    infoSection.appendChild(controls);
+    
+    // 音频元素
+    var audio = this.document.createElement("audio");
+    if(this.musicUrl) audio.src = this.musicUrl;
+    audio.preload = "metadata";
+    
+    playerDiv.appendChild(coverContainer);
+    playerDiv.appendChild(infoSection);
+    playerDiv.appendChild(audio);
+    
+    this.addEventListeners(playButton, audio, coverImg, progressFill, timeDisplay, volumeSlider, muteBtn, volumeBtn, volumePanel, progressBar);
+    
+    parent.insertBefore(playerDiv, nextSibling);
+    this.domNodes.push(playerDiv);
+};
+
+GDStudioAudioWidget.prototype.addEventListeners = function(playButton, audio, coverImg, progressFill, timeDisplay, volumeSlider, muteBtn, volumeBtn, volumePanel, progressBar) {
+    var self = this;
+    var isPlaying = false;
+    var volumeVisible = false;
+    var isDragging = false;
+    var isMuted = false;
+    var previousVolume = 0.5;
+    
+    // 播放控制
+    playButton.addEventListener("click", function(e) {
+        e.preventDefault();
+        if (!audio.src) return;
+        
+        if (isPlaying) {
+            audio.pause();
+            playButton.innerHTML = self.getIconContent(self.playIconTiddler, self.defaultPlayIcon, self.playIconSize);
+            coverImg.classList.remove("spinning");
+        } else {
+            audio.play().catch(function(error) {
+                console.error("Audio play failed:", error);
+            });
+            playButton.innerHTML = self.getIconContent(self.pauseIconTiddler, self.defaultPauseIcon, self.pauseIconSize);
+            coverImg.classList.add("spinning");
+        }
+        isPlaying = !isPlaying;
+    });
+    
+    // 时间更新
+    audio.addEventListener("timeupdate", function() {
+        if (audio.duration && !isNaN(audio.duration)) {
+            var progress = (audio.currentTime / audio.duration) * 100;
+            progressFill.style.width = progress + "%";
+            
+            var currentMin = Math.floor(audio.currentTime / 60);
+            var currentSec = Math.floor(audio.currentTime % 60);
+            var totalMin = Math.floor(audio.duration / 60);
+            var totalSec = Math.floor(audio.duration % 60);
+            
+            timeDisplay.textContent = currentMin + ":" + (currentSec < 10 ? "0" : "") + currentSec + 
+                                    "/" + totalMin + ":" + (totalSec < 10 ? "0" : "") + totalSec;
+        }
+    });
+    
+    audio.addEventListener("loadedmetadata", function() {
+        if (audio.duration && !isNaN(audio.duration)) {
+            var totalMin = Math.floor(audio.duration / 60);
+            var totalSec = Math.floor(audio.duration % 60);
+            timeDisplay.textContent = "0:00/" + totalMin + ":" + (totalSec < 10 ? "0" : "") + totalSec;
+        }
+    });
+    
+    // 进度条拖动
+    progressBar.addEventListener("click", function(e) {
+        if (audio.duration) {
+            var rect = progressBar.getBoundingClientRect();
+            var clickX = e.clientX - rect.left;
+            audio.currentTime = (clickX / rect.width) * audio.duration;
+        }
+    });
+    
+    progressBar.addEventListener("mousedown", function(e) {
+        isDragging = true;
+        e.preventDefault();
+    });
+    
+    self.document.addEventListener("mousemove", function(e) {
+        if (isDragging && audio.duration) {
+            var rect = progressBar.getBoundingClientRect();
+            var clickX = e.clientX - rect.left;
+            audio.currentTime = Math.max(0, Math.min((clickX / rect.width) * audio.duration, audio.duration));
+        }
+    });
+    
+    self.document.addEventListener("mouseup", function() {
+        isDragging = false;
+    });
+    
+    // 分离的静音控制
+    muteBtn.addEventListener("click", function(e) {
+        e.preventDefault();
+        
+        if (isMuted) {
+            // 取消静音
+            audio.volume = previousVolume;
+            volumeSlider.value = previousVolume * 100;
+            muteBtn.innerHTML = self.getIconContent(self.unmuteIconTiddler, self.defaultUnmuteIcon, self.unmuteIconSize);
+            isMuted = false;
+        } else {
+            // 静音
+            previousVolume = audio.volume;
+            audio.volume = 0;
+            volumeSlider.value = 0;
+            muteBtn.innerHTML = self.getIconContent(self.muteIconTiddler, self.defaultMuteIcon, self.muteIconSize);
+            isMuted = true;
+        }
+    });
+    
+    // 分离的音量面板控制
+    volumeBtn.addEventListener("click", function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        // 切换音量面板显示
+        volumeVisible = !volumeVisible;
+        volumePanel.classList.toggle("visible", volumeVisible);
+    });
+    
+    volumeSlider.addEventListener("input", function() {
+        var volume = this.value / 100;
+        audio.volume = volume;
+        
+        if (volume === 0) {
+            muteBtn.innerHTML = self.getIconContent(self.muteIconTiddler, self.defaultMuteIcon, self.muteIconSize);
+            isMuted = true;
+        } else {
+            muteBtn.innerHTML = self.getIconContent(self.unmuteIconTiddler, self.defaultUnmuteIcon, self.unmuteIconSize);
+            isMuted = false;
+            if (volume > 0) {
+                previousVolume = volume;
+            }
+        }
+    });
+    
+    // 点击外部关闭音量面板
+    self.document.addEventListener("click", function(e) {
+        if (!volumeBtn.contains(e.target) && !volumePanel.contains(e.target)) {
+            volumeVisible = false;
+            volumePanel.classList.remove("visible");
+        }
+    });
+    
+    // 播放结束
+    audio.addEventListener("ended", function() {
+        playButton.innerHTML = self.getIconContent(self.playIconTiddler, self.defaultPlayIcon, self.playIconSize);
+        coverImg.classList.remove("spinning");
+        isPlaying = false;
+    });
+    
+    audio.addEventListener("error", function(e) {
+        console.error("Audio error:", e);
+        playButton.innerHTML = self.getIconContent(self.playIconTiddler, self.defaultPlayIcon, self.playIconSize);
+        coverImg.classList.remove("spinning");
+        isPlaying = false;
+    });
+};
+
+GDStudioAudioWidget.prototype.refresh = function(changedTiddlers) {
+    var changedAttributes = this.computeAttributes();
+    if (Object.keys(changedAttributes).length > 0) {
+        this.refreshSelf();
+        return true;
+    }
+    return this.refreshChildren(changedTiddlers);
+};
+
+exports["gdstudio-audio"] = GDStudioAudioWidget;
