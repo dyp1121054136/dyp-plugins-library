@@ -36,7 +36,7 @@ display: none; / Chrome, Safari, Opera /
   left: 0px;
   z-index: 999;
   display: inline-block; /* 或 display: block; */
-  max-width: 180px;
+  max-width: 220px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
