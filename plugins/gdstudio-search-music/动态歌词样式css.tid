@@ -6,12 +6,8 @@ title: 动态歌词样式css
 .lyric-display-container {  
     text-align: center;  
     padding: 20px;  
-    max-height: 150px;  
     overflow: hidden;  
     position: fixed;  
-    top: auto;  
-    left: 10px;  
-    bottom: 80px;  
     min-width: 300px;  
     font-family: "FZYUEKZJW-H";
     display: inline-block; /* 或 display: block; */
@@ -33,6 +29,38 @@ title: 动态歌词样式css
 .lyric-current {  
     opacity: 1;  
     font-weight: bold;  
-    color: <<colour primary>>;  
+    color: #5797d8;  
     font-size: 1.1em;  
+}
+
+/* 定义大屏宽度 */
+.large-screen {
+  width: 1000px;
+}
+
+/* 定义小屏宽度 */
+.small-screen {
+  width: 350px;
+}
+
+/* 媒体查询，大屏 */
+@media (min-width: 768px) {
+.lyric-display-container {
+  left: 10px;
+  bottom: 80px;  
+  max-height: 150px;  
+}
+}
+
+/* 媒体查询，小屏 */
+@media (max-width: 767px) {
+.lyric-display-container {
+  left: 20%;
+  top: -50px;
+  max-height: 100px;
+}.lyric-line {  
+    opacity: 0;  
+}.lyric-current {  
+    opacity: 1;  
+}  
 }
