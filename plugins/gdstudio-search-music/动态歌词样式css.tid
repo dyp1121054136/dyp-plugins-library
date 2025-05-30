@@ -55,8 +55,8 @@ title: 动态歌词样式css
 /* 媒体查询，小屏 */
 @media (max-width: 767px) {
 .lyric-display-container {
-  left: 20%;
-  top: -50px;
+  left: 5%;
+  top: -30px;
   max-height: 100px;
 }.lyric-line {  
     opacity: 0;  
