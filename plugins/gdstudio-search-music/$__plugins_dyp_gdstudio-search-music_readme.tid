@@ -6,10 +6,14 @@ type: text/vnd.tiddlywiki
 
 ; GD音乐库在线听歌
 
-使用gdstudio-api搭建的音乐播放器，可以搜索歌曲并播放。
+使用gdstudio-api搭建的音乐播放器，可以搜索歌曲并播放，支持动态歌词。
 
 gdstudio-api源网站：
 
 https://music.gdstudio.xyz
 
 https://space.bilibili.com/13715770
+
+目前稳定维护的音乐源有：网易云、QQ、酷我、Tidal、Qobuz
+
+测试音乐源，不保证可用：喜马FM、咪咕、酷狗、油管、Spotify
