@@ -1,0 +1,38 @@
+created: 20250531103100797
+modified: 20250531103834367
+tags: 音乐播放器 样式 $:/tags/Stylesheet gdstudio
+title: 自定义音乐播放器补充样式css
+
+/* 定义大屏宽度 */
+.large-screen {
+  width: 1000px;
+}
+
+/* 定义小屏宽度 */
+.small-screen {
+  width: 350px;
+}
+
+/* 媒体查询，大屏 */
+@media (min-width: 768px) {
+
+}
+
+/* 媒体查询，小屏 */
+@media (max-width: 767px) {
+.gdstudio-mini-player {
+  width: 58px;
+}
+
+.gdstudio-mini-cover {
+  margin-right: 8px;
+}
+
+.gdstudio-time {
+  font-size: 0.7em;
+}
+
+.gdstudio-volume-panel.visible {
+    transform: translateX(93px);
+}
+}
