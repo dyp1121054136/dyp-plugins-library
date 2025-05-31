@@ -83,6 +83,17 @@ GDStudioAudioWidget.prototype.render = function(parent,nextSibling) {
     var progressFill = this.document.createElement("div");
     progressFill.className = "gdstudio-progress-fill";
     progressBar.appendChild(progressFill);
+
+// 添加点击事件监听器，允许用户手动调节播放位置
+progressBar.addEventListener("click", function(e) {  
+    if (audio.duration) {  
+        var rect = progressBar.getBoundingClientRect();  
+        var clickX = e.clientX - rect.left;  
+        var percentage = clickX / rect.width;  
+        var newTime = percentage * audio.duration;  
+        audio.currentTime = newTime;  
+    }  
+});
     
     // 合并的音量控制按钮
 // 音量的 SVG 代码，从条目text获取
