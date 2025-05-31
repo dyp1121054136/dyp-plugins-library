@@ -87,6 +87,7 @@ title: 自定义音乐播放器样式css
   overflow: hidden;
   text-overflow: ellipsis;
   text-align: center;  
+  transform: translateY(20px); /* 向下移动 */
 }
 
 .gdstudio-mini-controls {
