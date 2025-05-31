@@ -68,8 +68,4 @@ title: 动态歌词样式css
 .lyric-line.lyric-current {  
     opacity: 1;  
 }  
-
-.gdstudio-music-name {
-  transform: translateY(20px); /* 向下移动 */
-}
 }
