@@ -56,11 +56,16 @@ title: 动态歌词样式css
 @media (max-width: 767px) {
 .lyric-display-container {
   left: 5%;
-  top: -30px;
+  top: 0px;
   max-height: 100px;
-}.lyric-line {  
+  transform: translateY(-0px); /* 向上移动 */
+}
+
+.lyric-line {  
     opacity: 0;  
-}.lyric-current {  
+}
+
+.lyric-line.lyric-current {  
     opacity: 1;  
 }  
 
