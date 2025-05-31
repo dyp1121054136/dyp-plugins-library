@@ -176,7 +176,7 @@ title: 自定义音乐播放器样式css
     bottom: 100%;
     right: 0;
     background: #ffffff;
-    border: 1px solid #ffffff;
+    border: 1px solid #ddd;
     border-radius: 8px;
     padding: 8px 4px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
