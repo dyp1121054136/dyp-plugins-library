@@ -127,13 +127,8 @@ GDStudioAudioWidget.prototype.render = function(parent,nextSibling) {
     var previousVolume = 0.5;
     
     // 播放控制
-// 暂停播放的 SVG 代码
-const customSvg = `
-  <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-pause-circle" viewBox="0 0 16 16">
-  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
-  <path d="M5 6.25a1.25 1.25 0 1 1 2.5 0v3.5a1.25 1.25 0 1 1-2.5 0zm3.5 0a1.25 1.25 0 1 1 2.5 0v3.5a1.25 1.25 0 1 1-2.5 0z"/>
-</svg>
-`;
+// 暂停播放的 SVG 代码，从条目text获取
+const pauseSvg = this.wiki.getTiddlerText("$:/core/images/gdstudio-pause-music");
     playButton.addEventListener("click", function() {
         if (!audio.src) return;
         if (isPlaying) {
@@ -142,7 +137,7 @@ const customSvg = `
             coverImg.classList.remove("spinning");
         } else {
             audio.play();
-            playButton.innerHTML = customSvg;
+            playButton.innerHTML = pauseSvg;
             coverImg.classList.add("spinning");
         }
         isPlaying = !isPlaying;
