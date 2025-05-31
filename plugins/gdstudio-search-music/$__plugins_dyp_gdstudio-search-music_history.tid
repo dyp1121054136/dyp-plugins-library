@@ -4,6 +4,10 @@ tags:
 title: $:/plugins/dyp/gdstudio-search-music/history
 type: text/vnd.tiddlywiki
 
+; v.0.0.5 2025-05-31
+
+# 精简audio widget，禁音和音量控制按钮合为一个；
+
 ; v.0.0.4 2025-05-30
 
 音乐播放器audio组件完全重构，新增滚动唱片式海报动画，新增widget：
