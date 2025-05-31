@@ -85,9 +85,11 @@ GDStudioAudioWidget.prototype.render = function(parent,nextSibling) {
     progressBar.appendChild(progressFill);
     
     // 合并的音量控制按钮
+// 音量的 SVG 代码，从条目text获取
+const volumeSvg = this.wiki.getTiddlerText("$:/core/images/volume");
     var volumeBtn = this.document.createElement("button");
     volumeBtn.className = "gdstudio-volume-btn";
-    volumeBtn.innerHTML = "🔊";
+    volumeBtn.innerHTML = volumeSvg;
     
     // 音量面板
     var volumePanel = this.document.createElement("div");
