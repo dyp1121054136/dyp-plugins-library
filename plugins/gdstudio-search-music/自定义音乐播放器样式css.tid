@@ -246,6 +246,6 @@ title: 自定义音乐播放器样式css
     transform: scale(1.5); /* 放大 1.5 倍 */
     transform-origin: center; /* 放大中心点 */
     transition: all 0.3s ease; /* 可选：让放大更平滑 */
-  fill: black;
-  opacity: 0.5;
+  fill: <<colour foreground>>;
+  opacity: 0.8;
 }
