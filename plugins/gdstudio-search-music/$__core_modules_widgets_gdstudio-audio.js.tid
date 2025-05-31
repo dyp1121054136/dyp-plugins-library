@@ -160,7 +160,7 @@ const pauseSvg = this.wiki.getTiddlerText("$:/core/images/gdstudio-pause-music")
                 // 取消静音
                 audio.volume = previousVolume;
                 volumeSlider.value = previousVolume * 100;
-                volumeBtn.innerHTML = "🔊";
+                volumeBtn.innerHTML = volumeSvg;
                 isMuted = false;
             } else {
                 // 静音
@@ -182,7 +182,7 @@ const pauseSvg = this.wiki.getTiddlerText("$:/core/images/gdstudio-pause-music")
             volumeBtn.innerHTML = "🔇";
             isMuted = true;
         } else {
-            volumeBtn.innerHTML = "🔊";
+            volumeBtn.innerHTML = volumeSvg;
             isMuted = false;
             if (volume > 0) {
                 previousVolume = volume;
