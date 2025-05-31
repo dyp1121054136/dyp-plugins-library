@@ -226,3 +226,14 @@ title: 自定义音乐播放器样式css
   cursor: pointer;
   border: none;
 }
+
+.bi.bi-pause-circle {
+    display: block;
+    width: 40px;  /* 保持原始宽度 */
+    height: 40px; /* 保持原始高度 */
+    transform: scale(1.5); /* 放大 1.5 倍 */
+    transform-origin: center; /* 放大中心点 */
+    transition: all 0.3s ease; /* 可选：让放大更平滑 */
+  fill: white;
+  opacity: 0.5;
+}
