@@ -1,0 +1,8 @@
+created: 20250602074254547
+modified: 20250602074431713
+tags: $:/tags/PageTemplate
+title: 调用自定义播放器-固定页面
+
+<div class="gdstudio-audio-position">
+<$transclude tiddler="调用自定义播放器"/>
+</div>
