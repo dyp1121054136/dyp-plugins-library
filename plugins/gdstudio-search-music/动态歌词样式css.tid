@@ -61,11 +61,16 @@ title: 动态歌词样式css
   transform: translateY(-0px); /* 向上移动 */
 }
 
-.lyric-line {  
-    opacity: 0;  
-}
-
-.lyric-line.lyric-current {  
+  /* 默认隐藏所有歌词行 */  
+  .lyric-display-container .lyric-line {    
+    visibility: hidden;  
+    position: absolute;  
+  }  
+  
+  /* 只显示当前高亮行 */  
+  .lyric-display-container .lyric-line.lyric-current {    
+    visibility: visible;  
+    position: relative;  
     opacity: 1;  
-}  
+  } 
 }
