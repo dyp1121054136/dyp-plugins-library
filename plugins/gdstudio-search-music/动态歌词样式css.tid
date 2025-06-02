@@ -33,6 +33,16 @@ title: 动态歌词样式css
     font-size: 1.1em;  
 }
 
+.lyric-display-container.single-line-mode {  
+    text-align: center;  
+    min-height: 2em;  
+}  
+  
+.lyric-display-container.single-line-mode .lyric-line {  
+    text-align: center;  
+    font-size: 1.2em;  
+}
+
 /* 定义大屏宽度 */
 .large-screen {
   width: 1000px;
@@ -61,16 +71,4 @@ title: 动态歌词样式css
   transform: translateY(-0px); /* 向上移动 */
 }
 
-  /* 默认隐藏所有歌词行 */  
-  .lyric-display-container .lyric-line {    
-    visibility: hidden;  
-    position: absolute;  
-  }  
-  
-  /* 只显示当前高亮行 */  
-  .lyric-display-container .lyric-line.lyric-current {    
-    visibility: visible;  
-    position: relative;  
-    opacity: 1;  
-  } 
 }
