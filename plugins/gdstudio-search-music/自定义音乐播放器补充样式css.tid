@@ -26,19 +26,19 @@ title: 自定义音乐播放器补充样式css
 
 /* 媒体查询，小屏 */
 @media (max-width: 767px) {
-.gdstudio-mini-player {
-  width: 58px;
+.gdstudio-audio-position .gdstudio-mini-player {
+  width: 158px;
 }
 
-.gdstudio-mini-cover {
+.gdstudio-audio-position .gdstudio-mini-cover {
   margin-right: 8px;
 }
 
-.gdstudio-time {
+.gdstudio-audio-position .gdstudio-time {
   font-size: 0.7em;
 }
 
-.gdstudio-volume-panel.visible {
-    transform: translateX(93px);
+.gdstudio-audio-position .gdstudio-volume-panel.visible {
+    transform: translateX(23px);
 }
 }
