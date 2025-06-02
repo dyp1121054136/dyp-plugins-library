@@ -6,8 +6,7 @@ title: 动态歌词样式css
 .lyric-display-container {  
     text-align: center;  
     padding: 20px;  
-    overflow: hidden;  
-    position: fixed;  
+    overflow: hidden;
     min-width: 300px;  
     font-family: "FZYUEKZJW-H";
     display: inline-block; /* 或 display: block; */
@@ -15,7 +14,11 @@ title: 动态歌词样式css
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-}  
+}
+
+.gdstudio-audio-position .lyric-display-container {
+  position: fixed;  
+}
   
 .lyric-line {  
     padding: 2px 0; /* 紧凑的 padding */  
@@ -54,7 +57,7 @@ title: 动态歌词样式css
 
 /* 媒体查询，大屏 */
 @media (min-width: 768px) {
-.lyric-display-container {
+.gdstudio-audio-position .lyric-display-container {
   left: 10px;
   bottom: 80px;  
   max-height: 150px;  
@@ -63,7 +66,7 @@ title: 动态歌词样式css
 
 /* 媒体查询，小屏 */
 @media (max-width: 767px) {
-.lyric-display-container {
+.gdstudio-audio-position .lyric-display-container {
   left: 5%;
   top: 0px;
   max-height: 100px;
