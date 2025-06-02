@@ -5,185 +5,207 @@ tags: 动态歌词 gdstudio
 title: $:/core/modules/widgets/lyric-display.js
 type: application/javascript
 
-/*\  
-title: $:/core/modules/widgets/lyric-display.js  
-type: application/javascript  
-module-type: widget  
+/*\    
+title: $:/core/modules/widgets/lyric-display.js    
+type: application/javascript    
+module-type: widget    
+    
+歌词显示widget    
+\*/    
+"use strict";    
+    
+var Widget = require("$:/core/modules/widgets/widget.js").widget;    
+    
+var LyricDisplayWidget = function(parseTreeNode,options) {    
+    this.initialise(parseTreeNode,options);    
+};    
+    
+LyricDisplayWidget.prototype = new Widget();    
+    
+LyricDisplayWidget.prototype.render = function(parent,nextSibling) {    
+    this.parentDomNode = parent;    
+    this.computeAttributes();    
+    this.execute();    
+    this.domNode = this.document.createElement("div");    
+    this.domNode.className = this.getSingleLineMode() ? "lyric-display-container single-line-mode" : "lyric-display-container";    
+    this.domNode.style.overflow = "hidden";    
+        
+    // 创建滚动容器    
+    this.scrollContainer = this.document.createElement("div");    
+    this.scrollContainer.style.transition = "transform 0.3s ease";    
+    this.scrollContainer.style.transform = "translateY(0px)";    
+    this.domNode.appendChild(this.scrollContainer);    
+        
+    parent.insertBefore(this.domNode,nextSibling);    
+    this.domNodes.push(this.domNode);    
+        
+    this.updateDisplay();    
+};    
+    
+LyricDisplayWidget.prototype.execute = function() {    
+    this.lyricTiddler = this.getAttribute("lyric-tiddler");    
+    this.showLines = parseInt(this.getAttribute("show-lines", "3"));    
+    this.singleLineMode = this.getAttribute("single-line-mode", "no");    
+    this.currentLineState = this.getAttribute("current-line-state", "$:/state/gdstudio-api/current-lyric-line");    
+    this.parsedLyrics = this.parseLyrics();    
+    this.lastCurrentLineIndex = -1;    
+};    
   
-歌词显示widget  
-\*/  
-"use strict";  
-  
-var Widget = require("$:/core/modules/widgets/widget.js").widget;  
-  
-var LyricDisplayWidget = function(parseTreeNode,options) {  
-    this.initialise(parseTreeNode,options);  
+LyricDisplayWidget.prototype.getSingleLineMode = function() {  
+    return this.singleLineMode === "yes" || this.singleLineMode === "true";  
 };  
   
-LyricDisplayWidget.prototype = new Widget();  
-  
-LyricDisplayWidget.prototype.render = function(parent,nextSibling) {  
-    this.parentDomNode = parent;  
-    this.computeAttributes();  
-    this.execute();  
-    this.domNode = this.document.createElement("div");  
-    this.domNode.className = "lyric-display-container";  
-    this.domNode.style.overflow = "hidden";  
-      
-    // 创建滚动容器  
-    this.scrollContainer = this.document.createElement("div");  
-    this.scrollContainer.style.transition = "transform 0.3s ease";  
-    this.scrollContainer.style.transform = "translateY(0px)";  
-    this.domNode.appendChild(this.scrollContainer);  
-      
-    parent.insertBefore(this.domNode,nextSibling);  
-    this.domNodes.push(this.domNode);  
-      
-    this.updateDisplay();  
+LyricDisplayWidget.prototype.isSmallScreen = function() {  
+    return window.innerWidth <= 767;  
 };  
   
-LyricDisplayWidget.prototype.execute = function() {  
-    this.lyricTiddler = this.getAttribute("lyric-tiddler");  
-    this.showLines = parseInt(this.getAttribute("show-lines", "3"));  
-    this.currentLineState = this.getAttribute("current-line-state", "$:/state/gdstudio-api/current-lyric-line");  
-    this.parsedLyrics = this.parseLyrics();  
-    this.lastCurrentLineIndex = -1;  
+LyricDisplayWidget.prototype.shouldShowOnlyCurrentLine = function() {  
+    return this.getSingleLineMode() || this.isSmallScreen();  
 };  
-  
-LyricDisplayWidget.prototype.getLineHeight = function() {  
-    // 如果已经有歌词行，直接使用第一行的高度  
-    if (this.scrollContainer.children.length > 0) {  
-        return this.scrollContainer.children[0].offsetHeight;  
+    
+LyricDisplayWidget.prototype.getLineHeight = function() {    
+    // 如果已经有歌词行，直接使用第一行的高度    
+    if (this.scrollContainer.children.length > 0) {    
+        return this.scrollContainer.children[0].offsetHeight;    
+    }    
+        
+    // 否则创建临时元素    
+    var tempElement = this.document.createElement("div");    
+    tempElement.className = "lyric-line";    
+    tempElement.style.visibility = "hidden";    
+    tempElement.style.position = "absolute";    
+    tempElement.style.top = "-9999px";    
+    tempElement.textContent = "测试文本";    
+        
+    this.domNode.appendChild(tempElement);    
+    var actualHeight = tempElement.offsetHeight;    
+    this.domNode.removeChild(tempElement);    
+        
+    return actualHeight || 40;    
+};    
+    
+LyricDisplayWidget.prototype.parseLyrics = function() {    
+    if (!this.lyricTiddler) return [];    
+    var lyricText = this.wiki.getTiddlerText(this.lyricTiddler, "");    
+    return lyricText.split('\n')    
+        .map(function(line) {    
+            var match = line.match(/^\[([0-9]{2}):([0-9]{2})\.([0-9]{1,9})\]\s*(.*)$/);    
+            if (!match) return null;    
+            var timeInSeconds = parseInt(match[1]) * 60 + parseInt(match[2]) + parseInt(match[3]) / Math.pow(10, match[3].length);    
+            return {    
+                time: timeInSeconds,    
+                text: match[4]    
+            };    
+        })    
+        .filter(Boolean)    
+        .sort(function(a, b) {    
+            return a.time - b.time;    
+        });    
+};    
+    
+LyricDisplayWidget.prototype.updateDisplay = function() {    
+    if (!this.domNode || !this.scrollContainer) return;    
+        
+    if (this.parsedLyrics.length === 0) {    
+        this.scrollContainer.innerHTML = "";    
+        this.scrollContainer.textContent = "无歌词";    
+        return;    
+    }    
+        
+    var currentLineIndex = parseInt(this.wiki.getTiddlerText(this.currentLineState, "-1"));    
+        
+    if (this.shouldShowOnlyCurrentLine()) {  
+        // 单行模式：重新渲染当前行  
+        if (currentLineIndex !== this.lastCurrentLineIndex) {  
+            this.renderCurrentLineOnly(currentLineIndex);  
+        }  
+    } else {  
+        // 多行模式：原有逻辑  
+        if (this.scrollContainer.children.length === 0) {    
+            this.renderAllLyrics();    
+        }    
+            
+        if (!this.lineHeight) {    
+            this.lineHeight = this.getLineHeight();    
+        }    
+            
+        this.updateHighlight(currentLineIndex);    
+            
+        if (currentLineIndex >= 0 && currentLineIndex !== this.lastCurrentLineIndex) {    
+            this.scrollToLine(currentLineIndex);    
+        }    
     }  
-      
-    // 否则创建临时元素  
-    var tempElement = this.document.createElement("div");  
-    tempElement.className = "lyric-line";  
-    tempElement.style.visibility = "hidden";  
-    tempElement.style.position = "absolute";  
-    tempElement.style.top = "-9999px";  
-    tempElement.textContent = "测试文本";  
-      
-    this.domNode.appendChild(tempElement);  
-    var actualHeight = tempElement.offsetHeight;  
-    this.domNode.removeChild(tempElement);  
-      
-    return actualHeight || 40;  
-};  
+        
+    this.lastCurrentLineIndex = currentLineIndex;    
+};    
   
-LyricDisplayWidget.prototype.parseLyrics = function() {  
-    if (!this.lyricTiddler) return [];  
-    var lyricText = this.wiki.getTiddlerText(this.lyricTiddler, "");  
-    return lyricText.split('\n')  
-        .map(function(line) {  
-            var match = line.match(/^\[([0-9]{2}):([0-9]{2})\.([0-9]{1,9})\]\s*(.*)$/);  
-            if (!match) return null;  
-            var timeInSeconds = parseInt(match[1]) * 60 + parseInt(match[2]) + parseInt(match[3]) / Math.pow(10, match[3].length);  
-            return {  
-                time: timeInSeconds,  
-                text: match[4]  
-            };  
-        })  
-        .filter(Boolean)  
-        .sort(function(a, b) {  
-            return a.time - b.time;  
-        });  
-};  
-  
-LyricDisplayWidget.prototype.updateDisplay = function() {  
-    if (!this.domNode || !this.scrollContainer) return;  
-      
-    if (this.parsedLyrics.length === 0) {  
-        this.scrollContainer.innerHTML = "";  
-        this.scrollContainer.textContent = "无歌词";  
-        return;  
-    }  
-      
-    var currentLineIndex = parseInt(this.wiki.getTiddlerText(this.currentLineState, "-1"));  
-      
-    // 如果是第一次渲染，创建所有歌词行  
-    if (this.scrollContainer.children.length === 0) {  
-        this.renderAllLyrics();  
-    }  
-      
-    // 确保行高已设置（无论是否第一次渲染）  
-    if (!this.lineHeight) {  
-        this.lineHeight = this.getLineHeight();  
-    }  
-      
-    // 更新高亮状态  
-    this.updateHighlight(currentLineIndex);  
-      
-    // 计算滚动位置  
-    if (currentLineIndex >= 0 && currentLineIndex !== this.lastCurrentLineIndex) {  
-        this.scrollToLine(currentLineIndex);  
-    }  
-      
-    this.lastCurrentLineIndex = currentLineIndex;  
-};  
-  
-LyricDisplayWidget.prototype.renderAllLyrics = function() {  
+LyricDisplayWidget.prototype.renderCurrentLineOnly = function(currentLineIndex) {  
     this.scrollContainer.innerHTML = "";  
-    for (var i = 0; i < this.parsedLyrics.length; i++) {  
+    if (currentLineIndex >= 0 && currentLineIndex < this.parsedLyrics.length) {  
         var lineDiv = this.document.createElement("div");  
-        lineDiv.className = "lyric-line";  
-        lineDiv.textContent = this.parsedLyrics[i].text;  
-        lineDiv.setAttribute("data-line-index", i);  
+        lineDiv.className = "lyric-line lyric-current";  
+        lineDiv.textContent = this.parsedLyrics[currentLineIndex].text;  
         this.scrollContainer.appendChild(lineDiv);  
     }  
 };  
-  
-LyricDisplayWidget.prototype.updateHighlight = function(currentLineIndex) {  
-    var lines = this.scrollContainer.querySelectorAll('.lyric-line');  
-    for (var i = 0; i < lines.length; i++) {  
-        var line = lines[i];  
-        if (i === currentLineIndex) {  
-            line.className = "lyric-line lyric-current";  
-        } else {  
-            line.className = "lyric-line";  
-        }  
-    }  
-};  
-  
-LyricDisplayWidget.prototype.scrollToLine = function(lineIndex) {  
-    if (lineIndex < 0) return;  
-      
-    // 确保行高已设置  
-    if (!this.lineHeight) {  
-        this.lineHeight = this.getLineHeight();  
-    }  
-      
-    // 计算目标位置，让当前行显示在中间  
-    var centerOffset = Math.floor(this.showLines / 2);  
-    var targetOffset = (lineIndex - centerOffset) * this.lineHeight;  
-      
-    // 限制滚动范围  
-    var maxOffset = Math.max(0, (this.parsedLyrics.length - this.showLines) * this.lineHeight);  
-    targetOffset = Math.max(0, Math.min(targetOffset, maxOffset));  
-      
-    // 应用滚动动画  
-    this.scrollContainer.style.transform = "translateY(-" + targetOffset + "px)";  
-};  
-  
-LyricDisplayWidget.prototype.refresh = function(changedTiddlers) {  
-    var changedAttributes = this.computeAttributes();  
-      
-    // 如果歌词内容变化，需要完全刷新  
-    if (changedAttributes["lyric-tiddler"] || changedTiddlers[this.lyricTiddler]) {  
-        this.refreshSelf();  
-        return true;  
-    }  
-      
-    // 如果只是当前行变化，只更新显示  
-    if (changedTiddlers[this.currentLineState]) {  
-        var currentLineIndex = parseInt(this.wiki.getTiddlerText(this.currentLineState, "-1"));  
-        if (currentLineIndex !== this.lastCurrentLineIndex) {  
-            this.updateDisplay();  
-        }  
-        return true;  
-    }  
-      
-    return false;  
-};  
-  
+    
+LyricDisplayWidget.prototype.renderAllLyrics = function() {    
+    this.scrollContainer.innerHTML = "";    
+    for (var i = 0; i < this.parsedLyrics.length; i++) {    
+        var lineDiv = this.document.createElement("div");    
+        lineDiv.className = "lyric-line";    
+        lineDiv.textContent = this.parsedLyrics[i].text;    
+        lineDiv.setAttribute("data-line-index", i);    
+        this.scrollContainer.appendChild(lineDiv);    
+    }    
+};    
+    
+LyricDisplayWidget.prototype.updateHighlight = function(currentLineIndex) {    
+    var lines = this.scrollContainer.querySelectorAll('.lyric-line');    
+    for (var i = 0; i < lines.length; i++) {    
+        var line = lines[i];    
+        if (i === currentLineIndex) {    
+            line.className = "lyric-line lyric-current";    
+        } else {    
+            line.className = "lyric-line";    
+        }    
+    }    
+};    
+    
+LyricDisplayWidget.prototype.scrollToLine = function(lineIndex) {    
+    if (lineIndex < 0) return;    
+        
+    if (!this.lineHeight) {    
+        this.lineHeight = this.getLineHeight();    
+    }    
+        
+    var centerOffset = Math.floor(this.showLines / 2);    
+    var targetOffset = (lineIndex - centerOffset) * this.lineHeight;    
+        
+    var maxOffset = Math.max(0, (this.parsedLyrics.length - this.showLines) * this.lineHeight);    
+    targetOffset = Math.max(0, Math.min(targetOffset, maxOffset));    
+        
+    this.scrollContainer.style.transform = "translateY(-" + targetOffset + "px)";    
+};    
+    
+LyricDisplayWidget.prototype.refresh = function(changedTiddlers) {    
+    var changedAttributes = this.computeAttributes();    
+        
+    if (changedAttributes["lyric-tiddler"] || changedTiddlers[this.lyricTiddler] ||   
+        changedAttributes["single-line-mode"]) {    
+        this.refreshSelf();    
+        return true;    
+    }    
+        
+    if (changedTiddlers[this.currentLineState]) {    
+        var currentLineIndex = parseInt(this.wiki.getTiddlerText(this.currentLineState, "-1"));    
+        if (currentLineIndex !== this.lastCurrentLineIndex) {    
+            this.updateDisplay();    
+        }    
+        return true;    
+    }    
+        
+    return false;    
+};    
+    
 exports["lyric-display"] = LyricDisplayWidget;
