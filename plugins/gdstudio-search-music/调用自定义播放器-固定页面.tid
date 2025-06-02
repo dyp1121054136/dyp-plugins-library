@@ -5,4 +5,5 @@ title: 调用自定义播放器-固定页面
 
 <div class="gdstudio-audio-position">
 <$transclude tiddler="调用自定义播放器"/>
+<$transclude tiddler="添加歌词同步功能"/>
 </div>
