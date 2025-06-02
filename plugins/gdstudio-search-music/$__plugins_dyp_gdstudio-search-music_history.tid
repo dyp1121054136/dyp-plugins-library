@@ -4,6 +4,12 @@ tags:
 title: $:/plugins/dyp/gdstudio-search-music/history
 type: text/vnd.tiddlywiki
 
+; v.0.0.6 2025-06-02
+
+动态歌词显示方式新增单行模式和多行模式自由设置
+
+[[动态歌词单行模式与多行模式]]
+
 ; v.0.0.5 2025-05-31
 
 # 精简audio widget，禁音和音量控制按钮合为一个；
