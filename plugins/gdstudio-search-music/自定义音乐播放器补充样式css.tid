@@ -3,6 +3,12 @@ modified: 20250531103834367
 tags: 音乐播放器 样式 $:/tags/Stylesheet gdstudio
 title: 自定义音乐播放器补充样式css
 
+.gdstudio-audio-position .gdstudio-mini-player {
+  position: fixed;
+  bottom: 5px;
+  left: 5px;
+}
+
 /* 定义大屏宽度 */
 .large-screen {
   width: 1000px;
