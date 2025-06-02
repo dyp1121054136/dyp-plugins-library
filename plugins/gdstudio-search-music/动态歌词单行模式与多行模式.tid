@@ -1,0 +1,14 @@
+code-body: yes
+created: 20250602083542522
+modified: 20250602084245103
+tags: 动态歌词
+title: 动态歌词单行模式与多行模式
+
+<!-- 多行模式（默认） -->  
+<$lyric-display lyric-tiddler="$:/state/gdstudio-api/lyric" show-lines="5"/> 
+  
+<!-- 单行模式 -->  
+<$lyric-display lyric-tiddler="$:/state/gdstudio-api/lyric" single-line-mode="yes"/>  
+  
+<!-- 在任何屏幕尺寸下都只显示当前行 -->  
+<$lyric-display lyric-tiddler="$:/state/gdstudio-api/lyric" single-line-mode="true"/>
