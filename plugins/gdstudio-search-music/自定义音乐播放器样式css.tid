@@ -12,9 +12,6 @@ title: 自定义音乐播放器样式css
   padding: 4px;
   width: 280px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  position: fixed;
-  bottom: 5px;
-  left: 5px;
   height: 60px;
 }
 
