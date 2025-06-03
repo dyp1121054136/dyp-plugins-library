@@ -23,7 +23,7 @@ $:/plugins/kookma/utility/procedures/code
 
 `title` 改为 `显示/隐藏条目原内容`
 
-添加样式 `<span class="bottom-details">Source</span>`
+添加样式 `<span class="bottom-details">{{$:/core/images/code}}</span>`
 
 语言修改为tw `language={{{ [{!!title}get[type]else[tw]] }}}`
 
