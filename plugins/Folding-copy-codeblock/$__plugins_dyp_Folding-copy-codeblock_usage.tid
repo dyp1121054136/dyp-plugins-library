@@ -14,7 +14,7 @@ type: text/vnd.tiddlywiki
 或
 
 ```
-<<code src:"条目标题" language:"代码语言(不填则默认为tw)" caption:"小标题">>
+<<code src:"条目标题" language:"tw" caption:"小标题">>
 ```
 
 或
@@ -22,7 +22,7 @@ type: text/vnd.tiddlywiki
 ```
 <<$codeblock   
   caption:"小标题"   
-  language:"代码语言(不填则默认为tw)"   
+  language:"tw"   
   code:"内容"   
   open:"open"  
 >>  
