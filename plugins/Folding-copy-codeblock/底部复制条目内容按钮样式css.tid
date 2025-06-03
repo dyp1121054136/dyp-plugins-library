@@ -26,5 +26,5 @@ title: 底部复制条目内容按钮样式css
 }
 
 details[open] .bottom-details {
-	opacity:0.5;
+	opacity:0;
 }
