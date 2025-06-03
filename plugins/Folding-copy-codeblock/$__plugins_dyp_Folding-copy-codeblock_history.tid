@@ -1,0 +1,8 @@
+created: 20250603055335742
+modified: 20250603055528035
+tags: 
+title: $:/plugins/dyp/Folding-copy-codeblock/history
+
+; v.0.0.3 2025-06-03
+
+新增图标 [[$:/core/images/code]]，设置条目源代码隐藏时该图标透明度为0.5，打开后隐藏图标
