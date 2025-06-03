@@ -3,7 +3,7 @@
     "title": "$:/plugins/dyp/Folding-copy-codeblock",
     "stability": "STABILITY_2_STABLE",
     "modified": "20250512135912489",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "name": "Folding-copy-codeblock",
     "description": "折叠复制代码块",
     "author": "dyp",
