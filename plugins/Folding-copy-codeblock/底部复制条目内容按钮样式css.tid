@@ -4,7 +4,7 @@ tags: $:/tags/Stylesheet 备份 代码块折叠按钮
 title: 底部复制条目内容按钮样式css
 
 .bottom-details {
-	opacity: 0;
+	opacity: 0.5;
 	font-size:0.9em;
 	display: inline;
 	cursor: pointer;
@@ -22,9 +22,9 @@ title: 底部复制条目内容按钮样式css
 }
 
 .bottom-details:hover{
-	opacity:0;
+	opacity:1;
 }
 
 details[open] .bottom-details {
-	opacity:0;
+	opacity:0.5;
 }
