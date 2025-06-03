@@ -1,0 +1,14 @@
+created: 20240303034605399
+modified: 20250603085928659
+tags: 条目行间批注 $:/tags/Macro
+title: 条目行间批注宏
+
+<!-- 样式css已添加硬式换行，宏定义避免空格空行，以免影响内容排版 -->
+\define sidenote(title, content)    
+<details class="details-ji sidenote"><summary><span class="sidenote-t">$title$</span></summary><span class="sidenote-edit-btn"><$button class="tc-btn-invisible" tooltip="复制sidenote内容"><$action-sendmessage $message="tm-copy-to-clipboard" $param={{{ [[$content$]else[]] }}} />{{$:/core/images/copy-sidenote|20px}}</$button></span><blockquote class="zhedie">$content$</blockquote></details>    
+\end
+
+\define sidelink(link, title)
+
+<details class="details-ji sidelink"><summary><span class="sidenote-t"><$link to=$link$ tooltip="跳转到引用条目">$title$</$link></span></summary><blockquote class="zhedie"><$transclude tiddler=$link$></blockquote></details>
+\end

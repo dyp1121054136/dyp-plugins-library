@@ -1,0 +1,38 @@
+created: 20250603082015818
+modified: 20250603085928659
+tags: $:/tags/Stylesheet 样式 条目行间批注
+title: 条目行间批注右上标序号样式css
+
+/* 计数器样式 - 适中尺寸版 */  
+.details-ji summary::before {  
+  content: counter(sidenote);  
+  position: absolute;  
+  top: -0.5em;  
+  left: 100%;  
+  margin-left: 0.1em;  
+  font-size: 0.85em; /* 适中的字体大小 */  
+  min-width: 1.3em; /* 适中的最小宽度 */  
+  width: auto;  
+  height: 1.3em; /* 适中的高度 */  
+  line-height: 1.3em;  
+  text-align: center;  
+  color: #1A4975;  
+  background-color: #B1D3E9;  
+  border-radius: 50%;  
+  opacity: 0.8;  
+  z-index: 1;  
+  padding: 0 0.15em; /* 稍微减小内边距 */  
+  box-sizing: border-box;  
+}
+  
+/* 调整小标题summary样式以支持精确定位 */  
+.details-ji summary {  
+  position: relative; /* 改为相对定位作为定位基准 */  
+  display: inline-block;  
+  padding-top: 0; /* 移除多余的padding */  
+  cursor: pointer;  
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);  
+  counter-increment: sidenote;  
+  font-size: 0.8em;  
+  vertical-align: baseline; /* 与文字基线对齐 */  
+}
