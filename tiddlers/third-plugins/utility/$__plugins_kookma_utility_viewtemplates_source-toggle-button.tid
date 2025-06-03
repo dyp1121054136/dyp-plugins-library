@@ -23,7 +23,7 @@ type: text/vnd.tiddlywiki
 
 \define show-tiddler-source(open:"")
 <details title="显示/隐藏条目原内容" $open$>
-<summary><span class="bottom-details">{{$:/core/images/code}}</span></summary>
+<summary><span class="bottom-details">{{$:/core/images/code|18px}}</span></summary>
 <$transclude $variable="code" language={{{ [{!!title}get[type]else[tw]] }}} src={{!!text}} />
 </details>
 \end
