@@ -42,9 +42,7 @@ body {
 
 /* details内容展开时的样式 */
 .details-ji[open] {
-  position: fixed; 
-  z-index: 999;
-  /* 移除 top: 50%; left: 50%; transform: translate(-50%, -50%); */  
+  /* 移除  position: fixed; z-index: 999; top: 50%; left: 50%; transform: translate(-50%, -50%); */  
   /* 这些值将通过 JavaScript 动态设置 */  
   width: auto;
   height: auto;
