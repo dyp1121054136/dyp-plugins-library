@@ -50,9 +50,9 @@ body {
   width: auto;
   height: auto;
   max-width: 300px; /* 最大宽度 */
-  background-color: white;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.16), 0 2px 4px rgba(0,0,0,0.23); /* 阴影 */
-  border-radius: 0.5em; /* 圆角 */
+  background-color: <<colour tiddler-background>>;
+  border-radius: 8px;  /* 圆角 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 阴影 */
 }
 
 .details-ji[open] summary {
