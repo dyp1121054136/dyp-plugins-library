@@ -5,164 +5,176 @@ tags: 条目行间批注
 title: details-positioning.js
 type: application/javascript
 
-/*\  
-title: $:/details-positioning.js  
-type: application/javascript  
-module-type: widget  
-  
-Details widget with custom positioning for sidenotes  
-  
-\*/  
-(function(){  
-  
-"use strict";  
-  
-var Widget = require("$:/core/modules/widgets/widget.js").widget;  
-  
-var DetailsPositioningWidget = function(parseTreeNode,options) {  
-    this.initialise(parseTreeNode,options);  
-};  
-  
-// 继承基础 widget 类  
-DetailsPositioningWidget.prototype = new Widget();  
-  
-// 渲染方法  
-DetailsPositioningWidget.prototype.render = function(parent,nextSibling) {  
-    this.parentDomNode = parent;  
-    this.computeAttributes();  
-    this.execute();  
-      
-    // 创建 details 元素  
-    var detailsNode = this.document.createElement("details");  
-    var summaryNode = this.document.createElement("summary");  
-      
-    // 应用自定义类名  
-    if(this.detailsClass) {  
-        detailsNode.className = this.detailsClass;  
-    }  
-    if(this.summaryClass) {  
-        summaryNode.className = this.summaryClass;  
-    }  
-      
-    // 渲染 summary 内容  
+/*\    
+title: $:/details-positioning.js    
+type: application/javascript    
+module-type: widget    
+    
+Details widget with custom positioning for sidenotes    
+    
+\*/    
+(function(){    
+    
+"use strict";    
+    
+var Widget = require("$:/core/modules/widgets/widget.js").widget;    
+    
+var DetailsPositioningWidget = function(parseTreeNode,options) {    
+    this.initialise(parseTreeNode,options);    
+};    
+    
+// 继承基础 widget 类    
+DetailsPositioningWidget.prototype = new Widget();    
+    
+// 渲染方法    
+DetailsPositioningWidget.prototype.render = function(parent,nextSibling) {    
+    this.parentDomNode = parent;    
+    this.computeAttributes();    
+    this.execute();    
+        
+    // 创建 details 元素    
+    var detailsNode = this.document.createElement("details");    
+    var summaryNode = this.document.createElement("summary");    
+        
+    // 应用自定义类名    
+    if(this.detailsClass) {    
+        detailsNode.className = this.detailsClass;    
+    }    
+    if(this.summaryClass) {    
+        summaryNode.className = this.summaryClass;    
+    }    
+        
+    detailsNode.appendChild(summaryNode);    
+        
+    // 创建内容容器    
+    var contentContainer = this.document.createElement("div");    
+    detailsNode.appendChild(contentContainer);    
+        
+    // 根据是否有summary属性来决定渲染方式  
     if(this.summaryText) {  
-        var summarySpan = this.document.createElement("span");  
-        summarySpan.className = "sidenote-t";  
-        summarySpan.appendChild(this.document.createTextNode(this.summaryText));  
+        // 如果有summary属性，创建简单文本节点  
+        var summarySpan = this.document.createElement("span");    
+        summarySpan.className = "sidenote-t";    
+        summarySpan.appendChild(this.document.createTextNode(this.summaryText));    
         summaryNode.appendChild(summarySpan);  
+          
+        // 渲染所有子内容到内容容器  
+        this.renderChildren(contentContainer, null);  
+    } else {  
+        // 如果没有summary属性，第一个子元素作为summary，其余作为详细内容  
+        if(this.children.length > 0) {  
+            // 渲染第一个子元素到 summary  
+            this.children[0].render(summaryNode, null);  
+              
+            // 渲染其余子元素到内容容器  
+            for(var i = 1; i < this.children.length; i++) {  
+                this.children[i].render(contentContainer, null);  
+            }  
+        }  
     }  
-      
-    detailsNode.appendChild(summaryNode);  
-      
-    // 创建内容容器并立即渲染子内容  
-    var contentContainer = this.document.createElement("div");  
-    detailsNode.appendChild(contentContainer);  
-      
-    // 渲染子内容（包括复制按钮和blockquote）  
-    this.renderChildren(contentContainer, null);  
-      
-    // 添加定位逻辑  
-    var self = this;  
-    detailsNode.addEventListener('toggle', function(event) {  
-        if(event.target.open) {  
-            // 展开时：应用定位  
-            self.positionDetails(event.target, summaryNode);  
-        } else {  
-            // 关闭时：清理定位样式  
-            self.clearPositioning(event.target);  
-        }  
-    });  
-      
-    parent.insertBefore(detailsNode, nextSibling);  
-    this.domNodes.push(detailsNode);  
-};  
-  
-// 执行方法 - 获取属性  
-DetailsPositioningWidget.prototype.execute = function() {  
-    this.summaryText = this.getAttribute("summary", "");  
-    this.detailsClass = this.getAttribute("detailsClass", "details-ji");  
-    this.summaryClass = this.getAttribute("summaryClass", "");  
-    this.position = this.getAttribute("position", "right");  
-    this.offset = parseInt(this.getAttribute("offset", "10"));  
-      
-    // 创建子 widgets  
-    this.makeChildWidgets();  
-};  
-  
-// 自定义定位逻辑  
-DetailsPositioningWidget.prototype.positionDetails = function(detailsElement, summaryElement) {  
-    var summaryRect = summaryElement.getBoundingClientRect();  
-    var position = this.position;  
-    var offset = this.offset;  
-      
-    // 获取计算后的字体大小来补偿 CSS 偏移  
-    var computedStyle = window.getComputedStyle(detailsElement);  
-    var fontSize = parseFloat(computedStyle.fontSize) || 16;  
-    var topOffset = fontSize * 1.2; // 补偿 -1.2em 偏移  
-      
-    // 设置定位样式  
-    detailsElement.style.position = "fixed";  
-    detailsElement.style.zIndex = "999";  
-      
-    switch(position) {  
-        case "right":  
-            detailsElement.style.left = (summaryRect.right + offset) + "px";  
-            detailsElement.style.top = (summaryRect.top + topOffset) + "px";  
-            break;  
-        case "left":  
-            detailsElement.style.right = (window.innerWidth - summaryRect.left + offset) + "px";  
-            detailsElement.style.top = (summaryRect.top + topOffset) + "px";  
-            break;  
-        case "below":  
-            detailsElement.style.left = summaryRect.left + "px";  
-            detailsElement.style.top = (summaryRect.bottom + offset) + "px";  
-            break;  
-        case "above":  
-            detailsElement.style.left = summaryRect.left + "px";  
-            detailsElement.style.bottom = (window.innerHeight - summaryRect.top + offset) + "px";  
-            break;  
-    }  
-      
-    // 边界检测  
-    setTimeout(function() {  
-        var detailsRect = detailsElement.getBoundingClientRect();  
-        if(detailsRect.right > window.innerWidth) {  
-            detailsElement.style.left = (window.innerWidth - detailsRect.width - 10) + "px";  
-        }  
-        if(detailsRect.bottom > window.innerHeight) {  
-            detailsElement.style.top = (window.innerHeight - detailsRect.height - 10) + "px";  
-        }  
-        if(detailsRect.left < 0) {  
-            detailsElement.style.left = "10px";  
-        }  
-        if(detailsRect.top < 0) {  
-            detailsElement.style.top = "10px";  
-        }  
-    }, 0);  
-};  
-  
-// 清理定位样式  
-DetailsPositioningWidget.prototype.clearPositioning = function(detailsElement) {  
-    detailsElement.style.position = "";  
-    detailsElement.style.left = "";  
-    detailsElement.style.top = "";  
-    detailsElement.style.right = "";  
-    detailsElement.style.bottom = "";  
-    detailsElement.style.zIndex = "";  
-};  
-  
-// 刷新方法  
-DetailsPositioningWidget.prototype.refresh = function(changedTiddlers) {  
-    var changedAttributes = this.computeAttributes();  
-    if(changedAttributes.summary || changedAttributes.detailsClass ||   
-       changedAttributes.summaryClass || changedAttributes.position ||   
-       changedAttributes.offset) {  
-        this.refreshSelf();  
-        return true;  
-    }  
-    return this.refreshChildren(changedTiddlers);  
-};  
-  
-exports["details-positioning"] = DetailsPositioningWidget;  
-  
+        
+    // 添加定位逻辑    
+    var self = this;    
+    detailsNode.addEventListener('toggle', function(event) {    
+        if(event.target.open) {    
+            // 展开时：应用定位    
+            self.positionDetails(event.target, summaryNode);    
+        } else {    
+            // 关闭时：清理定位样式    
+            self.clearPositioning(event.target);    
+        }    
+    });    
+        
+    parent.insertBefore(detailsNode, nextSibling);    
+    this.domNodes.push(detailsNode);    
+};    
+    
+// 执行方法 - 获取属性    
+DetailsPositioningWidget.prototype.execute = function() {    
+    this.summaryText = this.getAttribute("summary", "");    
+    this.detailsClass = this.getAttribute("detailsClass", "details-ji");    
+    this.summaryClass = this.getAttribute("summaryClass", "");    
+    this.position = this.getAttribute("position", "right");    
+    this.offset = parseInt(this.getAttribute("offset", "10")); 
+        
+    // 创建子 widgets    
+    this.makeChildWidgets();    
+};    
+    
+// 自定义定位逻辑    
+DetailsPositioningWidget.prototype.positionDetails = function(detailsElement, summaryElement) {    
+    var summaryRect = summaryElement.getBoundingClientRect();    
+    var position = this.position;    
+    var offset = this.offset;    
+        
+    // 获取计算后的字体大小来补偿 CSS 偏移    
+    var computedStyle = window.getComputedStyle(detailsElement);    
+    var fontSize = parseFloat(computedStyle.fontSize) || 16;    
+    var topOffset = fontSize * 1.2; // 补偿 -1.2em 偏移    
+        
+    // 设置定位样式    
+    detailsElement.style.position = "fixed";    
+    detailsElement.style.zIndex = "999";    
+        
+    switch(position) {    
+        case "right":    
+            detailsElement.style.left = (summaryRect.right + offset) + "px";    
+            detailsElement.style.top = (summaryRect.top + topOffset) + "px";    
+            break;    
+        case "left":    
+            detailsElement.style.right = (window.innerWidth - summaryRect.left + offset) + "px";    
+            detailsElement.style.top = (summaryRect.top + topOffset) + "px";    
+            break;    
+        case "below":    
+            detailsNode.style.left = summaryRect.left + "px";    
+            detailsElement.style.top = (summaryRect.bottom + offset) + "px";    
+            break;    
+        case "above":    
+            detailsElement.style.left = summaryRect.left + "px";    
+            detailsElement.style.bottom = (window.innerHeight - summaryRect.top + offset) + "px";    
+            break;    
+    }    
+        
+    // 边界检测    
+    setTimeout(function() {    
+        var detailsRect = detailsElement.getBoundingClientRect();    
+        if(detailsRect.right > window.innerWidth) {    
+            detailsElement.style.left = (window.innerWidth - detailsRect.width - 10) + "px";    
+        }    
+        if(detailsRect.bottom > window.innerHeight) {    
+            detailsElement.style.top = (window.innerHeight - detailsRect.height - 10) + "px";    
+        }    
+        if(detailsRect.left < 0) {    
+            detailsElement.style.left = "10px";    
+        }    
+        if(detailsRect.top < 0) {    
+            detailsElement.style.top = "10px";    
+        }    
+    }, 0);    
+};    
+    
+// 清理定位样式    
+DetailsPositioningWidget.prototype.clearPositioning = function(detailsElement) {    
+    detailsElement.style.position = "";    
+    detailsElement.style.left = "";    
+    detailsElement.style.top = "";    
+    detailsElement.style.right = "";    
+    detailsElement.style.bottom = "";    
+    detailsElement.style.zIndex = "";    
+};    
+    
+// 刷新方法    
+DetailsPositioningWidget.prototype.refresh = function(changedTiddlers) {    
+    var changedAttributes = this.computeAttributes();    
+    if(changedAttributes.summary || changedAttributes.detailsClass ||     
+       changedAttributes.summaryClass || changedAttributes.position ||     
+       changedAttributes.offset) {    
+        this.refreshSelf();    
+        return true;    
+    }    
+    return this.refreshChildren(changedTiddlers);    
+};    
+    
+exports["details-positioning"] = DetailsPositioningWidget;    
+    
 })();
