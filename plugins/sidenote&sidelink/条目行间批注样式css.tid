@@ -60,7 +60,7 @@ body {
   display: inline;
   margin-left: 0.8em; 
   padding-top: 0.5em;
-  padding-right: 2em; /* 展开后即使内容为空也预留一定宽度*/
+  padding-right: 4em; /* 展开后即使内容为空也预留一定宽度*/
   font-size: 1em;
   font-weight: bold;
   max-height: none; /* 不限制高度 */
