@@ -1,0 +1,25 @@
+created: 20250604010901498
+modified: 20250604013925008
+tags: 条目行间批注 样式 $:/tags/Stylesheet
+title: 复制sidenote内容按钮样式css
+
+.sidenote-copy-btn {
+  opacity: 0.5;
+  transition: opacity 0.3s ease; /* 平滑过渡 */
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: none; /* 去除盒阴影 */
+  float: right;
+  transform: translateY(-2.2em);
+  /* 确保元素在移动时保持其正常流动 */
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.sidenote-copy-btn:hover {
+  /* opacity: 1; */
+}
+
+.sidenote-copy-btn svg {  
+    width: 22px;  
+    height: 22px;  
+}  
