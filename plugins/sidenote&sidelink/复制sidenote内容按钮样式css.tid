@@ -5,6 +5,8 @@ title: 复制sidenote内容按钮样式css
 
 .sidenote-copy-btn {
   opacity: 0.5;
+/* 优化悬停动画：使用will-change提示浏览器优化 */
+  will-change: opacity; /* 提示浏览器优化透明度动画 */
   transition: opacity 0.3s ease; /* 平滑过渡 */
   -webkit-tap-highlight-color: transparent;
   box-shadow: none; /* 去除盒阴影 */
@@ -16,7 +18,7 @@ title: 复制sidenote内容按钮样式css
 }
 
 .sidenote-copy-btn:hover {
-  /* opacity: 1; */
+  opacity: 1;
 }
 
 .sidenote-copy-btn svg {  
