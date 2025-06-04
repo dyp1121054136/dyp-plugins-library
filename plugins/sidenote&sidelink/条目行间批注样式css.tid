@@ -2,7 +2,7 @@ created: 20240303034841182
 modified: 20250603085928659
 tags: 条目行间批注 $:/tags/Stylesheet
 title: 条目行间批注样式css
-type: text/css
+type: 
 
 /* 内容部分blockquote缩进块样式 */
 .zhedie {
