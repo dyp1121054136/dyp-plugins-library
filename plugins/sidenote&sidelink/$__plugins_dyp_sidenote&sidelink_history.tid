@@ -8,4 +8,5 @@ type: text/vnd.tiddlywiki
 
 # 调整了复制按钮的排版；
 # 弹出批注背景颜色跟随主题条目背景颜色变化;
-# 新增widget [[details-positioning.js]]，重构条目批注宏 [[条目行间批注宏-widget版]]，展开后内容相对于上标序号在水平方向上向右展开。
+# 新增widget [[details-positioning.js]]，重构条目批注宏 [[条目行间批注宏-widget版]]，展开后内容相对于上标序号在水平方向上向右展开;
+# 优化复制按钮悬停动画，避免闪烁 [[复制sidenote内容按钮样式css]]
