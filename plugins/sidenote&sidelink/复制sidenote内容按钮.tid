@@ -4,6 +4,6 @@ tags: 条目行间批注
 title: 复制sidenote内容按钮
 
 \whitespace trim
-<span class="sidenote-edit-btn">
+<span class="sidenote-copy-btn">
 <$button class="tc-btn-invisible" tooltip="复制sidenote内容"><$action-sendmessage $message="tm-copy-to-clipboard" $param={{{ [[$content$]else[]] }}} />{{$:/core/images/copy-sidenote|20px}}</$button>
 </span>
