@@ -5,7 +5,7 @@ title: 条目行间批注宏
 
 <!-- 样式css已添加硬式换行，宏定义避免空格空行，以免影响内容排版 -->
 \define sidenote(title, content)    
-<details class="details-ji sidenote"><summary><span class="sidenote-t">$title$</span></summary><span class="sidenote-edit-btn"><$button class="tc-btn-invisible" tooltip="复制sidenote内容"><$action-sendmessage $message="tm-copy-to-clipboard" $param={{{ [[$content$]else[]] }}} />{{$:/core/images/copy-sidenote|20px}}</$button></span><blockquote class="zhedie">$content$</blockquote></details>    
+<details class="details-ji sidenote"><summary><span class="sidenote-t">$title$</span></summary>{{||复制sidenote内容按钮}}<blockquote class="zhedie">$content$</blockquote></details>    
 \end
 
 \define sidelink(link, title)
