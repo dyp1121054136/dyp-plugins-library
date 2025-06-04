@@ -44,9 +44,8 @@ body {
 .details-ji[open] {
   position: fixed; 
   z-index: 999;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* 屏幕中心 */
+  /* 移除 top: 50%; left: 50%; transform: translate(-50%, -50%); */  
+  /* 这些值将通过 JavaScript 动态设置 */  
   width: auto;
   height: auto;
   max-width: 300px; /* 最大宽度 */
