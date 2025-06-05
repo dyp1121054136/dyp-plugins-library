@@ -6,7 +6,9 @@ type: text/vnd.tiddlywiki
 
 ; v.0.0.3 2025-06-05
 
-# 优化widget [[details-positioning.js]]，修复了展开后内容闪烁的问题，并减少向右偏移量，允许设置为负值，[[条目行间批注宏-widget版]] 设置 `offset="-25"`；
+# 优化widget [[details-positioning.js]]，修复了展开后内容闪烁的问题；
+# 并减少向右偏移量，允许设置为负值，[[条目行间批注宏-widget版]] 设置 `offset="-25"`；
+# `.details-ji` 设置 `display: inline-block;` 和 `width: 0em;`，确保在行间可用，不影响排版。
 
 ; v.0.0.2 2025-06-04
 
