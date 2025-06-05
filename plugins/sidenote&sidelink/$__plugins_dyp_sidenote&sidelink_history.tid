@@ -4,7 +4,11 @@ tags:
 title: $:/plugins/dyp/sidenote&sidelink/history
 type: text/vnd.tiddlywiki
 
-; v.0.0.2 2025-04-04
+; v.0.0.3 2025-06-05
+
+# 优化widget [[details-positioning.js]]，修复了展开后内容闪烁的问题
+
+; v.0.0.2 2025-06-04
 
 # 调整了复制按钮的排版；
 # 弹出批注背景颜色跟随主题条目背景颜色变化;
