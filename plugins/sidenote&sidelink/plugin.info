@@ -1,6 +1,6 @@
 {
     "title": "$:/plugins/dyp/sidenote&sidelink",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "stability": "STABILITY_2_STABLE",
     "name": "sidenote&sidelink",
     "description": "条目行间批注",
