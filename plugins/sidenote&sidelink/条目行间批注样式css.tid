@@ -24,9 +24,9 @@ type:
 /* details折叠块整体样式 */
 .details-ji {
   position: relative;
-  display: inline;
+  display: inline-block; /* 确保在行间可用，不影响排版 */
   top: -1.2em; /* 向上移动 */
-  width: auto; /* 宽度自适应 */
+  width: 0em; /* 宽度自适应auto改成0em */
   text-indent: 0 !important; /* 避免折叠按钮缩进 */
 }
 
