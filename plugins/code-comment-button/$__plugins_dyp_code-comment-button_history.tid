@@ -4,6 +4,14 @@ tags:
 title: $:/plugins/dyp/code-comment-button/history
 type: text/vnd.tiddlywiki
 
+; v.0.0.3 2025-06-06
+
+新增快捷输入：
+
+```tw
+<$transclude tiddler=""/>
+```
+
 ; v.0.0.2 2025-05-27
 
 # 新增JavaScript代码注释符号 `// `；
