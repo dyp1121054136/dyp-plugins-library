@@ -1,0 +1,16 @@
+caption: {{$:/core/images/transclude}} 添加一个transclude
+condition: [<targetTiddler>type[]] [<targetTiddler>get[type]prefix[text/]] [<targetTiddler>get[type]match[application/javascript]] [<targetTiddler>get[type]match[application/json]] [<targetTiddler>get[type]match[application/x-tiddler-dictionary]] [<targetTiddler>get[type]match[image/svg+xml]] +[first[]]
+created: 20250606021509339
+description: 添加一个transclude
+icon: $:/core/images/transclude
+modified: 20250606022144359
+shortcuts: ((transclude))
+tags: $:/tags/EditorToolbar 按钮 transclude按钮
+title: $:/core/ui/EditorToolbar/transclude
+
+<$action-sendmessage
+	$message="tm-edit-text-operation"
+	$param="wrap-selection"
+	prefix={{{[[<$transclude tiddler="]]}}}
+	suffix={{{[["/>]]}}}
+/>
