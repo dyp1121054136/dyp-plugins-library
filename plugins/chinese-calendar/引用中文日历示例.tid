@@ -1,0 +1,40 @@
+created: 20250606063213752
+modified: 20250606090927139
+tags: 中文日历 测试
+title: 引用中文日历示例
+
+基本用法：
+
+```tw
+<$chinese-calendar year="2025" month="6" monday-first="yes" highlight-today="yes"/>
+```
+
+带批注的用法
+
+```tw
+<$chinese-calendar   
+    year="2025"   
+    month="6"   
+    monday-first="yes"   
+    highlight-today="yes"  
+    annotation-filter="[tag[calendar-annotation]field:date[{{date}}]]"/>
+```
+
+创建批注tiddler示例：
+
+```tw
+title: 2025-06-15-meeting  
+tags: calendar-annotation  
+date: 2025-06-15  
+annotation-color: red
+text: 重要会议  
+```
+
+<$chinese-calendar year="2025" month="6" monday-first="yes" highlight-today="yes"/>
+
+<$chinese-calendar   
+    year="2025"   
+    month="6"   
+    monday-first="yes"   
+    highlight-today="yes"  
+    annotation-filter="[field:date[{{date}}]]"/>

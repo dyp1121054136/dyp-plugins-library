@@ -1,0 +1,305 @@
+created: 20250606063044994
+modified: 20250606091307783
+tags: $:/tags/Stylesheet 中文日历
+title: 中文日历样式css
+
+/* 表格数据单元格 - 增大尺寸 */  
+.tc-calendar-cell {  
+    position: relative;  
+    height: 55px;  
+    min-height: 55px;  
+    width: 55px;  
+    padding: 2px;  
+    background-color: #ffffff;  
+    text-align: center;  
+    vertical-align: middle;  
+}  
+  
+/* 空白单元格 */  
+.tc-calendar-empty {  
+    background-color: #f9f9f9;  
+}  
+  
+/* 日期链接容器 - 可点击 */  
+.tc-calendar-date-link {  
+    cursor: pointer;  
+    width: 100%;  
+    height: 100%;  
+    display: flex;  
+    align-items: center;  
+    justify-content: center;  
+    border-radius: 2px;  
+    transition: background-color 0.2s ease;  
+}  
+  
+.tc-calendar-date-link:hover {  
+    background-color: rgba(0,0,0,0.05);  
+}  
+  
+/* 单元格内容容器 - 居中对齐，修复文字排版 */  
+.tc-calendar-cell-content {  
+    display: flex;  
+    flex-direction: column;  
+    align-items: center;  
+    justify-content: center;  
+    height: 100%;  
+    width: 100%;  
+    white-space: nowrap;  /* 防止文字换行 */  
+    word-break: keep-all; /* 保持文字完整 */  
+}  
+  
+/* 日期数字样式 - 大字体，修复排版 */  
+.tc-calendar-date {  
+    font-size: 18px;  
+    font-weight: bold;  
+    margin: 0;  
+    line-height: 1;  
+    color: #333333;  
+    text-align: center;  
+    white-space: nowrap;  
+}  
+  
+/* 农历日期样式 - 大字体，修复排版 */  
+.tc-calendar-lunar {  
+    font-size: 12px;  
+    color: #999;  
+    margin: 1px 0 0 0;  
+    line-height: 1;  
+    text-align: center;  
+    white-space: nowrap;  
+}  
+  
+/* 节假日样式 - 大字体，修复排版 */  
+.tc-calendar-holiday {  
+    font-size: 11px;  
+    color: #5797d8;  
+    font-weight: normal;  
+    line-height: 1;  
+    margin: 1px 0 0 0;  
+    text-align: center;  
+    white-space: nowrap;  
+}  
+  
+/* 节假日单元格背景 */  
+.tc-calendar-holiday-cell {  
+    background-color: #f2faea;  
+}  
+  
+/* 今天日期高亮 - 修复边框问题 */  
+.tc-calendar-today {  
+    background-color: #5797d825 !important;  
+    position: relative;  
+}  
+  
+.tc-calendar-today::before {  
+    content: '';  
+    position: absolute;  
+    top: 0;  
+    left: 0;  
+    right: 0;  
+    bottom: 0;  
+    border: 2px solid #5797d8;  
+    pointer-events: none;  
+    z-index: 1;  
+}  
+  
+.tc-calendar-today .tc-calendar-date {  
+    color: #5797d8;  
+    font-weight: bold;  
+    position: relative;  
+    z-index: 2;  
+}  
+  
+.tc-calendar-today .tc-calendar-lunar {  
+    position: relative;  
+    z-index: 2;  
+}  
+  
+.tc-calendar-today .tc-calendar-holiday {  
+    position: relative;  
+    z-index: 2;  
+}  
+  
+/* SVG批注按钮样式 */  
+.tc-calendar-annotation-button {  
+    position: absolute;  
+    top: 2px;  
+    right: 2px;  
+    width: 16px;  
+    height: 16px;  
+    cursor: pointer;  
+    z-index: 10;  
+    opacity: 0.7;  
+    transition: opacity 0.2s ease;  
+}  
+  
+.tc-calendar-annotation-button:hover {  
+    opacity: 1;  
+    transform: scale(1.1);  
+}  
+  
+.tc-calendar-annotation-button svg {  
+    width: 80%;  
+    height: 80%;  
+    fill: #5797d8;  
+}  
+  
+/* 不同颜色的SVG批注按钮 */  
+.tc-calendar-annotation-red svg {  
+    fill: #dc3545;  
+}  
+  
+.tc-calendar-annotation-blue svg {  
+    fill: #007bff;  
+}  
+  
+.tc-calendar-annotation-green svg {  
+    fill: #28a745;  
+}  
+  
+.tc-calendar-annotation-yellow svg {  
+    fill: #ffc107;  
+}  
+  
+.tc-calendar-annotation-orange svg {  
+    fill: #fd7e14;  
+}  
+  
+.tc-calendar-annotation-purple svg {  
+    fill: #6f42c1;  
+}  
+  
+/* 批注弹窗样式 - 显示在右侧，改进交互 */  
+.tc-calendar-annotation-popup {  
+    position: absolute;  
+    top: 0;  
+    left: 100%;  
+    margin-left: 5px;  
+    background-color: #ffffff;  
+    border: 1px solid #e0e0e0;  
+    border-radius: 4px;  
+    padding: 8px 10px;  
+    font-size: 14px;  
+    color: #333333;  
+    white-space: pre-wrap;  /* 支持换行和空格 */  
+    z-index: 1000;  
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);  
+    max-width: 200px;  
+    min-width: 120px;  
+    word-wrap: break-word;  
+    line-height: 1.4;  
+}  
+  
+.tc-calendar-annotation-popup::before {  
+    content: '';  
+    position: absolute;  
+    top: 50%;  
+    left: -5px;  
+    transform: translateY(-50%);  
+    width: 0;  
+    height: 0;  
+    border-top: 5px solid transparent;  
+    border-bottom: 5px solid transparent;  
+    border-right: 5px solid #ffffff;  
+}  
+  
+/* 隐藏原来的批注文字显示 */  
+.tc-calendar-annotation-text {  
+    display: none;  
+}  
+  
+/* 响应式调整 - 保持可读性 */  
+@media (max-width: 600px) {  
+    .tc-calendar-cell {  
+        height: 45px;  
+        min-height: 45px;  
+        width: 45px;  
+        padding: 1px;  
+    }  
+      
+    .tc-calendar-date {  
+        font-size: 16px;  
+    }  
+      
+    .tc-calendar-lunar {  
+        font-size: 11px;  
+    }  
+      
+    .tc-calendar-holiday {  
+        font-size: 10px;  
+    }  
+      
+    .tc-calendar-annotation-button {  
+        width: 14px;  
+        height: 14px;  
+    }  
+      
+    .tc-calendar-annotation-popup {  
+        font-size: 13px;  
+        max-width: 140px;  
+    }  
+}  
+  
+/* 平板设备调整 */  
+@media (max-width: 768px) and (min-width: 601px) {  
+    .tc-calendar-cell {  
+        height: 50px;  
+        min-height: 50px;  
+        width: 50px;  
+    }  
+      
+    .tc-calendar-date {  
+        font-size: 17px;  
+    }  
+      
+    .tc-calendar-lunar {  
+        font-size: 12px;  
+    }  
+}  
+  
+/* 深色主题适配 */  
+@media (prefers-color-scheme: dark) {  
+    .tc-calendar-annotation-popup {  
+        box-shadow: 0 2px 4px rgba(255,255,255,0.1);  
+    }  
+}  
+  
+/* 确保表格布局紧凑 - 单边框 */  
+.tc-calendar-table {  
+    border-collapse: collapse;  
+    border-spacing: 0;  
+}  
+  
+.tc-calendar-table th,  
+.tc-calendar-table td {  
+    border: 1px solid #e0e0e0;  
+    padding: 0;  
+    margin: 0;  
+}  
+  
+/* 表头样式调整 - 大字体 */  
+.tc-calendar-table th {  
+    background-color: #fafafa;  
+    height: 35px;  
+    font-weight: bold;  
+    font-size: 16px;  
+    color: #666666;  
+    text-align: center;  
+    vertical-align: middle;  
+}  
+  
+/* 日历标题样式 - 大字体 */  
+.tc-calendar-title {  
+    text-align: center;  
+    margin: 0 0 12px 0;  
+    color: #333333;  
+    font-size: 20px;  
+    font-weight: bold;  
+}  
+  
+/* 日历容器 */  
+.tc-chinese-calendar {  
+    font-family: sans-serif;  
+    margin: 5px 0;  
+    display: inline-block;  
+}
