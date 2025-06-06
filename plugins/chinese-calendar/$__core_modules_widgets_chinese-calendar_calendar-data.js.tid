@@ -1,0 +1,59 @@
+created: 20250606104500507
+modified: 20250606104819587
+module-type: library
+tags: 中文日历
+title: $:/core/modules/widgets/chinese-calendar/calendar-data.js
+type: application/javascript
+
+/*\  
+title: $:/core/modules/widgets/chinese-calendar/calendar-data.js  
+type: application/javascript  
+module-type: library  
+  
+中文日历 - 数据获取模块  
+\*/  
+  
+"use strict";  
+  
+var CalendarData = function(widget) {  
+    this.widget = widget;  
+};  
+  
+CalendarData.prototype.getLunarDate = function(date) {  
+    var monthKey = date.getFullYear() + "-" + String(date.getMonth() + 1).padStart(2, '0');  
+    var dayKey = String(date.getDate());  
+      
+    var lunarDataTiddler = this.widget.wiki.getTiddler("$:/data/lunar/" + monthKey);  
+      
+    if(lunarDataTiddler && lunarDataTiddler.fields.text) {  
+        try {  
+            var monthData = JSON.parse(lunarDataTiddler.fields.text);  
+            return monthData[dayKey] || "";  
+        } catch(e) {  
+            return "";  
+        }  
+    }  
+    return "";  
+};  
+  
+CalendarData.prototype.getHoliday = function(date) {  
+    var dateKey = date.getFullYear() + "-" +   
+                  String(date.getMonth() + 1).padStart(2, '0') + "-" +   
+                  String(date.getDate()).padStart(2, '0');  
+      
+    // 查找整年的节假日数据tiddler  
+    var holidayDataTiddler = this.widget.wiki.getTiddler("$:/data/holidays/" + date.getFullYear());  
+      
+    if(holidayDataTiddler && holidayDataTiddler.fields.text) {  
+        try {  
+            var yearData = JSON.parse(holidayDataTiddler.fields.text);  
+            return yearData[dateKey] || null;  
+        } catch(e) {  
+            return null;  
+        }  
+    }  
+      
+    return null;  
+};  
+  
+module.exports = CalendarData;

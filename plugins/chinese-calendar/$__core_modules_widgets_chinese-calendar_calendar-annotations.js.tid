@@ -1,0 +1,232 @@
+created: 20250606104318418
+modified: 20250606104854979
+module-type: library
+tags: 中文日历
+title: $:/core/modules/widgets/chinese-calendar/calendar-annotations.js
+type: application/javascript
+
+/*\  
+title: $:/core/modules/widgets/chinese-calendar/calendar-annotations.js  
+type: application/javascript  
+module-type: library  
+  
+中文日历 - 批注处理模块  
+\*/  
+  
+"use strict";  
+  
+var CalendarAnnotations = function(widget) {  
+    this.widget = widget;  
+};  
+  
+CalendarAnnotations.prototype.handleAnnotations = function(cell, currentDate, cellClasses) {  
+    if(!this.widget.annotationFilter) return;  
+      
+    var annotations = this.getAnnotations(currentDate);  
+    if(annotations && annotations.length > 0) {  
+        if(annotations.length === 1) {  
+            this.addSingleAnnotation(cell, annotations[0]);  
+        } else {  
+            this.addMultipleAnnotations(cell, annotations);  
+        }  
+        cellClasses.push("tc-calendar-annotated");  
+    }  
+};  
+  
+CalendarAnnotations.prototype.getAnnotations = function(date) {  
+    var dateKey = this.widget.year + "-" +   
+                  String(this.widget.month).padStart(2, '0') + "-" +   
+                  String(date.getDate()).padStart(2, '0');  
+      
+    var annotationTiddlers = this.widget.wiki.filterTiddlers(  
+        this.widget.annotationFilter.replace("{{date}}", dateKey), this.widget);  
+      
+    if(annotationTiddlers.length > 0) {  
+        var self = this;  
+        return annotationTiddlers.map(function(title) {  
+            var tiddler = self.widget.wiki.getTiddler(title);  
+            return {  
+                text: tiddler.fields.text || "",  
+                color: tiddler.fields["annotation-color"] || "default",  
+                tiddlerTitle: title  
+            };  
+        });  
+    }  
+    return null;  
+};  
+  
+CalendarAnnotations.prototype.addSingleAnnotation = function(cell, annotation) {  
+    this.createAnnotationButton(cell, annotation, annotation.tiddlerTitle);  
+};  
+  
+CalendarAnnotations.prototype.addMultipleAnnotations = function(cell, annotations) {  
+    var self = this;  
+      
+    // 创建主按钮显示第一个批注的颜色  
+    var mainAnnotation = annotations[0];  
+    var combinedText = annotations.map(function(ann) { return ann.text; }).join('\n---\n');  
+      
+    // 如果只有一个批注有链接，直接链接到它；否则显示选择菜单  
+    if(annotations.length === 1 || annotations.filter(function(ann) { return ann.tiddlerTitle; }).length <= 1) {  
+        var targetTitle = annotations.find(function(ann) { return ann.tiddlerTitle; });  
+        this.createAnnotationButton(cell, {  
+            text: combinedText,  
+            color: mainAnnotation.color  
+        }, targetTitle ? targetTitle.tiddlerTitle : null);  
+    } else {  
+        this.createMultiAnnotationButton(cell, annotations);  
+    }  
+};  
+  
+CalendarAnnotations.prototype.createAnnotationButton = function(cell, annotation, targetTitle) {  
+    var self = this;  
+    var svgButton = this.widget.document.createElement("div");  
+    svgButton.setAttribute("class", "tc-calendar-annotation-button");  
+      
+    if(annotation.color && annotation.color !== "default") {  
+        svgButton.classList.add("tc-calendar-annotation-" + annotation.color);  
+    }  
+      
+    var defaultSvg = '<svg viewBox="0 0 128 128" width="16pt" height="16pt"><g fill-rule="evenodd"><path d="M64 128C28.654 128 0 99.346 0 64 0 28.654 28.654 0 64 0c35.346 0 64 28.654 64 64 0 35.346-28.654 64-64 64zm0-16c26.51 0 48-21.49 48-48S90.51 16 64 16 16 37.49 16 64s21.49 48 48 48z"/><circle cx="64" cy="48" r="8"/><path d="M56 72h16v32H56z"/></g></svg>';  
+      
+    var iconTiddler = this.widget.wiki.getTiddler("$:/core/images/calendar-annotation");  
+    if(iconTiddler && iconTiddler.fields.text) {  
+        svgButton.innerHTML = iconTiddler.fields.text;  
+    } else {  
+        svgButton.innerHTML = defaultSvg;  
+    }  
+      
+    // 创建弹窗内容  
+    var popupContent = this.widget.document.createElement("div");  
+    popupContent.setAttribute("class", "tc-calendar-annotation-popup");  
+    popupContent.style.display = "none";  
+      
+    var textLines = annotation.text.split('\n');  
+    for(var i = 0; i < textLines.length; i++) {  
+        if(i > 0) {  
+            popupContent.appendChild(this.widget.document.createElement("br"));  
+        }  
+        popupContent.appendChild(this.widget.document.createTextNode(textLines[i]));  
+    }  
+      
+    var isPopupVisible = false;  
+      
+    // 悬停显示功能  
+    svgButton.addEventListener("mouseenter", function() {  
+        popupContent.style.display = "block";  
+        isPopupVisible = true;  
+    });  
+      
+    svgButton.addEventListener("mouseleave", function() {  
+        setTimeout(function() {  
+            if(!popupContent.matches(':hover')) {  
+                popupContent.style.display = "none";  
+                isPopupVisible = false;  
+            }  
+        }, 100);  
+    });  
+  
+    popupContent.addEventListener("mouseenter", function() {  
+        popupContent.style.display = "block";  
+        isPopupVisible = true;  
+    });  
+      
+    popupContent.addEventListener("mouseleave", function() {  
+        popupContent.style.display = "none";  
+        isPopupVisible = false;  
+    });  
+      
+    // 点击功能 - 跳转到批注条目  
+    svgButton.addEventListener("click", function(event) {  
+        event.stopPropagation();  
+          
+        // 如果有批注条目标题，则导航到该条目  
+        if(targetTitle) {  
+            self.widget.dispatchEvent({  
+                type: "tm-navigate",  
+                navigateTo: targetTitle,  
+                navigateFromTitle: self.widget.getVariable("currentTiddler")  
+            });  
+        } else {  
+            // 如果没有条目标题，则切换弹窗显示  
+            if(isPopupVisible) {  
+                popupContent.style.display = "none";  
+                isPopupVisible = false;  
+            } else {  
+                popupContent.style.display = "block";  
+                isPopupVisible = true;  
+            }  
+        }  
+    });  
+      
+    cell.appendChild(svgButton);  
+    cell.appendChild(popupContent);  
+};  
+  
+CalendarAnnotations.prototype.createMultiAnnotationButton = function(cell, annotations) {  
+    var self = this;  
+    var svgButton = this.widget.document.createElement("div");  
+    svgButton.setAttribute("class", "tc-calendar-annotation-button tc-calendar-multi-annotation");  
+      
+    // 使用第一个批注的颜色  
+    if(annotations[0].color && annotations[0].color !== "default") {  
+        svgButton.classList.add("tc-calendar-annotation-" + annotations[0].color);  
+    }  
+      
+    var defaultSvg = '<svg viewBox="0 0 128 128" width="16pt" height="16pt"><g fill-rule="evenodd"><path d="M64 128C28.654 128 0 99.346 0 64 0 28.654 28.654 0 64 0c35.346 0 64 28.654 64 64 0 35.346-28.654 64-64 64zm0-16c26.51 0 48-21.49 48-48S90.51 16 64 16 16 37.49 16 64s21.49 48 48 48z"/><circle cx="64" cy="48" r="8"/><path d="M56 72h16v32H56z"/></g></svg>';  
+      
+    svgButton.innerHTML = defaultSvg;  
+      
+    // 创建多批注选择菜单  
+    var menuContent = this.widget.document.createElement("div");  
+    menuContent.setAttribute("class", "tc-calendar-annotation-menu");  
+    menuContent.style.display = "none";  
+      
+    annotations.forEach(function(annotation, index) {  
+        var menuItem = self.widget.document.createElement("div");  
+        menuItem.setAttribute("class", "tc-calendar-annotation-menu-item");  
+          
+        var preview = annotation.text.length > 20 ?   
+                     annotation.text.substring(0, 20) + "..." :   
+                     annotation.text;  
+        menuItem.appendChild(self.widget.document.createTextNode(preview));  
+          
+        menuItem.addEventListener("click", function(event) {  
+            event.stopPropagation();  
+            if(annotation.tiddlerTitle) {  
+                self.widget.dispatchEvent({  
+                    type: "tm-navigate",  
+                    navigateTo: annotation.tiddlerTitle,  
+                    navigateFromTitle: self.widget.getVariable("currentTiddler")  
+                });  
+            }  
+            menuContent.style.display = "none";  
+        });  
+          
+        menuContent.appendChild(menuItem);  
+    });  
+      
+    var isMenuVisible = false;  
+      
+    svgButton.addEventListener("click", function(event) {  
+        event.stopPropagation();  
+        if(isMenuVisible) {  
+            menuContent.style.display = "none";  
+            isMenuVisible = false;  
+        } else {  
+            menuContent.style.display = "block";  
+            isMenuVisible = true;  
+        }  
+    });  
+      
+    // 点击其他地方关闭菜单  
+    this.widget.document.addEventListener("click", function() {  
+        menuContent.style.display = "none";  
+        isMenuVisible = false;  
+    });  
+      
+    cell.appendChild(svgButton);  
+    cell.appendChild(menuContent);  
+};  
+  
+module.exports = CalendarAnnotations;

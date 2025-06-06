@@ -1,0 +1,107 @@
+created: 20250606104242135
+modified: 20250606104749487
+module-type: library
+tags: 中文日历
+title: $:/core/modules/widgets/chinese-calendar/calendar-cell.js
+type: application/javascript
+
+/*\  
+title: $:/core/modules/widgets/chinese-calendar/calendar-cell.js
+type: application/javascript  
+module-type: library
+  
+中文日历 - 日期单元格处理模块  
+\*/  
+  
+"use strict";  
+  
+var CalendarAnnotations = require("$:/core/modules/widgets/chinese-calendar/calendar-annotations.js");  
+  
+var CalendarCell = function(widget) {  
+    this.widget = widget;  
+    this.annotationHelper = new CalendarAnnotations(widget);  
+};  
+  
+CalendarCell.prototype.createDateCell = function(cell, date) {  
+    var currentDate = new Date(this.widget.year, this.widget.month - 1, date);  
+    var isToday = this.widget.highlightToday &&   
+                  this.widget.year === this.widget.todayYear &&   
+                  this.widget.month === this.widget.todayMonth &&   
+                  date === this.widget.todayDate;  
+      
+    var cellClasses = ["tc-calendar-cell"];  
+    if(isToday) cellClasses.push("tc-calendar-today");  
+      
+    // 创建日期链接容器  
+    var dateLink = this.createDateLink(date);  
+    var cellContent = this.createCellContent(date, currentDate, cellClasses);  
+      
+    dateLink.appendChild(cellContent);  
+    cell.appendChild(dateLink);  
+      
+    // 处理批注  
+    this.annotationHelper.handleAnnotations(cell, currentDate, cellClasses);  
+      
+    cell.setAttribute("class", cellClasses.join(" "));  
+};  
+  
+CalendarCell.prototype.createDateLink = function(date) {  
+    var dateLink = this.widget.document.createElement("div");  
+    dateLink.setAttribute("class", "tc-calendar-date-link");  
+      
+    var dateKey = this.widget.year + "年" +   
+                  String(this.widget.month).padStart(2, '0') + "月" +   
+                  String(date).padStart(2, '0') + "日";  
+      
+    var self = this;  
+    dateLink.addEventListener("click", function(event) {  
+        if(!event.target.closest('.tc-calendar-annotation-button')) {  
+            event.stopPropagation();  
+            self.widget.dispatchEvent({  
+                type: "tm-navigate",  
+                navigateTo: dateKey,  
+                navigateFromTitle: self.widget.getVariable("currentTiddler")  
+            });  
+        }  
+    });  
+      
+    return dateLink;  
+};  
+  
+CalendarCell.prototype.createCellContent = function(date, currentDate, cellClasses) {  
+    var cellContent = this.widget.document.createElement("div");  
+    cellContent.setAttribute("class", "tc-calendar-cell-content");  
+      
+    // 日期数字  
+    var dateDiv = this.widget.document.createElement("div");  
+    dateDiv.setAttribute("class", "tc-calendar-date");  
+    dateDiv.appendChild(this.widget.document.createTextNode(date.toString()));  
+    cellContent.appendChild(dateDiv);  
+      
+    // 农历日期  
+    if(this.widget.showLunar) {  
+        var lunarDate = this.widget.dataHelper.getLunarDate(currentDate);  
+        if(lunarDate) {  
+            var lunarDiv = this.widget.document.createElement("div");  
+            lunarDiv.setAttribute("class", "tc-calendar-lunar");  
+            lunarDiv.appendChild(this.widget.document.createTextNode(lunarDate));  
+            cellContent.appendChild(lunarDiv);  
+        }  
+    }  
+      
+    // 节假日  
+    if(this.widget.showHolidays) {  
+        var holiday = this.widget.dataHelper.getHoliday(currentDate);  
+        if(holiday) {  
+            var holidayDiv = this.widget.document.createElement("div");  
+            holidayDiv.setAttribute("class", "tc-calendar-holiday");  
+            holidayDiv.appendChild(this.widget.document.createTextNode(holiday));  
+            cellContent.appendChild(holidayDiv);  
+            cellClasses.push("tc-calendar-holiday-cell");  
+        }  
+    }  
+      
+    return cellContent;  
+};  
+  
+module.exports = CalendarCell;
