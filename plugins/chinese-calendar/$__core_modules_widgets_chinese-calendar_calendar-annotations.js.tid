@@ -189,10 +189,27 @@ CalendarAnnotations.prototype.createMultiAnnotationButton = function(cell, annot
     if(iconTiddler && iconTiddler.fields.text) {  
         svgButton.innerHTML = iconTiddler.fields.text;  
     } else {  
+        // 如果没有图标条目，使用简单的文本标记  
         svgButton.textContent = "●";  
-        svgButton.style.fontSize = "16px";  
-        svgButton.style.lineHeight = "16px";  
+        svgButton.style.fontSize = "8px";  
+        svgButton.style.lineHeight = "8px";  
         svgButton.style.textAlign = "center";  
+
+// 根据批注颜色设置文本颜色  
+if(annotation.color && annotation.color !== "default") {  
+    // 使用CSS中定义的颜色映射  
+    var colorMap = {  
+        "red": "#dc3545",  
+        "blue": "#007bff",   
+        "green": "#28a745",  
+        "yellow": "#ffc107",  
+        "orange": "#fd7e14",  
+        "purple": "#6f42c1"  
+    };  
+    svgButton.style.color = colorMap[annotation.color] || "#5797d8";  
+} else {  
+    svgButton.style.color = "#5797d8"; // 默认颜色  
+}
     }  
       
     // 设置相对定位以便添加徽章  
