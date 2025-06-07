@@ -59,7 +59,7 @@ title: 动态歌词样式css
 @media (min-width: 768px) {
 .gdstudio-audio-position .lyric-display-container {
   left: 10px;
-  bottom: 80px;  
+  bottom: 50px;  
   max-height: 150px;  
 }
 }
