@@ -38,8 +38,14 @@ CalendarAnnotations.prototype.getAnnotations = function(date) {
                   String(this.widget.month).padStart(2, '0') + "-" +   
                   String(date.getDate()).padStart(2, '0');  
       
+    // 调试日志（可选，用于排查问题）  
+    // console.log("查找批注，日期键:", dateKey);  
+    // console.log("筛选器:", this.widget.annotationFilter.replace("{{date}}", dateKey));  
+      
     var annotationTiddlers = this.widget.wiki.filterTiddlers(  
         this.widget.annotationFilter.replace("{{date}}", dateKey), this.widget);  
+      
+    // console.log("找到的批注条目:", annotationTiddlers);  
       
     if(annotationTiddlers.length > 0) {  
         var self = this;  
@@ -60,22 +66,8 @@ CalendarAnnotations.prototype.addSingleAnnotation = function(cell, annotation) {
 };  
   
 CalendarAnnotations.prototype.addMultipleAnnotations = function(cell, annotations) {  
-    var self = this;  
-      
-    // 创建主按钮显示第一个批注的颜色  
-    var mainAnnotation = annotations[0];  
-    var combinedText = annotations.map(function(ann) { return ann.text; }).join('\n---\n');  
-      
-    // 如果只有一个批注有链接，直接链接到它；否则显示选择菜单  
-    if(annotations.length === 1 || annotations.filter(function(ann) { return ann.tiddlerTitle; }).length <= 1) {  
-        var targetTitle = annotations.find(function(ann) { return ann.tiddlerTitle; });  
-        this.createAnnotationButton(cell, {  
-            text: combinedText,  
-            color: mainAnnotation.color  
-        }, targetTitle ? targetTitle.tiddlerTitle : null);  
-    } else {  
-        this.createMultiAnnotationButton(cell, annotations);  
-    }  
+    // 直接创建多批注按钮，简化逻辑  
+    this.createMultiAnnotationButton(cell, annotations);  
 };  
   
 CalendarAnnotations.prototype.createAnnotationButton = function(cell, annotation, targetTitle) {  
@@ -87,13 +79,32 @@ CalendarAnnotations.prototype.createAnnotationButton = function(cell, annotation
         svgButton.classList.add("tc-calendar-annotation-" + annotation.color);  
     }  
       
-    var defaultSvg = '<svg viewBox="0 0 128 128" width="16pt" height="16pt"><g fill-rule="evenodd"><path d="M64 128C28.654 128 0 99.346 0 64 0 28.654 28.654 0 64 0c35.346 0 64 28.654 64 64 0 35.346-28.654 64-64 64zm0-16c26.51 0 48-21.49 48-48S90.51 16 64 16 16 37.49 16 64s21.49 48 48 48z"/><circle cx="64" cy="48" r="8"/><path d="M56 72h16v32H56z"/></g></svg>';  
-      
+    // 只使用条目中设置的图标，不提供硬编码默认值  
     var iconTiddler = this.widget.wiki.getTiddler("$:/core/images/calendar-annotation");  
     if(iconTiddler && iconTiddler.fields.text) {  
         svgButton.innerHTML = iconTiddler.fields.text;  
     } else {  
-        svgButton.innerHTML = defaultSvg;  
+        // 如果没有图标条目，使用简单的文本标记  
+        svgButton.textContent = "●";  
+        svgButton.style.fontSize = "8px";  
+        svgButton.style.lineHeight = "8px";  
+        svgButton.style.textAlign = "center";  
+
+// 根据批注颜色设置文本颜色  
+if(annotation.color && annotation.color !== "default") {  
+    // 使用CSS中定义的颜色映射  
+    var colorMap = {  
+        "red": "#dc3545",  
+        "blue": "#007bff",   
+        "green": "#28a745",  
+        "yellow": "#ffc107",  
+        "orange": "#fd7e14",  
+        "purple": "#6f42c1"  
+    };  
+    svgButton.style.color = colorMap[annotation.color] || "#5797d8";  
+} else {  
+    svgButton.style.color = "#5797d8"; // 默认颜色  
+}
     }  
       
     // 创建弹窗内容  
@@ -173,9 +184,25 @@ CalendarAnnotations.prototype.createMultiAnnotationButton = function(cell, annot
         svgButton.classList.add("tc-calendar-annotation-" + annotations[0].color);  
     }  
       
-    var defaultSvg = '<svg viewBox="0 0 128 128" width="16pt" height="16pt"><g fill-rule="evenodd"><path d="M64 128C28.654 128 0 99.346 0 64 0 28.654 28.654 0 64 0c35.346 0 64 28.654 64 64 0 35.346-28.654 64-64 64zm0-16c26.51 0 48-21.49 48-48S90.51 16 64 16 16 37.49 16 64s21.49 48 48 48z"/><circle cx="64" cy="48" r="8"/><path d="M56 72h16v32H56z"/></g></svg>';  
+    // 使用相同的图标处理逻辑  
+    var iconTiddler = this.widget.wiki.getTiddler("$:/core/images/calendar-annotation");  
+    if(iconTiddler && iconTiddler.fields.text) {  
+        svgButton.innerHTML = iconTiddler.fields.text;  
+    } else {  
+        svgButton.textContent = "●";  
+        svgButton.style.fontSize = "16px";  
+        svgButton.style.lineHeight = "16px";  
+        svgButton.style.textAlign = "center";  
+    }  
       
-    svgButton.innerHTML = defaultSvg;  
+    // 设置相对定位以便添加徽章  
+    svgButton.style.position = "relative";  
+      
+    // 添加多批注数量徽章  
+    var countBadge = this.widget.document.createElement("span");  
+    countBadge.textContent = annotations.length.toString();  
+    countBadge.style.cssText = "position:absolute;top:-5px;right:-5px;background:#ff4444;color:white;border-radius:50%;width:12px;height:12px;font-size:8px;text-align:center;line-height:12px;font-weight:bold;";  
+    svgButton.appendChild(countBadge);  
       
     // 创建多批注选择菜单  
     var menuContent = this.widget.document.createElement("div");  
@@ -201,6 +228,7 @@ CalendarAnnotations.prototype.createMultiAnnotationButton = function(cell, annot
                 });  
             }  
             menuContent.style.display = "none";  
+            isMenuVisible = false;  
         });  
           
         menuContent.appendChild(menuItem);  
@@ -220,10 +248,12 @@ CalendarAnnotations.prototype.createMultiAnnotationButton = function(cell, annot
     });  
       
     // 点击其他地方关闭菜单  
-    this.widget.document.addEventListener("click", function() {  
+    var closeMenuHandler = function() {  
         menuContent.style.display = "none";  
         isMenuVisible = false;  
-    });  
+    };  
+      
+    this.widget.document.addEventListener("click", closeMenuHandler);  
       
     cell.appendChild(svgButton);  
     cell.appendChild(menuContent);  
