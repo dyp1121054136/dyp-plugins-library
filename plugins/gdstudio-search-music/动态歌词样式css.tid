@@ -58,7 +58,7 @@ title: 动态歌词样式css
 /* 媒体查询，大屏 */
 @media (min-width: 768px) {
 .gdstudio-audio-position .lyric-display-container {
-  left: 10px;
+  left: 2px;
   bottom: 50px;  
   max-height: 150px;  
 }
