@@ -3,7 +3,7 @@ modified: 20250528132403678
 tags: 音乐 gdstudio
 title: 音乐搜索界面优化版
 
-音乐源：<$select tiddler="$:/state/gdstudio-api/music-source" default="netease">  
+音乐源：<$select tiddler="$:/state/gdstudio-api/music-source" default="">  
 <option value="netease">网易云音乐 (netease)</option>  
 <option value="tencent">QQ音乐 (tencent)</option>  
 <option value="kuwo">酷我音乐 (kuwo)</option> 
@@ -16,7 +16,7 @@ title: 音乐搜索界面优化版
 <option value="qobuz">Qobuz</option>  
 <option value="joox">JOOX</option>  
 <option value="deezer">Deezer</option>  
-</$select> 关键词：<$edit-text tiddler="$:/state/gdstudio-api/keyword" default="夜梦记" tag="input"/> <$button actions=<<gdstudio-search-http-get>>>搜索</$button>
+</$select> 关键词：<$edit-text tiddler="$:/state/gdstudio-api/keyword" default="" tag="input"/> <$button actions=<<gdstudio-search-http-get>>>搜索</$button>
 
 每页数量：<$select tiddler="$:/state/gdstudio-api/page-length" default="10">
 <option value="10">10</option>
