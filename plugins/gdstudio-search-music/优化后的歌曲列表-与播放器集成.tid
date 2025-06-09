@@ -21,7 +21,12 @@ title: 优化后的歌曲列表-与播放器集成
 <$button class="tc-btn-invisible gdstudio-button" tooltip="播放">  
   <!-- 先清空之前的URL状态 -->  
   <$action-setfield $tiddler="$:/state/gdstudio-api/music-url" text=""/>  
-  <$action-setfield $tiddler="$:/state/gdstudio-api/cover-url" text=""/>  
+  <$action-setfield $tiddler="$:/state/gdstudio-api/cover-url" text=""/>
+
+  <!-- 先清空新增的酷狗api缓存 -->
+  <$action-setfield $tiddler="$:/state/kugou-api/searchResults" text=""/>
+  <$action-setfield $tiddler="$:/state/kugou-api/hash" text=""/>
+  <$action-setfield $tiddler="$:/state/kugou-api/music-url" text=""/>
     
   <!-- 然后设置新的ID -->  
   <$action-setfield $tiddler="$:/state/gdstudio-api/track-id" text={{{ [{$:/state/gdstudio-api/searchResults}jsonget<currentTiddler>,[id]] }}}/>        
