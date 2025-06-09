@@ -27,6 +27,10 @@ title: 优化后的歌曲列表-与播放器集成
   <$action-setfield $tiddler="$:/state/kugou-api/searchResults" text=""/>
   <$action-setfield $tiddler="$:/state/kugou-api/hash" text=""/>
   <$action-setfield $tiddler="$:/state/kugou-api/music-url" text=""/>
+
+  <!-- 先清空新增的洛雪音乐api缓存 -->
+  <$action-setfield $tiddler="$:/state/lxmusic/music-url" text=""/>
+  <<clear-debug-data>>
     
   <!-- 然后设置新的ID -->  
   <$action-setfield $tiddler="$:/state/gdstudio-api/track-id" text={{{ [{$:/state/gdstudio-api/searchResults}jsonget<currentTiddler>,[id]] }}}/>        
@@ -45,6 +49,13 @@ title: 优化后的歌曲列表-与播放器集成
       <<kugou-search-http-get>>  
       <<kugou-extract-hash>>  
       <<kugou-get-music-url>>  
+    </$reveal>
+  </$reveal>
+
+  <!-- 切换到洛雪音乐api -->  
+  <$reveal state="$:/state/gdstudio-api/music-url" type="match" text="">  
+    <$reveal state="$:/state/kugou-api/music-url" type="match" text="">  
+      <<lxmusic-get-music-url>>
     </$reveal>
   </$reveal>
 
