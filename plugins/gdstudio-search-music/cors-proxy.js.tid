@@ -30,7 +30,8 @@ exports.startup = function() {
         // 检查是否需要使用CORS代理    
         var shouldUseCors = options.useCorsProxy === "yes" ||     
                            (url && url.includes("mobilecdn.kugou.com")) ||  
-                           (url && url.includes("m.kugou.com"));  
+                           (url && url.includes("m.kugou.com")) ||
+                           (url && url.includes("88.lxmusic.xn--fiqs8s"));
                 
         if (shouldUseCors && url && !url.startsWith("https://cors-anywhere.herokuapp.com/")) {        
             options.url = "https://cors-anywhere.herokuapp.com/" + url;        
@@ -48,7 +49,8 @@ exports.startup = function() {
                 
             var shouldUseCors = options.useCorsProxy === "yes" ||     
                                (url && url.includes("mobilecdn.kugou.com")) ||  
-                               (url && url.includes("m.kugou.com"));  
+                               (url && url.includes("m.kugou.com")) ||
+                               (url && url.includes("88.lxmusic.xn--fiqs8s"));
                 
             if (shouldUseCors && url && !url.startsWith("https://cors-anywhere.herokuapp.com/")) {    
                 options.url = "https://cors-anywhere.herokuapp.com/" + url;    
