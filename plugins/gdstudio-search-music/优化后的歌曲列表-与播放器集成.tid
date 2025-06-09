@@ -5,7 +5,7 @@ title: 优化后的歌曲列表-与播放器集成
 
 调试信息：- track-id: <$view tiddler="$:/state/gdstudio-api/track-id"/> - music-source: <$view tiddler="$:/state/gdstudio-api/music-source"/>
 
-- music-url: <$view tiddler="$:/state/gdstudio-api/music-url"/>
+- music-url: <$text text={{{ [{$:/state/gdstudio-api/music-url}!is[blank]] ~[{$:/state/kugou-api/music-url}!is[blank]] ~[{$:/state/lxmusic/music-url}] +[first[]] }}}/>
 
 <!-- 显示搜索结果中的所有歌曲 -->  
 <$list filter="[{$:/state/gdstudio-api/searchResults}jsonindexes[]]">    
