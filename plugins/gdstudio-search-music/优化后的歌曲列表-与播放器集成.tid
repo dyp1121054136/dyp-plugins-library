@@ -52,11 +52,9 @@ title: 优化后的歌曲列表-与播放器集成
     </$reveal>
   </$reveal>
 
-  <!-- 切换到洛雪音乐api -->  
+  <!-- 如果gdstudio api为空则切换到洛雪音乐api -->  
   <$reveal state="$:/state/gdstudio-api/music-url" type="match" text="">  
-    <$reveal state="$:/state/kugou-api/music-url" type="match" text="">  
       <<lxmusic-get-music-url>>
-    </$reveal>
   </$reveal>
 
   {{$:/core/images/gdstudio-play-music}}      
