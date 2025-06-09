@@ -33,6 +33,16 @@ title: 优化后的歌曲列表-与播放器集成
   <<gdstudio-get-cover-url>>  
   <<gdstudio-get-lyric-url>>  
   <<gdstudio-get-lyric-text>>  
+
+  <!-- 最后执行：双重条件检查的新增动作 -->  
+  <$reveal state="$:/state/gdstudio-api/music-source" type="match" text="kugou">  
+    <$reveal state="$:/state/gdstudio-api/music-url" type="match" text="">  
+      <<kugou-search-http-get>>  
+      <<kugou-extract-hash>>  
+      <<kugou-get-music-url>>  
+    </$reveal>
+  </$reveal>
+
   {{$:/core/images/gdstudio-play-music}}      
 </$button>
 
