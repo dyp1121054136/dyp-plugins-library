@@ -5,7 +5,7 @@ title: 调用自定义播放器
 
 <$gdstudio-audio         
     cover-url={{$:/state/gdstudio-api/cover-url}}      
-    music-url={{$:/state/gdstudio-api/music-url}}      
+    music-url={{{ [{$:/state/gdstudio-api/music-url}!is[blank]] ~[{$:/state/kugou-api/music-url}] }}}      
     song-name={{{ [{$:/state/gdstudio-api/searchResults}jsonget[{$:/state/gdstudio-api/track-id}],[name]] }}}      
     artist={{{ [{$:/state/gdstudio-api/searchResults}jsonget[{$:/state/gdstudio-api/track-id}],[artist]] }}}      
     width="320px"         
