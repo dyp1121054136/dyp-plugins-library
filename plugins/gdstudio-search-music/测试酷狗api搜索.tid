@@ -1,0 +1,22 @@
+created: 20250607092103509
+modified: 20250609033624026
+tags: 酷狗音乐api
+title: 测试酷狗api搜索
+
+ <$button actions=<<kugou-search-http-get>>>测试酷狗api搜索</$button>
+
+<$button actions=<<kugou-search-http-get>>>1. 搜索歌曲</$button>  
+<$button actions=<<kugou-extract-hash>>>2. 提取Hash</$button>  
+<$button actions=<<kugou-get-music-url>>>3. 获取音乐URL</$button>
+
+搜索结果：
+
+{{$:/state/kugou-api/searchResults}}
+
+hash值：
+
+{{$:/state/kugou-api/hash}}
+
+歌曲url：
+
+{{$:/state/kugou-api/music-url}}

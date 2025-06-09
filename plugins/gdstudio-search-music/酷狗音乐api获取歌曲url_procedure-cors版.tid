@@ -1,0 +1,30 @@
+code-body: yes
+created: 20250609032607021
+modified: 20250609033815808
+tags: 酷狗音乐api $:/tags/Macro
+title: 酷狗音乐api获取歌曲url procedure-cors版
+
+<!-- 提取hash参数的程序 -->
+
+\procedure kugou-extract-hash()  
+<$list filter="[{$:/state/kugou-api/searchResults}jsonget[data],[info],[0],[hash]!is[blank]]" variable="hash">  
+    <$action-setfield $tiddler="$:/state/kugou-api/hash" text=<<hash>>/>  
+</$list>  
+\end
+
+\procedure kugou-get-music-url()  
+<$action-sendmessage  
+    $message="tm-http-request"  
+    url="https://m.kugou.com/app/i/getSongInfo.php"  
+    query-cmd="playInfo"  
+    query-hash={{$:/state/kugou-api/hash}}  
+    method="GET"  
+    oncompletion=<<kugou-extract-music-url>>  
+/>  
+\end  
+  
+\procedure kugou-extract-music-url()  
+<$list filter="[<data>jsonget[url]!is[blank]]" variable="url">  
+    <$action-setfield $tiddler="$:/state/kugou-api/music-url" text=<<url>>/>  
+</$list>  
+\end

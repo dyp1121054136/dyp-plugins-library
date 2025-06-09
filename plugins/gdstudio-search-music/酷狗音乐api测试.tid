@@ -1,0 +1,32 @@
+created: 20250607084139424
+modified: 20250609021634722
+tags: 酷狗音乐api
+title: 酷狗音乐api测试
+
+添加公共 CORS 代理服务
+
+```tw
+https://cors-anywhere.herokuapp.com/
+```
+
+搜索歌曲
+
+```tw
+http://mobilecdn.kugou.com/api/v3/search/song?format=json&keyword={关键字}&page={页数量}
+```
+
+http://mobilecdn.kugou.com/api/v3/search/song?format=json&keyword=所倾共赴&page=1
+
+获取歌曲url
+
+```tw
+https://m.kugou.com/app/i/getSongInfo.php?cmd=playInfo&hash={hash}
+```
+
+https://m.kugou.com/app/i/getSongInfo.php?cmd=playInfo&hash=61a8c6a5ba335feeff0b0729438af472
+
+https://sharefs.tx.kugou.com/202506071650/bdca807c5ac92230a49969a4c99d6e0a/v3/61a8c6a5ba335feeff0b0729438af472/yp/full/ap1000_us0_pi409_s3756821329.mp3
+
+原贴：
+
+https://blog.csdn.net/2301_78245299/article/details/140352615

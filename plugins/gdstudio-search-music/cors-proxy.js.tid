@@ -1,0 +1,60 @@
+created: 20250609023933331
+modified: 20250609033943910
+module-type: startup
+tags: 酷狗音乐api
+title: cors-proxy.js
+type: application/javascript
+
+/*\        
+title: cors-proxy.js
+type: application/javascript
+module-type: startup
+        
+TiddlyWiki选择性CORS代理插件
+\*/        
+        
+"use strict";        
+        
+exports.name = "cors-proxy";        
+exports.platforms = ["browser"];        
+exports.after = ["rootwidget"];        
+exports.synchronous = true;        
+        
+exports.startup = function() {        
+    // 拦截HTTP请求函数        
+    var originalHttpRequest = $tw.utils.httpRequest;        
+            
+    $tw.utils.httpRequest = function(options) {        
+        var url = options.url;      
+              
+        // 检查是否需要使用CORS代理    
+        var shouldUseCors = options.useCorsProxy === "yes" ||     
+                           (url && url.includes("mobilecdn.kugou.com")) ||  
+                           (url && url.includes("m.kugou.com"));  
+                
+        if (shouldUseCors && url && !url.startsWith("https://cors-anywhere.herokuapp.com/")) {        
+            options.url = "https://cors-anywhere.herokuapp.com/" + url;        
+        }        
+                
+        return originalHttpRequest.call(this, options);        
+    };    
+        
+    // 同时拦截HttpClient请求    
+    if ($tw.utils.HttpClient) {    
+        var originalInitiateHttpRequest = $tw.utils.HttpClient.prototype.initiateHttpRequest;    
+            
+        $tw.utils.HttpClient.prototype.initiateHttpRequest = function(options) {    
+            var url = options.url;    
+                
+            var shouldUseCors = options.useCorsProxy === "yes" ||     
+                               (url && url.includes("mobilecdn.kugou.com")) ||  
+                               (url && url.includes("m.kugou.com"));  
+                
+            if (shouldUseCors && url && !url.startsWith("https://cors-anywhere.herokuapp.com/")) {    
+                options.url = "https://cors-anywhere.herokuapp.com/" + url;    
+            }    
+                
+            return originalInitiateHttpRequest.call(this, options);    
+        };    
+    }    
+};

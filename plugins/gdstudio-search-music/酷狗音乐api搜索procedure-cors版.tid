@@ -1,0 +1,23 @@
+code-body: yes
+created: 20250609024149395
+modified: 20250609030149922
+tags: 酷狗音乐api $:/tags/Macro
+title: 酷狗音乐api搜索procedure-cors版
+
+\procedure kugou-search-output()      
+<$action-setfield $tiddler="$:/state/kugou-api/searchResults" text=<<data>>/>      
+\end    
+    
+\procedure kugou-search-http-get()      
+	<$action-sendmessage      
+		$message="tm-http-request"      
+		url="http://mobilecdn.kugou.com/api/v3/search/song"    
+		query-format="json"    
+		query-keyword={{$:/state/gdstudio-api/keyword}}      
+		query-page={{$:/state/gdstudio-api/page-num}}      
+		bind-status="$:/state/kugou-api/status"      
+		bind-progress="$:/state/kugou-api/progress"    
+		method="GET"      
+		oncompletion=<<kugou-search-output>>      
+	/>      
+\end
