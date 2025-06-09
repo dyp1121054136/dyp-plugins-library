@@ -4,6 +4,10 @@ tags:
 title: $:/plugins/dyp/gdstudio-search-music/history
 type: text/vnd.tiddlywiki
 
+; v.0.0.7 2025-06-09
+
+新增官方酷狗音乐api，并通过添加cors绕过权限；
+
 ; v.0.0.6 2025-06-02
 
 # 动态歌词显示方式新增单行模式和多行模式自由设置 [[动态歌词单行模式与多行模式]]；
