@@ -1,0 +1,29 @@
+created: 20250609055713993
+modified: 20250609073936135
+tags: 洛雪音乐
+title: 测试洛雪音乐api获取音乐url
+
+<$button actions=<<lxmusic-get-music-url>>>获取音乐URL</$button>  
+<$button actions=<<clear-debug-data>>>清空测试数据</$button>  
+  
+音乐源：{{$:/state/gdstudio-api/music-source}}  
+  
+id：{{$:/state/gdstudio-api/track-id}}  
+  
+音质：{{$:/state/gdstudio-api/br}}  
+  
+歌曲url：{{$:/state/lxmusic/music-url}}
+
+调试信息
+请求状态：{{$:/state/lxmusic/debug-request}}
+HTTP状态码：{{$:/state/lxmusic/debug-status}}
+请求进度：{{$:/state/lxmusic/request-progress}}
+错误信息：{{$:/state/lxmusic/debug-error}}
+调试结果：{{$:/state/lxmusic/debug-result}}
+API错误：{{$:/state/lxmusic/error}}
+
+原始响应数据：
+<$codeblock code={{$:/state/lxmusic/debug-data}}/>
+
+响应头：
+<$codeblock code={{$:/state/lxmusic/debug-headers}}/>

@@ -1,0 +1,30 @@
+created: 20250530064319033
+modified: 20250530075236966
+tags: 洛雪音乐
+title: 引用洛雪音乐api
+
+<<lxmusic-music-url "wy" "1824959449" "320k">>
+
+<$transclude $variable="lxmusic-music-url" source="wy" songid="1824959449" quality="320k"/>
+
+```tw
+<<lxmusic-music-url "wy" "1824959449" "320k">>
+
+<$transclude $variable="lxmusic-music-url" source="wy" songid="1824959449" quality="320k"/>
+```
+
+<$button>  
+  获取音乐  
+  <<lxmusic-get-music-url "wy" "1824959449" "320k">>  
+</$button>
+
+<$button>  
+  获取并播放音乐  
+  <<lxmusic-get-music-url "wy" "1824959449" "320k">>  
+</$button>  
+  
+<$list filter="[{$:/state/lxmusic-api/music-url}!is[blank]]" variable="musicUrl">  
+  <audio controls style="width: 100%; object-fit: contain">  
+    <source src=<<musicUrl>> type="audio/mpeg">  
+  </audio>  
+</$list>

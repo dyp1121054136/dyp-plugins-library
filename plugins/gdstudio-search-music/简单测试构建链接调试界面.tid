@@ -1,0 +1,34 @@
+created: 20250609063154053
+modified: 20250609071609199
+tags: 洛雪音乐
+title: 简单测试构建链接调试界面
+
+<$button actions=<<lxmusic-get-music-url>>>测试lxmusic URL</$button>    
+<$button actions=<<clear-debug-data>>>清空调试信息</$button>    
+  
+输入参数调试  
+音乐源：{{$:/state/gdstudio-api/music-source}}  
+歌曲ID：{{$:/state/gdstudio-api/track-id}}  
+酷狗Hash：{{$:/state/kugou-api/hash}}  
+音质：{{$:/state/gdstudio-api/br}}  
+  
+URL构建调试  
+源代码映射：{{$:/state/lxmusic/debug-source}}  
+歌曲ID选择：{{$:/state/lxmusic/debug-songid}}  
+音质参数：{{$:/state/lxmusic/debug-quality}}  
+最终URL：{{$:/state/lxmusic/debug-url}}  
+  
+请求调试  
+测试状态：{{$:/state/lxmusic/debug-request}}    
+HTTP状态码：{{$:/state/lxmusic/debug-status}}    
+错误信息：{{$:/state/lxmusic/debug-error}}    
+调试结果：{{$:/state/lxmusic/debug-result}}    
+  
+解析的歌曲URL：{{$:/state/lxmusic/music-url}}    
+API错误：{{$:/state/lxmusic/error}}  
+  
+原始响应数据：    
+<$codeblock code={{$:/state/lxmusic/debug-data}}/>    
+  
+响应头：    
+<$codeblock code={{$:/state/lxmusic/debug-headers}}/>

@@ -1,0 +1,91 @@
+code-body: yes
+created: 20250609070011993
+modified: 20250609073520772
+tags: 洛雪音乐 $:/tags/Macro
+title: 简单测试构建链接procedure
+
+<!-- 
+https://cors-anywhere.herokuapp.com/
+ -->
+
+\procedure lxmusic-get-music-url-simple()  
+<$action-setfield $tiddler="$:/state/lxmusic/debug-request" text="开始简单测试"/>  
+<$action-sendmessage  
+    $message="tm-http-request"  
+    url="https://88.lxmusic.xn--fiqs8s/lxmusicv3/url/kg/61a8c6a5ba335feeff0b0729438af472/320k"  
+    method="GET"  
+    header-Content-Type="application/json"  
+    header-X-Request-Key="lxmusic"  
+    bind-status="$:/state/lxmusic/request-status"  
+    bind-progress="$:/state/lxmusic/request-progress"  
+    oncompletion=<<lxmusic-extract-music-url>>  
+/>  
+\end
+
+\procedure lxmusic-get-music-url()  
+<$action-setfield $tiddler="$:/state/lxmusic/debug-request" text="开始请求"/>  
+<$let   
+    sourceCode={{{ [{$:/state/gdstudio-api/music-source}match[netease]then[wy]] [{$:/state/gdstudio-api/music-source}match[kugou]then[kg]] [{$:/state/gdstudio-api/music-source}match[kuwo]then[kw]] +[first[]] }}}  
+    quality={{{ [{$:/state/gdstudio-api/br}addsuffix[k]] }}}  
+    songId={{{ [{$:/state/gdstudio-api/track-id}!match[null]!is[blank]] ~[{$:/state/kugou-api/hash}] +[first[]] }}}  
+    baseUrl="https://88.lxmusic.xn--fiqs8s/lxmusicv3/url/"  
+>  
+<$action-setfield $tiddler="$:/state/lxmusic/debug-source" text=<<sourceCode>>/>  
+<$action-setfield $tiddler="$:/state/lxmusic/debug-songid" text=<<songId>>/>  
+<$action-setfield $tiddler="$:/state/lxmusic/debug-quality" text=<<quality>>/>  
+<$action-setfield $tiddler="$:/state/lxmusic/debug-url" text={{{ [<baseUrl>addsuffix<sourceCode>addsuffix[/]addsuffix<songId>addsuffix[/]addsuffix<quality>] }}}/>  
+<$action-sendmessage  
+    $message="tm-http-request"  
+    url={{{ [<baseUrl>addsuffix<sourceCode>addsuffix[/]addsuffix<songId>addsuffix[/]addsuffix<quality>] }}}  
+    method="GET"  
+    header-Content-Type="application/json"  
+    header-X-Request-Key="lxmusic"  
+    bind-status="$:/state/lxmusic/request-status"  
+    bind-progress="$:/state/lxmusic/request-progress"  
+    oncompletion=<<lxmusic-extract-music-url>>  
+/>  
+</$let>  
+\end
+
+\procedure lxmusic-extract-music-url()  
+<$action-setfield $tiddler="$:/state/lxmusic/debug-status" text=<<status>>/>  
+<$action-setfield $tiddler="$:/state/lxmusic/debug-data" text=<<data>>/>  
+<$action-setfield $tiddler="$:/state/lxmusic/debug-error" text=<<error>>/>  
+<$action-setfield $tiddler="$:/state/lxmusic/debug-headers" text=<<headers>>/>  
+<$list filter="[<status>compare:number:gteq[200]compare:number:lteq[299]]" variable="ignore">  
+    <$list filter="[<data>jsonget[code]match[0]]" variable="ignore">  
+        <$action-setfield  
+            $tiddler="$:/state/lxmusic/music-url"  
+            text={{{ [<data>jsonget[data]] }}}  
+        />  
+        <$action-setfield $tiddler="$:/state/lxmusic/debug-result" text="成功获取URL"/>  
+    </$list>  
+    <$list filter="[<data>jsonget[code]!match[0]]" variable="ignore">  
+        <$action-setfield  
+            $tiddler="$:/state/lxmusic/error"  
+            text={{{ [<data>jsonget[msg]] }}}  
+        />  
+        <$action-setfield $tiddler="$:/state/lxmusic/debug-result" text="API返回错误"/>  
+    </$list>  
+</$list>  
+<$list filter="[<status>!compare:number:gteq[200]] [<status>!compare:number:lteq[299]]" variable="ignore">  
+    <$action-setfield $tiddler="$:/state/lxmusic/debug-result" text="HTTP请求失败"/>  
+</$list>  
+\end
+
+\procedure clear-debug-data()  
+<$action-setfield $tiddler="$:/state/lxmusic/debug-request" text=""/>  
+<$action-setfield $tiddler="$:/state/lxmusic/debug-status" text=""/>  
+<$action-setfield $tiddler="$:/state/lxmusic/debug-data" text=""/>  
+<$action-setfield $tiddler="$:/state/lxmusic/debug-error" text=""/>  
+<$action-setfield $tiddler="$:/state/lxmusic/debug-headers" text=""/>  
+<$action-setfield $tiddler="$:/state/lxmusic/debug-result" text=""/>  
+<$action-setfield $tiddler="$:/state/lxmusic/debug-source" text=""/>  
+<$action-setfield $tiddler="$:/state/lxmusic/debug-songid" text=""/>  
+<$action-setfield $tiddler="$:/state/lxmusic/debug-quality" text=""/>  
+<$action-setfield $tiddler="$:/state/lxmusic/debug-url" text=""/>  
+<$action-setfield $tiddler="$:/state/lxmusic/music-url" text=""/>  
+<$action-setfield $tiddler="$:/state/lxmusic/error" text=""/>  
+<$action-setfield $tiddler="$:/state/lxmusic/request-status" text=""/>  
+<$action-setfield $tiddler="$:/state/lxmusic/request-progress" text=""/>  
+\end

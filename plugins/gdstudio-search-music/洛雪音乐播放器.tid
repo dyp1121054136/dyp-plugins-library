@@ -1,0 +1,9 @@
+created: 20250530094050631
+modified: 20250530094806339
+tags: 洛雪音乐
+title: 洛雪音乐播放器
+
+<audio controls autoplay onerror="console.error('Audio loading failed')">                
+     <source src={{$:/state/lxmusic/music-url}} type="audio/mpeg">                
+     您的浏览器不支持音频播放                
+</audio>  

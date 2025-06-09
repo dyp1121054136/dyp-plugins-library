@@ -1,0 +1,11 @@
+code-body: yes
+created: 20250530064013775
+modified: 20250530073002007
+tags: $:/tags/Macro 洛雪音乐
+title: 洛雪音乐api宏macro
+
+\define lxmusic-base-url() https://88.lxmusic.xn--fiqs8s
+  
+\define lxmusic-music-url(source, songid, quality)  
+$(lxmusic-base-url)$/lxmusicv3/url/$source$/$songid$/$quality$  
+\end

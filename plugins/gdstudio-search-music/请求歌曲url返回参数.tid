@@ -1,0 +1,22 @@
+code-body: yes
+created: 20250530075136320
+modified: 20250530075202186
+tags: 洛雪音乐
+title: 请求歌曲url返回参数
+
+{
+  "code": 0,
+  "msg": "success",
+  "data": "http:\/\/m701.music.126.net\/20250530161457\/864a7c34f51b93cfb262a3f02067bf70\/jdymusic\/obj\/wo3DlMOGwrbDjj7DisKw\/7797582220\/9a45\/b69b\/b41a\/ed55008675c3035d7e03e68b5f7ff9b8.mp3",
+  "extra": {
+    "cache": false,
+    "quality": {
+      "target": "320k",
+      "result": "320k"
+    },
+    "expire": {
+      "time": 1748592597,
+      "canExpire": true
+    }
+  }
+}
