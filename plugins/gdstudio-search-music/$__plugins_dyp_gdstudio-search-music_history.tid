@@ -6,9 +6,8 @@ type: text/vnd.tiddlywiki
 
 ; v.0.0.8 2025-06-10
 
-# 解决了cors-anywhere需要手动验证的问题；
 # 移除官方酷狗音乐api，已不需要通过此方式来获取歌曲hash；
-# 添加洛雪音乐封面和歌词procedure，如果gdstudio-api未能成功获取歌曲、封面、歌词url则自动使用洛雪音乐api；
+# 如果gdstudio-api未能成功获取歌曲、封面、歌词url则自动使用洛雪音乐api；
 
 ; v.0.0.7 2025-06-09
 
