@@ -27,7 +27,7 @@ https://cors-anywhere.herokuapp.com/
 <$let   
     sourceCode={{{ [{$:/state/gdstudio-api/music-source}match[netease]then[wy]] [{$:/state/gdstudio-api/music-source}match[kugou]then[kg]] [{$:/state/gdstudio-api/music-source}match[kuwo]then[kw]] +[first[]] }}}  
     quality={{{ [{$:/state/gdstudio-api/br}addsuffix[k]] }}}  
-    songId={{{ [{$:/state/gdstudio-api/track-id}!match[null]!is[blank]] ~[{$:/state/gdstudio-api/pic-id}] +[first[]] }}}  
+    songId={{{ [{$:/state/gdstudio-api/track-id}!match[null]!is[blank]] ~[{$:/state/kugou-api/hash}] +[first[]] }}}  
     baseUrl="https://88.lxmusic.xn--fiqs8s/lxmusicv3/url/"  
 >  
 <$action-setfield $tiddler="$:/state/lxmusic/debug-source" text=<<sourceCode>>/>  
