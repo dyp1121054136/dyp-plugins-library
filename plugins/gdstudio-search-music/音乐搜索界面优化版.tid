@@ -19,12 +19,13 @@ title: 音乐搜索界面优化版
 </$select> 关键词：<$edit-text tiddler="$:/state/gdstudio-api/keyword" default="" tag="input"/> <$button class="" tooltip="搜索">搜索
 <<gdstudio-search-http-get>>
   <$reveal state="$:/state/gdstudio-api/music-source" type="match" text="kugou">
-  <!-- 先清空新增的酷狗api缓存 -->
+  <!-- 先清空新增的酷狗api缓存 问题已解决，不需要了
   <$action-setfield $tiddler="$:/state/kugou-api/searchResults" text=""/>
   <$action-setfield $tiddler="$:/state/kugou-api/hash" text=""/>
   <$action-setfield $tiddler="$:/state/kugou-api/music-url" text=""/>
       <<kugou-search-http-get>>  
-      <<kugou-extract-hash>>  
+      <<kugou-extract-hash>>
+ -->
   </$reveal>
 </$button>
 
