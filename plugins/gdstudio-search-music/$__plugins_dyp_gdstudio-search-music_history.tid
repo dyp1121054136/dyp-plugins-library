@@ -7,7 +7,8 @@ type: text/vnd.tiddlywiki
 ; v.0.0.7 2025-06-09
 
 # 新增官方酷狗音乐api，并通过添加cors绕过权限，经测试酷狗vip歌曲仍然无法播放；
-# 新增洛雪音乐源，并通过添加cors绕过权限，解决vip歌曲无法播放的问题。
+# 新增洛雪音乐源，并通过添加cors绕过权限，解决vip歌曲无法播放的问题；
+# 经测试，需要打开网址 https://cors-anywhere.herokuapp.com/corsdemo 点击确认 “Request temporary access to the demo server”，才可使用cors服务。
 
 ; v.0.0.6 2025-06-02
 
