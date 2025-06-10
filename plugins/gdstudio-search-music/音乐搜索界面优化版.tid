@@ -16,7 +16,17 @@ title: 音乐搜索界面优化版
 <option value="qobuz">Qobuz</option>  
 <option value="joox">JOOX</option>  
 <option value="deezer">Deezer</option>  
-</$select> 关键词：<$edit-text tiddler="$:/state/gdstudio-api/keyword" default="" tag="input"/> <$button actions=<<gdstudio-search-http-get>>>搜索</$button>
+</$select> 关键词：<$edit-text tiddler="$:/state/gdstudio-api/keyword" default="" tag="input"/> <$button class="" tooltip="搜索">搜索
+<<gdstudio-search-http-get>>
+  <$reveal state="$:/state/gdstudio-api/music-source" type="match" text="kugou">
+  <!-- 先清空新增的酷狗api缓存 -->
+  <$action-setfield $tiddler="$:/state/kugou-api/searchResults" text=""/>
+  <$action-setfield $tiddler="$:/state/kugou-api/hash" text=""/>
+  <$action-setfield $tiddler="$:/state/kugou-api/music-url" text=""/>
+      <<kugou-search-http-get>>  
+      <<kugou-extract-hash>>  
+  </$reveal>
+</$button>
 
 每页数量：<$select tiddler="$:/state/gdstudio-api/page-length" default="10">
 <option value="10">10</option>
