@@ -5,58 +5,81 @@ tags: 酷狗音乐api
 title: cors-proxy.js
 type: application/javascript
 
-/*\        
-title: cors-proxy.js
-type: application/javascript
-module-type: startup
-        
-TiddlyWiki选择性CORS代理插件
-\*/        
-        
-"use strict";        
-        
-exports.name = "cors-proxy";        
-exports.platforms = ["browser"];        
-exports.after = ["rootwidget"];        
-exports.synchronous = true;        
-        
-exports.startup = function() {        
-    // 拦截HTTP请求函数        
-    var originalHttpRequest = $tw.utils.httpRequest;        
-            
-    $tw.utils.httpRequest = function(options) {        
-        var url = options.url;      
+/*\          
+title: cors-proxy.js  
+type: application/javascript  
+module-type: startup  
+          
+TiddlyWiki选择性CORS代理插件  
+\*/          
+          
+"use strict";          
+          
+exports.name = "cors-proxy";          
+exports.platforms = ["browser"];          
+exports.after = ["rootwidget"];          
+exports.synchronous = true;          
+  
+exports.startup = function() {          
+    // 拦截HTTP请求函数          
+    var originalHttpRequest = $tw.utils.httpRequest;          
               
-        // 检查是否需要使用CORS代理    
-        var shouldUseCors = options.useCorsProxy === "yes" ||     
-                           (url && url.includes("mobilecdn.kugou.com")) ||  
-                           (url && url.includes("m.kugou.com")) ||
-                           (url && url.includes("88.lxmusic.xn--fiqs8s"));
+    $tw.utils.httpRequest = function(options) {          
+        var url = options.url;        
                 
-        if (shouldUseCors && url && !url.startsWith("https://cors-anywhere.herokuapp.com/")) {        
-            options.url = "https://cors-anywhere.herokuapp.com/" + url;        
-        }        
-                
-        return originalHttpRequest.call(this, options);        
-    };    
-        
-    // 同时拦截HttpClient请求    
-    if ($tw.utils.HttpClient) {    
-        var originalInitiateHttpRequest = $tw.utils.HttpClient.prototype.initiateHttpRequest;    
-            
-        $tw.utils.HttpClient.prototype.initiateHttpRequest = function(options) {    
-            var url = options.url;    
-                
-            var shouldUseCors = options.useCorsProxy === "yes" ||     
-                               (url && url.includes("mobilecdn.kugou.com")) ||  
-                               (url && url.includes("m.kugou.com")) ||
-                               (url && url.includes("88.lxmusic.xn--fiqs8s"));
-                
-            if (shouldUseCors && url && !url.startsWith("https://cors-anywhere.herokuapp.com/")) {    
-                options.url = "https://cors-anywhere.herokuapp.com/" + url;    
-            }    
-                
-            return originalInitiateHttpRequest.call(this, options);    
-        };    
-    }    
+        // 检查是否需要使用CORS代理      
+        var shouldUseCors = options.useCorsProxy === "yes" ||       
+                           (url && url.includes("mobilecdn.kugou.com")) ||    
+                           (url && url.includes("m.kugou.com")) ||  
+                           (url && url.includes("88.lxmusic.xn--fiqs8s"));  
+                  
+        if (shouldUseCors && url && !url.startsWith("https://cors-anywhere.herokuapp.com/")) {          
+            // 使用原生XMLHttpRequest直接请求，绕过TiddlyWiki框架  
+            var xhr = new XMLHttpRequest();  
+            var corsUrl = "https://cors-anywhere.herokuapp.com/" + url;  
+              
+            xhr.open(options.type || "GET", corsUrl, true);  
+              
+            // 设置基本的响应处理  
+            xhr.onload = xhr.onerror = function() {  
+                if (xhr.status >= 200 && xhr.status < 300) {  
+                    // 成功响应  
+                    options.callback(null, xhr.responseText, xhr);  
+                } else {  
+                    // 错误响应  
+                    options.callback("HTTP Error: " + xhr.status, xhr.responseText, xhr);  
+                }  
+            };  
+              
+            // 处理POST请求的数据  
+            if (options.data && /^POST/i.test(options.type)) {  
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');  
+            }  
+              
+            xhr.send(options.data || null);  
+            return xhr;  
+        }          
+                  
+        return originalHttpRequest.call(this, options);          
+    };      
+          
+    // HttpClient拦截保持原有逻辑  
+    if ($tw.utils.HttpClient) {      
+        var originalInitiateHttpRequest = $tw.utils.HttpClient.prototype.initiateHttpRequest;      
+              
+        $tw.utils.HttpClient.prototype.initiateHttpRequest = function(options) {      
+            var url = options.url;      
+                  
+            var shouldUseCors = options.useCorsProxy === "yes" ||       
+                               (url && url.includes("mobilecdn.kugou.com")) ||    
+                               (url && url.includes("m.kugou.com")) ||  
+                               (url && url.includes("88.lxmusic.xn--fiqs8s"));  
+                  
+            if (shouldUseCors && url && !url.startsWith("https://cors-anywhere.herokuapp.com/")) {      
+                options.url = "https://cors-anywhere.herokuapp.com/" + url;      
+            }      
+                  
+            return originalInitiateHttpRequest.call(this, options);      
+        };      
+    }      
 };
