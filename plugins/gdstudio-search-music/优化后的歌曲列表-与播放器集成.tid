@@ -48,10 +48,11 @@ title: 优化后的歌曲列表-与播放器集成
     </$reveal>  
 </$reveal>
 
-<!-- 如果音乐源为酷狗则切换到酷狗音乐api -->
+<!-- 如果音乐源为酷狗则切换到酷狗音乐api 问题已解决，不需要了
   <$reveal state="$:/state/gdstudio-api/music-source" type="match" text="kugou">
       <<kugou-get-music-url>>  
   </$reveal>
+-->
 
   <!-- 如果gdstudio api为空则切换到洛雪音乐api -->  
   <$reveal state="$:/state/gdstudio-api/music-url" type="match" text="">  
