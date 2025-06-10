@@ -28,7 +28,7 @@ title: 优化后的歌曲列表-与播放器集成
   <<clear-debug-data>>
     
   <!-- 然后设置新的ID -->  
-  <$action-setfield $tiddler="$:/state/gdstudio-api/track-id" text={{{ [{$:/state/gdstudio-api/searchResults}jsonget<currentTiddler>,[id]] }}}/>        
+  <$action-setfield $tiddler="$:/state/gdstudio-api/track-id" text={{{ [{$:/state/gdstudio-api/searchResults}jsonget<currentTiddler>,[id]!match[null]] :else[{$:/state/gdstudio-api/searchResults}jsonget<currentTiddler>,[url_id]] }}}/>     
   <$action-setfield $tiddler="$:/state/gdstudio-api/pic-id" text={{{ [{$:/state/gdstudio-api/searchResults}jsonget<currentTiddler>,[pic_id]] }}}/>        
   <$action-setfield $tiddler="$:/state/gdstudio-api/lyric-id" text={{{ [{$:/state/gdstudio-api/searchResults}jsonget<currentTiddler>,[lyric_id]] }}}/>  
     
