@@ -32,6 +32,7 @@ title: 获取歌词url和文本定义procedure
 	/>        
 \end      
       
-\procedure gdstudio-extract-lyric()  
-<$action-setfield $tiddler="$:/state/gdstudio-api/lyric" text={{{[<data>jsonget[lyric]] }}}/>   
+\procedure gdstudio-extract-lyric()    
+<$action-setfield $tiddler="$:/state/gdstudio-api/lyric" text={{{[<data>jsonget[lyric]splitregexp[\r?\n]prefix[[0]join[  
+]] }}}/>     
 \end
