@@ -30,6 +30,7 @@ title: 自定义音乐播放器补充样式css
   width: 57.5px;
   height: 57.5px;
   border-radius: 57.5px;
+}
 
 /* 海报外边距 */
 .gdstudio-audio-position .gdstudio-mini-cover {
@@ -49,8 +50,13 @@ title: 自定义音乐播放器补充样式css
 
 /* 歌曲名-歌手名，音量按钮 */
 .gdstudio-audio-position .gdstudio-music-name,
-.gdstudio-audio-position .gdstudio-volume-btn
+.gdstudio-audio-position .gdstudio-volume-btn,
+.gdstudio-audio-position .gdstudio-progress
  {
   display: none;
+}
+
+.gdstudio-audio-position gdstudio-progress-fill {
+
 }
 }
