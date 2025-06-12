@@ -1,0 +1,8 @@
+created: 20250612031733855
+modified: 20250612031815465
+tags: 音乐 gdstudio
+title: 调用自定义播放器-精简模式
+
+<$radio tiddler="$:/state/audio-player-mode" field="text" value="auto"> 自动模式</$radio>  
+<$radio tiddler="$:/state/audio-player-mode" field="text" value="compact"> 精简模式</$radio>    
+<$radio tiddler="$:/state/audio-player-mode" field="text" value="full"> 完整模式</$radio>  
