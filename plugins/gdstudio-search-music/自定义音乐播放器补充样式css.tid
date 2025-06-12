@@ -27,6 +27,7 @@ title: 自定义音乐播放器补充样式css
 /* 媒体查询，小屏 */
 @media (max-width: 767px) {
 /* 音乐播放器宽度 */
+.gdstudio-audio-position .gdstudio-mini-player {
   width: 57.5px;
   height: 57.5px;
   border-radius: 57.5px;
