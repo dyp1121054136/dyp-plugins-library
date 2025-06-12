@@ -4,3 +4,6 @@ tags:
 title: $:/plugins/dyp/chinese-calendar/history
 type: text/vnd.tiddlywiki
 
+; v.0.0.2 2025-06-12
+
+# 可以查看全年日历或单月日历，可通过“上一月”、“下一月”按钮翻页；
