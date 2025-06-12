@@ -4,6 +4,10 @@ tags:
 title: $:/plugins/dyp/gdstudio-search-music/history
 type: text/vnd.tiddlywiki
 
+; v.0.1.0 2025-06-12
+
+# 音乐播放器可切换精简模式和完整模式 [[调用自定义播放器-精简模式]]
+
 ; v.0.0.9 2025-06-11
 
 # 优化了歌词解析procedure，只保留带时间戳的行，避免音乐播放器获取不了动态歌词；
