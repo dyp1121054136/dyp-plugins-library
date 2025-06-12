@@ -3,61 +3,72 @@ modified: 20250531103834367
 tags: 音乐播放器 样式 $:/tags/Stylesheet gdstudio
 title: 自定义音乐播放器补充样式css
 
-.gdstudio-audio-position .gdstudio-mini-player {
-  position: fixed;
-  bottom: 5px;
-  left: 5px;
-}
-
-/* 定义大屏宽度 */
-.large-screen {
-  width: 1000px;
-}
-
-/* 定义小屏宽度 */
-.small-screen {
-  width: 350px;
-}
-
-/* 媒体查询，大屏 */
-@media (min-width: 768px) {
-
-}
-
-/* 媒体查询，小屏 */
-@media (max-width: 767px) {
-/* 音乐播放器宽度 */
-.gdstudio-audio-position .gdstudio-mini-player {
-  width: 57.5px;
-  height: 57.5px;
-  border-radius: 57.5px;
-}
-
-/* 海报外边距 */
-.gdstudio-audio-position .gdstudio-mini-cover {
-  margin-right: 10px;
-}
-
-/* 时间戳字号 */
-.gdstudio-audio-position .gdstudio-time {
-  font-size: 0.7em;
-  display: none;
-}
-
-/* 音量条位置 */
-.gdstudio-audio-position .gdstudio-volume-panel.visible {
-  transform: translateX(23px);
-}
-
-/* 歌曲名-歌手名，音量按钮 */
-.gdstudio-audio-position .gdstudio-music-name,
-.gdstudio-audio-position .gdstudio-volume-btn,
-.gdstudio-audio-position .gdstudio-progress
- {
-  display: none;
-}
-
-.gdstudio-audio-position gdstudio-progress-fill {
-
-}
+/* 基础样式 - 保持原有的默认样式 */  
+.gdstudio-audio-position .gdstudio-mini-player {  
+  position: fixed;  
+  bottom: 5px;  
+  left: 5px;  
+}  
+  
+/* 只为精简模式添加特殊样式 */  
+.audio-player-compact .gdstudio-audio-position .gdstudio-mini-player {  
+  width: 57.5px;  
+  height: 57.5px;  
+  border-radius: 57.5px;  
+}  
+  
+.audio-player-compact .gdstudio-audio-position .gdstudio-mini-cover {  
+  margin-right: 10px;  
+}  
+  
+.audio-player-compact .gdstudio-audio-position .gdstudio-time {  
+  font-size: 0.7em;  
+  display: none;  
+}  
+  
+.audio-player-compact .gdstudio-audio-position .gdstudio-volume-panel.visible {  
+  transform: translateX(23px);  
+}  
+  
+.audio-player-compact .gdstudio-audio-position .gdstudio-music-name,  
+.audio-player-compact .gdstudio-audio-position .gdstudio-volume-btn,  
+.audio-player-compact .gdstudio-audio-position .gdstudio-progress {  
+  display: none;  
+}  
+  
+/* 自动模式只在小屏时应用精简样式 */  
+@media (max-width: 767px) {  
+  .audio-player-auto .gdstudio-audio-position .gdstudio-mini-player {  
+    width: 57.5px;  
+    height: 57.5px;  
+    border-radius: 57.5px;  
+  }  
+    
+  .audio-player-auto .gdstudio-audio-position .gdstudio-mini-cover {  
+    margin-right: 10px;  
+  }  
+    
+  .audio-player-auto .gdstudio-audio-position .gdstudio-time {  
+    font-size: 0.7em;  
+    display: none;  
+  }  
+    
+  .audio-player-auto .gdstudio-audio-position .gdstudio-volume-panel.visible {  
+    transform: translateX(23px);  
+  }  
+    
+  .audio-player-auto .gdstudio-audio-position .gdstudio-music-name,  
+  .audio-player-auto .gdstudio-audio-position .gdstudio-volume-btn,  
+  .audio-player-auto .gdstudio-audio-position .gdstudio-progress {  
+    display: none;  
+  }  
+}  
+  
+/* 保留您的原有定义 */  
+.large-screen {  
+  width: 1000px;  
+}  
+  
+.small-screen {  
+  width: 350px;  
 }
