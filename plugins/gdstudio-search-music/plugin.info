@@ -1,6 +1,6 @@
 {
     "title": "$:/plugins/dyp/gdstudio-search-music",
-    "version": "0.0.9",
+    "version": "0.1.0",
     "stability": "STABILITY_2_STABLE",
     "name": "gdstudio-search-music",
     "description": "GD音乐库在线听歌",
