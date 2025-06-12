@@ -3,7 +3,28 @@ modified: 20250602074431713
 tags: $:/tags/PageTemplate
 title: 调用自定义播放器-固定页面
 
-<div class="gdstudio-audio-position">
-<$transclude tiddler="调用自定义播放器"/>
-<$transclude tiddler="添加歌词同步功能"/>
-</div>
+<$reveal state="$:/state/audio-player-mode" type="match" text="compact">  
+<div class="audio-player-compact">  
+<div class="gdstudio-audio-position">  
+<$transclude tiddler="调用自定义播放器"/>  
+<$transclude tiddler="添加歌词同步功能"/>  
+</div>  
+</div>  
+</$reveal>  
+  
+<$reveal state="$:/state/audio-player-mode" type="match" text="auto">  
+<div class="audio-player-auto">  
+<div class="gdstudio-audio-position">  
+<$transclude tiddler="调用自定义播放器"/>  
+<$transclude tiddler="添加歌词同步功能"/>  
+</div>  
+</div>  
+</$reveal>  
+  
+<$reveal state="$:/state/audio-player-mode" type="match" text="full">  
+<!-- 完整模式不添加任何额外类，使用原始样式 -->  
+<div class="gdstudio-audio-position">  
+<$transclude tiddler="调用自定义播放器"/>  
+<$transclude tiddler="添加歌词同步功能"/>  
+</div>  
+</$reveal>
