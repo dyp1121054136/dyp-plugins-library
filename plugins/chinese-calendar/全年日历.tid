@@ -1,0 +1,60 @@
+created: 20250612080501958
+modified: 20250612081435923
+tags: 中文日历
+title: 全年日历
+
+<!-- 月份选择器 -->    
+<$select tiddler="$:/temp/calendar-month" default="6">    
+<$list filter="1 2 3 4 5 6 7 8 9 10 11 12">    
+<option value=<<currentTiddler>>><$text text={{{ [<currentTiddler>addsuffix[月]] }}}/></option>    
+</$list>    
+</$select>    
+    
+<!-- 导航按钮 -->    
+<$button>  
+<$action-setfield $tiddler="$:/temp/calendar-month" text={{{ [{$:/temp/calendar-month}!is[blank]else[6]subtract[1]max[1]] }}}/>  
+上一月    
+</$button>    
+    
+<$button>  
+<$action-setfield $tiddler="$:/temp/calendar-month" text={{{ [{$:/temp/calendar-month}!is[blank]else[6]add[1]min[12]] }}}/>  
+下一月    
+</$button>    
+    
+<$button>  
+<$action-setfield $tiddler="$:/temp/calendar-view" text="year"/>  
+全年    
+</$button>  
+  
+<$button>  
+<$action-setfield $tiddler="$:/temp/calendar-view" text="month"/>  
+单月    
+</$button>    
+
+<!-- 条件显示：单月或全年 -->  
+<$reveal state="$:/temp/calendar-view" type="nomatch" text="year" default="month">  
+  
+<!-- 单月日历显示 -->    
+<$chinese-calendar       
+    year="2025"       
+    month={{$:/temp/calendar-month}}    
+    monday-first="yes"       
+    highlight-today="yes"      
+    annotation-filter="[field:date[{{date}}]]"/>  
+</$reveal>  
+  
+<$reveal state="$:/temp/calendar-view" type="match" text="year">  
+<!-- 全年日历显示 -->  
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">  
+<$list filter="1 2 3 4 5 6 7 8 9 10 11 12">  
+<div>  <!-- <h3><$text text={{{ [<currentTiddler>addsuffix[月]] }}}/></h3>  -->  
+<$chinese-calendar       
+    year="2025"       
+    month=<<currentTiddler>>  
+    monday-first="yes"       
+    highlight-today="yes"      
+    annotation-filter="[field:date[{{date}}]]"/>  
+</div>  
+</$list>  
+</div>  
+</$reveal>
