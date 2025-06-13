@@ -1,0 +1,28 @@
+created: 20250613082816923
+modified: 20250613084410267
+tags: $:/tags/Stylesheet 样式 quick-editfix
+title: 右键菜单文本框样式css
+
+.context-menu .tc-quick-editfix-container {    
+    padding: 7px 14px;    
+    line-height: 1.4;  
+}    
+    
+.context-menu .tc-quick-editfix-label {    
+    display: inline-block;  /* 改为inline-block */  
+    font-size: 0.9em;    
+    margin-bottom: 5px;  
+    float: left;  /* 左浮动 */  
+}    
+    
+.context-menu .tc-quick-editfix-submit {    
+    float: right;  /* 右浮动，与label同行 */  
+    margin-top: 0;  /* 调整垂直对齐 */  
+}  
+  
+.context-menu .tc-quick-editfix-textarea {    
+    width: 100%;    
+    margin-bottom: 0px;    
+    resize: both;  /* 允许水平和垂直方向调整大小 */
+    clear: both;  /* 清除浮动，确保文本框在新行 */  
+}
