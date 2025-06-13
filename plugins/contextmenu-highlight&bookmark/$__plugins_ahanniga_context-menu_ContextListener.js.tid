@@ -173,7 +173,15 @@ const addSuffix = addSuffixConfig === "yes" ? true : false;
     // 将后缀添加到选中文本的后面，如果addSuffix为true
     const editedSelection = addSuffix ? selection + suffix : selection;
 
-    menuHtml.push(`<li class="${separator}${hideme} ${decorator}"><label>修改: ` + ((qe_match_count > 1) ? "(" + qe_match_count + ")" : "") + `</label><input type="hidden" id="selectionStore" value="${sanitize(selection)}" /><input type="text" id="quick-editfix" value="${sanitize(editedSelection)}" /></li>`);
+    // menuHtml.push(`<li class="${separator}${hideme} ${decorator}"><label>修改: ` + ((qe_match_count > 1) ? "(" + qe_match_count + ")" : "") + `</label><input type="hidden" id="selectionStore" value="${sanitize(selection)}" /><input type="text" id="quick-editfix" value="${sanitize(editedSelection)}" /></li>`);
+
+    // 更改为多行输入框并添加提交按钮
+    menuHtml.push(`<li class="${separator}${hideme} ${decorator}">  
+        <label>修改: ` + ((qe_match_count > 1) ? "(" + qe_match_count + ")" : "") + `</label>  
+        <input type="hidden" id="selectionStore" value="${sanitize(selection)}" />  
+        <textarea id="quick-editfix" rows="3">${sanitize(editedSelection)}</textarea>  
+        <button type="submit" class="tc-btn-invisible">提交</button> 
+    </li>`);  
 }
 
 else if (action==="tm-new-tiddler") {
