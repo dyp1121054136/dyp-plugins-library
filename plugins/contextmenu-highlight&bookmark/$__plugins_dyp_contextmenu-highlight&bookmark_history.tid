@@ -4,3 +4,6 @@ tags:
 title: $:/plugins/dyp/contextmenu-highlight&bookmark/history
 type: text/vnd.tiddlywiki
 
+; v.0.0.2 2025-06-13
+
+# 右键菜单修改条目内容更改为多行输入框并添加提交按钮；
