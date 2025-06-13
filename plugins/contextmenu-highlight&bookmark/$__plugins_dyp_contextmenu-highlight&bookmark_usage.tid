@@ -16,4 +16,4 @@ type: text/vnd.tiddlywiki
 
 注：按住 <kbd>Ctrl</kbd> 键点击右键会显示原右键菜单。
 
-2、[[$:/config/tiddlercontextmenu/quick-editfix]] 很有用，选中文字后可以在查看模式下修改错别字、增加或替换文字内容等，修改完成后按回车键提交，手机端也生效。目前只有单行输入框，不建议一次性修改太多内容。
+2、[[$:/config/tiddlercontextmenu/quick-editfix]] 很有用，选中文字后可以在查看模式下修改错别字、增加或替换文字内容等，修改完成后点击按钮提交，手机端也生效。目前已有多行输入框，不建议一次性修改太多内容，不支持修改带复杂代码的内容。
