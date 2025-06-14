@@ -42,6 +42,7 @@ type: text/vnd.tiddlywiki
 ::-webkit-scrollbar-button {
   background-color: <<colour page-background>>; 
   height: 5px; /* 原10px */
+  width: 5px;
   border: 1px solid <<colour primary>>;
   border-radius: 3px; 
   background-image: radial-gradient(circle at 50% 50%, <<colour primary>> 0%, transparent 70%);
