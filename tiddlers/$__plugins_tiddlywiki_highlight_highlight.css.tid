@@ -1,0 +1,123 @@
+created: 20250614031339019
+modified: 20250614031804813
+tags: $:/tags/Stylesheet
+title: $:/plugins/tiddlywiki/highlight/highlight.css
+type: text/css
+
+/*!
+  Theme: Default
+  Description: Original highlight.js style
+  Author: (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
+  Maintainer: @highlightjs/core-team
+  Website: https://highlightjs.org/
+  License: see project LICENSE
+  Touched: 2021
+*/
+
+/* 修改版 适配黑色主题 */
+
+/* 设置代码块的样式，使用黑色背景 */
+.hljs {
+/*   background-color: #1E1E1E;
+  color: #D4D4D4; */
+  display: block;            /* 块级元素 */
+  overflow-x: auto;          /* 横向滚动 */
+  padding: 1em;              /* 内边距 */
+}
+
+/* 代码行的内边距 */
+code.hljs {
+  padding: 3px 5px;
+}
+
+/* 注释颜色 */
+.hljs-comment {
+  color: #6A6A6A;  /* 浅灰色注释 */
+}
+
+/* 标点符号、标签等 */
+.hljs-punctuation,
+.hljs-tag {
+  color: #D4D4D4;  /* 默认代码颜色 */
+}
+
+/* 标签内的属性或名称 */
+.hljs-tag .hljs-attr,
+.hljs-tag .hljs-name {
+  color: #D4D4D4;  /* 默认代码颜色 */
+}
+
+/* 属性名、关键字、选择器等 */
+.hljs-attribute,
+.hljs-doctag,
+.hljs-keyword,
+.hljs-meta .hljs-keyword,
+.hljs-name,
+.hljs-selector-tag {
+  font-weight: 700;  /* 加粗显示 */
+  color: #569CD6;    /* 蓝色 */
+}
+
+/* 删除内容、数字、字符串、类选择器等 */
+.hljs-deletion,
+.hljs-number,
+.hljs-quote,
+.hljs-selector-class,
+.hljs-selector-id,
+.hljs-string,
+.hljs-template-tag,
+.hljs-type {
+  color: #CE9178;  /* 橙色 */
+}
+
+/* 标题、部分标题等 */
+.hljs-section,
+.hljs-title {
+  color: #D16969;  /* 红色 */
+  font-weight: 700;  /* 加粗 */
+}
+
+/* 链接、操作符、正则表达式、变量等 */
+.hljs-link,
+.hljs-operator,
+.hljs-regexp,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-symbol,
+.hljs-template-variable,
+.hljs-variable {
+  color: #C586C0;  /* 紫色 */
+}
+
+/* 字面量（如 true、false、null） */
+.hljs-literal {
+  color: #608B4E;  /* 绿色 */
+}
+
+/* 新增内容、内置函数、代码块等 */
+.hljs-addition,
+.hljs-builtin,
+.hljs-bullet,
+.hljs-code {
+  color: #608B4E;  /* 绿色 */
+}
+
+/* 元数据（如 @import、@media 等） */
+.hljs-meta {
+  color: #9CDCFE;  /* 青色 */
+}
+
+/* 元数据中的字符串 */
+.hljs-meta .hljs-string {
+  color: #CE9178;  /* 橙色 */
+}
+
+/* 强调文本（斜体） */
+.hljs-emphasis {
+  font-style: italic;  /* 斜体 */
+}
+
+/* 加粗文本 */
+.hljs-strong {
+  font-weight: 700;  /* 加粗 */
+}
