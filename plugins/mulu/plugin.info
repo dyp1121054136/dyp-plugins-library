@@ -3,7 +3,7 @@
     "title": "$:/plugins/dyp/mulu",
     "stability": "STABILITY_2_STABLE",
     "modified": "20250506020103171",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "name": "Mulu",
     "list": "readme usage history",
     "source": "https://github.com/dyp1121054136/dyp-plugins-library",
