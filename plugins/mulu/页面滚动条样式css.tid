@@ -6,8 +6,8 @@ type: text/vnd.tiddlywiki
 
 /* 基本滚动条样式 */
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 5px; /* 原10px */
+  height: 5px; /* 原10px */
 }
 
 /* 滚动轨迹样式 */
@@ -41,7 +41,7 @@ type: text/vnd.tiddlywiki
 /* 滚动箭头按钮样式 */
 ::-webkit-scrollbar-button {
   background-color: <<colour page-background>>; 
-  height: 10px;
+  height: 5px; /* 原10px */
   border: 1px solid <<colour primary>>;
   border-radius: 3px; 
   background-image: radial-gradient(circle at 50% 50%, <<colour primary>> 0%, transparent 70%);
