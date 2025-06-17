@@ -15,7 +15,7 @@ title: toc-mulu-caption-template
 \define mulu0() 
 \whitespace trim
 
-<$wikify name="muluth" text={{{ [<currentTiddler>get[caption]else{!!title}search-replace:g:regexp<mulu1>,<mulu0>search-replace:g:regexp<mulu2>,<mulu0>search-replace:g:regexp<mulu-kong>,<mulu0>]}}} mode="inline" output="html"><<muluth>></$wikify>
+<$wikify name="muluth" text={{{ [<currentTiddler>get[caption]else{!!title}] :filter[prefix[0]] +[search-replace:g:regexp<mulu1>,<mulu0>search-replace:g:regexp<mulu2>,<mulu0>] ~[<currentTiddler>get[caption]else{!!title}] }}} mode="inline" output="html"><<muluth>></$wikify>
 \end
 
 <$list filter="[all[current]has<extraField>]" variable=ignore emptyMessage=<<toc-default-caption>>>
