@@ -45,7 +45,7 @@ title: $:/core/macros/list
 						<$transclude tiddler="""$itemTemplate$""">
 							<$link to={{!!title}}>
 								<$let tv-wikilinks="no">
-<$wikify name="muluth" text={{{ [<currentTiddler>get[caption]else{!!title}search-replace:g:regexp<mulu1>,<mulu0>search-replace:g:regexp<mulu2>,<mulu0>]}}} mode="inline" output="html"><<muluth>></$wikify>
+<$wikify name="muluth" text={{{ [<currentTiddler>get[caption]else{!!title}] :filter[prefix[0]] +[search-replace:g:regexp<mulu1>,<mulu0>search-replace:g:regexp<mulu2>,<mulu0>] ~[<currentTiddler>get[caption]else{!!title}] }}} mode="inline" output="html"><<muluth>></$wikify>
 								</$let>
 							</$link>
 						</$transclude>
@@ -115,7 +115,7 @@ title: $:/core/macros/list
 						<$transclude tiddler="""$itemTemplate$""">
 							<$link to={{!!title}}>
 								<$let tv-wikilinks="no">
-<$wikify name="muluth" text={{{ [<currentTiddler>get[caption]else{!!title}search-replace:g:regexp<mulu1>,<mulu0>search-replace:g:regexp<mulu2>,<mulu0>]}}} mode="inline" output="html"><<muluth>></$wikify>
+<$wikify name="muluth" text={{{ [<currentTiddler>get[caption]else{!!title}] :filter[prefix[0]] +[search-replace:g:regexp<mulu1>,<mulu0>search-replace:g:regexp<mulu2>,<mulu0>] ~[<currentTiddler>get[caption]else{!!title}] }}} mode="inline" output="html"><<muluth>></$wikify>
 								</$let>
 							</$link>
 						</$transclude>
