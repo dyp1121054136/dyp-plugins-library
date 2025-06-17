@@ -4,6 +4,14 @@ tags:
 title: $:/plugins/dyp/mulu/history
 type: text/vnd.tiddlywiki
 
+; v.0.0.8  2025-06-17
+
+* 修正筛选器公式为：
+
+```tw
+{{{ [<currentTiddler>get[caption]else{!!title}] :filter[prefix[0]] +[search-replace:g:regexp<mulu1>,<mulu0>search-replace:g:regexp<mulu2>,<mulu0>] ~[<currentTiddler>get[caption]else{!!title}] }}}
+```
+
 ; v.0.0.7  2025-06-14
 
 # [[页面滚动条样式css]] 滚动条宽度和高度缩小为5px;
