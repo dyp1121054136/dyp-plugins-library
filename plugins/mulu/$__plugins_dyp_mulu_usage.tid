@@ -19,5 +19,5 @@ type: text/vnd.tiddlywiki
 系统标签丸模板 [[$:/core/ui/TagTemplate]] （未改）
 系统标签丸弹出标题模板 [[$:/core/ui/ListItemTemplate]] （已改）
 系统标签丸弹出下拉列表模板 [[$:/core/macros/list]] （已改）
-系统标签丸模板 [[$:/core/macros/tag]] （已改）
+系统标签丸宏 [[$:/core/macros/tag]] （已改）
 """
