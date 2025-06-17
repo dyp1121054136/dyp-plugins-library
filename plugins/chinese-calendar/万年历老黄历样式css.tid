@@ -1,0 +1,10 @@
+created: 20250617025514001
+modified: 20250617025616671
+tags: 万年历老黄历 $:/tags/Stylesheet 样式
+title: 万年历老黄历样式css
+
+.tc-very-narrow-input {  
+    width: 40px !important;  
+    padding: 1px !important;  
+    text-align: center;  
+}

@@ -1,0 +1,46 @@
+created: 20250617022914752
+modified: 20250617030939441
+tags: 万年历老黄历
+title: 万年历老黄历展示
+
+<div style="margin-bottom: 10px;">              
+<$select tiddler="$:/temp/webpage-params-draft" field="year" default="2025">            
+<option value="2023">2023年</option>            
+<option value="2024">2024年</option>            
+<option value="2025">2025年</option>            
+<option value="2026">2026年</option>            
+</$select>            
+<$select tiddler="$:/temp/webpage-params-draft" field="month" default="06">            
+<option value="01">01月</option>      
+<option value="02">02月</option>      
+<option value="03">03月</option>      
+<option value="04">04月</option>      
+<option value="05">05月</option>      
+<option value="06">06月</option>      
+<option value="07">07月</option>       
+<option value="08">08月</option>      
+<option value="09">09月</option>      
+<option value="10">10月</option>      
+<option value="11">11月</option>      
+<option value="12">12月</option>      
+</$select>            
+<$edit-text tiddler="$:/temp/webpage-params-draft" field="day" default="17" tag="input" class="tc-very-narrow-input" placeholder="17"/>日  
+<$button>                
+<$action-setfield $tiddler="$:/temp/webpage-params"         
+    year={{{ [[$:/temp/webpage-params-draft]get[year]else[2025]] }}}        
+    month={{{ [[$:/temp/webpage-params-draft]get[month]else[06]] }}}        
+    day={{{ [[$:/temp/webpage-params-draft]get[day]else[17]] }}}  
+    prefix="https://www.wnl.cc/"/>                
+万年历          
+</$button>  
+<$button>                
+<$action-setfield $tiddler="$:/temp/webpage-params"         
+    year={{{ [[$:/temp/webpage-params-draft]get[year]else[2025]] }}}        
+    month={{{ [[$:/temp/webpage-params-draft]get[month]else[06]] }}}        
+    day={{{ [[$:/temp/webpage-params-draft]get[day]else[17]] }}}  
+    prefix="https://www.wnl.cc/hl/"/>                
+老黄历          
+</$button>                
+</div>      
+      
+<iframe src={{{ [[$:/temp/webpage-params]get[prefix]else[https://www.wnl.cc/]addsuffix{$:/temp/webpage-params!!year}else[2025]addsuffix[/]addsuffix{$:/temp/webpage-params!!month}else[06]addsuffix{$:/temp/webpage-params!!day}else[17]addsuffix[.html]] }}} width="100%" height="600px" frameborder="0"></iframe>
