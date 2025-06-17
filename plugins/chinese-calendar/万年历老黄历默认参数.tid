@@ -1,7 +1,7 @@
 code-body: yes
 created: 20250617024639675
 modified: 20250617025050220
-tags: $:/tags/StartupAction/Browser 万年历老黄历
+tags: $:/tags/StartupAction 万年历老黄历
 title: 万年历老黄历默认参数
 
 <$action-setfield $tiddler="$:/temp/webpage-params" year="2025" month="06" day="17"/>
