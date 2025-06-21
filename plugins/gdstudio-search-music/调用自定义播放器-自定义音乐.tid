@@ -10,8 +10,6 @@ title: 调用自定义播放器-自定义音乐
     music-url="https://sharefs.tx.kugou.com/202506071650/bdca807c5ac92230a49969a4c99d6e0a/v3/61a8c6a5ba335feeff0b0729438af472/yp/full/ap1000_us0_pi409_s3756821329.mp3"
     song-name="所倾共赴"
     artist="杨秉音"
-    width="320px"         
-    progress-height="8px"  
 />
 
 只更改音乐url，如果 [[$:/state/gdstudio-api/music-url]] 为空则使用 [[$:/state/kugou-api/music-url]]
@@ -20,7 +18,5 @@ title: 调用自定义播放器-自定义音乐
     cover-url={{$:/state/gdstudio-api/cover-url}}      
     music-url={{{ [{$:/state/gdstudio-api/music-url}!is[blank]] ~[{$:/state/kugou-api/music-url}] }}}
     song-name={{{ [{$:/state/gdstudio-api/searchResults}jsonget[{$:/state/gdstudio-api/track-id}],[name]] }}}      
-    artist={{{ [{$:/state/gdstudio-api/searchResults}jsonget[{$:/state/gdstudio-api/track-id}],[artist]] }}}      
-    width="320px"         
-    progress-height="8px"  
+    artist={{{ [{$:/state/gdstudio-api/searchResults}jsonget[{$:/state/gdstudio-api/track-id}],[artist]] }}} 
 />
