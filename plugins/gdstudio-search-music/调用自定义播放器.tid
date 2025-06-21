@@ -8,6 +8,4 @@ title: 调用自定义播放器
     music-url={{{ [{$:/state/gdstudio-api/music-url}!is[blank]] ~[{$:/state/lxmusic/music-url}] +[first[]] }}}
     song-name={{{ [{$:/state/gdstudio-api/searchResults}jsonget[{$:/state/gdstudio-api/track-id}],[name]] }}}      
     artist={{{ [{$:/state/gdstudio-api/searchResults}jsonget[{$:/state/gdstudio-api/track-id}],[artist]] }}}      
-    width="320px"         
-    progress-height="8px"  
 />
