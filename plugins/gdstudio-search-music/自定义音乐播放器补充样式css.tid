@@ -59,7 +59,9 @@ title: 自定义音乐播放器补充样式css
     
   .audio-player-auto .gdstudio-audio-position .gdstudio-music-name,  
   .audio-player-auto .gdstudio-audio-position .gdstudio-volume-btn,  
-  .audio-player-auto .gdstudio-audio-position .gdstudio-progress {  
+  .audio-player-auto .gdstudio-audio-position .gdstudio-progress,
+  .audio-player-auto .gdstudio-audio-position .gdstudio-download-btn
+{  
     display: none;  
   }  
 }  
