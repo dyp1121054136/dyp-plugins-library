@@ -84,6 +84,61 @@ GDStudioAudioWidget.prototype.render = function(parent,nextSibling) {
     progressFill.className = "gdstudio-progress-fill";
     progressBar.appendChild(progressFill);
 
+// 在 controls 区域添加下载按钮  
+// 下载的 SVG 代码，从条目text获取  
+const downloadSvg = this.wiki.getTiddlerText("$:/core/images/downloadSvg");  
+var downloadBtn = this.document.createElement("button");  
+downloadBtn.className = "tc-btn-invisible gdstudio-download-btn";  
+downloadBtn.innerHTML = downloadSvg;  
+downloadBtn.title = "下载音频";
+
+// 下载按钮事件处理  
+downloadBtn.addEventListener("click", function() {  
+    if (!self.musicUrl) return;  
+      
+    // 显示下载状态  
+    downloadBtn.innerHTML = "⏳";  
+    downloadBtn.disabled = true;  
+      
+    // 使用 fetch 获取音频数据  
+    fetch(self.musicUrl)  
+        .then(function(response) {  
+            if (!response.ok) {  
+                throw new Error('网络请求失败');  
+            }  
+            return response.blob();  
+        })  
+        .then(function(blob) {  
+            // 创建下载链接  
+            var link = self.document.createElement("a");  
+            var url = URL.createObjectURL(blob);  
+            link.setAttribute("href", url);  
+              
+            // 设置下载文件名 - 修改这里  
+            var filename = (self.songName || "未知歌曲") + "-" + (self.artist || "未知歌手") + ".mp3";  
+            link.setAttribute("download", filename);  
+              
+            // 触发下载  
+            self.document.body.appendChild(link);  
+            link.click();  
+            self.document.body.removeChild(link);  
+              
+            // 清理 URL 对象  
+            URL.revokeObjectURL(url);  
+              
+            // 恢复按钮状态  
+            downloadBtn.innerHTML = "⬇";  
+            downloadBtn.disabled = false;  
+        })  
+        .catch(function(error) {  
+            console.error('下载失败:', error);  
+            alert('下载失败，请检查网络连接或音频链接');  
+              
+            // 恢复按钮状态  
+            downloadBtn.innerHTML = "⬇";  
+            downloadBtn.disabled = false;  
+        });  
+});
 // 添加点击事件监听器，允许用户手动调节播放位置
 progressBar.addEventListener("click", function(e) {  
     if (audio.duration) {  
@@ -117,6 +172,7 @@ const volumeSvg = this.wiki.getTiddlerText("$:/core/images/volume");
     controls.appendChild(timeDisplay);
     controls.appendChild(progressBar);
     controls.appendChild(volumeBtn);
+controls.appendChild(downloadBtn); // 新增下载按钮  
     controls.appendChild(volumePanel);
     
     infoSection.appendChild(musicName);
