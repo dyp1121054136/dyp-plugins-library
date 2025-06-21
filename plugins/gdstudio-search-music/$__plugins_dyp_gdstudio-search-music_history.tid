@@ -4,6 +4,10 @@ tags:
 title: $:/plugins/dyp/gdstudio-search-music/history
 type: text/vnd.tiddlywiki
 
+; v.0.1.1 2025-06-21
+
+# 音乐播放器界面新增下载按钮；
+
 ; v.0.1.0 2025-06-12
 
 # 音乐播放器可切换精简模式和完整模式 [[调用自定义播放器-精简模式]]
