@@ -1,0 +1,33 @@
+created: 20250621061449543
+modified: 20250621062756226
+tags: gdstudio 样式 $:/tags/Stylesheet 音乐下载
+title: gdstudio-audio下载按钮样式css
+
+.gdstudio-download-btn {
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: none;
+
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  background: transparent;
+  border: none;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #bbb;
+  transition: all 0.2s ease;
+  transform: translateX(-10px); /* 向左移动 */
+}
+
+.gdstudio-download-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+.gdstudio-download-btn:hover {
+    background: #bbb;
+    color: #ffffff;
+}
