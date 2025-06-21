@@ -127,7 +127,7 @@ downloadBtn.addEventListener("click", function() {
             URL.revokeObjectURL(url);  
               
             // 恢复按钮状态  
-            downloadBtn.innerHTML = "⬇";  
+            downloadBtn.innerHTML = downloadSvg;  
             downloadBtn.disabled = false;  
         })  
         .catch(function(error) {  
@@ -135,7 +135,7 @@ downloadBtn.addEventListener("click", function() {
             alert('下载失败，请检查网络连接或音频链接');  
               
             // 恢复按钮状态  
-            downloadBtn.innerHTML = "⬇";  
+            downloadBtn.innerHTML = downloadSvg;  
             downloadBtn.disabled = false;  
         });  
 });
