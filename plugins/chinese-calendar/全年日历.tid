@@ -4,7 +4,7 @@ tags: 中文日历
 title: 全年日历
 
 <!-- 月份选择器 -->    
-<$select tiddler="$:/temp/calendar-month" default="6">    
+<$select tiddler="$:/temp/calendar-month" default={{{ [<now MM>] }}}>    
 <$list filter="1 2 3 4 5 6 7 8 9 10 11 12">    
 <option value=<<currentTiddler>>><$text text={{{ [<currentTiddler>addsuffix[月]] }}}/></option>    
 </$list>    
