@@ -11,6 +11,13 @@ title: 万年历老黄历默认参数
     prefix="https://www.wnl.cc/"
 />
 
+
+<$action-setfield $tiddler="$:/temp/webpage-params-draft"   
+    year={{{ [<now YYYY>] }}}   
+    month={{{ [<now 0MM>] }}}   
+    day={{{ [<now 0DD>] }}}
+/>
+
 <$action-setfield $tiddler="$:/temp/calendar-month"   
 text={{{ [<now MM>] }}}/>
 
