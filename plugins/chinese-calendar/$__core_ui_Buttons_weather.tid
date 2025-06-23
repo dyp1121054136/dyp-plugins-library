@@ -1,0 +1,21 @@
+caption: {{$:/core/images/weather}} 打开天气
+created: 20250623054420583
+description: 打开天气
+modified: 20250623061148043
+tags: 按钮 天气
+title: $:/core/ui/Buttons/weather
+
+\whitespace trim
+<$button tooltip="打开天气" class=<<tv-config-toolbar-class>>>
+<$list filter="[<tv-config-toolbar-icons>match[yes]]">
+{{$:/core/images/weather|25px}}
+</$list>
+<$list filter="[<tv-config-toolbar-text>match[yes]]">
+<span class="tc-btn-text">
+<$text text=打开天气/>
+</span>
+</$list>
+
+<$action-navigate $to="天气小组件"/>
+
+</$button>

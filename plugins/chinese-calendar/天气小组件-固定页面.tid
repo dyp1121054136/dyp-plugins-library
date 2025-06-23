@@ -1,0 +1,8 @@
+created: 20250623040924573
+modified: 20250623041112257
+tags: 天气 $:/tags/PageTemplate
+title: 天气小组件-固定页面
+
+<div class="tianqi-position">  
+<$transclude tiddler="天气小组件"/>  
+</div> 

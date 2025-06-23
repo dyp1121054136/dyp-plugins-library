@@ -1,0 +1,11 @@
+created: 20250623041127766
+modified: 20250623060803400
+tags: 天气 样式 $:/tags/Stylesheet
+title: 天气小组件样式css
+
+.tianqi-position {
+  position: fixed;  
+  top: 5px;  
+  left: 15px;  
+  z-index: 9;
+}

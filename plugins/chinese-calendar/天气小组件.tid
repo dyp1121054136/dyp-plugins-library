@@ -1,0 +1,14 @@
+created: 20250623035339320
+modified: 20250623060753769
+tags: 天气
+title: 天气小组件
+
+<iframe width="300" scrolling="no" height="30" frameborder="0" allowtransparency="true" src="https://i.tianqi.com?c=code&id=34&icon=1&py=shunde&site=16&lang=cn"></iframe>
+
+<!-- 
+<iframe width="300" scrolling="no" height="30" frameborder="0" allowtransparency="true" src="https://i.tianqi.com?c=code&id=34&icon=1&py=shunde&site=16&lang=cn"></iframe>
+
+<iframe width="100" scrolling="no" height="100" frameborder="0" allowtransparency="true" src="https://i.tianqi.com?c=code&id=31&icon=1&site=15&lang=cn"></iframe>
+
+<iframe width="360" scrolling="no" height="140" frameborder="0" allowtransparency="true" src="https://i.tianqi.com?c=code&id=20&icon=1&py=shunde&site=16&lang=cn"></iframe>
+ -->
