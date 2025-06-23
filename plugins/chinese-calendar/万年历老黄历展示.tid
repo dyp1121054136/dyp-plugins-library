@@ -4,13 +4,13 @@ tags: 万年历老黄历
 title: 万年历老黄历展示
 
 <div style="margin-bottom: 10px;">              
-<$select tiddler="$:/temp/webpage-params-draft" field="year" default="2025">            
+<$select tiddler="$:/temp/webpage-params-draft" field="year" default={{{ [<now YYYY>] }}}>            
 <option value="2023">2023年</option>            
 <option value="2024">2024年</option>            
 <option value="2025">2025年</option>            
 <option value="2026">2026年</option>            
 </$select>            
-<$select tiddler="$:/temp/webpage-params-draft" field="month" default="06">            
+<$select tiddler="$:/temp/webpage-params-draft" field="month" default={{{ [<now 0MM>] }}}>            
 <option value="01">01月</option>      
 <option value="02">02月</option>      
 <option value="03">03月</option>      
@@ -24,7 +24,7 @@ title: 万年历老黄历展示
 <option value="11">11月</option>      
 <option value="12">12月</option>      
 </$select>            
-<$edit-text tiddler="$:/temp/webpage-params-draft" field="day" default="17" tag="input" class="tc-very-narrow-input" placeholder="17"/>日  
+<$edit-text tiddler="$:/temp/webpage-params-draft" field="day" default={{{ [<now 0DD>] }}} tag="input" class="tc-very-narrow-input" placeholder=""/>日  
 <$button>                
 <$action-setfield $tiddler="$:/temp/webpage-params"         
     year={{{ [[$:/temp/webpage-params-draft]get[year]else[2025]] }}}        
