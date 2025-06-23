@@ -4,7 +4,8 @@ tags: 天气 样式 $:/tags/Stylesheet
 title: 天气小组件样式css
 
 .tianqi-position {
-  position: fixed;  
+/*   position: absolute; */
+  position: fixed; /* 搭配标题吸顶使用，否则会遮挡 */
   top: 5px;  
   left: 15px;  
   z-index: 9;
