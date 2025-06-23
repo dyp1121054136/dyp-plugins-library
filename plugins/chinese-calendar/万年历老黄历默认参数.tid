@@ -9,5 +9,8 @@ title: 万年历老黄历默认参数
     month={{{ [<now 0MM>] }}}   
     day={{{ [<now 0DD>] }}}/>
 
+<$action-setfield $tiddler="$:/temp/calendar-month"   
+text={{{ [<now MM>] }}}/>
+
 <!-- <$action-setfield $tiddler="$:/temp/webpage-params" year="2025" month="06" day="17"/>
  -->
