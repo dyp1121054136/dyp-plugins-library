@@ -27,20 +27,20 @@ title: 万年历老黄历展示
 <$edit-text tiddler="$:/temp/webpage-params-draft" field="day" default={{{ [<now 0DD>] }}} tag="input" class="tc-very-narrow-input" placeholder=""/>日  
 <$button>                
 <$action-setfield $tiddler="$:/temp/webpage-params"         
-    year={{{ [[$:/temp/webpage-params-draft]get[year]else[2025]] }}}        
-    month={{{ [[$:/temp/webpage-params-draft]get[month]else[06]] }}}        
-    day={{{ [[$:/temp/webpage-params-draft]get[day]else[17]] }}}  
+    year={{{ [[$:/temp/webpage-params-draft]get[year]else[<now YYYY>]] }}}        
+    month={{{ [[$:/temp/webpage-params-draft]get[month]else[<now 0MM>]] }}}        
+    day={{{ [[$:/temp/webpage-params-draft]get[day]else[<now 0DD>]] }}}  
     prefix="https://www.wnl.cc/"/>                
 万年历          
 </$button>  
 <$button>                
 <$action-setfield $tiddler="$:/temp/webpage-params"         
-    year={{{ [[$:/temp/webpage-params-draft]get[year]else[2025]] }}}        
-    month={{{ [[$:/temp/webpage-params-draft]get[month]else[06]] }}}        
-    day={{{ [[$:/temp/webpage-params-draft]get[day]else[17]] }}}  
+    year={{{ [[$:/temp/webpage-params-draft]get[year]else[<now YYYY>]] }}}        
+    month={{{ [[$:/temp/webpage-params-draft]get[month]else[<now 0MM>]] }}}        
+    day={{{ [[$:/temp/webpage-params-draft]get[day]else[<now 0DD>]] }}}  
     prefix="https://www.wnl.cc/hl/"/>                
 老黄历          
 </$button>                
 </div>      
       
-<iframe src={{{ [[$:/temp/webpage-params]get[prefix]else[https://www.wnl.cc/]addsuffix{$:/temp/webpage-params!!year}else[2025]addsuffix[/]addsuffix{$:/temp/webpage-params!!month}else[06]addsuffix{$:/temp/webpage-params!!day}else[17]addsuffix[.html]] }}} width="100%" height="600px" frameborder="0"></iframe>
+<iframe src={{{ [[$:/temp/webpage-params]get[prefix]else[https://www.wnl.cc/]addsuffix{$:/temp/webpage-params!!year}else[<now YYYY>]addsuffix[/]addsuffix{$:/temp/webpage-params!!month}else[<now 0MM>]addsuffix{$:/temp/webpage-params!!day}else[<now 0DD>]addsuffix[.html]] }}} width="100%" height="600px" frameborder="0"></iframe>
