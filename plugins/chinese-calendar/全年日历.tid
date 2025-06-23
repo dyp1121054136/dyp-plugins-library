@@ -29,7 +29,7 @@ title: 全年日历
 <$button>  
 <$action-setfield $tiddler="$:/temp/calendar-view" text="month"/>  
 单月    
-</$button>  <span style="margin-left: 20px;">{{||$:/core/ui/Buttons/chinese-calendar2}}</span>
+</$button>  <span style="margin-left: 20px;">{{||$:/core/ui/Buttons/chinese-calendar2}}</span><span style="margin-left: 20px;">{{||$:/core/ui/Buttons/weather}}</span>
 
 <!-- 条件显示：单月或全年 -->  
 <$reveal state="$:/temp/calendar-view" type="nomatch" text="year" default="month">  
