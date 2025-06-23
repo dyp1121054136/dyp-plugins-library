@@ -7,7 +7,9 @@ title: 万年历老黄历默认参数
 <$action-setfield $tiddler="$:/temp/webpage-params"   
     year={{{ [<now YYYY>] }}}   
     month={{{ [<now 0MM>] }}}   
-    day={{{ [<now 0DD>] }}}/>
+    day={{{ [<now 0DD>] }}}
+    prefix="https://www.wnl.cc/"
+/>
 
 <$action-setfield $tiddler="$:/temp/calendar-month"   
 text={{{ [<now MM>] }}}/>
