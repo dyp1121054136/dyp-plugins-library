@@ -3,7 +3,7 @@
     "title": "$:/plugins/dyp/Tags-drop-down-menu",
     "stability": "STABILITY_2_STABLE",
     "modified": "20250506152153843",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "author": "dyp",
     "name": "Tags-drop-down-menu",
     "description": "标签下拉菜单",
