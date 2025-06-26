@@ -1,0 +1,16 @@
+{
+    "title": "$:/plugins/dyp/novel-collection",
+    "version": "0.0.1",
+    "stability": "STABILITY_2_STABLE",
+    "name": "novel-collection",
+    "description": "小说收藏",
+    "author": "dyp",
+    "source": "https://github.com/dyp1121054136/dyp-plugins-library",
+    "list": "readme usage history",
+    "plugin-priority": "",
+    "parent-plugin": "",
+    "dependents": "",
+    "plugin-type": "plugin",
+    "core-version": "5.3.7-prerelease",
+    "packaged-by": "Gatha on 26th 六月 2025, 17:08:16"
+}
