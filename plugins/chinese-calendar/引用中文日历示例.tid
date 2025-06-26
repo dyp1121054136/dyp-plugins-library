@@ -17,7 +17,7 @@ title: 引用中文日历示例
     month="6"   
     monday-first="yes"   
     highlight-today="yes"  
-    annotation-filter="[tag[calendar-annotation]field:date[{{date}}]]"/>
+    annotation-filter="[all[tiddlers+shadows]field:date[{{date}}]]"/>
 ```
 
 创建批注tiddler示例：
@@ -37,4 +37,4 @@ text: 重要会议
     month="6"   
     monday-first="yes"   
     highlight-today="yes"  
-    annotation-filter="[field:date[{{date}}]]"/>
+    annotation-filter="[all[tiddlers+shadows]field:date[{{date}}]]"/>
