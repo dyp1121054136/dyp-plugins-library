@@ -1,0 +1,327 @@
+created: 20250624024951607
+modified: 20250624031639363
+module-type: widget
+tags: 复制粘贴库
+title: $:/core/modules/widgets/copypaste.js
+type: application/javascript
+
+/*\  
+title: $:/core/modules/widgets/copypaste.js  
+type: application/javascript  
+module-type: widget  
+  
+复制粘贴小部件  
+  
+\*/  
+(function(){  
+  
+"use strict";  
+  
+var Widget = require("$:/core/modules/widgets/widget.js").widget;  
+  
+var CopyPasteWidget = function(parseTreeNode,options) {  
+	this.initialise(parseTreeNode,options);  
+};  
+  
+/*  
+继承基础小部件类  
+*/  
+CopyPasteWidget.prototype = new Widget();  
+  
+/*  
+静态数据存储，模仿原始库的CopyPasteJS.data  
+*/  
+CopyPasteWidget.data = "";  
+  
+/*  
+将此小部件渲染到DOM中  
+*/  
+CopyPasteWidget.prototype.render = function(parent,nextSibling) {  
+	var self = this;  
+	this.parentDomNode = parent;  
+	this.computeAttributes();  
+	this.execute();  
+	  
+	var domNode = this.document.createElement(this.tagName || "button");  
+	domNode.className = this.className || "tc-btn-invisible tc-copypaste-button";  
+	  
+	if(this.buttonText) {  
+		domNode.appendChild(this.document.createTextNode(this.buttonText));  
+	}  
+	  
+	domNode.addEventListener("click", function(event) {  
+		self.handleClickEvent(event);  
+		event.preventDefault();  
+		return false;  
+	});  
+	  
+	parent.insertBefore(domNode,nextSibling);  
+	this.renderChildren(domNode,null);  
+	this.domNodes.push(domNode);  
+};  
+  
+/*  
+计算小部件的内部状态  
+*/  
+CopyPasteWidget.prototype.execute = function() {  
+	this.copyOrigin = this.getAttribute("copy-origin");  
+	this.copyText = this.getAttribute("copy-text");  
+	this.copyTiddler = this.getAttribute("copy-tiddler"); // 从条目复制  
+	this.copyField = this.getAttribute("copy-field", "text"); // 复制的字段  
+	this.pasteTarget = this.getAttribute("paste-target");  
+	this.pasteTiddler = this.getAttribute("paste-tiddler");  
+	this.pasteField = this.getAttribute("paste-field", "text");  
+	this.cutOrigin = this.getAttribute("cut-origin");  
+	this.copyCallback = this.getAttribute("copy-callback");  
+	this.pasteCallback = this.getAttribute("paste-callback");  
+	this.buttonText = this.getAttribute("text","复制");  
+	this.tagName = this.getAttribute("tag","button");  
+	this.className = this.getAttribute("class");  
+	  
+	this.makeChildWidgets();  
+};  
+  
+/*  
+处理点击事件  
+*/  
+CopyPasteWidget.prototype.handleClickEvent = function(event) {  
+	if(this.copyOrigin) {  
+		this.copyFromOrigin();  
+	}  
+	else if(this.copyText) {  
+		this.copySpecificText();  
+	}  
+	else if(this.copyTiddler) {  
+		this.copyFromTiddler(); // 从条目复制  
+	}  
+	  
+	if(this.pasteTarget) {  
+		this.pasteToTarget();  
+	}  
+	  
+	if(this.pasteTiddler) {  
+		this.pasteToTiddler();  
+	}  
+	  
+	if(this.cutOrigin) {  
+		this.cutFromOrigin();  
+	}  
+};  
+  
+/*  
+从来源元素复制  
+*/  
+CopyPasteWidget.prototype.copyFromOrigin = function() {  
+	if(!this.copyOrigin) return;  
+	  
+	var copyElement = this.document.querySelector(this.copyOrigin);  
+	if(!copyElement) return;  
+	  
+	var textToCopy;  
+	if(copyElement.tagName && (copyElement.tagName.toLowerCase() === "input" || copyElement.tagName.toLowerCase() === "textarea")) {  
+		CopyPasteWidget.data = copyElement.value;  
+		textToCopy = copyElement.value;  
+		copyElement.select();  
+	} else {  
+		CopyPasteWidget.data = copyElement.innerText || copyElement.textContent;  
+		textToCopy = CopyPasteWidget.data;  
+		this.selectText(copyElement);  
+	}  
+	  
+	var succeeded = document.execCommand("copy");  
+	  
+	if(succeeded) {  
+		$tw.notifier.display("$:/language/Notifications/CopiedToClipboard/Succeeded");  
+	} else {  
+		$tw.notifier.display("$:/language/Notifications/CopiedToClipboard/Failed");  
+	}  
+	  
+	if(this.copyCallback) {  
+		this.executeCallback(this.copyCallback);  
+	}  
+};  
+  
+/*  
+复制指定文本  
+*/  
+CopyPasteWidget.prototype.copySpecificText = function() {  
+	if(!this.copyText) return;  
+	  
+	CopyPasteWidget.data = this.copyText;  
+	  
+	var element = this.document.createElement('input');  
+	element.value = this.copyText;  
+	this.document.body.appendChild(element);  
+	element.select();  
+	var succeeded = document.execCommand('copy');  
+	this.document.body.removeChild(element);  
+	  
+	if(succeeded) {  
+		$tw.notifier.display("$:/language/Notifications/CopiedToClipboard/Succeeded");  
+	} else {  
+		$tw.notifier.display("$:/language/Notifications/CopiedToClipboard/Failed");  
+	}  
+	  
+	if(this.copyCallback) {  
+		this.executeCallback(this.copyCallback);  
+	}  
+};  
+  
+/*  
+从条目复制内容  
+*/  
+CopyPasteWidget.prototype.copyFromTiddler = function() {  
+	if(!this.copyTiddler) return;  
+	  
+	var textToCopy = "";  
+	var tiddler = this.wiki.getTiddler(this.copyTiddler);  
+	  
+	if(tiddler) {  
+		if(this.copyField === "text") {  
+			// 获取条目的文本内容  
+			textToCopy = this.wiki.getTiddlerText(this.copyTiddler);  
+		} else {  
+			// 获取指定字段的内容  
+			if(tiddler.hasField(this.copyField)) {  
+				textToCopy = tiddler.getFieldString(this.copyField);  
+			}  
+		}  
+	} else {  
+		// 如果条目不存在，根据字段类型返回默认值  
+		if(this.copyField === "title") {  
+			textToCopy = this.copyTiddler;  
+		}  
+	}  
+	  
+	if(textToCopy) {  
+		CopyPasteWidget.data = textToCopy;  
+		  
+		// 创建临时元素进行复制  
+		var element = this.document.createElement('input');  
+		element.value = textToCopy;  
+		this.document.body.appendChild(element);  
+		element.select();  
+		var succeeded = document.execCommand('copy');  
+		this.document.body.removeChild(element);  
+		  
+		// 显示通知  
+		if(succeeded) {  
+			$tw.notifier.display("$:/language/Notifications/CopiedToClipboard/Succeeded");  
+		} else {  
+			$tw.notifier.display("$:/language/Notifications/CopiedToClipboard/Failed");  
+		}  
+		  
+		// 执行回调  
+		if(this.copyCallback) {  
+			this.executeCallback(this.copyCallback);  
+		}  
+	}  
+};  
+  
+/*  
+粘贴到目标元素  
+*/  
+CopyPasteWidget.prototype.pasteToTarget = function() {  
+	if(!this.pasteTarget) return;  
+	  
+	var pasteElement = this.document.querySelector(this.pasteTarget);  
+	if(!pasteElement) return;  
+	  
+	pasteElement.focus();  
+	  
+	var pasteSuccessfully = document.execCommand("paste");  
+	  
+	if(!pasteSuccessfully) {  
+		pasteElement.value = CopyPasteWidget.data;  
+	}  
+	  
+	if(this.pasteCallback) {  
+		this.executeCallback(this.pasteCallback);  
+	}  
+};  
+  
+/*  
+粘贴到条目 - 只使用存储的数据  
+*/  
+CopyPasteWidget.prototype.pasteToTiddler = function() {  
+	if(!this.pasteTiddler) return;  
+	  
+	// 只使用存储的数据，不使用剪贴板API  
+	if(CopyPasteWidget.data) {  
+		this.wiki.setText(this.pasteTiddler, this.pasteField, null, CopyPasteWidget.data);  
+		if(this.pasteCallback) {  
+			this.executeCallback(this.pasteCallback);  
+		}  
+	}  
+};  
+  
+/*  
+从来源元素剪切  
+*/  
+CopyPasteWidget.prototype.cutFromOrigin = function() {  
+	if(!this.cutOrigin) return;  
+	  
+	var cutElement = this.document.querySelector(this.cutOrigin);  
+	if(!cutElement) return;  
+	  
+	if(cutElement.tagName && (cutElement.tagName.toLowerCase() === "input" || cutElement.tagName.toLowerCase() === "textarea")) {  
+		CopyPasteWidget.data = cutElement.value;  
+		cutElement.select();  
+		var succeeded = document.execCommand("cut");  
+		  
+		if(succeeded) {  
+			$tw.notifier.display("$:/language/Notifications/CopiedToClipboard/Succeeded");  
+		} else {  
+			$tw.notifier.display("$:/language/Notifications/CopiedToClipboard/Failed");  
+		}  
+	}  
+};  
+  
+/*  
+选择元素中的文本  
+*/  
+CopyPasteWidget.prototype.selectText = function(element) {  
+	var range, selection;  
+	  
+	if (this.document.body.createTextRange) {  
+		range = this.document.body.createTextRange();  
+		range.moveToElementText(element);  
+		range.select();  
+	} else if (window.getSelection) {  
+		selection = window.getSelection();  
+		range = this.document.createRange();  
+		range.selectNodeContents(element);  
+		selection.removeAllRanges();  
+		selection.addRange(range);  
+	}  
+};  
+  
+/*  
+执行回调函数  
+*/  
+CopyPasteWidget.prototype.executeCallback = function(callback) {  
+	if(callback) {  
+		this.invokeActionString(callback, this);  
+	}  
+};  
+  
+/*  
+刷新小部件  
+*/  
+CopyPasteWidget.prototype.refresh = function(changedTiddlers) {  
+	var changedAttributes = this.computeAttributes();  
+	if(changedAttributes["copy-origin"] || changedAttributes["copy-text"] ||   
+	   changedAttributes["copy-tiddler"] || changedAttributes["copy-field"] ||  
+	   changedAttributes["paste-target"] || changedAttributes["paste-tiddler"] ||   
+	   changedAttributes["paste-field"] || changedAttributes["cut-origin"] ||   
+	   changedAttributes["copy-callback"] || changedAttributes["paste-callback"] ||  
+	   changedAttributes.text || changedAttributes.tag || changedAttributes["class"]) {  
+		this.refreshSelf();  
+		return true;  
+	}  
+	return this.refreshChildren(changedTiddlers);  
+};  
+  
+exports.copypaste = CopyPasteWidget;  
+  
+})();

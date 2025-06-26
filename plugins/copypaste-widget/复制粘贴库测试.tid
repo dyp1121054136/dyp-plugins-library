@@ -1,0 +1,97 @@
+created: 20250624025040652
+modified: 20250624032853134
+tags: 复制粘贴库
+title: 复制粘贴库测试
+
+<style>    
+.test-section {    
+  border: 1px solid #ccc;    
+  padding: 15px;    
+  margin: 10px 0;    
+  border-radius: 5px;    
+}    
+.test-section h5 {    
+  margin-top: 0;    
+  color: #333;    
+  border-bottom: 1px solid #eee;    
+  padding-bottom: 5px;    
+}    
+.input-group {    
+  margin: 10px 0;    
+}    
+.input-group label {    
+  display: block;    
+  font-weight: bold;    
+  margin-bottom: 5px;    
+}    
+.button-group {    
+  margin: 10px 0;    
+}    
+</style>    
+    
+<!-- 第一部分：源数据设置 -->    
+<div class="test-section">    
+<h5>📝 源数据设置</h5>    
+<div class="input-group">    
+<label>MyTestTiddler 主要内容：</label>    
+<$edit-text tiddler="MyTestTiddler" field="text" default="这是MyTestTiddler的内容" tag="input" class="tc-edit-texteditor"/>    
+</div>    
+<div class="input-group">    
+<label>MyTestTiddler caption字段：</label>    
+<$edit-text tiddler="MyTestTiddler" field="caption" default="测试标题" tag="input" class="tc-edit-texteditor"/>    
+</div>    
+</div>    
+    
+<!-- 第二部分：复制功能测试 -->    
+<div class="test-section">    
+<h5>📋 复制功能测试</h5>    
+<div class="button-group">    
+<$copypaste copy-tiddler="MyTestTiddler" text="复制条目内容"/> ← 复制上面的主要内容    
+</div>    
+<div class="button-group">    
+<$copypaste copy-tiddler="MyTestTiddler" copy-field="caption" text="复制caption字段"/> ← 复制上面的caption字段    
+</div>    
+<div class="input-group">    
+<label>自定义复制文本：</label>    
+<input type="text" id="custom-copy-text" value="Hello World!" style="width: 200px; padding: 5px;"/>    
+<$copypaste copy-origin="#custom-copy-text" text="复制自定义文本"/> ← 复制左边输入框的内容    
+</div>    
+</div>    
+    
+<!-- 第三部分：验证复制结果 -->    
+<div class="test-section">    
+<h5>🔍 验证复制结果</h5>    
+<div class="input-group">    
+<label>测试输入框（手动粘贴 Ctrl+V 查看复制的内容）：</label>    
+<input type="text" id="test-input" placeholder="在这里粘贴测试复制的内容" style="width: 100%; padding: 5px;"/>    
+</div>    
+</div>    
+    
+<!-- 第四部分：粘贴功能测试 -->    
+<div class="test-section">    
+<h5>📥 粘贴功能测试</h5>    
+<div class="input-group">    
+<label>目标条目编辑框：</label>    
+<$edit-text tiddler="AnotherTiddler" field="text" placeholder="粘贴内容将显示在这里" tag="input" class="tc-edit-texteditor"/>    
+</div>    
+<div class="button-group">    
+<$copypaste paste-tiddler="AnotherTiddler" text="粘贴到条目"/> ← 将复制的内容粘贴到上面的输入框    
+</div>    
+</div>    
+    
+<!-- 第五部分：结果显示 -->    
+<div class="test-section">    
+<h5>📊 结果显示</h5>    
+<div class="input-group">    
+<label>MyTestTiddler 当前内容：</label>    
+<div style="background: #f5f5f5; padding: 10px; border-radius: 3px;">    
+<$transclude tiddler="MyTestTiddler"/>    
+</div>    
+</div>    
+<div class="input-group">    
+<label>AnotherTiddler 当前内容：</label>    
+<div style="background: #f5f5f5; padding: 10px; border-radius: 3px;">    
+<$transclude tiddler="AnotherTiddler"/>    
+</div>    
+</div>    
+</div>
