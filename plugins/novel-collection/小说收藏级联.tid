@@ -1,0 +1,26 @@
+created: 20250618092847952
+modified: 20250618093142370
+tags: 小说收藏
+title: 小说收藏级联
+
+[[$:/config/ViewTemplateBodyFilters/novel-collection]]
+
+```
+$:/tags/ViewTemplateBodyFilter
+```
+
+```
+[field:类型[小说]then[$:/custom/ui/ViewTemplate/body/novel-collection]]
+```
+
+```
+list-before: $:/config/ViewTemplateBodyFilters/default
+```
+[[$:/custom/ui/ViewTemplate/body/novel-collection]]
+
+```
+书名:《{{!!书名}}》  
+作者：{{!!作者}}  
+  
+<$transclude tiddler={{!!title}} field="text" mode="block"/> 
+```

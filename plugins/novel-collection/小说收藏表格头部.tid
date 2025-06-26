@@ -1,0 +1,202 @@
+created: 20250617094737831
+modified: 20250619095608085
+tags: 小说收藏
+title: 小说收藏表格头部
+
+<table class="tw-novel-table">    
+  <thead>    
+    <tr>    
+      <$list filter="[[$:/config/novel-table/columns/书名]get[visible]else[yes]match[yes]]" variable="ignore">  
+        <th>书名</th>  
+      </$list>  
+      <$list filter="[[$:/config/novel-table/columns/封面]get[visible]else[yes]match[yes]]" variable="ignore">  
+        <th>封面</th>  
+      </$list>  
+      <$list filter="[[$:/config/novel-table/columns/作者]get[visible]else[yes]match[yes]]" variable="ignore">  
+        <th>作者</th>  
+      </$list>  
+      <$list filter="[[$:/config/novel-table/columns/时代]get[visible]else[yes]match[yes]]" variable="ignore">  
+        <th>时代</th>  
+      </$list>  
+      <$list filter="[[$:/config/novel-table/columns/平台]get[visible]else[no]match[yes]]" variable="ignore">  
+        <th>平台</th>  
+      </$list>  
+      <$list filter="[[$:/config/novel-table/columns/性向]get[visible]else[yes]match[yes]]" variable="ignore">  
+        <th>性向</th>  
+      </$list>  
+      <$list filter="[[$:/config/novel-table/columns/视角]get[visible]else[yes]match[yes]]" variable="ignore">  
+        <th>视角</th>  
+      </$list>  
+      <$list filter="[[$:/config/novel-table/columns/文章长度]get[visible]else[no]match[yes]]" variable="ignore">  
+        <th>文章长度</th>  
+      </$list>  
+      <$list filter="[[$:/config/novel-table/columns/分类标签]get[visible]else[yes]match[yes]]" variable="ignore">  
+        <th>分类标签</th>  
+      </$list>  
+      <$list filter="[[$:/config/novel-table/columns/特殊标签]get[visible]else[yes]match[yes]]" variable="ignore">  
+        <th>特殊标签</th>  
+      </$list>  
+      <$list filter="[[$:/config/novel-table/columns/归档]get[visible]else[no]match[yes]]" variable="ignore">  
+        <th>归档</th>  
+      </$list>  
+      <$list filter="[[$:/config/novel-table/columns/淘汰]get[visible]else[no]match[yes]]" variable="ignore">  
+        <th>淘汰</th>  
+      </$list>  
+      <$list filter="[[$:/config/novel-table/columns/创建时间]get[visible]else[no]match[yes]]" variable="ignore">  
+        <th>创建时间</th>  
+      </$list>  
+      <$list filter="[[$:/config/novel-table/columns/更新时间]get[visible]else[yes]match[yes]]" variable="ignore">  
+        <th>更新时间</th>  
+      </$list>  
+      <$list filter="[[$:/config/novel-table/columns/附件]get[visible]else[yes]match[yes]]" variable="ignore">  
+        <th>附件</th>  
+      </$list>  
+    </tr>    
+  </thead>    
+  <tbody>    
+    <$list filter="[field:类型[小说]sort[title]]">      
+      <tr>      
+        <$list filter="[[$:/config/novel-table/columns/书名]get[visible]else[yes]match[yes]]" variable="ignore">  
+<td>
+<$link to=<<currentTiddler>>>  
+<$list filter="[<currentTiddler>has[书名]]" emptyMessage="未命名">  
+<$view field="书名"/>  
+</$list>  
+</$link>
+</td>  
+        </$list>  
+        <$list filter="[[$:/config/novel-table/columns/封面]get[visible]else[yes]match[yes]]" variable="ignore">  
+          <td class="tw-novel-table-cover">  
+            <$list filter="[<currentTiddler>has[封面]]">    
+              <img src={{!!封面}}/>  
+            </$list>    
+          </td>  
+        </$list>  
+        <$list filter="[[$:/config/novel-table/columns/作者]get[visible]else[yes]match[yes]]" variable="ignore">  
+<td class="tw-novel-table-author">
+<$let editState=<<qualify "$:/state/author-edit">> originalValue=<<qualify "$:/temp/author-original">>>  
+<$reveal type="nomatch" state=<<editState>> text="yes">
+  <$view field="作者"/>
+  <$button class="tc-btn-invisible tw-novel-table-edit" tooltip="编辑">    
+    <$action-setfield $tiddler=<<editState>> text="yes"/>  
+    <$action-setfield $tiddler=<<originalValue>> text={{!!作者}}/>  
+    {{$:/core/images/edit-button|18px}}  
+  </$button>
+</$reveal>    
+<$reveal type="match" state=<<editState>> text="yes">  
+<div class="tw-novel-table-edit-container">
+  <$button class="tc-btn-invisible tw-novel-table-edit-cancel" tooltip="取消编辑">      
+    <$action-setfield $tiddler=<<currentTiddler>> 作者={{{ [<originalValue>get[text]] }}}/>  
+    <$action-deletetiddler $tiddler=<<editState>>/>  
+    <$action-deletetiddler $tiddler=<<originalValue>>/>  
+    {{$:/core/images/cancel-button|18px}}    
+  </$button>  
+  <$button class="tc-btn-invisible tw-novel-table-edit-done" tooltip="完成编辑">    
+    <$action-deletetiddler $tiddler=<<editState>>/>  
+    <$action-deletetiddler $tiddler=<<originalValue>>/>  
+    {{$:/core/images/done-button|18px}}  
+  </$button>  
+</div>
+  <$edit-text field="作者" placeholder="输入作者名称"/>  
+</$reveal>    
+</$let>
+</td>  
+        </$list>  
+        <$list filter="[[$:/config/novel-table/columns/时代]get[visible]else[yes]match[yes]]" variable="ignore">  
+          <td>  
+            <$select field="时代" default="古代">    
+              <option value="古代">古代</option>      
+              <option value="架空">架空</option>      
+              <option value="未来">未来</option>      
+              <option value="现代">现代</option>      
+              <option value="民国">民国</option>     
+            </$select>      
+          </td>  
+        </$list>  
+        <$list filter="[[$:/config/novel-table/columns/平台]get[visible]else[no]match[yes]]" variable="ignore">  
+          <td>  
+            <$select field="平台" default="晋江">    
+              <option value="晋江">晋江</option>      
+              <option value="番茄">番茄</option>      
+              <option value="长佩">长佩</option>      
+              <option value="起点">起点</option>      
+            </$select>      
+          </td>  
+        </$list>  
+        <$list filter="[[$:/config/novel-table/columns/性向]get[visible]else[yes]match[yes]]" variable="ignore">  
+          <td>  
+            <$select field="性向" default="言情">    
+              <option value="言情">言情</option>      
+              <option value="耽美">耽美</option>      
+              <option value="百合">百合</option>      
+              <option value="无cp">无cp</option>        
+            </$select>      
+          </td>  
+        </$list>  
+        <$list filter="[[$:/config/novel-table/columns/视角]get[visible]else[yes]match[yes]]" variable="ignore">  
+          <td>  
+            <$select field="视角" default="男主">    
+              <option value="男主">男主</option>      
+              <option value="女主">女主</option>      
+              <option value="主受">主受</option>      
+              <option value="主攻">主攻</option>        
+            </$select>      
+          </td>  
+        </$list>  
+        <$list filter="[[$:/config/novel-table/columns/文章长度]get[visible]else[no]match[yes]]" variable="ignore">  
+          <td>  
+            <$select field="文章长度" default="长篇1M-3M">    
+              <option value="超长篇6M以上">超长篇6M以上</option>      
+              <option value="大长篇3M-6M">大长篇3M-6M</option>      
+              <option value="长篇1M-3M">长篇1M-3M</option>      
+              <option value="中篇500KB-1M">中篇500KB-1M</option>      
+              <option value="中短篇300KB-500KB">中短篇300KB-500KB</option>      
+            </$select>      
+          </td>  
+        </$list>  
+        <$list filter="[[$:/config/novel-table/columns/分类标签]get[visible]else[yes]match[yes]]" variable="ignore">  
+          <td class="category-tags-container">  
+            <$list filter="[<currentTiddler>has[分类标签]]">      
+              <$list filter="[{!!分类标签}split[ ]]" join=" ">        
+                <$transclude $variable="tag-pill" tag=<<currentTiddler>>/>        
+              </$list>      
+            </$list>      
+          </td>  
+        </$list>  
+        <$list filter="[[$:/config/novel-table/columns/特殊标签]get[visible]else[yes]match[yes]]" variable="ignore">  
+          <td class="category-tags-container">  
+            <$list filter="[<currentTiddler>has[特殊标签]]">    
+              <$list filter="[{!!特殊标签}split[ ]]" join=" ">      
+                <$transclude $variable="tag-pill" tag=<<currentTiddler>>/>      
+              </$list>    
+            </$list>    
+          </td>  
+        </$list>  
+        <$list filter="[[$:/config/novel-table/columns/归档]get[visible]else[no]match[yes]]" variable="ignore">  
+          <td>  
+            <$checkbox field="归档" checked="yes" unchecked="no"/>    
+          </td>  
+        </$list>  
+        <$list filter="[[$:/config/novel-table/columns/淘汰]get[visible]else[no]match[yes]]" variable="ignore">  
+          <td>  
+            <$checkbox field="淘汰" checked="yes" unchecked="no"/>    
+          </td>  
+        </$list>  
+        <$list filter="[[$:/config/novel-table/columns/创建时间]get[visible]else[no]match[yes]]" variable="ignore">  
+          <td class="tw-novel-table-date"><$view field="created" format="date" template="YYYY-0MM-0DD 0hh:0mm:0ss"/></td>  
+        </$list>  
+        <$list filter="[[$:/config/novel-table/columns/更新时间]get[visible]else[yes]match[yes]]" variable="ignore">  
+          <td class="tw-novel-table-date"><$view field="modified" format="date" template="YYYY-0MM-0DD 0hh:0mm:0ss"/></td>  
+        </$list>  
+        <$list filter="[[$:/config/novel-table/columns/附件]get[visible]else[yes]match[yes]]" variable="ignore">  
+<td>
+  <$button class="tc-btn-invisible tw-novel-table-download" tooltip="下载txt">
+{{$:/core/images/download-novel|18px}}
+<$action-sendmessage $message="tm-open-external-window" $param={{{ [<currentTiddler>get[附件]] }}}/>
+  </$button>
+</td>  
+        </$list>  
+      </tr>      
+    </$list>    
+  </tbody>    
+</table>

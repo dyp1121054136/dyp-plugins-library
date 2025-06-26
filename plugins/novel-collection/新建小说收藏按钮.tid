@@ -1,0 +1,32 @@
+created: 20250619090121413
+modified: 20250619094210637
+tags: 小说收藏
+title: 新建小说收藏按钮
+
+<$button class="tc-btn-invisible" tooltip=新建小说收藏>
+<$list filter="[<tv-config-toolbar-icons>match[yes]]">
+{{$:/core/images/new-button}}
+</$list>
+<$list filter="[<tv-config-toolbar-text>match[yes]]">
+<span class="tc-btn-text">
+<$text text=新建小说收藏/>
+</span>
+</$list>
+
+<$action-sendmessage $message="tm-new-tiddler" title={{{ [[小说-]] [<now YYYY-0MM-0DD-hh0mm0ss0XXX>] +[join[]] }}} tags="" text="" 类型="小说" 
+书名="" 
+封面="" 
+作者="" 
+时代="" 
+平台="" 
+性向="" 
+视角="" 
+文章长度="" 
+分类标签="" 
+特殊标签="" 
+归档="" 
+淘汰="" 
+附件=""
+/>
+
+</$button>

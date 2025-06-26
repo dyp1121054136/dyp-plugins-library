@@ -1,0 +1,104 @@
+created: 20250617074651485
+modified: 20250617094205945
+tags: 小说收藏
+title: 小说收藏汇总
+
+<table>  
+  <thead>  
+    <tr>  
+      <th>书名</th>
+      <th>封面</th>
+      <th>作者</th>
+      <th>时代</th>
+      <th>平台</th>
+      <th>性向</th>
+      <th>视角</th>
+      <th>文章长度</th>
+      <th>分类标签</th>
+      <th>特殊标签</th>
+      <th>归档</th>
+      <th>淘汰</th>
+      <th>创建时间</th>
+      <th>更新时间</th>
+      <th>附件</th>
+    </tr>  
+  </thead>  
+  <tbody>  
+    <$list filter="[field:类型[小说]has[分类标签]sort[title]]">    
+      <tr>    
+        <td><$link to=<<currentTiddler>>><$view field="title"/></$link></td>  
+<td>  <!-- 封面 -->  
+  <$list filter="[<currentTiddler>has[封面]]">  
+<img src={{!!封面}} border="0">
+  </$list>  
+</td>
+        <td><$view field="作者"/></td> <!-- 作者 -->
+<td>  <!-- 时代 -->    
+  <$select field="时代" default="古代">  
+    <option value="古代">古代</option>    
+    <option value="架空">架空</option>    
+    <option value="未来">未来</option>    
+    <option value="现代">现代</option>    
+    <option value="现代">民国</option>   
+  </$select>    
+</td>
+<td>  <!-- 平台 -->    
+  <$select field="平台" default="晋江">  
+    <option value="晋江">晋江</option>    
+    <option value="番茄">番茄</option>    
+    <option value="长佩">长佩</option>    
+    <option value="起点">起点</option>    
+  </$select>    
+</td>
+<td>  <!-- 性向 -->    
+  <$select field="性向" default="言情">  
+    <option value="言情">言情</option>    
+    <option value="耽美">耽美</option>    
+    <option value="百合">百合</option>    
+    <option value="无cp">无cp</option>      
+  </$select>    
+</td>
+<td>  <!-- 视角 -->    
+  <$select field="视角" default="男主">  
+    <option value="男主">男主</option>    
+    <option value="女主">女主</option>    
+    <option value="主受">主受</option>    
+    <option value="主攻">主攻</option>      
+  </$select>    
+</td>
+<td>  <!-- 文章长度 -->    
+  <$select field="文章长度" default="长篇1M-3M">  
+    <option value="超长篇6M以上">超长篇6M以上</option>    
+    <option value="大长篇3M-6M">大长篇3M-6M</option>    
+    <option value="长篇1M-3M">长篇1M-3M</option>    
+    <option value="中篇500KB-1M">中篇500KB-1M</option>    
+    <option value="中短篇300KB-500KB">中短篇300KB-500KB</option>    
+  </$select>    
+</td>
+<td class="category-tags-container">  <!-- 分类标签 -->      
+  <$list filter="[<currentTiddler>has[分类标签]]">    
+    <$list filter="[{!!分类标签}split[ ]]" join=" ">      
+      <$transclude $variable="tag-pill" tag=<<currentTiddler>>/>      
+    </$list>    
+  </$list>    
+</td>
+<td class="category-tags-container">  <!-- 特殊标签 -->    
+  <$list filter="[<currentTiddler>has[特殊标签]]">  
+    <$list filter="[{!!特殊标签}split[ ]]" join=" ">    
+      <$transclude $variable="tag-pill" tag=<<currentTiddler>>/>    
+    </$list>  
+  </$list>  
+</td>
+<td>  <!-- 归档 -->  
+  <$checkbox field="归档" checked="yes" unchecked="no"/>  
+</td>  
+<td>  <!-- 淘汰 -->  
+  <$checkbox field="淘汰" checked="yes" unchecked="no"/>  
+</td>
+        <td><$view field="created" format="date" template="YYYY-0MM-0DD 0hh:0mm:0ss"/></td> <!-- 创建时间 -->  
+        <td><$view field="modified" format="date" template="YYYY-0MM-0DD 0hh:0mm:0ss"/></td> <!-- 更新时间 -->  
+        <td></td> <!-- 附件 -->  
+      </tr>    
+    </$list>  
+  </tbody>  
+</table>

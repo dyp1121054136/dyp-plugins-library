@@ -1,0 +1,84 @@
+created: 20250617095859502
+modified: 20250626084921733
+tags: 小说收藏 样式 $:/tags/Stylesheet
+title: 小说收藏表格样式css
+
+/* 水平滚动样式 */
+.tw-novel-table-x {
+  overflow-x: auto; /* 启用水平滚动 */
+  width: 100%; /* 确保表格宽度占满容器 */
+}
+
+/* 表格样式 */
+.tw-novel-table {
+  text-align: center;
+}
+
+/* 表头样式 */
+.tw-novel-table thead {
+  font-size: 16px;
+  height: 50px;
+}
+
+/* 日期 */
+.tw-novel-table-date {
+  font-size: 0.8em;
+  width: 100px;
+}
+
+/* 作者 */
+.tw-novel-table-author {
+  font-size: 0.9em;
+  width: 100px;
+  white-space: nowrap;
+}
+
+/* 封面 */  
+.tw-novel-table-cover {  
+  width: 60px;  
+  transition: transform 0.3s ease;  
+  transform-origin: 50% 50%;   
+  overflow: visible; /* 改为visible，允许放大内容显示 */  
+  position: relative;    
+}  
+  
+/* 悬停时放大 */  
+.tw-novel-table-cover:hover {  
+  transform: scale(1.5);  /* 放大倍数 */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);  
+  z-index: 999;  
+}
+
+/* 编辑按钮 */
+.tw-novel-table-edit-container {
+  border: none; 
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.tw-novel-table-edit {
+  opacity: 0.5;
+  transition: opacity 0.5s ease-in-out;
+  display: inline;
+}
+
+.tw-novel-table-edit-done,
+.tw-novel-table-edit-cancel,
+.tw-novel-table-download
+ {
+  opacity: 0.5;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.tw-novel-table-edit:hover,
+.tw-novel-table-edit-done:hover,
+.tw-novel-table-edit-cancel:hover,
+.tw-novel-table-download:hover
+ {
+  opacity: 1;
+}

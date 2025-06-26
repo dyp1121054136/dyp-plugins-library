@@ -1,0 +1,25 @@
+created: 20250617094633638
+modified: 20250619095836380
+tags: 小说收藏
+title: 小说收藏显示列设置
+
+<!-- 列显示控制面板 -->  
+<div class="column-controls">
+  <div class="control-grid">  
+    <$checkbox tiddler="$:/config/novel-table/columns/书名" field="visible" checked="yes" unchecked="no" default="yes">书名</$checkbox>  
+    <$checkbox tiddler="$:/config/novel-table/columns/封面" field="visible" checked="yes" unchecked="no" default="yes">封面</$checkbox>  
+    <$checkbox tiddler="$:/config/novel-table/columns/作者" field="visible" checked="yes" unchecked="no" default="yes">作者</$checkbox>  
+    <$checkbox tiddler="$:/config/novel-table/columns/时代" field="visible" checked="yes" unchecked="no" default="yes">时代</$checkbox>  
+    <$checkbox tiddler="$:/config/novel-table/columns/平台" field="visible" checked="yes" unchecked="no" default="no">平台</$checkbox>  
+    <$checkbox tiddler="$:/config/novel-table/columns/性向" field="visible" checked="yes" unchecked="no" default="yes">性向</$checkbox>  
+    <$checkbox tiddler="$:/config/novel-table/columns/视角" field="visible" checked="yes" unchecked="no" default="yes">视角</$checkbox>  
+    <$checkbox tiddler="$:/config/novel-table/columns/文章长度" field="visible" checked="yes" unchecked="no" default="no">文章长度</$checkbox>  
+    <$checkbox tiddler="$:/config/novel-table/columns/分类标签" field="visible" checked="yes" unchecked="no" default="yes">分类标签</$checkbox>  
+    <$checkbox tiddler="$:/config/novel-table/columns/特殊标签" field="visible" checked="yes" unchecked="no" default="yes">特殊标签</$checkbox>  
+    <$checkbox tiddler="$:/config/novel-table/columns/归档" field="visible" checked="yes" unchecked="no" default="no">归档</$checkbox>  
+    <$checkbox tiddler="$:/config/novel-table/columns/淘汰" field="visible" checked="yes" unchecked="no" default="no">淘汰</$checkbox>  
+    <$checkbox tiddler="$:/config/novel-table/columns/创建时间" field="visible" checked="yes" unchecked="no" default="no">创建时间</$checkbox>  
+    <$checkbox tiddler="$:/config/novel-table/columns/更新时间" field="visible" checked="yes" unchecked="no" default="yes">更新时间</$checkbox>  
+    <$checkbox tiddler="$:/config/novel-table/columns/附件" field="visible" checked="yes" unchecked="no" default="yes">附件</$checkbox>  
+  </div>  
+</div>

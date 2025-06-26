@@ -1,0 +1,7 @@
+created: 20250618085919650
+list-before: $:/config/ViewTemplateBodyFilters/default
+modified: 20250618093035127
+tags: 小说收藏 级联 $:/tags/ViewTemplateBodyFilter
+title: $:/config/ViewTemplateBodyFilters/novel-collection
+
+[field:类型[小说]then[$:/custom/ui/ViewTemplate/body/novel-collection]]

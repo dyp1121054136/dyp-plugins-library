@@ -1,0 +1,109 @@
+caption: 小说收藏模版
+code-body: yes
+created: 20250618090109669
+modified: 20250626085056825
+tags: 小说收藏
+title: $:/custom/ui/ViewTemplate/body/novel-collection
+
+<div class="novel-detail-container">      
+  <div class="novel-header">      
+    <div class="novel-cover">      
+      <$list filter="[<currentTiddler>has[封面]]">          
+        <img src={{!!封面}} class="novel-cover-image"/>        
+      </$list>      
+    </div>      
+    <div class="novel-info">    
+      <div class="novel-meta">      
+        <!-- 基本信息组 -->    
+        <div class="meta-group">    
+          <div class="meta-row">      
+            <span class="meta-label">书名：</span>      
+            <span class="meta-value">《{{!!书名}}》</span>      
+          </div>      
+          <div class="meta-row">      
+            <span class="meta-label">作者：</span>      
+            <span class="meta-value">{{!!作者}}</span>      
+          </div>      
+          <div class="meta-row">      
+            <span class="meta-label">时代：</span>      
+            <span class="meta-value">{{!!时代}}</span>      
+          </div>      
+          <div class="meta-row">      
+            <span class="meta-label">平台：</span>      
+            <span class="meta-value">{{!!平台}}</span>      
+          </div>      
+          <div class="meta-row">      
+            <span class="meta-label">性向：</span>      
+            <span class="meta-value">{{!!性向}}</span>      
+          </div>      
+          <div class="meta-row">      
+            <span class="meta-label">视角：</span>      
+            <span class="meta-value">{{!!视角}}</span>      
+          </div>      
+        </div>    
+      </div>      
+    </div>      
+  </div>      
+        
+  <div class="novel-tags">      
+    <div class="tag-section">      
+      <span class="tag-label">文章长度：</span>      
+      <span class="tag-value">{{!!文章长度}}</span>      
+    </div>  
+      
+    <div class="tag-section">      
+      <span class="tag-label">分类标签：</span>      
+      <div class="category-tags-container">      
+        <$list filter="[<currentTiddler>has[分类标签]]">        
+          <$list filter="[{!!分类标签}split[ ]]" join=" ">        
+            <$transclude $variable="tag-pill" tag=<<currentTiddler>>/>        
+          </$list>        
+        </$list>      
+      </div>      
+    </div>      
+          
+    <div class="tag-section">      
+      <span class="tag-label">特殊标签：</span>      
+      <div class="category-tags-container">      
+        <$list filter="[<currentTiddler>has[特殊标签]]">        
+          <$list filter="[{!!特殊标签}split[ ]]" join=" ">        
+            <$transclude $variable="tag-pill" tag=<<currentTiddler>>/>        
+          </$list>        
+        </$list>      
+      </div>      
+    </div>      
+  </div>      
+        
+  <div class="novel-status">      
+    <div class="status-row">      
+      <span class="status-label">归档：</span>      
+      <span class="status-value"><$checkbox field="归档" checked="yes" unchecked="no"/></span>      
+    </div>      
+    <div class="status-row">      
+      <span class="status-label">淘汰：</span>      
+      <span class="status-value"><$checkbox field="淘汰" checked="yes" unchecked="no"/></span>      
+    </div>      
+    <div class="status-row">      
+      <span class="status-label">创建时间：</span>      
+      <span class="status-value"><$view field="created" format="date" template="YYYY-0MM-0DD 0hh:0mm:0ss"/></span>      
+    </div>      
+    <div class="status-row">      
+      <span class="status-label">更新时间：</span>      
+      <span class="status-value"><$view field="modified" format="date" template="YYYY-0MM-0DD 0hh:0mm:0ss"/></span>      
+    </div>      
+    <div class="status-row">      
+      <span class="status-label">附件：</span>      
+      <span class="status-value">      
+        <$list filter="[<currentTiddler>has[附件]]">        
+          <$button class="tc-btn-invisible tw-novel-table-download" tooltip="下载txt">        
+            {{$:/core/images/download-novel|18px}}        
+            <$action-sendmessage $message="tm-open-external-window" $param={{!!附件}}/>        
+          </$button>        
+        </$list>      
+      </span>      
+    </div>      
+  </div>
+
+<div class="novel-content"><$transclude tiddler={{!!title}} field="text" mode="block"/></div>
+
+</div>

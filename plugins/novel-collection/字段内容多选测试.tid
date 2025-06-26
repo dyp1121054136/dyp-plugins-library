@@ -1,0 +1,21 @@
+created: 20250617073836407
+modified: 20250618084113402
+tags: 小说收藏
+title: 字段内容多选测试
+作者: 哈哈
+分类标签: 分类1 分类2 分类3
+封面: https://s1.imagehub.cc/images/2024/01/14/23fa492a97c88ced8fdd8f16b2b8505f.png
+平台: 起点
+归档: yes
+文章长度: 超长篇6M以上
+淘汰: no
+特殊标签: 特殊1 特殊2 特殊3
+类型: 
+
+<td class="category-tags-container">  <!-- 分类标签 -->      
+  <$list filter="[<currentTiddler>has[分类标签]]">    
+    <$list filter="[{!!分类标签}split[ ]]" join=" ">      
+      <$transclude $variable="tag-pill" tag=<<currentTiddler>>/>      
+    </$list>    
+  </$list>    
+</td>

@@ -1,0 +1,38 @@
+created: 20250617074254572
+modified: 20250619091617711
+tags: 样式 $:/tags/Stylesheet 小说收藏
+title: 字段内容多选样式css
+分类标签: 仙侠 无限流 自定义分类标签
+
+/* 仙侠标签 - 温暖的紫色系 */  
+.category-tags-container [data-tag-title="仙侠"] .tc-tag-label,
+.category-tags-container [data-tag-title="武侠"] .tc-tag-label
+ {  
+    background-color: #8B7EC8 !important;  
+    color: #FFFFFF !important;  
+}  
+  
+/* 无限流标签 - 清新的蓝绿色系 */  
+.category-tags-container [data-tag-title="无限流"] .tc-tag-label {  
+    background-color: #4ECDC4 !important;  
+    color: #FFFFFF !important;  
+}  
+  
+/* 自定义分类标签 - 柔和的橙色系 */  
+.category-tags-container [data-tag-title="自定义分类标签"] .tc-tag-label {  
+    background-color: #FFB347 !important;  
+    color: #FFFFFF !important;  
+}  
+  
+/* 字段标签丸添加轻微的阴影效果 */  
+.category-tags-container .tc-tag-label {  
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);  
+  transition: all 0.2s ease;  
+  transform: scale(0.9);  
+}  
+  
+/* 条目内容中标签丸的鼠标悬停效果 */  
+.category-tags-container .tc-tag-label:hover {  
+  transform: translateY(-1px);  
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);  
+} 

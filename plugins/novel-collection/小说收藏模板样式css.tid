@@ -1,0 +1,142 @@
+created: 20250619081356300
+modified: 20250626090439274
+tags: 样式 $:/tags/Stylesheet 小说收藏
+title: 小说收藏模板样式css
+
+.tag-value {  
+  flex: 1;  
+  font-weight: normal;  
+}
+
+.novel-detail-container {    
+  margin: 0  auto;    
+  padding: 0; /* 移除内边距 */
+  font-family: inherit;
+}    
+    
+.novel-header {    
+  display: flex;    
+  gap: 20px;    
+  margin-bottom: 20px;    
+  align-items: flex-start;    
+}    
+    
+.novel-cover {    
+  flex-shrink: 0;    
+}    
+    
+.novel-cover-image {    
+  width: 150px;    
+  height: auto;    
+  max-height: 200px;    
+  object-fit: cover;    
+  border-radius: 8px;    
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);    
+}    
+    
+.novel-info {    
+  flex: 1;    
+  min-height: 200px;    
+  display: flex;    
+  flex-direction: column;    
+}    
+    
+.novel-meta {    
+  flex: 1;    
+}    
+  
+.meta-columns {  
+  display: flex;  
+  gap: 30px;  
+}  
+  
+.meta-column-left {  
+  flex: 2;  
+}  
+  
+.meta-column-right {  
+  flex: 1;  
+}  
+    
+.meta-row, .status-row {    
+  display: flex;    
+  margin-bottom: 8px;    
+  align-items: center;    
+}    
+    
+.meta-label, .status-label, .tag-label {    
+  font-weight: bold;    
+  min-width: 50px;    
+  color: #666;    
+  flex-shrink: 0;    
+}    
+    
+.meta-value, .status-value {    
+  flex: 1;    
+}    
+    
+.novel-tags {    
+  margin: 20px 0;    
+  padding: 15px;    
+  background-color: #f8f9fa;    
+  border-radius: 6px;    
+}    
+    
+.tag-section {    
+  display: flex;    
+  align-items: flex-start;    
+  margin-bottom: 10px;    
+}    
+    
+.tag-section:last-child {    
+  margin-bottom: 0;    
+}    
+   
+.novel-status {    
+  margin: 20px 0;    
+  padding: 15px;    
+  border: 1px solid #e0e0e0;    
+  border-radius: 6px;    
+}    
+
+/* 正文排版 */
+.novel-content {    
+  border-top: 2px solid #e0e0e0;   
+
+  font-family: "FZYUEKZJW-H";
+  text-align: justify; /* 两端对齐 */
+  line-height: 1.5; /* 行高*/
+  letter-spacing: 0em; /* 增加字符间距 */
+
+/* 硬式换行 */
+  word-break: normal; 
+  word-wrap: break-word; 
+  /* white-space: pre-wrap; 保留空白字符，包括空格、制表符和换行符。 */
+  white-space:pre-line; /* 连续的空白字符合并成一个空格 */ 
+
+  margin-bottom: 0; /* 确保没有底部边距 */  
+  padding-bottom: 0; /* 确保没有底部内边距 */  
+}    
+    
+@media (max-width: 600px) {    
+  .novel-header {    
+    flex-direction: column;    
+  }    
+      
+  .novel-cover {    
+    align-self: center;    
+  }    
+      
+  .novel-info {    
+    min-height: auto;    
+  }    
+      
+  .meta-columns {  
+    flex-direction: column;  
+    gap: 15px;  
+  }  
+      
+  .meta-label, .status-label, .tag-label {    
+    min-width: 80px;    
+  }    
+}
