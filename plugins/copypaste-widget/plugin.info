@@ -1,0 +1,16 @@
+{
+    "title": "$:/plugins/dyp/copypaste-widget",
+    "version": "0.0.1",
+    "stability": "STABILITY_2_STABLE",
+    "name": "copypaste-widget",
+    "description": "复制粘贴小工具",
+    "author": "dyp",
+    "source": "https://github.com/dyp1121054136/dyp-plugins-library",
+    "list": "readme usage history",
+    "plugin-priority": "",
+    "parent-plugin": "",
+    "dependents": "",
+    "plugin-type": "plugin",
+    "core-version": "5.3.7-prerelease",
+    "packaged-by": "Gatha on 26th 六月 2025, 16:15:27"
+}
