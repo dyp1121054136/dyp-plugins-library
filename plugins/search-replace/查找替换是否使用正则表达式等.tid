@@ -6,7 +6,7 @@ title: 查找替换是否使用正则表达式等
 <span class="search-replace-checkbox">
 <$checkbox default="yes" unchecked="no" checked="yes" field="text" tiddler="$:/state/searchNreplace/global"> 全局</$checkbox>
 
-<$checkbox default="no" unchecked="no" checked="yes" field="text" tiddler="$:/state/searchNreplace/regex"> 正则</$checkbox>
+<$checkbox default="yes" unchecked="no" checked="yes" field="text" tiddler="$:/state/searchNreplace/regex"> 正则</$checkbox>
 </span>
 
 <span class="search-replace-checkbox">
