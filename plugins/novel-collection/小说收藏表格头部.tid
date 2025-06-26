@@ -54,7 +54,7 @@ title: 小说收藏表格头部
     </tr>    
   </thead>    
   <tbody>    
-    <$list filter="[field:类型[小说]sort[title]]">      
+    <$list filter="[all[tiddlers+shadows]field:类型[小说]sort[title]]">      
       <tr>      
         <$list filter="[[$:/config/novel-table/columns/书名]get[visible]else[yes]match[yes]]" variable="ignore">  
 <td>
