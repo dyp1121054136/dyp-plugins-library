@@ -40,7 +40,7 @@ title: 全年日历
     month={{$:/temp/calendar-month}}    
     monday-first="yes"       
     highlight-today="yes"      
-    annotation-filter="[field:date[{{date}}]]"/>  
+    annotation-filter="[all[tiddlers+shadows]field:date[{{date}}]]"/>  
 </$reveal>  
   
 <$reveal state="$:/temp/calendar-view" type="match" text="year">  
@@ -53,7 +53,7 @@ title: 全年日历
     month=<<currentTiddler>>  
     monday-first="yes"       
     highlight-today="yes"      
-    annotation-filter="[field:date[{{date}}]]"/>  
+    annotation-filter="[all[tiddlers+shadows]field:date[{{date}}]]"/>  
 </div>  
 </$list>  
 </div>  
