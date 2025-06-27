@@ -4,6 +4,11 @@ tags: 小说收藏
 title: 小说收藏汇总修改版
 
 <$transclude tiddler="小说收藏显示列设置"/>
+
+<$transclude tiddler="修改小说收藏筛选公式"/>
+
+筛选公式：{{novel-collection-filter}}
+
 <div style="text-align: right;"><$transclude tiddler="新建小说收藏按钮"/></div>
 
 <div class="tw-novel-table-x"><$transclude tiddler="小说收藏表格头部"/></div>
