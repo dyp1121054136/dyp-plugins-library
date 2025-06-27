@@ -190,10 +190,12 @@ title: 小说收藏表格头部
         </$list>  
         <$list filter="[[$:/config/novel-table/columns/附件]get[visible]else[yes]match[yes]]" variable="ignore">  
 <td>
+<$list filter="[<currentTiddler>has[附件]]"> 
   <$button class="tc-btn-invisible tw-novel-table-download" tooltip="下载txt">
 {{$:/core/images/download-novel|18px}}
 <$action-sendmessage $message="tm-open-external-window" $param={{{ [<currentTiddler>get[附件]] }}}/>
   </$button>
+</$list>
 </td>  
         </$list>  
       </tr>      
