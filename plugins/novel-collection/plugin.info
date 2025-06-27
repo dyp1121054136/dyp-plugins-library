@@ -1,6 +1,6 @@
 {
     "title": "$:/plugins/dyp/novel-collection",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "stability": "STABILITY_2_STABLE",
     "name": "novel-collection",
     "description": "小说收藏",
