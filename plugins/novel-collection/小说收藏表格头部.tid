@@ -54,7 +54,8 @@ title: 小说收藏表格头部
     </tr>    
   </thead>    
   <tbody>    
-    <$list filter="[all[tiddlers+shadows]field:类型[小说]sort[title]]">      
+<$set name="novel-collection-filter" tiddler="novel-collection-filter" field="text">
+<$list filter=<<novel-collection-filter>>>
       <tr>      
         <$list filter="[[$:/config/novel-table/columns/书名]get[visible]else[yes]match[yes]]" variable="ignore">  
 <td>
@@ -199,6 +200,7 @@ title: 小说收藏表格头部
 </td>  
         </$list>  
       </tr>      
-    </$list>    
+    </$list>
+</$set>
   </tbody>    
 </table>
