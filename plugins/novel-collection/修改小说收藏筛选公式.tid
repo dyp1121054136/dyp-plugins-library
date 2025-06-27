@@ -1,0 +1,26 @@
+created: 20250627070347158
+modified: 20250627071704992
+tags: 小说收藏
+title: 修改小说收藏筛选公式
+
+分类标签: <$edit-text tiddler="$:/temp/novel-filter/分类标签" tag="input" placeholder="输入分类标签"/>
+  
+特殊标签: <$edit-text tiddler="$:/temp/novel-filter/特殊标签" tag="input" placeholder="输入特殊标签"/>
+  
+排序方式: <$select tiddler="$:/temp/novel-filter/sort" default="created">  
+<option value="title">标题</option> 
+<option value="created">创建时间</option>   
+<option value="modified">修改时间</option>  
+</$select>  
+  
+<$vars   
+    分类标签={{$:/temp/novel-filter/分类标签}}  
+    特殊标签={{$:/temp/novel-filter/特殊标签}}  
+    排序={{$:/temp/novel-filter/sort}}  
+>  
+<$button>  
+<$action-setfield $tiddler="novel-collection-filter"   
+    text=`[all[tiddlers+shadows]field:类型[小说]search:分类标签[$(分类标签)$]search:特殊标签[$(特殊标签)$]sort[$(排序)$]]`/>  
+确认设置  
+</$button>  
+</$vars>
