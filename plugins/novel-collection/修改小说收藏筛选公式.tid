@@ -10,7 +10,7 @@ title: 修改小说收藏筛选公式
 排序方式: <$select tiddler="$:/temp/novel-filter/sort" default="created">  
 <option value="title">标题</option> 
 <option value="created">创建时间</option>   
-<option value="modified">修改时间</option>  
+<option value="modified">更新时间</option>  
 </$select>  
   
 <$vars   
