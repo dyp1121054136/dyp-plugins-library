@@ -1,0 +1,55 @@
+created: 20250627092537104
+modified: 20250627092943927
+tags: 小说收藏
+title: 编辑分类标签多选框
+
+<td class="category-tags-container">    
+  <$let editState={{{ [[$:/state/category-tags-edit/]addsuffix<currentTiddler>] }}} originalValue={{{ [[$:/temp/category-tags-original/]addsuffix<currentTiddler>] }}}>    
+    <$reveal type="nomatch" state=<<editState>> text="yes">    
+      <!-- 显示模式 -->    
+      <$list filter="[<currentTiddler>has[分类标签]]">    
+        <$list filter="[{!!分类标签}split[ ]]" join=" ">    
+          <$transclude $variable="tag-pill" tag=<<currentTiddler>>/>    
+        </$list>    
+      </$list>    
+      <$button class="tc-btn-invisible tw-novel-table-edit" tooltip="编辑">    
+        <$action-setfield $tiddler=<<editState>> text="yes"/>    
+        <$action-setfield $tiddler=<<originalValue>> text={{!!分类标签}}/>    
+        {{$:/core/images/edit-button|18px}}    
+      </$button>    
+    </$reveal>    
+        
+    <$reveal type="match" state=<<editState>> text="yes">    
+      <!-- 编辑模式 -->    
+      <div class="tw-novel-table-edit-container">    
+        <$button class="tc-btn-invisible tw-novel-table-edit-cancel" tooltip="取消编辑">    
+          <$action-setfield $tiddler=<<currentTiddler>> 分类标签={{{ [<originalValue>get[text]] }}}/>    
+          <$action-deletetiddler $tiddler=<<editState>>/>    
+          <$action-deletetiddler $tiddler=<<originalValue>>/>    
+          {{$:/core/images/cancel-button|18px}}    
+        </$button>    
+        <$button class="tc-btn-invisible tw-novel-table-edit-done" tooltip="完成编辑">    
+          <$action-deletetiddler $tiddler=<<editState>>/>    
+          <$action-deletetiddler $tiddler=<<originalValue>>/>    
+          {{$:/core/images/done-button|18px}}    
+        </$button>    
+      </div>    
+          
+      <!-- 直接编辑字段内容 -->    
+      <$edit-text field="分类标签" placeholder="输入标签，用空格分隔"/>    
+          
+      <!-- 按钮式编辑 -->    
+      <div class="category-tags-edit">    
+        <$list filter="[{!!分类标签}split[ ]]" variable="tagItem">    
+          <span class="tag-item">    
+            <$transclude $variable="tag-pill" tag=<<tagItem>>/>    
+            <$button class="tc-btn-invisible tag-remove" tooltip="移除">    
+              <$action-listops $field="分类标签" $subfilter="+[remove<tagItem>]"/>    
+              ×    
+            </$button>    
+          </span>    
+        </$list>    
+      </div>    
+    </$reveal>    
+  </$let>    
+</td>
