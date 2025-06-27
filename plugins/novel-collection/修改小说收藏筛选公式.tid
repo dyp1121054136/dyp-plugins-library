@@ -3,9 +3,9 @@ modified: 20250627071704992
 tags: 小说收藏
 title: 修改小说收藏筛选公式
 
-分类标签: <$edit-text tiddler="$:/temp/novel-filter/分类标签" tag="input" placeholder="输入分类标签"/>
+分类标签: <$edit-text tiddler="$:/temp/novel-filter/分类标签" tag="input" placeholder="输入分类标签" size="5"/>
   
-特殊标签: <$edit-text tiddler="$:/temp/novel-filter/特殊标签" tag="input" placeholder="输入特殊标签"/>
+特殊标签: <$edit-text tiddler="$:/temp/novel-filter/特殊标签" tag="input" placeholder="输入特殊标签" size="5"/>
   
 排序方式: <$select tiddler="$:/temp/novel-filter/sort" default="created">  
 <option value="title">标题</option> 
