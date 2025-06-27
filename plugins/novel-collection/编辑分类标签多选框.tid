@@ -3,7 +3,6 @@ modified: 20250627092943927
 tags: 小说收藏
 title: 编辑分类标签多选框
 
-<td class="category-tags-container">    
   <$let editState={{{ [[$:/state/category-tags-edit/]addsuffix<currentTiddler>] }}} originalValue={{{ [[$:/temp/category-tags-original/]addsuffix<currentTiddler>] }}}>    
     <$reveal type="nomatch" state=<<editState>> text="yes">    
       <!-- 显示模式 -->    
@@ -52,4 +51,3 @@ title: 编辑分类标签多选框
       </div>    
     </$reveal>    
   </$let>    
-</td>
