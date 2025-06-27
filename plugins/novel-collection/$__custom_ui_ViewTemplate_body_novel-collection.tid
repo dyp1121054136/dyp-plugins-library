@@ -55,21 +55,14 @@ title: $:/custom/ui/ViewTemplate/body/novel-collection
       <span class="tag-label">分类标签：</span>      
       <div class="category-tags-container">      
         <$list filter="[<currentTiddler>has[分类标签]]">        
-          <$list filter="[{!!分类标签}split[ ]]" join=" ">        
-            <$transclude $variable="tag-pill" tag=<<currentTiddler>>/>        
-          </$list>        
-        </$list>      
+<$transclude tiddler="编辑分类标签多选框"/>   
       </div>      
     </div>      
           
     <div class="tag-section">      
       <span class="tag-label">特殊标签：</span>      
       <div class="category-tags-container">      
-        <$list filter="[<currentTiddler>has[特殊标签]]">        
-          <$list filter="[{!!特殊标签}split[ ]]" join=" ">        
-            <$transclude $variable="tag-pill" tag=<<currentTiddler>>/>        
-          </$list>        
-        </$list>      
+<$transclude tiddler="编辑特殊标签多选框"/>   
       </div>      
     </div>      
   </div>      
