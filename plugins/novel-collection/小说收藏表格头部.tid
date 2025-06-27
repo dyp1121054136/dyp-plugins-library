@@ -156,22 +156,10 @@ title: 小说收藏表格头部
           </td>  
         </$list>  
         <$list filter="[[$:/config/novel-table/columns/分类标签]get[visible]else[yes]match[yes]]" variable="ignore">  
-          <td class="category-tags-container">  
-            <$list filter="[<currentTiddler>has[分类标签]]">      
-              <$list filter="[{!!分类标签}split[ ]]" join=" ">        
-                <$transclude $variable="tag-pill" tag=<<currentTiddler>>/>        
-              </$list>      
-            </$list>      
-          </td>  
+<$transclude tiddler="编辑分类标签多选框"/>
         </$list>  
         <$list filter="[[$:/config/novel-table/columns/特殊标签]get[visible]else[yes]match[yes]]" variable="ignore">  
-          <td class="category-tags-container">  
-            <$list filter="[<currentTiddler>has[特殊标签]]">    
-              <$list filter="[{!!特殊标签}split[ ]]" join=" ">      
-                <$transclude $variable="tag-pill" tag=<<currentTiddler>>/>      
-              </$list>    
-            </$list>    
-          </td>  
+<$transclude tiddler="编辑特殊标签多选框"/>
         </$list>  
         <$list filter="[[$:/config/novel-table/columns/归档]get[visible]else[no]match[yes]]" variable="ignore">  
           <td>  
