@@ -7,3 +7,4 @@ type: text/vnd.tiddlywiki
 v.0.0.2 2025-06-27
 
 # 小说收藏筛选公式在条目 [[novel-collection-filter]] 中单独设置，方便修改筛选条件；
+# 修复编辑作者时所有行都进入编辑模式的问题；
