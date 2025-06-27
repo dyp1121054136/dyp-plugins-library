@@ -12,10 +12,10 @@ title: $:/custom/ui/ViewTemplate/body/novel-collection
         <img src={{!!封面}} class="novel-cover-image"/>        
       </$list>      
     </div>      
-    <div class="novel-info">    
+    <div class="novel-info">
       <div class="novel-meta">      
         <!-- 基本信息组 -->    
-        <div class="meta-group">    
+        <div class="meta-group">
           <div class="meta-row">      
             <span class="meta-label">书名：</span>      
             <span class="meta-value">《{{!!书名}}》</span>      
