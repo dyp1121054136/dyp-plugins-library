@@ -1,9 +1,9 @@
 created: 20250627093024638
-modified: 20250627093237642
+modified: 20250627095919392
 tags: 小说收藏
 title: 编辑特殊标签多选框
-   
-<$let editState={{{ [[$:/state/special-tags-edit/]addsuffix<currentTiddler>] }}} originalValue={{{ [[$:/temp/special-tags-original/]addsuffix<currentTiddler>] }}}>    
+
+  <$let editState={{{ [[$:/state/special-tags-edit/]addsuffix<currentTiddler>] }}} originalValue={{{ [[$:/temp/special-tags-original/]addsuffix<currentTiddler>] }}}>    
     <$reveal type="nomatch" state=<<editState>> text="yes">    
       <!-- 显示模式 -->    
       <$list filter="[<currentTiddler>has[特殊标签]]">    
@@ -50,4 +50,4 @@ title: 编辑特殊标签多选框
         </$list>    
       </div>    
     </$reveal>    
-  </$let>
+  </$let>    
