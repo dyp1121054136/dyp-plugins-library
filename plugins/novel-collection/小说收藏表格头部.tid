@@ -75,7 +75,7 @@ title: 小说收藏表格头部
         </$list>  
         <$list filter="[[$:/config/novel-table/columns/作者]get[visible]else[yes]match[yes]]" variable="ignore">  
 <td class="tw-novel-table-author">
-<$let editState=<<qualify "$:/state/author-edit">> originalValue=<<qualify "$:/temp/author-original">>>  
+<$let editState={{{ [[$:/state/author-edit/]addsuffix<currentTiddler>] }}} originalValue={{{ [[$:/temp/author-original/]addsuffix<currentTiddler>] }}}>  
 <$reveal type="nomatch" state=<<editState>> text="yes">
   <$view field="作者"/>
   <$button class="tc-btn-invisible tw-novel-table-edit" tooltip="编辑">    
