@@ -78,7 +78,7 @@ title: 小说收藏模板样式css
 .novel-tags {    
   margin: 20px 0;    
   padding: 15px;    
-  background-color: #f8f9fa;    
+  background-color: <<colour pre-background>>; /* #f8f9fa */
   border-radius: 6px;    
 }    
     
