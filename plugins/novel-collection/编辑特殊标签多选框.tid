@@ -2,8 +2,7 @@ created: 20250627093024638
 modified: 20250627093237642
 tags: 小说收藏
 title: 编辑特殊标签多选框
-
-<td class="category-tags-container">    
+   
   <$let editState={{{ [[$:/state/special-tags-edit/]addsuffix<currentTiddler>] }}} originalValue={{{ [[$:/temp/special-tags-original/]addsuffix<currentTiddler>] }}}>    
     <$reveal type="nomatch" state=<<editState>> text="yes">    
       <!-- 显示模式 -->    
@@ -51,5 +50,4 @@ title: 编辑特殊标签多选框
         </$list>    
       </div>    
     </$reveal>    
-  </$let>    
-</td>
+  </$let>
