@@ -3,12 +3,22 @@ modified: 20250623075507473
 tags: 小说收藏
 title: 小说收藏汇总修改版
 
-<$transclude tiddler="小说收藏显示列设置"/>
-
-<$transclude tiddler="修改小说收藏筛选公式"/>
-
-筛选公式：{{novel-collection-filter}}
-
+<$button class="tc-btn-invisible">  
+<$action-setfield $tiddler="$:/state/novel-collection-settings" text={{{ [[$:/state/novel-collection-settings]get[text]else[hide]match[show]then[hide]else[show]] }}}/>  
+<$list filter="[[$:/state/novel-collection-settings]get[text]else[hide]match[show]]" variable="ignore" emptyMessage="{{$:/core/images/right-arrow}} 小说收藏设置">  
+{{$:/core/images/down-arrow}} 小说收藏设置  
+</$list>  
+</$button>  
+  
+<$reveal state="$:/state/novel-collection-settings" text="show" type="match" default="hide" animate="yes">  
+  
+<$transclude tiddler="小说收藏显示列设置"/>  
+  
+<$transclude tiddler="修改小说收藏筛选公式"/>  
+  
+筛选公式：{{novel-collection-filter}}  
+  
+</$reveal>
 <div style="text-align: right;"><$transclude tiddler="新建小说收藏按钮"/></div>
 
 <div class="tw-novel-table-x"><$transclude tiddler="小说收藏表格头部"/></div>
