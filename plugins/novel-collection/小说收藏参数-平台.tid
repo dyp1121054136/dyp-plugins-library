@@ -1,0 +1,11 @@
+created: 20250628060651864
+modified: 20250628060745586
+tags: 小说收藏
+title: 小说收藏参数-平台
+
+<$select field="平台" default="晋江">    
+<option value="晋江">晋江</option>      
+<option value="番茄">番茄</option>      
+<option value="长佩">长佩</option>      
+<option value="起点">起点</option>      
+</$select> 
