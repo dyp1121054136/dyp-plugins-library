@@ -115,33 +115,17 @@ title: 小说收藏表格头部
         </$list>  
         <$list filter="[[$:/config/novel-table/columns/性向]get[visible]else[yes]match[yes]]" variable="ignore">  
           <td>  
-            <$select field="性向" default="言情">    
-              <option value="言情">言情</option>      
-              <option value="耽美">耽美</option>      
-              <option value="百合">百合</option>      
-              <option value="无cp">无cp</option>        
-            </$select>      
+<$transclude tiddler="小说收藏参数-性向"/>
           </td>  
         </$list>  
         <$list filter="[[$:/config/novel-table/columns/视角]get[visible]else[yes]match[yes]]" variable="ignore">  
           <td>  
-            <$select field="视角" default="男主">    
-              <option value="男主">男主</option>      
-              <option value="女主">女主</option>      
-              <option value="主受">主受</option>      
-              <option value="主攻">主攻</option>        
-            </$select>      
+ <$transclude tiddler="小说收藏参数-视角"/> 
           </td>  
         </$list>  
         <$list filter="[[$:/config/novel-table/columns/文章长度]get[visible]else[no]match[yes]]" variable="ignore">  
           <td>  
-            <$select field="文章长度" default="长篇1M-3M">    
-              <option value="超长篇6M以上">超长篇6M以上</option>      
-              <option value="大长篇3M-6M">大长篇3M-6M</option>      
-              <option value="长篇1M-3M">长篇1M-3M</option>      
-              <option value="中篇500KB-1M">中篇500KB-1M</option>      
-              <option value="中短篇300KB-500KB">中短篇300KB-500KB</option>      
-            </$select>      
+ <$transclude tiddler="小说收藏参数-文章长度"/>
           </td>  
         </$list>  
         <$list filter="[[$:/config/novel-table/columns/分类标签]get[visible]else[yes]match[yes]]" variable="ignore">  
@@ -156,12 +140,12 @@ title: 小说收藏表格头部
         </$list>  
         <$list filter="[[$:/config/novel-table/columns/归档]get[visible]else[no]match[yes]]" variable="ignore">  
           <td>  
-            <$checkbox field="归档" checked="yes" unchecked="no"/>    
+ <$transclude tiddler="小说收藏参数-归档"/>
           </td>  
         </$list>  
         <$list filter="[[$:/config/novel-table/columns/淘汰]get[visible]else[no]match[yes]]" variable="ignore">  
           <td>  
-            <$checkbox field="淘汰" checked="yes" unchecked="no"/>    
+ <$transclude tiddler="小说收藏参数-淘汰"/>  
           </td>  
         </$list>  
         <$list filter="[[$:/config/novel-table/columns/创建时间]get[visible]else[no]match[yes]]" variable="ignore">  
