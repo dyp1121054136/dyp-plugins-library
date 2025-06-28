@@ -95,13 +95,13 @@ title: 小说收藏模板样式css
 .novel-status {    
   margin: 20px 0;    
   padding: 15px;    
-  border: 1px solid #e0e0e0;    
+  border: 1px solid <<colour muted-foreground>>;    
   border-radius: 6px;    
 }    
 
 /* 正文排版 */
 .novel-content {    
-  border-top: 2px solid #e0e0e0;   
+  border-top: 2px solid <<colour muted-foreground>>;   
 
   font-family: "FZYUEKZJW-H";
   text-align: justify; /* 两端对齐 */
