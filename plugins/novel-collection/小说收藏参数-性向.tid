@@ -1,0 +1,11 @@
+created: 20250628060946212
+modified: 20250628061012889
+tags: 小说收藏
+title: 小说收藏参数-性向
+
+<$select field="性向" default="言情">    
+<option value="言情">言情</option>      
+<option value="耽美">耽美</option>      
+<option value="百合">百合</option>      
+<option value="无cp">无cp</option>        
+</$select>  
