@@ -31,9 +31,12 @@ title: 编辑分类标签多选框
       </$button>    
     </$reveal>    
         
-    <$reveal type="match" state=<<editState>> text="yes">    
+    <$reveal type="match" state=<<editState>> text="yes">
+      <!-- 直接编辑字段内容 -->    
+      <$edit-text field="分类标签" placeholder="输入标签，用空格分隔" tag="textarea" class="novel-collection-textarea"/> 
+
       <!-- 编辑模式 -->    
-      <div class="tw-novel-table-edit-container">    
+      <div class="tw-novel-table-edit-container" style="float: right;">    
         <$button class="tc-btn-invisible tw-novel-table-edit-cancel" tooltip="取消编辑">    
           <$action-setfield $tiddler=<<currentTiddler>> 分类标签={{{ [<originalValue>get[text]] }}}/>    
           <$action-deletetiddler $tiddler=<<editState>>/>    
@@ -45,10 +48,7 @@ title: 编辑分类标签多选框
           <$action-deletetiddler $tiddler=<<originalValue>>/>    
           {{$:/core/images/done-button|18px}}    
         </$button>    
-      </div>    
-          
-      <!-- 直接编辑字段内容 -->    
-      <$edit-text field="分类标签" placeholder="输入标签，用空格分隔" tag="textarea" class="novel-collection-textarea"/>    
+      </div>
           
       <!-- 按钮式编辑 -->    
       <div class="category-tags-edit">    
