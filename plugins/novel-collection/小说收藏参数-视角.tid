@@ -1,0 +1,11 @@
+created: 20250628061114334
+modified: 20250628061137325
+tags: 小说收藏
+title: 小说收藏参数-视角
+
+<$select field="视角" default="男主">    
+<option value="男主">男主</option>      
+<option value="女主">女主</option>      
+<option value="主受">主受</option>      
+<option value="主攻">主攻</option>        
+</$select>    

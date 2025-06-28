@@ -1,0 +1,6 @@
+created: 20250628061351791
+modified: 20250628061403828
+tags: 小说收藏
+title: 小说收藏参数-淘汰
+
+<$checkbox field="淘汰" checked="yes" unchecked="no"/>
