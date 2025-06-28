@@ -54,10 +54,6 @@ title: 小说收藏表格样式css
   border: none; 
   -webkit-tap-highlight-color: transparent;
   box-shadow: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  gap: 10px;
   margin-bottom: 5px;
   display: inline-block;
 }
@@ -71,6 +67,10 @@ td .tw-novel-table-edit-container {
   opacity: 0.5;
   transition: opacity 0.5s ease-in-out;
   display: inline;
+}
+
+.tw-novel-table-edit-done {
+  margin-left: 10px;
 }
 
 .tw-novel-table-edit-done,
