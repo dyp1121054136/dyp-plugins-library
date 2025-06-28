@@ -5,7 +5,7 @@ title: 小说收藏文本框样式css
 
 .novel-collection-textarea {
   width: 100%; /* 宽度 */
-  padding: 12px 15px; /* 内边距 */
+  padding: 6px 7px; /* 内边距 */
   border: 2px solid #ccc; /* 边框 */
   border-radius: 8px; /* 圆角 */
   resize: vertical; /* 允许垂直调整大小 */
