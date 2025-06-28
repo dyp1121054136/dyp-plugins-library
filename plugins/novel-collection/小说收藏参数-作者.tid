@@ -26,6 +26,6 @@ title: 小说收藏参数-作者
     {{$:/core/images/done-button|18px}}  
   </$button>  
 </div>
-  <$edit-text field="作者" placeholder="输入作者名称"/>  
+  <$edit-text field="作者" placeholder="输入作者名称" tag="input" size="15"/>  
 </$reveal>    
 </$let>
