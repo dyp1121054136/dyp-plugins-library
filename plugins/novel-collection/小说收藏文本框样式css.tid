@@ -10,8 +10,8 @@ title: 小说收藏文本框样式css
   border-radius: 8px; /* 圆角 */
   resize: vertical; /* 允许垂直调整大小 */
   box-sizing: border-box; /* 确保 padding 和 border 不会增加宽度 */
-  background-color: #f9f9f9; /* 背景色 */
-  color: #333; /* 文字颜色 */
+  background-color: <<colour tiddler-background>>; /* 背景色 */
+  color:  <<colour foreground>>/* 文字颜色 */
   outline: none; /* 移除焦点边框 */
   transition: border-color 0.3s ease; /* 过渡效果 */
 }
