@@ -1,0 +1,23 @@
+created: 20250628023455054
+modified: 20250628023614797
+tags: 小说收藏 样式 $:/tags/Stylesheet
+title: 小说收藏文本框样式css
+
+.novel-collection-textarea {
+  width: 100%; /* 宽度 */
+  padding: 12px 15px; /* 内边距 */
+  border: 2px solid #ccc; /* 边框 */
+  border-radius: 8px; /* 圆角 */
+  resize: vertical; /* 允许垂直调整大小 */
+  box-sizing: border-box; /* 确保 padding 和 border 不会增加宽度 */
+  background-color: #f9f9f9; /* 背景色 */
+  color: #333; /* 文字颜色 */
+  outline: none; /* 移除焦点边框 */
+  transition: border-color 0.3s ease; /* 过渡效果 */
+}
+
+/* 聚焦时的样式 */
+.novel-collection-textarea:focus {
+  border-color: #007BFF; /* 聚焦边框颜色 */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3); /* 聚焦阴影 */
+}
