@@ -51,6 +51,7 @@ title: 小说收藏表格样式css
 
 /* 编辑按钮 */
 .tw-novel-table-edit-container {
+  width: 180px;
   border: none; 
   -webkit-tap-highlight-color: transparent;
   box-shadow: none;
