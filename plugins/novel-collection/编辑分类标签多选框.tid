@@ -7,9 +7,18 @@ title: 编辑分类标签多选框
     <$reveal type="nomatch" state=<<editState>> text="yes">    
       <!-- 显示模式 -->    
       <$list filter="[<currentTiddler>has[分类标签]]">    
-        <$list filter="[{!!分类标签}split[ ]]" join=" ">    
-          <$transclude $variable="tag-pill" tag=<<currentTiddler>>/>    
-        </$list>    
+<$list filter="[{!!分类标签}split[ ]]" join=" " variable="tagItem">      
+  <$button class="tc-btn-invisible" tooltip="点击设置为过滤条件">  
+    <$vars   
+        当前特殊标签={{$:/temp/novel-filter/特殊标签}}  
+        当前排序={{$:/temp/novel-filter/sort}}  
+    >  
+      <$action-setfield $tiddler="novel-collection-filter"   
+          text=`[all[tiddlers+shadows]field:类型[小说]search:分类标签[$(tagItem)$]search:特殊标签[$(当前特殊标签)$]sort[$(当前排序)$]]`/>  
+    </$vars>  
+    <$transclude $variable="tag-pill" tag=<<tagItem>>/>  
+  </$button>  
+</$list>
       </$list>    
       <$button class="tc-btn-invisible tw-novel-table-edit" tooltip="编辑">    
         <$action-setfield $tiddler=<<editState>> text="yes"/>    
