@@ -16,7 +16,7 @@ title: $:/custom/ui/ViewTemplate/body/novel-collection
         <div class="meta-group">
           <div class="meta-row">      
             <span class="meta-label">书名：</span>      
-            <span class="meta-value"><$transclude tiddler="小说收藏参数-书名"/><</span>      
+            <span class="meta-value"><$transclude tiddler="小说收藏参数-书名"/></span>      
           </div>      
           <div class="meta-row">      
             <span class="meta-label">作者：</span>      
