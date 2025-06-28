@@ -1,0 +1,12 @@
+created: 20250628060353255
+modified: 20250628060507456
+tags: 小说收藏
+title: 小说收藏参数-时代
+
+<$select field="时代" default="古代">    
+<option value="古代">古代</option>      
+<option value="架空">架空</option>      
+<option value="未来">未来</option>      
+<option value="现代">现代</option>      
+<option value="民国">民国</option>     
+</$select>      
