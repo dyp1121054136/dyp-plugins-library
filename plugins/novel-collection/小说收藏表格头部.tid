@@ -105,23 +105,12 @@ title: 小说收藏表格头部
         </$list>  
         <$list filter="[[$:/config/novel-table/columns/时代]get[visible]else[yes]match[yes]]" variable="ignore">  
           <td>  
-            <$select field="时代" default="古代">    
-              <option value="古代">古代</option>      
-              <option value="架空">架空</option>      
-              <option value="未来">未来</option>      
-              <option value="现代">现代</option>      
-              <option value="民国">民国</option>     
-            </$select>      
+<$transclude tiddler="小说收藏参数-时代"/>     
           </td>  
         </$list>  
         <$list filter="[[$:/config/novel-table/columns/平台]get[visible]else[no]match[yes]]" variable="ignore">  
           <td>  
-            <$select field="平台" default="晋江">    
-              <option value="晋江">晋江</option>      
-              <option value="番茄">番茄</option>      
-              <option value="长佩">长佩</option>      
-              <option value="起点">起点</option>      
-            </$select>      
+<$transclude tiddler="小说收藏参数-平台"/>     
           </td>  
         </$list>  
         <$list filter="[[$:/config/novel-table/columns/性向]get[visible]else[yes]match[yes]]" variable="ignore">  
