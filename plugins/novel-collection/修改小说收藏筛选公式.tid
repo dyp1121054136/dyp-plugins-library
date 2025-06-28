@@ -8,7 +8,8 @@ title: 修改小说收藏筛选公式
 特殊标签: <$edit-text tiddler="$:/temp/novel-filter/特殊标签" tag="input" placeholder="江湖" size="5"/>
   
 排序方式: <$select tiddler="$:/temp/novel-filter/sort" default="created">  
-<option value="title">标题</option> 
+<option value="title">标题</option>
+<option value="书名">书名</option>
 <option value="created">创建时间</option>   
 <option value="modified">更新时间</option>  
 </$select>  
