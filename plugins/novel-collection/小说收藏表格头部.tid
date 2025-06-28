@@ -124,10 +124,14 @@ title: 小说收藏表格头部
           </td>  
         </$list>  
         <$list filter="[[$:/config/novel-table/columns/创建时间]get[visible]else[no]match[yes]]" variable="ignore">  
-          <td class="tw-novel-table-date"><$view field="created" format="date" template="YYYY-0MM-0DD 0hh:0mm:0ss"/></td>  
+<td class="tw-novel-table-date">
+<$transclude tiddler="小说收藏参数-创建时间"/>
+</td>  
         </$list>  
         <$list filter="[[$:/config/novel-table/columns/更新时间]get[visible]else[yes]match[yes]]" variable="ignore">  
-          <td class="tw-novel-table-date"><$view field="modified" format="date" template="YYYY-0MM-0DD 0hh:0mm:0ss"/></td>  
+<td class="tw-novel-table-date">
+<$transclude tiddler="小说收藏参数-更新时间"/>
+</td>  
         </$list>  
         <$list filter="[[$:/config/novel-table/columns/附件]get[visible]else[yes]match[yes]]" variable="ignore">  
 <td>
