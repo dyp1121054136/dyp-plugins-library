@@ -75,42 +75,17 @@ title: 小说收藏表格头部
         </$list>  
         <$list filter="[[$:/config/novel-table/columns/作者]get[visible]else[yes]match[yes]]" variable="ignore">  
 <td class="tw-novel-table-author">
-<$let editState={{{ [[$:/state/author-edit/]addsuffix<currentTiddler>] }}} originalValue={{{ [[$:/temp/author-original/]addsuffix<currentTiddler>] }}}>  
-<$reveal type="nomatch" state=<<editState>> text="yes">
-  <$view field="作者"/>
-  <$button class="tc-btn-invisible tw-novel-table-edit" tooltip="编辑">    
-    <$action-setfield $tiddler=<<editState>> text="yes"/>  
-    <$action-setfield $tiddler=<<originalValue>> text={{!!作者}}/>  
-    {{$:/core/images/edit-button|18px}}  
-  </$button>
-</$reveal>    
-<$reveal type="match" state=<<editState>> text="yes">  
-<div class="tw-novel-table-edit-container">
-  <$button class="tc-btn-invisible tw-novel-table-edit-cancel" tooltip="取消编辑">      
-    <$action-setfield $tiddler=<<currentTiddler>> 作者={{{ [<originalValue>get[text]] }}}/>  
-    <$action-deletetiddler $tiddler=<<editState>>/>  
-    <$action-deletetiddler $tiddler=<<originalValue>>/>  
-    {{$:/core/images/cancel-button|18px}}    
-  </$button>  
-  <$button class="tc-btn-invisible tw-novel-table-edit-done" tooltip="完成编辑">    
-    <$action-deletetiddler $tiddler=<<editState>>/>  
-    <$action-deletetiddler $tiddler=<<originalValue>>/>  
-    {{$:/core/images/done-button|18px}}  
-  </$button>  
-</div>
-  <$edit-text field="作者" placeholder="输入作者名称"/>  
-</$reveal>    
-</$let>
+<$transclude tiddler="小说收藏参数-作者"/>
 </td>  
         </$list>  
         <$list filter="[[$:/config/novel-table/columns/时代]get[visible]else[yes]match[yes]]" variable="ignore">  
           <td>  
-<$transclude tiddler="小说收藏参数-时代"/>     
+<$transclude tiddler="小说收藏参数-时代"/>   
           </td>  
         </$list>  
         <$list filter="[[$:/config/novel-table/columns/平台]get[visible]else[no]match[yes]]" variable="ignore">  
           <td>  
-<$transclude tiddler="小说收藏参数-平台"/>     
+<$transclude tiddler="小说收藏参数-平台"/>
           </td>  
         </$list>  
         <$list filter="[[$:/config/novel-table/columns/性向]get[visible]else[yes]match[yes]]" variable="ignore">  
@@ -120,7 +95,7 @@ title: 小说收藏表格头部
         </$list>  
         <$list filter="[[$:/config/novel-table/columns/视角]get[visible]else[yes]match[yes]]" variable="ignore">  
           <td>  
- <$transclude tiddler="小说收藏参数-视角"/> 
+ <$transclude tiddler="小说收藏参数-视角"/>
           </td>  
         </$list>  
         <$list filter="[[$:/config/novel-table/columns/文章长度]get[visible]else[no]match[yes]]" variable="ignore">  
