@@ -7,10 +7,8 @@ title: $:/custom/ui/ViewTemplate/body/novel-collection
 
 <div class="novel-detail-container">      
   <div class="novel-header">      
-    <div class="novel-cover">      
-      <$list filter="[<currentTiddler>has[封面]]">          
-        <img src={{!!封面}} class="novel-cover-image"/>        
-      </$list>      
+    <div class="novel-cover novel-cover-image">      
+<$transclude tiddler="小说收藏参数-封面"/>  
     </div>      
     <div class="novel-info">
       <div class="novel-meta">      
