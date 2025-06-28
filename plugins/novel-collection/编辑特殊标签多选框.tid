@@ -35,7 +35,7 @@ title: 编辑特殊标签多选框
       </div>    
           
       <!-- 直接编辑字段内容 -->    
-      <$edit-text field="特殊标签" placeholder="输入标签，用空格分隔" tag="textarea"/>    
+      <$edit-text field="特殊标签" placeholder="输入标签，用空格分隔" tag="textarea" class="novel-collection-textarea"/>    
           
       <!-- 按钮式编辑 -->    
       <div class="category-tags-edit">    
