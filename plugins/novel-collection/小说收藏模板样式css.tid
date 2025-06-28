@@ -101,7 +101,7 @@ title: 小说收藏模板样式css
 
 /* 正文排版 */
 .novel-content {    
-  border-top: 2px solid <<colour muted-foreground>>;   
+  border-top: 0px solid <<colour muted-foreground>>;   /* 移除上分隔线 */
 
   font-family: "FZYUEKZJW-H";
   text-align: justify; /* 两端对齐 */
