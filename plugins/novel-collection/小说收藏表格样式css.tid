@@ -60,6 +60,12 @@ title: 小说收藏表格样式css
   justify-content: flex-end;
   gap: 10px;
   margin-bottom: 5px;
+  display: inline-block;
+}
+
+td .tw-novel-table-edit-container {
+  display: block;
+  text-align: right;
 }
 
 .tw-novel-table-edit {
