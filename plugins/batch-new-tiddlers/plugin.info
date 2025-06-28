@@ -1,6 +1,6 @@
 {
     "title": "$:/plugins/dyp/batch-new-tiddlers",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "stability": "STABILITY_2_STABLE",
     "name": "batch-new-tiddlers",
     "description": "按list批量创建新条目",
