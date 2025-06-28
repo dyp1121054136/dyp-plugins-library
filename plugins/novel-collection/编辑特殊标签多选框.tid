@@ -14,7 +14,7 @@ title: 编辑特殊标签多选框
       <$button class="tc-btn-invisible tw-novel-table-edit" tooltip="编辑">    
         <$action-setfield $tiddler=<<editState>> text="yes"/>    
         <$action-setfield $tiddler=<<originalValue>> text={{!!特殊标签}}/>    
-        {{$:/core/images/edit-button|18px}}    
+        <span class="novel-collection-muted">{{$:/core/images/novel-collection-dot}}</span>    
       </$button>    
     </$reveal>    
         
