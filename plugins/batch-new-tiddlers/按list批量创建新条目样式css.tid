@@ -18,8 +18,8 @@ type: text/css
   padding: 8px;
 
   /* 调整背景和文字颜色 */
-  background-color: #fff; /* 背景颜色为白色 */
-  color: #333; /* 文字颜色为深灰 */
+  background-color: <<colour tiddler-background>>; /* 背景色 */
+  color:  <<colour foreground>>/* 文字颜色 */
 
   /* 鼠标悬停和获取焦点时的样式 */
   &:hover, &:focus {
