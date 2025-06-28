@@ -4,6 +4,10 @@ tags:
 title: $:/plugins/dyp/batch-new-tiddlers/history
 type: text/vnd.tiddlywiki
 
+; v.0.0.3 2025-06-28
+
+# 文本框背景颜色和文字颜色跟随调色板改变;
+
 ; v.0.0.2 2025-05-24
 
-替换图标，优化图标排版
+# 替换图标，优化图标排版;
