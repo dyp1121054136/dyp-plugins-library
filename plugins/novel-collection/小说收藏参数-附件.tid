@@ -1,0 +1,11 @@
+created: 20250628072520643
+modified: 20250628072603250
+tags: 小说收藏
+title: 小说收藏参数-附件
+
+<$list filter="[<currentTiddler>has[附件]]"> 
+  <$button class="tc-btn-invisible tw-novel-table-download" tooltip="下载txt">
+{{$:/core/images/download-novel|18px}}
+<$action-sendmessage $message="tm-open-external-window" $param={{{ [<currentTiddler>get[附件]] }}}/>
+  </$button>
+</$list>
