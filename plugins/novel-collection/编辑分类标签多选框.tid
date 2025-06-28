@@ -15,7 +15,11 @@ title: 编辑分类标签多选框
     >  
       <$action-setfield $tiddler="novel-collection-filter"   
           text=`[all[tiddlers+shadows]field:类型[小说]search:分类标签[$(tagItem)$]search:特殊标签[$(当前特殊标签)$]sort[$(当前排序)$]]`/>  
-    </$vars>  
+    </$vars>
+<!-- 新增跳转功能 -->
+  <%if [<currentTiddler>!match[小说收藏汇总修改版]] %>  
+    <$action-navigate $to="小说收藏汇总修改版"/>  
+  <%endif%>
     <$transclude $variable="tag-pill" tag=<<tagItem>>/>  
   </$button>  
 </$list>
