@@ -6,6 +6,7 @@ title: 小说收藏参数-书名
 
 <$let editState={{{ [[$:/state/novel-name-edit/]addsuffix<currentTiddler>] }}} originalValue={{{ [[$:/temp/novel-name-original/]addsuffix<currentTiddler>] }}}>  
 <$reveal type="nomatch" state=<<editState>> text="yes">
+《{{!!书名}}》
   <$button class="tc-btn-invisible tw-novel-table-edit" tooltip="编辑">    
     <$action-setfield $tiddler=<<editState>> text="yes"/>  
     <$action-setfield $tiddler=<<originalValue>> text={{!!书名}}/>  
