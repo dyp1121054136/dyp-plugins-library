@@ -1,0 +1,31 @@
+created: 20250628061557099
+modified: 20250628061648675
+tags: 小说收藏
+title: 小说收藏参数-作者
+
+<$let editState={{{ [[$:/state/author-edit/]addsuffix<currentTiddler>] }}} originalValue={{{ [[$:/temp/author-original/]addsuffix<currentTiddler>] }}}>  
+<$reveal type="nomatch" state=<<editState>> text="yes">
+  <$view field="作者"/>
+  <$button class="tc-btn-invisible tw-novel-table-edit" tooltip="编辑">    
+    <$action-setfield $tiddler=<<editState>> text="yes"/>  
+    <$action-setfield $tiddler=<<originalValue>> text={{!!作者}}/>  
+    {{$:/core/images/edit-button|18px}}  
+  </$button>
+</$reveal>    
+<$reveal type="match" state=<<editState>> text="yes">  
+<div class="tw-novel-table-edit-container">
+  <$button class="tc-btn-invisible tw-novel-table-edit-cancel" tooltip="取消编辑">      
+    <$action-setfield $tiddler=<<currentTiddler>> 作者={{{ [<originalValue>get[text]] }}}/>  
+    <$action-deletetiddler $tiddler=<<editState>>/>  
+    <$action-deletetiddler $tiddler=<<originalValue>>/>  
+    {{$:/core/images/cancel-button|18px}}    
+  </$button>  
+  <$button class="tc-btn-invisible tw-novel-table-edit-done" tooltip="完成编辑">    
+    <$action-deletetiddler $tiddler=<<editState>>/>  
+    <$action-deletetiddler $tiddler=<<originalValue>>/>  
+    {{$:/core/images/done-button|18px}}  
+  </$button>  
+</div>
+  <$edit-text field="作者" placeholder="输入作者名称"/>  
+</$reveal>    
+</$let>
