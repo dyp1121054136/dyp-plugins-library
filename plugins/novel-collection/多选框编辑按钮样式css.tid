@@ -1,0 +1,16 @@
+created: 20250628013713433
+modified: 20250628013919125
+tags: 小说收藏 $:/tags/Stylesheet 样式
+title: 多选框编辑按钮样式css
+
+.novel-collection-muted svg {
+    height: 1em;
+    width: 1em;
+    color: <<colour tiddler-controls-foreground>>;
+    fill: <<colour tiddler-controls-foreground>>;
+}
+
+.novel-collection-muted:hover svg {
+    color: <<colour tiddler-controls-foreground-hover>>;
+    fill: <<colour tiddler-controls-foreground-hover>>;
+}
