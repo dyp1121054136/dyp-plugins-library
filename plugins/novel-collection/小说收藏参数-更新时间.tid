@@ -1,0 +1,6 @@
+created: 20250628064216255
+modified: 20250628064259370
+tags: 小说收藏
+title: 小说收藏参数-更新时间
+
+<$view field="modified" format="date" template="YYYY-0MM-0DD 0hh:0mm:0ss"/>
