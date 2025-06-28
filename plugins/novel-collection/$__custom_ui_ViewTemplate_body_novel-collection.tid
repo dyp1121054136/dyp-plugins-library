@@ -89,6 +89,6 @@ title: $:/custom/ui/ViewTemplate/body/novel-collection
     </div>      
   </div>
 
-<div style="text-align: right;"><$transclude tiddler="小说收藏正文编辑按钮"/></div>
+<$transclude tiddler="小说收藏正文编辑按钮"/>
 
 </div>
