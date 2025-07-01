@@ -6,7 +6,7 @@ type: text/vnd.tiddlywiki
 
 ; v.0.1.1 2025-07-01
 
-# 音乐播放器和歌词同步添加统一id，避免冲突；
+# 优化了 [[$:/core/modules/widgets/gdstudio-audio.js]] 和 [[$:/core/modules/widgets/lyric-sync.js]]，音乐播放器和歌词同步添加统一id，避免冲突；
 
 ; v.0.1.1 2025-06-21
 
