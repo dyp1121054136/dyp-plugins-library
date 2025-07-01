@@ -28,6 +28,7 @@ GDStudioAudioWidget.prototype.execute = function() {
     this.musicUrl = this.getAttribute("music-url", "");
     this.songName = this.getAttribute("song-name", "未知歌曲");
     this.artist = this.getAttribute("artist", "未知歌手");
+    this.playerId = this.getAttribute("id", ""); // 添加这行
     
     this.makeChildWidgets();
 };
@@ -48,6 +49,9 @@ GDStudioAudioWidget.prototype.render = function(parent,nextSibling) {
     
     var playerDiv = this.document.createElement("div");
     playerDiv.className = "gdstudio-mini-player";
+    if (this.playerId) {  
+        playerDiv.id = this.playerId; // 添加这行  
+    }
     
     var coverContainer = this.document.createElement("div");
     coverContainer.className = "gdstudio-mini-cover";
