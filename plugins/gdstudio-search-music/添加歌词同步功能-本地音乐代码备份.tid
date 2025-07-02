@@ -1,0 +1,30 @@
+created: 20250702021326212
+modified: 20250702075712488
+tags: 动态歌词 gdstudio 本地音乐
+title: 添加歌词同步功能-本地音乐代码备份
+
+<!-- 添加歌词同步功能 -->
+
+本地路径：（实测无效）
+
+```
+<$lyric-sync lyric-tiddler={{{file://C:\Users\lamti\Downloads\同归-云之泣.lrc}}} audio-selector="#gdstudio-music-player-local audio">
+<$lyric-display lyric-tiddler={{{file://C:\Users\lamti\Downloads\同归-云之泣.lrc}}} show-lines="5" single-line-mode="no"/>
+</$lyric-sync>
+```
+
+条目标题：（可行）
+
+```
+<$lyric-sync lyric-tiddler="$:/lyrics/同归-云之泣" audio-selector="#gdstudio-music-player-local audio">
+<$lyric-display lyric-tiddler="$:/lyrics/同归-云之泣" show-lines="5" single-line-mode="no"/>
+</$lyric-sync>
+```
+
+条目内容：（可行）
+
+```
+<$lyric-sync lyric-tiddler={{{$:/lyrics/同归-云之泣}}} audio-selector="#gdstudio-music-player-local audio">
+<$lyric-display lyric-tiddler={{{$:/lyrics/同归-云之泣}}} show-lines="5" single-line-mode="no"/>
+</$lyric-sync>
+```

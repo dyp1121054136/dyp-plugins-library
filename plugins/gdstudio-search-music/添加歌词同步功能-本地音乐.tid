@@ -1,0 +1,8 @@
+created: 20250701095452251
+modified: 20250702075732664
+tags: 动态歌词 gdstudio 本地音乐
+title: 添加歌词同步功能-本地音乐
+
+<$lyric-sync lyric-tiddler="$:/lyrics/同归-云之泣" audio-selector="#gdstudio-music-player-local audio">
+<$lyric-display lyric-tiddler="$:/lyrics/同归-云之泣" show-lines="3" single-line-mode="no"/>
+</$lyric-sync>
