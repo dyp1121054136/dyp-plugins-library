@@ -11,6 +11,7 @@ type: text/vnd.tiddlywiki
 ; v.0.1.2 2025-07-01
 
 # 优化了 [[$:/core/modules/widgets/gdstudio-audio.js]] 和 [[$:/core/modules/widgets/lyric-sync.js]]，音乐播放器和歌词同步添加统一id，避免冲突；
+# 支持添加本地mp3和图片，动态歌词需要创建新条目并引用条目内容，音乐播放器 `id` 和 动态歌词 `audio-selector` 需要一致；
 
 ; v.0.1.1 2025-06-21
 
