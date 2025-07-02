@@ -28,7 +28,13 @@ LyricDisplayWidget.prototype.render = function(parent,nextSibling) {
     this.execute();    
     this.domNode = this.document.createElement("div");    
     this.domNode.className = this.getSingleLineMode() ? "lyric-display-container single-line-mode" : "lyric-display-container";    
-    this.domNode.style.overflow = "hidden";    
+    this.domNode.style.overflow = "hidden"; 
+
+    // 在这里添加高度设置  
+    if (!this.getSingleLineMode()) {    
+        var estimatedHeight = this.showLines * 40; // 40px 是默认行高    
+        this.domNode.style.height = estimatedHeight + "px";    
+    }  
         
     // 创建滚动容器    
     this.scrollContainer = this.document.createElement("div");    
