@@ -1,0 +1,32 @@
+created: 20250703031309681
+modified: 20250703031921106
+tags: 小说收藏
+title: 小说收藏参数-评价
+评价: 
+
+<$let editState={{{ [[$:/state/comment-edit/]addsuffix<currentTiddler>] }}} originalValue={{{ [[$:/temp/comment-original/]addsuffix<currentTiddler>] }}}>  
+<$reveal type="nomatch" state=<<editState>> text="yes">
+  <$view field="评价"/>
+  <$button class="tc-btn-invisible tw-novel-table-edit" tooltip="编辑">    
+    <$action-setfield $tiddler=<<editState>> text="yes"/>  
+    <$action-setfield $tiddler=<<originalValue>> text={{!!评价}}/>  
+    {{$:/core/images/edit-button|18px}}  
+  </$button>
+</$reveal>    
+<$reveal type="match" state=<<editState>> text="yes">
+<$edit-text field="评价" placeholder="输入评价" tag="textarea"  class="novel-collection-textarea"/>
+<div class="tw-novel-table-edit-container" style="float: right;">
+  <$button class="tc-btn-invisible tw-novel-table-edit-cancel" tooltip="取消编辑">      
+    <$action-setfield $tiddler=<<currentTiddler>> 评价={{{ [<originalValue>get[text]] }}}/>  
+    <$action-deletetiddler $tiddler=<<editState>>/>  
+    <$action-deletetiddler $tiddler=<<originalValue>>/>  
+    {{$:/core/images/cancel-button|18px}}    
+  </$button>  
+  <$button class="tc-btn-invisible tw-novel-table-edit-done" tooltip="完成编辑">    
+    <$action-deletetiddler $tiddler=<<editState>>/>  
+    <$action-deletetiddler $tiddler=<<originalValue>>/>  
+    {{$:/core/images/done-button|18px}}  
+  </$button>  
+</div>
+</$reveal>    
+</$let>
