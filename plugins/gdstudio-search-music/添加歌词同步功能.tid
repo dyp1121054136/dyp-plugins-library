@@ -5,5 +5,5 @@ title: 添加歌词同步功能
 
 <!-- 添加歌词同步功能 -->
 <$lyric-sync lyric-tiddler="$:/state/gdstudio-api/lyric" audio-selector="#gdstudio-music-player audio">
-<$lyric-display lyric-tiddler="$:/state/gdstudio-api/lyric" show-lines="5" single-line-mode="yes"/>
+<$lyric-display lyric-tiddler="$:/state/gdstudio-api/lyric" show-lines="3" single-line-mode="no"/>
 </$lyric-sync>
