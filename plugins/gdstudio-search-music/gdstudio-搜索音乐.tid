@@ -5,6 +5,8 @@ title: gdstudio-搜索音乐
 
 <$transclude tiddler="音乐搜索界面优化版"/>
 
+<$transclude tiddler="调用自定义播放器-精简模式"/> <span style="margin-left: 20px;">{{||$:/core/ui/Buttons/open-close-music-player}}</span>
+
 <br/>
 
 <$transclude tiddler="优化后的歌曲列表-与播放器集成"/>
