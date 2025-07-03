@@ -2,7 +2,7 @@ created: 20250703055739059
 modified: 20250703060407274
 tags: 小说收藏
 title: 小说收藏参数-星级
-星级: 3
+星级: 
 
 <style>    
 .star-rating {    
@@ -13,7 +13,7 @@ title: 小说收藏参数-星级
 .star-rating button {    
   background: none;    
   border: none;    
-  font-size: 0.8em;    
+  font-size: 1em;    
   cursor: pointer;    
   color: #ddd;    
   padding: 0px;  
