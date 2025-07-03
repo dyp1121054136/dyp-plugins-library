@@ -4,6 +4,10 @@ tags:
 title: $:/plugins/dyp/novel-collection/history
 type: text/vnd.tiddlywiki
 
+v.0.0.4 2025-07-03
+
+# 新增 [[小说收藏参数-评价]]；
+
 v.0.0.3 2025-06-28
 
 # 修改了分类标签和特殊标签编辑按钮样式；
