@@ -16,7 +16,7 @@ title: 音乐搜索界面优化版
 <option value="qobuz">Qobuz</option>  
 <option value="joox">JOOX</option>  
 <option value="deezer">Deezer</option>  
-</$select> 关键词：<$edit-text tiddler="$:/state/gdstudio-api/keyword" default="" tag="input"/> <$button class="" tooltip="搜索">搜索
+</$select> 关键词：<$edit-text tiddler="$:/state/gdstudio-api/keyword" default="" tag="input"/> <$button class="tc-btn-invisible music-player-common-btn" tooltip="搜索">搜索
 <<gdstudio-search-http-get>>
   <$reveal state="$:/state/gdstudio-api/music-source" type="match" text="kugou">
   <!-- 先清空新增的酷狗api缓存 问题已解决，不需要了
