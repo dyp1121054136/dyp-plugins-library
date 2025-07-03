@@ -1,0 +1,14 @@
+created: 20250703013630660
+modified: 20250703014028120
+tags: gdstudio 音乐 按钮
+title: $:/core/ui/Buttons/open-close-music-player
+
+<$button class="tc-btn-invisible gdstudio-button" tooltip="开启/关闭页面音乐播放器">
+<$action-listops $tiddler="调用自定义播放器-固定页面" $tags="+[toggle[$:/tags/PageTemplate]]"/>
+
+<$list filter="[<tv-config-toolbar-icons>match[yes]]">{{$:/core/images/gdstudio-play-music}}</$list><$list filter="[<tv-config-toolbar-text>match[yes]]">
+<span class="tc-btn-text">
+开启/关闭页面音乐播放器
+</span></$list>
+
+</$button>
