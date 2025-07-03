@@ -9,7 +9,7 @@ title: gdstudio-搜索音乐
 
 https://cors-anywhere.herokuapp.com/corsdemo
 
-<br/>
+<div style="margin-bottom: 40px;"></div>
 
 <$transclude tiddler="优化后的歌曲列表-与播放器集成"/>
 
