@@ -1,0 +1,24 @@
+created: 20250703024042977
+modified: 20250703024201618
+tags: 样式 $:/tags/Stylesheet 音乐 gdstudio
+title: 音乐播放器普通按钮样式css
+
+.music-player-common-btn {
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: none;
+  border: 1px solid #000;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 15px; /* 调整字体大小 */
+  padding: 3px 6px; /* 增加内边距，让按钮更舒适 */
+  height: auto; /* 根据内容自动调整高度 */
+  line-height: 1; /* 调整行高，与字体大小保持一致 */
+  display: inline-block;
+  cursor: pointer;
+}
+
+.music-player-common-btn:hover {
+  opacity: 1;
+}
