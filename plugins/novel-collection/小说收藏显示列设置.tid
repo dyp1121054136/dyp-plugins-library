@@ -17,7 +17,8 @@ title: 小说收藏显示列设置
     <$checkbox tiddler="$:/config/novel-table/columns/分类标签" field="visible" checked="yes" unchecked="no" default="yes">分类标签</$checkbox>  
     <$checkbox tiddler="$:/config/novel-table/columns/特殊标签" field="visible" checked="yes" unchecked="no" default="yes">特殊标签</$checkbox>  
     <$checkbox tiddler="$:/config/novel-table/columns/归档" field="visible" checked="yes" unchecked="no" default="no">归档</$checkbox>  
-    <$checkbox tiddler="$:/config/novel-table/columns/淘汰" field="visible" checked="yes" unchecked="no" default="no">淘汰</$checkbox>  
+    <$checkbox tiddler="$:/config/novel-table/columns/淘汰" field="visible" checked="yes" unchecked="no" default="no">淘汰</$checkbox>
+    <$checkbox tiddler="$:/config/novel-table/columns/评价" field="visible" checked="yes" unchecked="no" default="no">评价</$checkbox>    
     <$checkbox tiddler="$:/config/novel-table/columns/创建时间" field="visible" checked="yes" unchecked="no" default="no">创建时间</$checkbox>  
     <$checkbox tiddler="$:/config/novel-table/columns/更新时间" field="visible" checked="yes" unchecked="no" default="yes">更新时间</$checkbox>  
     <$checkbox tiddler="$:/config/novel-table/columns/附件" field="visible" checked="yes" unchecked="no" default="yes">附件</$checkbox>  
