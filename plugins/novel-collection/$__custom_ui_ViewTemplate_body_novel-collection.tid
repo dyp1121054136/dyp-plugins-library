@@ -74,6 +74,10 @@ title: $:/custom/ui/ViewTemplate/body/novel-collection
       <span class="status-value"><$transclude tiddler="小说收藏参数-淘汰"/></span>      
     </div>
     <div class="status-row">      
+      <span class="status-label">星级：</span>      
+      <span class="status-value"><$transclude tiddler="小说收藏参数-星级"/></span>      
+    </div>  
+    <div class="status-row">      
       <span class="status-label">评价：</span>      
       <span class="status-value"><$transclude tiddler="小说收藏参数-评价"/></span>      
     </div>    
