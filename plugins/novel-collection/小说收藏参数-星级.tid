@@ -13,7 +13,7 @@ title: 小说收藏参数-星级
 .star-rating button {    
   background: none;    
   border: none;    
-  font-size: 1em;    
+  font-size: 0.9em;    
   cursor: pointer;    
   color: #ddd;    
   padding: 0px;  
