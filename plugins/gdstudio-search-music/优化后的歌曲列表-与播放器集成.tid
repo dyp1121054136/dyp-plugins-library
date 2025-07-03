@@ -3,7 +3,7 @@ modified: 20250529022038331
 tags: 音乐 gdstudio
 title: 优化后的歌曲列表-与播放器集成
 
-<$button class="" tooltip="清除缓存">清除缓存
+<$button class="tc-btn-invisible music-player-common-btn" tooltip="清除缓存">清除缓存
   <!-- 先清空之前的id和url -->
   <$action-setfield $tiddler="$:/state/gdstudio-api/track-id" text=""/>
   <$action-setfield $tiddler="$:/state/gdstudio-api/pic-id" text=""/>
