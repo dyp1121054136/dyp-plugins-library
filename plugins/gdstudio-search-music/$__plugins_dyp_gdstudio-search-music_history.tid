@@ -4,6 +4,10 @@ tags:
 title: $:/plugins/dyp/gdstudio-search-music/history
 type: text/vnd.tiddlywiki
 
+; v.0.1.4 2025-07-04
+
+# 支持一键关闭页面音乐播放器；
+
 ; v.0.1.3 2025-07-03
 
 # 动态歌词根据行数自动设置歌词容器高度；
