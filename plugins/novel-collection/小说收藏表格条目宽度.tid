@@ -15,7 +15,7 @@ title: 小说收藏表格条目宽度
 
 /* 媒体查询，大屏 */
 @media (min-width: 768px) {
-.tc-tiddler-frame.tc-novel-collection-width {  
+.tc-tiddler-frame.tc-tiddler-view-frame.tc-novel-collection-width {  
     width: 95vw !important;  
     max-width: none !important;  
     position: fixed !important;  
