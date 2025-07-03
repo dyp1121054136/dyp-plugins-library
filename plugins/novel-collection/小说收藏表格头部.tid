@@ -42,6 +42,9 @@ title: 小说收藏表格头部
       <$list filter="[[$:/config/novel-table/columns/淘汰]get[visible]else[no]match[yes]]" variable="ignore">  
         <th>淘汰</th>  
       </$list>
+      <$list filter="[[$:/config/novel-table/columns/星级]get[visible]else[no]match[yes]]" variable="ignore">  
+        <th>星级</th>  
+      </$list>
       <$list filter="[[$:/config/novel-table/columns/评价]get[visible]else[no]match[yes]]" variable="ignore">  
         <th>评价</th>  
       </$list>  
