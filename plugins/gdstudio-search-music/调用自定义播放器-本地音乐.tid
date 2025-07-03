@@ -1,12 +1,12 @@
 created: 20250701094830002
-modified: 20250701100349042
+modified: 20250703020413309
 tags: 音乐播放器 gdstudio 本地音乐
 title: 调用自定义播放器-本地音乐
 
 <$gdstudio-audio
     id="gdstudio-music-player-local"
-    cover-url={{{file://C:\Users\lamti\Downloads\同归-云之泣.png}}}
-    music-url={{{file://C:\Users\lamti\Downloads\同归-云之泣.mp3}}}
-    song-name=同归
-    artist=云之泣
+    cover-url={{本地音乐链接和信息!!海报url}}
+    music-url={{本地音乐链接和信息!!歌曲url}}
+    song-name={{本地音乐链接和信息!!歌曲名}}
+    artist={{本地音乐链接和信息!!歌手名}}
 />

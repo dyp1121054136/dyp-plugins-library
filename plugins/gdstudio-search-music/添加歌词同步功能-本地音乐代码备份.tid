@@ -1,5 +1,5 @@
 created: 20250702021326212
-modified: 20250702075712488
+modified: 20250703020505121
 tags: 动态歌词 gdstudio 本地音乐
 title: 添加歌词同步功能-本地音乐代码备份
 
@@ -9,7 +9,7 @@ title: 添加歌词同步功能-本地音乐代码备份
 
 ```
 <$lyric-sync lyric-tiddler={{{file://C:\Users\lamti\Downloads\同归-云之泣.lrc}}} audio-selector="#gdstudio-music-player-local audio">
-<$lyric-display lyric-tiddler={{{file://C:\Users\lamti\Downloads\同归-云之泣.lrc}}} show-lines="5" single-line-mode="no"/>
+<$lyric-display lyric-tiddler={{{file://C:\Users\lamti\Downloads\同归-云之泣.lrc}}} show-lines="3" single-line-mode="no"/>
 </$lyric-sync>
 ```
 
@@ -17,7 +17,7 @@ title: 添加歌词同步功能-本地音乐代码备份
 
 ```
 <$lyric-sync lyric-tiddler="$:/lyrics/同归-云之泣" audio-selector="#gdstudio-music-player-local audio">
-<$lyric-display lyric-tiddler="$:/lyrics/同归-云之泣" show-lines="5" single-line-mode="no"/>
+<$lyric-display lyric-tiddler="$:/lyrics/同归-云之泣" show-lines="3" single-line-mode="no"/>
 </$lyric-sync>
 ```
 
@@ -25,6 +25,6 @@ title: 添加歌词同步功能-本地音乐代码备份
 
 ```
 <$lyric-sync lyric-tiddler={{{$:/lyrics/同归-云之泣}}} audio-selector="#gdstudio-music-player-local audio">
-<$lyric-display lyric-tiddler={{{$:/lyrics/同归-云之泣}}} show-lines="5" single-line-mode="no"/>
+<$lyric-display lyric-tiddler={{{$:/lyrics/同归-云之泣}}} show-lines="3" single-line-mode="no"/>
 </$lyric-sync>
 ```
