@@ -41,6 +41,9 @@ title: 小说收藏表格头部
       </$list>  
       <$list filter="[[$:/config/novel-table/columns/淘汰]get[visible]else[no]match[yes]]" variable="ignore">  
         <th>淘汰</th>  
+      </$list>
+      <$list filter="[[$:/config/novel-table/columns/评价]get[visible]else[no]match[yes]]" variable="ignore">  
+        <th>评价</th>  
       </$list>  
       <$list filter="[[$:/config/novel-table/columns/创建时间]get[visible]else[no]match[yes]]" variable="ignore">  
         <th>创建时间</th>  
@@ -119,6 +122,11 @@ title: 小说收藏表格头部
         <$list filter="[[$:/config/novel-table/columns/淘汰]get[visible]else[no]match[yes]]" variable="ignore">  
           <td>  
  <$transclude tiddler="小说收藏参数-淘汰"/>  
+          </td>  
+        </$list>
+        <$list filter="[[$:/config/novel-table/columns/评价]get[visible]else[no]match[yes]]" variable="ignore">  
+          <td>  
+ <$transclude tiddler="小说收藏参数-评价"/>  
           </td>  
         </$list>  
         <$list filter="[[$:/config/novel-table/columns/创建时间]get[visible]else[no]match[yes]]" variable="ignore">  
