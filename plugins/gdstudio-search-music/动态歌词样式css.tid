@@ -18,7 +18,6 @@ title: 动态歌词样式css
 
 .gdstudio-audio-position .lyric-display-container {
   position: fixed; 
-  z-index: -1;
 }
   
 .lyric-line {  
@@ -60,7 +59,7 @@ title: 动态歌词样式css
 @media (min-width: 768px) {
 .gdstudio-audio-position .lyric-display-container {
   left: 2px;
-  bottom: 70px;  
+  bottom: 50px;  
   max-height: 150px;  
 }
 }
