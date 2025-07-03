@@ -1,6 +1,6 @@
 created: 20250602074254547
 modified: 20250602074431713
-tags: $:/tags/PageTemplate
+tags: 
 title: 调用自定义播放器-固定页面
 
 <$reveal state="$:/state/audio-player-mode" type="match" text="compact">  
