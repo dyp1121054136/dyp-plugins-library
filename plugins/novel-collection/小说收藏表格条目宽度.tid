@@ -15,15 +15,21 @@ title: 小说收藏表格条目宽度
 
 /* 媒体查询，大屏 */
 @media (min-width: 768px) {
-.tc-story-river:has(.tc-novel-collection-width) {  
-    left: 0 !important;  
-    width: 100vw !important;  
-    display: flex;  
-    justify-content: center;  
-}  
-  
-.tc-tiddler-frame.tc-tiddler-view-frame.tc-novel-collection-width {    
-    width: 95vw;  
+.tc-story-river:has(.tc-novel-collection-width) {    
+    left: 0 !important;    
+    width: 100vw !important;    
+    display: flex !important;    
+    justify-content: center !important;  
+    /* 可能还需要重置其他可能冲突的属性 */  
+    position: relative !important;  
+    padding: 0 !important;  
+    margin: 0 !important;  
+}    
+    
+.tc-tiddler-frame.tc-tiddler-view-frame.tc-novel-collection-width {      
+    width: 95vw !important;  
+    /* 确保覆盖默认的tiddler宽度设置 */  
+    max-width: none !important;  
 }
 }
 
