@@ -4,6 +4,10 @@ tags:
 title: $:/plugins/dyp/novel-collection/history
 type: text/vnd.tiddlywiki
 
+v.0.0.5 2025-07-04
+
+# 新增画廊视图；
+
 v.0.0.4 2025-07-03
 
 # 新增 [[小说收藏参数-评价]] 和 [[小说收藏参数-星级]]；
