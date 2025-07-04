@@ -18,7 +18,7 @@ title: 小说收藏画廊视图
 [[筛选公式|novel-collection-filter]]：{{novel-collection-filter}}  
   
 </$reveal>
-<div style="text-align: right;"><$transclude tiddler="新建小说收藏按钮"/></div>
+<div style="text-align: right;"><span style="margin-right: 20px;">{{||$:/core/ui/Buttons/tw-novel-table}}</span><$transclude tiddler="新建小说收藏按钮"/></div>
 
 <div class="tw-novel-gallery">  
 <$set name="novel-collection-filter" tiddler="novel-collection-filter" field="text">  
