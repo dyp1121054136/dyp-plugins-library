@@ -35,7 +35,12 @@ title: 小说收藏画廊视图
 <br/>
       <div class="tw-novel-gallery-tags">  
         <$transclude tiddler="编辑特殊标签多选框"/>  
-      </div>   
+      </div>
+<br/>
+      <div class="tw-novel-gallery-comment">  
+        <$transclude tiddler="小说收藏参数-评价"/>  
+      </div> 
+    </div> 
     </div>  
   </div>  
 </$list>  
