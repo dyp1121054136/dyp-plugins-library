@@ -1,0 +1,43 @@
+class: tc-novel-collection-width
+created: 20250704014910246
+modified: 20250704015858022
+tags: 小说收藏
+title: 小说收藏画廊视图
+
+<div style="text-align: right;"><$transclude tiddler="新建小说收藏按钮"/></div>
+
+<div class="tw-novel-gallery">  
+<$set name="novel-collection-filter" tiddler="novel-collection-filter" field="text">  
+<$list filter=<<novel-collection-filter>>>  
+  <div class="tw-novel-gallery-item">  
+    <!-- 封面作为主要元素 -->  
+    <div class="tw-novel-gallery-cover">  
+      <$transclude tiddler="小说收藏参数-封面"/>  
+    </div>  
+      
+    <!-- 书名 -->  
+    <div class="tw-novel-gallery-title">  
+      <$link to=<<currentTiddler>>>  
+        <$list filter="[<currentTiddler>has[书名]]" emptyMessage="未命名">  
+          <$view field="书名"/>  
+        </$list>  
+      </$link>  
+    </div>  
+      
+    <!-- 其他信息 -->  
+    <div class="tw-novel-gallery-info">  
+      <div class="tw-novel-gallery-author">  
+        <$transclude tiddler="小说收藏参数-作者"/>  
+      </div>  
+      <div class="tw-novel-gallery-tags">  
+        <$transclude tiddler="编辑分类标签多选框"/>  
+      </div>
+<br/>
+      <div class="tw-novel-gallery-tags">  
+        <$transclude tiddler="编辑特殊标签多选框"/>  
+      </div>   
+    </div>  
+  </div>  
+</$list>  
+</$set>  
+</div>

@@ -1,0 +1,60 @@
+created: 20250704015102142
+modified: 20250704015930025
+tags: 样式 $:/tags/Stylesheet 小说收藏
+title: 小说收藏画廊视图样式css
+
+.tw-novel-gallery {  
+  display: grid;  
+  grid-template-columns: repeat(5, 1fr);  
+  gap: 1rem;  
+  width: 100%;  
+}  
+  
+.tw-novel-gallery-item {  
+  border: 1px solid <<colour table-border>>;  
+  border-radius: 8px;  
+  padding: 1rem;  
+  text-align: center;  
+  background: <<colour tiddler-background>>;  
+}  
+  
+.tw-novel-gallery-cover {  
+  width: 100%;  
+  height: 200px;  
+  margin-bottom: 0.5rem;  
+  overflow: hidden;  
+  border-radius: 4px;  
+  display: flex;  
+  align-items: center;  
+  justify-content: center;  
+  background-color: <<colour tiddler-background>>;  
+}  
+  
+.tw-novel-gallery-cover img {  
+  max-width: 100%;  
+  max-height: 100%;  
+  object-fit: contain;  
+  width: auto;  
+  height: auto;  
+}
+  
+.tw-novel-gallery-title {  
+  font-weight: bold;  
+  margin-bottom: 0.5rem;  
+  font-size: 0.9rem;  
+}  
+  
+.tw-novel-gallery-info {  
+  font-size: 0.8rem;  
+  color: <<colour muted-foreground>>;  
+}  
+  
+.tw-novel-gallery-author {  
+  margin-bottom: 0.25rem;  
+}  
+  
+@media (max-width: 768px) {  
+  .tw-novel-gallery {  
+    grid-template-columns: repeat(2, 1fr);  
+  }  
+}
