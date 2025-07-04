@@ -1,0 +1,21 @@
+caption: {{$:/core/images/tw-novel-gallery}} 打开小说收藏画廊视图
+created: 20250704020802729
+description: 打开小说收藏画廊视图
+modified: 20250704020900419
+tags: 按钮 小说收藏
+title: $:/core/ui/Buttons/tw-novel-gallery
+
+\whitespace trim
+<$button tooltip="打开小说收藏画廊视图" class=<<tv-config-toolbar-class>>>
+<$list filter="[<tv-config-toolbar-icons>match[yes]]">
+{{$:/core/images/tw-novel-gallery|25px}}
+</$list>
+<$list filter="[<tv-config-toolbar-text>match[yes]]">
+<span class="tc-btn-text">
+<$text text=打开小说收藏画廊视图/>
+</span>
+</$list>
+
+<$action-navigate $to="小说收藏画廊视图"/>
+
+</$button>
