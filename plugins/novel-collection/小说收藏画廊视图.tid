@@ -29,11 +29,11 @@ title: 小说收藏画廊视图
       <div class="tw-novel-gallery-author">  
         <$transclude tiddler="小说收藏参数-作者"/>  
       </div>  
-      <div class="tw-novel-gallery-tags">  
+      <div class="category-tags-container">  
         <$transclude tiddler="编辑分类标签多选框"/>  
       </div>
 <br/>
-      <div class="tw-novel-gallery-tags">  
+      <div class="category-tags-container">  
         <$transclude tiddler="编辑特殊标签多选框"/>  
       </div>
 <br/>
