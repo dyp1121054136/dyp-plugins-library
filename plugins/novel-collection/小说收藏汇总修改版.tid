@@ -20,6 +20,6 @@ title: 小说收藏汇总修改版
 筛选公式：{{novel-collection-filter}}  
   
 </$reveal>
-<div style="text-align: right;"><$transclude tiddler="新建小说收藏按钮"/></div>
+<div style="text-align: right;"><span style="margin-right: 20px;">{{||$:/core/ui/Buttons/tw-novel-gallery}}</span><$transclude tiddler="新建小说收藏按钮"/></div>
 
 <div class="tw-novel-table-x"><$transclude tiddler="小说收藏表格头部"/></div>
