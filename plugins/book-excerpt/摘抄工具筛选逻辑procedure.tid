@@ -16,7 +16,7 @@ title: 摘抄工具筛选逻辑procedure
 </$reveal>    
     
 <$reveal type="nomatch" state="$:/temp/current-filter" text="">    
-  <div style="background: #f0f8ff; padding: 1em; margin-bottom: 1em;">    
+  <div class="filtered-excerpt-background">    
     当前筛选：<span class="tc-tag-label">{{$:/temp/current-filter}}</span>    
     （{{$:/temp/filter-type}}）    
     <$button class="tc-btn-invisible" style="margin-left: 1em;">    
