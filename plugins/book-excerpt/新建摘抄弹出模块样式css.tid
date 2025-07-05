@@ -77,3 +77,16 @@ title: 新建摘抄弹出模块样式css
 .excerpt-modal-buttons .cancel-button:hover {
   background-color: #c82333;
 }
+
+@media (max-width: 55em) {  
+    .tc-modal-body {  
+        max-height: 70vh; /* 增加最大高度 */  
+        min-height: 300px; /* 设置最小高度 */  
+    }  
+      
+    .tc-modal {  
+        top: 0.5em; /* 减少顶部边距 */  
+        left: 0.5em; /* 减少左边距 */  
+        right: 0.5em; /* 减少右边距 */  
+    }  
+}
