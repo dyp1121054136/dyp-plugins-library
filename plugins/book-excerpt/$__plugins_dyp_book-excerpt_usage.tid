@@ -4,3 +4,5 @@ tags:
 title: $:/plugins/dyp/book-excerpt/usage
 type: text/vnd.tiddlywiki
 
+# 新建条目，添加字段 `excerpt=yes` 即可在当前条目使用摘抄模版；
+# 如果是摘抄同一本书，可选择隐藏书名和作者，额外添加字段 `excerpt=yes`；
