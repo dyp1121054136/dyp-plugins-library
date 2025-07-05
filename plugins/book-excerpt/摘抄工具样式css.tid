@@ -18,3 +18,11 @@ title: 摘抄工具样式css
 /*   border-left: 3px solid #ddd; */
   position: relative;
 }
+
+.filtered-excerpt-background {
+  background: transparent;  
+  border: 1px solid <<colour muted-foreground>>;  
+  border-radius: 8px;
+  padding: 1em;
+  margin-bottom: 1em;
+}
