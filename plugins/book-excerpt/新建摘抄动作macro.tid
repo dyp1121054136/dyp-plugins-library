@@ -1,5 +1,5 @@
 created: 20250705081140825
-modified: 20250705105731771
+modified: 20250705081226769
 tags: 摘抄 $:/tags/Macro
 title: 新建摘抄动作macro
 
@@ -9,7 +9,7 @@ title: 新建摘抄动作macro
 <$set name="excerpt-book" tiddler="$:/temp/excerpt-book" field="text">
 <$set name="excerpt-author" tiddler="$:/temp/excerpt-author" field="text">
 <$set name="current-text" tiddler=<<currentTiddler>> field="text">
-<$set name="macro-call" value={{{ [[<<tagged-excerpt-content "]] [<excerpt-content>] [[" "]] [<excerpt-tags>] [[" "]] [<excerpt-book>] [[" "]] [<excerpt-author>] [[">>]] +[join[]] }}}>
+<$set name="macro-call" value={{{ [[<<tagged-excerpt-content " ]] [<excerpt-content>] [[ " "]] [<excerpt-tags>] [[" "]] [<excerpt-book>] [[" "]] [<excerpt-author>] [[">>]] +[join[]] }}}>
 
 <$action-setfield $tiddler=<<currentTiddler>> text={{{ [<macro-call>][[
 
