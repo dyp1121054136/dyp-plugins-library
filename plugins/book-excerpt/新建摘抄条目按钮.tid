@@ -1,0 +1,18 @@
+created: 20250705092232628
+modified: 20250705092402936
+tags: 摘抄
+title: 新建摘抄条目按钮
+
+<$button class="tc-btn-invisible" tooltip=新建摘抄条目>
+<$list filter="[<tv-config-toolbar-icons>match[yes]]">
+{{$:/core/images/new-button}}
+</$list>
+<$list filter="[<tv-config-toolbar-text>match[yes]]">
+<span class="tc-btn-text">
+<$text text=新建摘抄条目/>
+</span>
+</$list>
+
+<$action-sendmessage $message="tm-new-tiddler" title={{{ [[摘抄-]] [<now YYYY-0MM-0DD-hh0mm0ss0XXX>] +[join[]] }}} tags="" text="" excerpt="yes" same="no"
+/>
+</$button>

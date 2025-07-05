@@ -1,0 +1,11 @@
+created: 20250705093135599
+modified: 20250705093402275
+tags: 摘抄
+title: 摘抄汇总
+type: 
+
+<div style="text-align: right;"><$transclude tiddler="新建摘抄条目按钮"/></div>
+
+<$list filter="[excerpt[yes]]">  
+<$link to={{!!title}}>{{!!title}}</$link>  
+</$list>

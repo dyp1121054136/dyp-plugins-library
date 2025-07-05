@@ -1,0 +1,21 @@
+caption: {{$:/core/images/new-book-excerpt}} 打开摘抄汇总
+created: 20250705092906193
+description: 打开摘抄汇总
+modified: 20250705093153382
+tags: 按钮 $:/tags/PageControls 摘抄
+title: $:/core/ui/Buttons/book-excerpt
+
+\whitespace trim
+<$button tooltip="打开摘抄" class=<<tv-config-toolbar-class>>>
+<$list filter="[<tv-config-toolbar-icons>match[yes]]">
+{{$:/core/images/new-book-excerpt}}
+</$list>
+<$list filter="[<tv-config-toolbar-text>match[yes]]">
+<span class="tc-btn-text">
+<$text text=打开摘抄/>
+</span>
+</$list>
+
+<$action-navigate $to="摘抄汇总"/>
+
+</$button>
