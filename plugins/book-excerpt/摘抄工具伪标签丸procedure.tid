@@ -18,7 +18,7 @@ title: 摘抄工具伪标签丸procedure
     </div>    
   <%endif%>    
   <%if [<book>!is[blank]] %>    
-    <div style="position: absolute; bottom: 0.5em; right: 0.5em; font-size: 0.8em; color: #666; font-style: italic;">    
+    <div class="excerpt-book-info">    
       ——《    
       <$button class="tc-btn-invisible" tooltip="点击筛选此书名的内容" style="color: #666; font-style: italic; text-decoration: none;">    
         <<book>>    
