@@ -1,0 +1,79 @@
+created: 20250705082531626
+modified: 20250705083135339
+tags: 摘抄 $:/tags/Stylesheet
+title: 新建摘抄弹出模块样式css
+
+.excerpt-modal-table {
+  width: 100%;
+  border-collapse: collapse;
+/*   border: 1px solid #ddd; */
+}
+
+.excerpt-modal-table td:first-child {
+  width: 20%;
+  text-align: right;
+  padding-right: 10px;
+  font-weight: bold;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.excerpt-modal-table input,
+.excerpt-modal-table textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  transition: border-color 0.3s ease;
+}
+
+.excerpt-modal-table input:focus,
+.excerpt-modal-table textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.excerpt-modal-table textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.excerpt-modal-buttons {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.excerpt-modal-buttons button {
+  padding: 8px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 15px; /* 添加这行 */  
+}
+
+.excerpt-modal-buttons button:hover {
+  opacity: 0.9;
+}
+
+.excerpt-modal-buttons .confirm-button {
+  background-color: #28a745;
+  color: white;
+}
+
+.excerpt-modal-buttons .confirm-button:hover {
+  background-color: #218838;
+}
+
+.excerpt-modal-buttons .cancel-button {
+  background-color: #dc3545;
+  color: white;
+}
+
+.excerpt-modal-buttons .cancel-button:hover {
+  background-color: #c82333;
+}

@@ -1,0 +1,29 @@
+created: 20250705072922579
+modified: 20250705083548627
+tags: 摘抄
+title: 新建摘抄按钮
+
+<$button class="tc-btn-invisible" tooltip=新建摘抄>
+<$list filter="[<tv-config-toolbar-icons>match[yes]]">
+{{$:/core/images/new-button}}
+</$list>
+<$list filter="[<tv-config-toolbar-text>match[yes]]">
+<span class="tc-btn-text">
+<$text text=新建摘抄/>
+</span>
+</$list>
+
+<!-- 先清除缓存 -->
+<$action-setfield $tiddler="$:/temp/excerpt-content" text=""/>  
+<$action-setfield $tiddler="$:/temp/excerpt-tags" text=""/>  
+<$action-setfield $tiddler="$:/temp/excerpt-book" text=""/>  
+<$action-setfield $tiddler="$:/temp/excerpt-author" text=""/>
+
+<!-- 然后打开新建摘抄模块 -->
+<$action-sendmessage   
+    $message="tm-modal"   
+    $param="excerpt-input-modal"  
+    currentTiddler=<<currentTiddler>>  
+/>
+
+</$button>

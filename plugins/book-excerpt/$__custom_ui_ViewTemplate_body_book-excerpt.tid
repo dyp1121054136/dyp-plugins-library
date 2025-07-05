@@ -1,0 +1,16 @@
+caption: 摘抄显示模版
+code-body: yes
+created: 20250705064422242
+modified: 20250705074632071
+tags: 摘抄 级联
+title: $:/custom/ui/ViewTemplate/body/book-excerpt
+
+<div style="text-align: right;"><$transclude tiddler="新建摘抄按钮"/></div>
+
+<$list filter="[<currentTiddler>!field:same[yes]]">
+<$transclude $variable="show-filtered-excerpt-content" source-tiddler=<<currentTiddler>> same="no"/>
+</$list>
+  
+<$list filter="[<currentTiddler>field:same[yes]]">
+<$transclude $variable="show-filtered-excerpt-content" source-tiddler=<<currentTiddler>> same="yes"/>
+</$list>

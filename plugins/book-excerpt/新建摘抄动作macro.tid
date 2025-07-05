@@ -1,0 +1,28 @@
+created: 20250705081140825
+modified: 20250705081226769
+tags: 摘抄 $:/tags/Macro
+title: 新建摘抄动作macro
+
+ \define add-excerpt-actions() 
+<$set name="excerpt-content" tiddler="$:/temp/excerpt-content" field="text">
+<$set name="excerpt-tags" tiddler="$:/temp/excerpt-tags" field="text">
+<$set name="excerpt-book" tiddler="$:/temp/excerpt-book" field="text">
+<$set name="excerpt-author" tiddler="$:/temp/excerpt-author" field="text">
+<$set name="current-text" tiddler=<<currentTiddler>> field="text">
+<$set name="macro-call" value={{{ [[<<tagged-excerpt-content " ]] [<excerpt-content>] [[ " "]] [<excerpt-tags>] [[" "]] [<excerpt-book>] [[" "]] [<excerpt-author>] [[">>]] +[join[]] }}}>
+
+<$action-setfield $tiddler=<<currentTiddler>> text={{{ [<macro-call>][[
+
+]] [<current-text>] +[join[]] }}} />
+
+<$action-deletetiddler $filter="[$:/temp/excerpt-content] [$:/temp/excerpt-tags] [$:/temp/excerpt-book] [$:/temp/excerpt-author]"/>
+
+<$action-sendmessage $message="tm-close-tiddler" $param="excerpt-input-modal"/>
+
+</$set>
+</$set>
+</$set>
+</$set>
+</$set>
+</$set> 
+\end

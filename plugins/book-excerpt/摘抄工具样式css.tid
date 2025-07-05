@@ -1,0 +1,20 @@
+created: 20250705061230389
+modified: 20250705063653305
+tags: 摘抄 样式 $:/tags/Stylesheet
+title: 摘抄工具样式css
+
+.tw-excerpt-text {
+  font-family: "FZYUEKZJW-H";
+
+/* 硬式换行 */
+  word-break: normal;   
+  word-wrap: break-word;   
+  white-space: pre-wrap; /* 保留所有空白字符，包括缩进 */  
+}
+
+.excerpt-content-item {
+  margin-bottom: 1em;
+  padding: 0.5em;
+/*   border-left: 3px solid #ddd; */
+  position: relative;
+}

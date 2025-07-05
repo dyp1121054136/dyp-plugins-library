@@ -1,0 +1,41 @@
+created: 20250705054507414
+modified: 20250705065925574
+tags: 摘抄 $:/tags/Macro
+title: 摘抄工具筛选逻辑procedure
+
+\procedure show-filtered-excerpt-content(source-tiddler:"待引用摘抄的内容", same:"no")    
+<$reveal type="match" state="$:/temp/current-filter" text="">    
+  <div class="all-content">    
+    <%if [<same>match[yes]] %>  
+      <style>  
+      .excerpt-content-item div[style*="position: absolute"] { display: none !important; }  
+      </style>  
+    <%endif%>  
+    <$transclude $tiddler=<<source-tiddler>>/>    
+  </div>    
+</$reveal>    
+    
+<$reveal type="nomatch" state="$:/temp/current-filter" text="">    
+  <div style="background: #f0f8ff; padding: 1em; margin-bottom: 1em;">    
+    当前筛选：<span class="tc-tag-label">{{$:/temp/current-filter}}</span>    
+    （{{$:/temp/filter-type}}）    
+    <$button class="tc-btn-invisible" style="margin-left: 1em;">    
+      清除筛选    
+      <$action-deletetiddler $tiddler="$:/temp/current-filter"/>    
+      <$action-deletetiddler $tiddler="$:/temp/filter-type"/>    
+    </$button>    
+  </div>    
+      
+  <style>    
+  .filtered-excerpt-btn { display: none; }    
+  .filtered-excerpt-btn[data-tags*="{{$:/temp/current-filter}}"] { display: block; }    
+  .filtered-excerpt-btn[data-book*="{{$:/temp/current-filter}}"] { display: block; }    
+  .filtered-excerpt-btn[data-author*="{{$:/temp/current-filter}}"] { display: block; }  
+  <%if [<same>match[yes]] %>  
+  .filtered-excerpt-btn div[style*="position: absolute"] { display: none !important; }  
+  <%endif%>  
+  </style>    
+      
+  <$transclude $tiddler=<<source-tiddler>>/>    
+</$reveal>    
+\end

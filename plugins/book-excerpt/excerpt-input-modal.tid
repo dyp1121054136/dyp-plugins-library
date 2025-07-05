@@ -1,0 +1,30 @@
+created: 20250705073501478
+modified: 20250705083025025
+subtitle: 新建摘抄
+tags: 摘抄
+title: excerpt-input-modal
+
+<div class="tc-modal-body">  
+  <table class="excerpt-modal-table">  
+    <tr>  
+      <td>摘抄内容：</td>  
+      <td><$edit-text tiddler="$:/temp/excerpt-content" tag="textarea" class="tc-edit-texteditor"/></td>  
+    </tr>  
+    <tr>  
+      <td>标签：</td>  
+      <td><$edit-text tiddler="$:/temp/excerpt-tags" tag="input" class="tc-edit-texteditor"/></td>  
+    </tr>  
+    <tr>  
+      <td>书名：</td>  
+      <td><$edit-text tiddler="$:/temp/excerpt-book" tag="input" class="tc-edit-texteditor"/></td>  
+    </tr>  
+    <tr>  
+      <td>作者：</td>  
+      <td><$edit-text tiddler="$:/temp/excerpt-author" tag="input" class="tc-edit-texteditor"/></td>  
+    </tr>  
+  </table>
+<div class="excerpt-modal-buttons"> 
+  <$button actions=<<add-excerpt-actions>>> 确认添加 </$button>   
+  <$button> <$action-sendmessage $message="tm-close-tiddler" $param="excerpt-input-modal"/> 取消 </$button>
+</div>
+</div>

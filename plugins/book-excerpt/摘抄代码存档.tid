@@ -1,0 +1,22 @@
+created: 20250705054210168
+modified: 20250705065247187
+tags: 摘抄
+title: 摘抄代码存档
+
+```tw
+<<tagged-excerpt-content "摘抄内容" "标签1 标签2 标签3" "书名" "作者">>
+```
+
+```tw
+\import 摘抄标签工具
+```
+
+```tw
+<<show-filtered-excerpt-content "条目标题" "yes">>
+```
+
+```tw
+<$transclude $variable="show-filtered-excerpt-content" source-tiddler="条目标题" same="yes"/>
+```
+
+添加字段 `excerpt=yes` 和 `same=no` 或 `same=yes`

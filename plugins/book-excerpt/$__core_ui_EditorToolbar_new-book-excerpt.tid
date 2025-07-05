@@ -1,0 +1,18 @@
+caption: {{$:/core/images/new-book-excerpt}} 添加一个摘抄
+condition: [<targetTiddler>!has[type]] [<targetTiddler>type[text/vnd.tiddlywiki]]
+created: 20250705071950358
+description: 添加一个摘抄
+icon: $:/core/images/new-book-excerpt
+modified: 20250705072500796
+shortcuts: ((new-book-excerpt))
+tags: $:/tags/EditorToolbar 按钮 摘抄
+title: $:/core/ui/EditorToolbar/new-book-excerpt
+
+<$action-sendmessage
+	$message="tm-edit-text-operation"
+	$param="wrap-selection"
+	prefix={{{ [[<<tagged-excerpt-content "
+]] }}}
+	suffix={{{ [[
+" "标签1 标签2 标签3" "书名" "作者">>]] }}}
+/>
