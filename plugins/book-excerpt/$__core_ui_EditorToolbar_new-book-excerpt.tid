@@ -14,5 +14,7 @@ title: $:/core/ui/EditorToolbar/new-book-excerpt
 	prefix={{{ [[<<tagged-excerpt-content "
 ]] }}}
 	suffix={{{ [[
-" "标签1 标签2 标签3" "书名" "作者">>]] }}}
+" "标签1 标签2 标签3" "书名" "作者">>
+
+]] }}}
 />
