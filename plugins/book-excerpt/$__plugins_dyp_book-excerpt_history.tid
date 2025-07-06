@@ -4,3 +4,7 @@ tags:
 title: $:/plugins/dyp/book-excerpt/history
 type: text/vnd.tiddlywiki
 
+v.0.0.2 2025-07-06
+
+# 优化手机端弹出模块样式；
+# 修复新建摘抄按钮的筛选器错误；
