@@ -80,8 +80,8 @@ title: 新建摘抄弹出模块样式css
 
 @media (max-width: 55em) {  
     .tc-modal-body {  
-        max-height: 70vh; /* 增加最大高度 */  
-        min-height: 300px; /* 设置最小高度 */  
+        max-height: 90vh; /* 增加最大高度 */  
+        min-height: 400px; /* 设置最小高度 */  
     }  
       
     .tc-modal {  
