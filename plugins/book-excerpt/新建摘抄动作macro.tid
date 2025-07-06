@@ -9,9 +9,7 @@ title: 新建摘抄动作macro
 <$set name="excerpt-book" tiddler="$:/temp/excerpt-book" field="text">
 <$set name="excerpt-author" tiddler="$:/temp/excerpt-author" field="text">
 <$set name="current-text" tiddler=<<currentTiddler>> field="text">
-<$set name="macro-call" value={{{ [[<<tagged-excerpt-content "
-]] [<excerpt-content>] [[
-" "]] [<excerpt-tags>] [[" "]] [<excerpt-book>] [[" "]] [<excerpt-author>] [[">>]] +[join[]] }}}>
+<$set name="macro-call" value={{{ [[$:/temp/excerpt-content]get[text]] [[$:/temp/excerpt-tags]get[text]] [[$:/temp/excerpt-book]get[text]] [[$:/temp/excerpt-author]get[text]] +[join[" "]] +[addprefix[<<tagged-excerpt-content "]] +[addsuffix[">>]] }}}>
 
 <$action-setfield $tiddler=<<currentTiddler>> text={{{ [<macro-call>][[
 
