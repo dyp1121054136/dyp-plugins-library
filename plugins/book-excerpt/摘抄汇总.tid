@@ -7,5 +7,5 @@ type:
 <div style="text-align: right;"><$transclude tiddler="新建摘抄条目按钮"/></div>
 
 <$list filter="[all[tiddlers+shadows]excerpt[yes]]">  
-<$link to={{!!title}}>{{!!title}}</$link>  
+<$link to={{!!title}}>{{!!title}}</$link><br/>
 </$list>
