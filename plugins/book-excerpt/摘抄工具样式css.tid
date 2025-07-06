@@ -25,6 +25,7 @@ title: 摘抄工具样式css
   border-radius: 8px;
   padding: 1em;
   margin-bottom: 1em;
+  font-size: 0.8em;
 }
 
 .excerpt-book-info {
