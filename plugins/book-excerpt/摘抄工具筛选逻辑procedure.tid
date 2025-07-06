@@ -8,7 +8,8 @@ title: 摘抄工具筛选逻辑procedure
   <div class="all-content">    
     <%if [<same>match[yes]] %>  
       <style>  
-      .excerpt-content-item div[style*="position: absolute"] { display: none !important; }  
+      .excerpt-content-item div[style*="position: absolute"] { display: none !important; }
+      .filtered-excerpt-btn .excerpt-book-info { display: none !important; }
       </style>  
     <%endif%>  
     <$transclude $tiddler=<<source-tiddler>>/>    
