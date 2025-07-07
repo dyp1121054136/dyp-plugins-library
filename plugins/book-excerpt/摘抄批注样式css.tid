@@ -44,7 +44,7 @@ type: text/css
 }
 
 .book-excerpt-quote-left {
-    flex: 1;
+  flex: 1;
 }
 
 .book-excerpt-comment-right {
