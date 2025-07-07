@@ -21,7 +21,15 @@ title: excerpt-input-modal
     <tr>  
       <td class="tc-modal-title">作者：</td>  
       <td><$edit-text tiddler="$:/temp/excerpt-author" tag="input" class="tc-edit-texteditor"/></td>  
-    </tr>  
+    </tr>
+    <tr>
+      <td class="tc-modal-title">章节：</td>  
+      <td><$edit-text tiddler="$:/temp/excerpt-chapter" tag="input" class="tc-edit-texteditor"/></td>  
+    </tr>
+    <tr> 
+      <td class="tc-modal-title">点评：</td>  
+      <td><$edit-text tiddler="$:/temp/excerpt-comment" tag="textarea" class="tc-edit-texteditor"/></td>  
+    </tr>
   </table>
 <div class="excerpt-modal-buttons"> 
   <$button actions=<<add-excerpt-actions>>> 确认添加 </$button>   
