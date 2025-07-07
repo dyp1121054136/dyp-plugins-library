@@ -4,6 +4,10 @@ tags:
 title: $:/plugins/dyp/book-excerpt/history
 type: text/vnd.tiddlywiki
 
+v.0.0.3 2025-07-07
+
+# 当前筛选条件显示为中文；
+
 v.0.0.2 2025-07-06
 
 # 优化手机端弹出模块样式；
