@@ -6,6 +6,7 @@ type: text/vnd.tiddlywiki
 
 # 新建条目，添加字段 `excerpt=yes` 即可在当前条目使用摘抄模版；
 # 如果是摘抄同一本书，可选择隐藏书名和作者，额外添加字段 `same=yes`；
+# 电脑端摘抄条目支持加大宽度，添加字段 `class=tc-book-excerpt-width`；
 
 写法：
 
