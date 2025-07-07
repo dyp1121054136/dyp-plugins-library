@@ -42,11 +42,9 @@ title: 摘抄工具伪标签丸procedure
     </div>      
   <%endif%>      
 </div>
-  <%if [<comment>!is[blank]] %>      
-    <div class="book-excerpt-comment-right">      
-      <<comment>>      
-    </div>      
-  <%endif%>      
+<%if [<comment>!is[blank]] %>
+<div class="book-excerpt-comment-right"><<comment>></div>
+<%endif%>   
 </div>
 </div>
 \end
