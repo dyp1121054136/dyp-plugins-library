@@ -8,6 +8,14 @@ title: 摘抄代码存档
 ```
 
 ```tw
+<$transclude $variable="tagged-excerpt-content" text="摘抄内容" tags="标签1 标签2 标签3" book="书名" author="作者"/>
+```
+
+```tw
+<$transclude $variable="tagged-excerpt-content" text={{条目标题}} tags="标签1 标签2 标签3" book="书名" author="作者"/>
+```
+
+```tw
 \import 摘抄标签工具
 ```
 
