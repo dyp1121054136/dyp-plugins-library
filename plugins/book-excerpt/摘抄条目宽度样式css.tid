@@ -1,0 +1,39 @@
+created: 20250707053827161
+modified: 20250707053913915
+tags: $:/tags/Stylesheet 摘抄
+title: 摘抄条目宽度样式css
+
+/* 定义大屏宽度 */
+.large-screen {
+  width: 1000px;
+}
+
+/* 定义小屏宽度 */
+.small-screen {
+  width: 350px;
+}
+
+/* 媒体查询，大屏 */
+@media (min-width: 768px) {
+.tc-story-river:has(.tc-book-excerpt-width) {    
+    left: 0 !important;    
+    width: 100vw !important;    
+    display: flex !important;    
+    justify-content: center !important;  
+    /* 可能还需要重置其他可能冲突的属性 */  
+    position: relative !important;  
+    padding: 0 !important;  
+    margin: 0 !important;  
+}    
+    
+.tc-tiddler-frame.tc-tiddler-view-frame.tc-book-excerpt-width {      
+    width: 95vw !important;  
+    /* 确保覆盖默认的tiddler宽度设置 */  
+    max-width: none !important;  
+}
+}
+
+/* 媒体查询，小屏 */
+@media (max-width: 767px) {
+
+}
