@@ -20,13 +20,13 @@ title: 摘抄工具伪标签丸procedure
   <%if [<book>!is[blank]] %>    
     <div class="excerpt-book-info">    
       ——《    
-      <$button class="tc-btn-invisible" tooltip="点击筛选此书名的内容" style="color: #666; font-style: italic; text-decoration: none;">    
+      <$button class="tc-btn-invisible" tooltip="点击筛选此书名的内容">    
         <<book>>    
         <$action-setfield $tiddler="$:/temp/current-filter" text=<<book>>/>    
         <$action-setfield $tiddler="$:/temp/filter-type" text="book"/>    
       </$button>    
       》<%if [<author>!is[blank]] %>by    
-      <$button class="tc-btn-invisible" tooltip="点击筛选此作者的内容" style="color: #666; font-style: italic; text-decoration: none;">    
+      <$button class="tc-btn-invisible" tooltip="点击筛选此作者的内容">    
         <<author>>    
         <$action-setfield $tiddler="$:/temp/current-filter" text=<<author>>/>    
         <$action-setfield $tiddler="$:/temp/filter-type" text="author"/>    
