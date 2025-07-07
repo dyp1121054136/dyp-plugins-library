@@ -18,6 +18,8 @@ title: 新建摘抄按钮
 <$action-setfield $tiddler="$:/temp/excerpt-tags" text=""/>  
 <$action-setfield $tiddler="$:/temp/excerpt-book" text=""/>  
 <$action-setfield $tiddler="$:/temp/excerpt-author" text=""/>
+<$action-setfield $tiddler="$:/temp/excerpt-chapter" text=""/>
+<$action-setfield $tiddler="$:/temp/excerpt-comment" text=""/>
 
 <!-- 然后打开新建摘抄模块 -->
 <$action-sendmessage   
