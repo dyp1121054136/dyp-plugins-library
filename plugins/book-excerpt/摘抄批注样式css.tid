@@ -17,6 +17,13 @@ type: text/css
   padding-left: 30px; /* 增加摘抄和批注之间的间距 */
   font-size: 0.8em;
   color: #888; 
+
+  font-family: "FZYUEKZJW-H";
+
+/* 硬式换行 */
+  word-break: normal;   
+  word-wrap: break-word;   
+  white-space: pre-wrap; /* 保留所有空白字符，包括缩进 */
 }
 
 /* 定义大屏宽度 */
