@@ -8,13 +8,15 @@ shortcuts: ((new-book-excerpt))
 tags: $:/tags/EditorToolbar 按钮 摘抄
 title: $:/core/ui/EditorToolbar/new-book-excerpt
 
+<$vars timestamp=<<now "YYYY-0MM-0DD 0hh:0mm:0ss">>>
 <$action-sendmessage
 	$message="tm-edit-text-operation"
 	$param="wrap-selection"
 	prefix={{{ [[<<tagged-excerpt-content "
 ]] }}}
 	suffix={{{ [[
-" "标签1 标签2 标签3" "书名" "作者">>
+" "标签1 标签2 标签3" "书名" "作者" "]addsuffix<timestamp>addsuffix[">>
 
-]] }}}
+]]}}}
 />
+</$vars>
