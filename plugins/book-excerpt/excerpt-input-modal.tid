@@ -7,7 +7,7 @@ title: excerpt-input-modal
 <div class="tc-modal-body">  
   <table class="excerpt-modal-table">  
     <tr>  
-      <td class="tc-modal-title">摘抄内容：</td>  
+      <td class="tc-modal-title">内容：</td>  
       <td><$edit-text tiddler="$:/temp/excerpt-content" tag="textarea" class="tc-edit-texteditor"/></td>  
     </tr>  
     <tr>  
