@@ -14,7 +14,6 @@ type: text/css
 
 .book-excerpt-comment-right {
   text-align: left; /* 靠左对齐 */
-  padding-left: 30px; /* 增加摘抄和批注之间的间距 */
   font-size: 0.9em;
   color: #888; 
 
@@ -50,6 +49,7 @@ type: text/css
 
 .book-excerpt-comment-right {
   flex: 0 0 20%; /* 设置批注的宽度 */
+  padding-left: 30px; /* 增加摘抄和批注之间的间距 */
 }
 }
 
