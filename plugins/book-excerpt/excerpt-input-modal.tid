@@ -4,7 +4,7 @@ subtitle: 新建摘抄
 tags: 摘抄
 title: excerpt-input-modal
 
-<div class="tc-modal-body">  
+<div class="tc-excerpt-modal-body">  
   <table class="excerpt-modal-table">  
     <tr>  
       <td class="tc-modal-title">内容：</td>  
