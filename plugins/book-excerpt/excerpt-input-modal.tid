@@ -12,7 +12,7 @@ title: excerpt-input-modal
     </tr>  
     <tr>  
       <td class="tc-modal-title">标签：</td>  
-      <td><$edit-text tiddler="$:/temp/excerpt-tags" tag="input" class="tc-edit-texteditor"/></td>  
+      <td><$edit-text tiddler="$:/temp/excerpt-tags" tag="input" class="tc-edit-texteditor" placeholder="输入标签，用空格分隔"/></td>  
     </tr>  
     <tr>  
       <td class="tc-modal-title">书名：</td>  
