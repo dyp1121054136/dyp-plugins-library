@@ -13,7 +13,7 @@ title: 摘抄工具样式css
 }
 
 .excerpt-content-item {
-  margin-bottom: 1em;
+  margin-bottom: 0em;
   padding: 0.5em;
 /*   border-left: 3px solid #ddd; */
   position: relative;
