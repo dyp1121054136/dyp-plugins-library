@@ -4,15 +4,15 @@ tags: 摘抄
 title: 摘抄代码存档
 
 ```tw
-<<tagged-excerpt-content "摘抄内容" "标签1 标签2 标签3" "书名" "作者" "0000-00-00 00:00:00">>
+<<tagged-excerpt-content "摘抄内容" "标签1 标签2 标签3" "书名" "作者" "章节" "0000-00-00 00:00:00" "批注点评">>
 ```
 
 ```tw
-<$transclude $variable="tagged-excerpt-content" text="摘抄内容" tags="标签1 标签2 标签3" book="书名" author="作者" recordTime:"0000-00-00 00:00:00"/>
+<$transclude $variable="tagged-excerpt-content" text="摘抄内容" tags="标签1 标签2 标签3" book="书名" author="作者" chapter="章节" recordTime="0000-00-00 00:00:00" comment="批注点评"/>
 ```
 
 ```tw
-<$transclude $variable="tagged-excerpt-content" text={{条目标题}} tags="标签1 标签2 标签3" book="书名" author="作者" recordTime:"0000-00-00 00:00:00"/>
+<$transclude $variable="tagged-excerpt-content" text={{条目标题}} tags="标签1 标签2 标签3" book="书名" author="作者" chapter="章节" recordTime="0000-00-00 00:00:00" comment="批注点评"/>
 ```
 
 ```tw
