@@ -95,3 +95,9 @@ title: 新建摘抄弹出模块样式css
   width: 100px !important;
 }
 }
+
+/* 移除模态框高度限制，实现自适应 */  
+.tc-modal-body {  
+    max-height: none;  
+    overflow-y: visible;  
+}  
