@@ -3,36 +3,41 @@ modified: 20250705064126832
 tags: 摘抄 $:/tags/Macro
 title: 摘抄工具伪标签丸procedure
 
-\procedure tagged-excerpt-content(text, tags:"", book:"", author:"")    
-<div class="filtered-excerpt-btn excerpt-content-item" data-tags=<<tags>> data-book=<<book>> data-author=<<author>>>    
-  <div class="tw-excerpt-text"><<text>></div>  
-  <%if [<tags>!is[blank]] %>    
-    <div style="margin-top: 0.5em;">    
-      <$list filter="[<tags>split[ ]]" variable="tag">    
-        <$button class="tc-btn-invisible" tooltip="点击筛选此标签的内容">    
-          <span class="tc-tag-label" style="font-size: 0.75em; margin-right: 0.3em;"><<tag>></span>    
-          <$action-setfield $tiddler="$:/temp/current-filter" text=<<tag>>/>    
-          <$action-setfield $tiddler="$:/temp/filter-type" text="tag"/>    
-        </$button>    
-      </$list>    
-    </div>    
-  <%endif%>    
-  <%if [<book>!is[blank]] %>    
-    <div class="excerpt-book-info">    
-      ——《    
-      <$button class="tc-btn-invisible" tooltip="点击筛选此书名的内容">    
-        <<book>>    
-        <$action-setfield $tiddler="$:/temp/current-filter" text=<<book>>/>    
-        <$action-setfield $tiddler="$:/temp/filter-type" text="book"/>    
-      </$button>    
-      》<%if [<author>!is[blank]] %>by    
-      <$button class="tc-btn-invisible" tooltip="点击筛选此作者的内容">    
-        <<author>>    
-        <$action-setfield $tiddler="$:/temp/current-filter" text=<<author>>/>    
-        <$action-setfield $tiddler="$:/temp/filter-type" text="author"/>    
-      </$button>    
-      <%endif%>    
-    </div>    
-  <%endif%>    
-</div>    
+\procedure tagged-excerpt-content(text, tags:"", book:"", author:"", recordTime:"")      
+<div class="filtered-excerpt-btn excerpt-content-item" data-tags=<<tags>> data-book=<<book>> data-author=<<author>> data-record-time=<<recordTime>>>      
+  <div class="tw-excerpt-text"><<text>></div>    
+  <%if [<tags>!is[blank]] %>      
+    <div style="margin-top: 0.5em;">      
+      <$list filter="[<tags>split[ ]]" variable="tag">      
+        <$button class="tc-btn-invisible" tooltip="点击筛选此标签的内容">      
+          <span class="tc-tag-label" style="font-size: 0.75em; margin-right: 0.3em;"><<tag>></span>      
+          <$action-setfield $tiddler="$:/temp/current-filter" text=<<tag>>/>      
+          <$action-setfield $tiddler="$:/temp/filter-type" text="tag"/>      
+        </$button>      
+      </$list>      
+    </div>      
+  <%endif%>      
+  <%if [<book>!is[blank]] %>      
+    <div class="excerpt-book-info">      
+      ——《      
+      <$button class="tc-btn-invisible" tooltip="点击筛选此书名的内容">      
+        <<book>>      
+        <$action-setfield $tiddler="$:/temp/current-filter" text=<<book>>/>      
+        <$action-setfield $tiddler="$:/temp/filter-type" text="book"/>      
+      </$button>      
+      》<%if [<author>!is[blank]] %>by      
+      <$button class="tc-btn-invisible" tooltip="点击筛选此作者的内容">      
+        <<author>>      
+        <$action-setfield $tiddler="$:/temp/current-filter" text=<<author>>/>      
+        <$action-setfield $tiddler="$:/temp/filter-type" text="author"/>      
+      </$button>      
+      <%endif%>      
+    </div>      
+  <%endif%>  
+  <%if [<recordTime>!is[blank]] %>      
+    <div class="excerpt-record-time">      
+      <<recordTime>>      
+    </div>      
+  <%endif%>      
+</div>      
 \end
