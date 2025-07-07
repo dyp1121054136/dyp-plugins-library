@@ -3,9 +3,11 @@ modified: 20250705064126832
 tags: 摘抄 $:/tags/Macro
 title: 摘抄工具伪标签丸procedure
 
-\procedure tagged-excerpt-content(text, tags:"", book:"", author:"", recordTime:"")      
-<div class="filtered-excerpt-btn excerpt-content-item" data-tags=<<tags>> data-book=<<book>> data-author=<<author>> data-record-time=<<recordTime>>>      
-  <div class="tw-excerpt-text"><<text>></div>    
+\procedure tagged-excerpt-content(text, tags:"", book:"", author:"", recordTime:"", comment:"")      
+<div class="filtered-excerpt-btn excerpt-content-item" data-tags=<<tags>> data-book=<<book>> data-author=<<author>> data-record-time=<<recordTime>> data-comment=<<comment>>>      
+<div class="quote-comment-container">
+<div class="book-excerpt-quote-left">
+<div class="tw-excerpt-text"><<text>></div>    
   <%if [<tags>!is[blank]] %>      
     <div style="margin-top: 0.5em;">      
       <$list filter="[<tags>split[ ]]" variable="tag">      
@@ -39,5 +41,12 @@ title: 摘抄工具伪标签丸procedure
       <<recordTime>>      
     </div>      
   <%endif%>      
-</div>      
+</div>
+  <%if [<comment>!is[blank]] %>      
+    <div class="book-excerpt-comment-right">      
+      <<comment>>      
+    </div>      
+  <%endif%>      
+</div>
+</div>
 \end
