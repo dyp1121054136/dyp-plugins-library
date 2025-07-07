@@ -65,10 +65,11 @@ title: 小说收藏模板样式css
 }    
     
 .meta-label, .status-label, .tag-label {    
-  font-weight: bold;    
-  min-width: 50px;    
-  color: #666;    
-  flex-shrink: 0;    
+  font-weight: bold;
+  min-width: 50px; 
+  flex-shrink: 0;
+  color: <<colour foreground>>;
+  filter: opacity(75%); /* 透明度 */
 }    
     
 .meta-value, .status-value {    
