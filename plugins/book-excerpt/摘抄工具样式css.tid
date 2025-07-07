@@ -31,7 +31,8 @@ title: 摘抄工具样式css
 .excerpt-book-info {
   text-align: right;
   font-size: 0.8em;
-  color: #666;
+  color: <<colour foreground>>;
+  filter: opacity(75%); /* 透明度 */
   font-style: italic;
   margin-top: 10px;
 }
