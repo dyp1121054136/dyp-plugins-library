@@ -4,6 +4,8 @@ tags: 摘抄
 title: 摘抄汇总
 type: 
 
+<<filter-pill "[all[tiddlers+shadows]excerpt[yes]]" 摘抄汇总>>
+
 <div style="text-align: right;"><$transclude tiddler="新建摘抄条目按钮"/></div>
 
 <$list filter="[all[tiddlers+shadows]excerpt[yes]]">  
