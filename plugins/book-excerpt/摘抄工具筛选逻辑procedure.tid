@@ -20,7 +20,7 @@ title: 摘抄工具筛选逻辑procedure
   <div class="filtered-excerpt-background">    
     当前筛选：<span class="tc-tag-label">{{$:/temp/current-filter}}</span>    
     （{{$:/temp/filter-type}}）    
-    <$button class="tc-btn-invisible" style="margin-left: 1em;">    
+    <$button class="tc-btn-invisible" style="margin-left: 0em;">    
       清除筛选    
       <$action-deletetiddler $tiddler="$:/temp/current-filter"/>    
       <$action-deletetiddler $tiddler="$:/temp/filter-type"/>    
