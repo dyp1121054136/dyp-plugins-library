@@ -15,7 +15,7 @@ type: text/css
 .book-excerpt-comment-right {
   text-align: left; /* 靠左对齐 */
   padding-left: 30px; /* 增加摘抄和批注之间的间距 */
-  font-size: 0.8em;
+  font-size: 0.9em;
   color: #888; 
 
   font-family: "FZYUEKZJW-H";
