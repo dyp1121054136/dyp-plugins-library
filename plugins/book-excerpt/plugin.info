@@ -1,6 +1,6 @@
 {
     "title": "$:/plugins/dyp/book-excerpt",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "stability": "STABILITY_2_STABLE",
     "name": "book-excerpt",
     "description": "摘抄",
