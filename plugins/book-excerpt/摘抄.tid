@@ -4,4 +4,4 @@ tags: 导出
 title: 摘抄
 type: 
 
-<<filter-pill "[tag[摘抄]][[摘抄]]" 摘抄>>
+<<filter-pill "[all[tiddlers+shadows]tag[摘抄]][[摘抄]]" 摘抄>>
