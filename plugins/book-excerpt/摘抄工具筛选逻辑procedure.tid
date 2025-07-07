@@ -19,7 +19,7 @@ title: 摘抄工具筛选逻辑procedure
 <$reveal type="nomatch" state="$:/temp/current-filter" text="">    
   <div class="filtered-excerpt-background">    
     当前筛选：<span class="tc-tag-label">{{$:/temp/current-filter}}</span>    
-    （{{$:/temp/filter-type}}）    
+    （<$reveal type="match" state="$:/temp/filter-type" text="tag">标签</$reveal><$reveal type="match" state="$:/temp/filter-type" text="book">书名</$reveal><$reveal type="match" state="$:/temp/filter-type" text="author">作者</$reveal>）    
     <$button class="tc-btn-invisible" style="margin-left: 0em;">    
       清除筛选    
       <$action-deletetiddler $tiddler="$:/temp/current-filter"/>    
