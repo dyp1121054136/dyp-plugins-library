@@ -91,7 +91,7 @@ title: 新建摘抄弹出模块样式css
     }  
 
 .tc-modal-title {
-  font-size: 0.7em;
+  font-size: 0.9em;
   width: 100px !important;
 }
 }
