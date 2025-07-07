@@ -40,3 +40,11 @@ title: 摘抄工具样式css
   filter: opacity(75%); /* 透明度 */
   font-style: italic;
 }
+
+.excerpt-record-time {
+  text-align: right;
+  font-size: 0.8em;
+  color: <<colour foreground>>;
+  filter: opacity(75%); /* 透明度 */
+  margin-top: 5px;
+}
