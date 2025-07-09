@@ -1,0 +1,18 @@
+created: 20250709072321687
+modified: 20250709073133463
+tags: 摘抄 样式 $:/tags/Stylesheet
+title: 摘抄工具编辑按钮样式css
+
+.edit-excerpt-btn {  
+  opacity: 0.5;  
+  transition: opacity 0.5s ease-in-out;  
+  position: absolute;  
+  right: -25px; /* 负值让按钮出现在容器外部 */  
+  bottom: 0;  
+  z-index: 10;  
+  padding-left: 2px;  
+}
+  
+.edit-excerpt-btn:hover {  
+  opacity: 1;  
+}

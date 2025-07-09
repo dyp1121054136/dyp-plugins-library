@@ -1,0 +1,149 @@
+created: 20250709071003013
+modified: 20250709073523389
+tags: 摘抄 $:/tags/Macro
+title: 摘抄工具编辑功能procedure
+
+\procedure edit-excerpt-actions()    
+<$let     
+  recordTimeEncoded={{{ [<recordTime>encodeuricomponent[]] }}}  
+  editStateTitle={{{ [[$:/temp/edit-excerpt-]addsuffix<recordTimeEncoded>] }}}    
+  contentCacheTitle={{{ [[$:/temp/excerpt-content-]addsuffix<recordTimeEncoded>] }}}    
+  tagsCacheTitle={{{ [[$:/temp/excerpt-tags-]addsuffix<recordTimeEncoded>] }}}    
+  bookCacheTitle={{{ [[$:/temp/excerpt-book-]addsuffix<recordTimeEncoded>] }}}    
+  authorCacheTitle={{{ [[$:/temp/excerpt-author-]addsuffix<recordTimeEncoded>] }}}    
+  chapterCacheTitle={{{ [[$:/temp/excerpt-chapter-]addsuffix<recordTimeEncoded>] }}}    
+  commentCacheTitle={{{ [[$:/temp/excerpt-comment-]addsuffix<recordTimeEncoded>] }}}    
+>    
+  <$action-setfield $tiddler=<<contentCacheTitle>> text=<<text>>/>    
+  <$action-setfield $tiddler=<<tagsCacheTitle>> text=<<tags>>/>    
+  <$action-setfield $tiddler=<<bookCacheTitle>> text=<<book>>/>    
+  <$action-setfield $tiddler=<<authorCacheTitle>> text=<<author>>/>    
+  <$action-setfield $tiddler=<<chapterCacheTitle>> text=<<chapter>>/>    
+  <$action-setfield $tiddler=<<commentCacheTitle>> text=<<comment>>/>    
+  <$action-setfield $tiddler=<<editStateTitle>> text="editing"/>    
+</$let>    
+\end    
+  
+\procedure save-excerpt-actions()    
+<$let     
+  recordTimeEncoded={{{ [<recordTime>encodeuricomponent[]] }}}  
+  editStateTitle={{{ [[$:/temp/edit-excerpt-]addsuffix<recordTimeEncoded>] }}}    
+  contentCacheTitle={{{ [[$:/temp/excerpt-content-]addsuffix<recordTimeEncoded>] }}}    
+  tagsCacheTitle={{{ [[$:/temp/excerpt-tags-]addsuffix<recordTimeEncoded>] }}}    
+  bookCacheTitle={{{ [[$:/temp/excerpt-book-]addsuffix<recordTimeEncoded>] }}}    
+  authorCacheTitle={{{ [[$:/temp/excerpt-author-]addsuffix<recordTimeEncoded>] }}}    
+  chapterCacheTitle={{{ [[$:/temp/excerpt-chapter-]addsuffix<recordTimeEncoded>] }}}    
+  commentCacheTitle={{{ [[$:/temp/excerpt-comment-]addsuffix<recordTimeEncoded>] }}}    
+  currentText={{{ [<currentTiddler>get[text]] }}}    
+>    
+  <$set name="newExcerptCall" value={{{ [<contentCacheTitle>get[text]else<text>] [<tagsCacheTitle>get[text]else<tags>] [<bookCacheTitle>get[text]else<book>] [<authorCacheTitle>get[text]else<author>] [<chapterCacheTitle>get[text]else<chapter>] [<recordTime>] [<commentCacheTitle>get[text]else<comment>] +[join[" "]] +[addprefix[<<tagged-excerpt-content "]] +[addsuffix[">>]] }}}>    
+    <$set name="oldExcerptCall" value={{{ [<text>] [<tags>] [<book>] [<author>] [<chapter>] [<recordTime>] [<comment>] +[join[" "]] +[addprefix[<<tagged-excerpt-content "]] +[addsuffix[">>]] }}}>    
+      <$action-setfield $tiddler=<<currentTiddler>> text={{{ [<currentText>search-replace<oldExcerptCall>,<newExcerptCall>] }}}/>    
+    </$set>    
+  </$set>    
+  <$action-deletetiddler $filter="[<editStateTitle>] [<contentCacheTitle>] [<tagsCacheTitle>] [<bookCacheTitle>] [<authorCacheTitle>] [<chapterCacheTitle>] [<commentCacheTitle>]"/>    
+</$let>    
+\end    
+  
+\procedure cancel-excerpt-edit()    
+<$let   
+  recordTimeEncoded={{{ [<recordTime>encodeuricomponent[]] }}}  
+  editStateTitle={{{ [[$:/temp/edit-excerpt-]addsuffix<recordTimeEncoded>] }}}  
+>    
+  <$action-deletetiddler $tiddler=<<editStateTitle>>/>    
+</$let>    
+\end    
+  
+\procedure tagged-excerpt-content(text, tags:"", book:"", author:"", chapter:"", recordTime:"", comment:"")          
+<$let   
+  recordTimeEncoded={{{ [<recordTime>encodeuricomponent[]] }}}  
+  editStateTitle={{{ [[$:/temp/edit-excerpt-]addsuffix<recordTimeEncoded>] }}}  
+>    
+<div class="filtered-excerpt-btn excerpt-content-item" data-tags=<<tags>> data-book=<<book>> data-author=<<author>> data-chapter=<<chapter>> data-record-time=<<recordTime>> data-comment=<<comment>>>          
+    
+<$reveal state=<<editStateTitle>> type="match" text="editing">    
+<div class="excerpt-edit-form">    
+  <div class="excerpt-edit-field">    
+    <label>内容：</label>    
+    <$edit-text tiddler={{{ [[$:/temp/excerpt-content-]addsuffix<recordTimeEncoded>] }}} class="tc-edit-texteditor" tag="textarea"/>    
+  </div>    
+  <div class="excerpt-edit-field">    
+    <label>标签：</label>    
+    <$edit-text tiddler={{{ [[$:/temp/excerpt-tags-]addsuffix<recordTimeEncoded>] }}} class="tc-edit-texteditor"  tag="input" placeholder="输入标签，用空格分隔"/>    
+  </div>    
+  <div class="excerpt-edit-field">    
+    <label>书名：</label>    
+    <$edit-text tiddler={{{ [[$:/temp/excerpt-book-]addsuffix<recordTimeEncoded>] }}} class="tc-edit-texteditor"  tag="input"/>    
+  </div>    
+  <div class="excerpt-edit-field">    
+    <label>作者：</label>    
+    <$edit-text tiddler={{{ [[$:/temp/excerpt-author-]addsuffix<recordTimeEncoded>] }}} class="tc-edit-texteditor"  tag="input"/>    
+  </div>    
+  <div class="excerpt-edit-field">    
+    <label>章节：</label>    
+    <$edit-text tiddler={{{ [[$:/temp/excerpt-chapter-]addsuffix<recordTimeEncoded>] }}} class="tc-edit-texteditor"  tag="input"/>    
+  </div>    
+  <div class="excerpt-edit-field">    
+    <label>评论：</label>    
+    <$edit-text tiddler={{{ [[$:/temp/excerpt-comment-]addsuffix<recordTimeEncoded>] }}} class="tc-edit-texteditor" tag="textarea"/>    
+  </div>    
+  <div class="excerpt-modal-buttons">    
+    <$button actions=<<save-excerpt-actions>> class="">保存</$button>    
+    <$button actions=<<cancel-excerpt-edit>> class="">取消</$button>    
+  </div>    
+</div>    
+</$reveal>    
+    
+<$reveal state=<<editStateTitle>> type="nomatch" text="editing">    
+<div class="quote-comment-container">    
+<div class="book-excerpt-quote-left">    
+<div class="tw-excerpt-text"><<text>></div>        
+  <%if [<tags>!is[blank]] %>          
+    <div style="margin-top: 0.5em;">          
+      <$list filter="[<tags>split[ ]]" variable="tag">          
+        <$button class="tc-btn-invisible" tooltip="点击筛选此标签的内容">          
+          <span class="tc-tag-label" style="font-size: 0.75em; margin-right: 0.3em;"><<tag>></span>          
+          <$action-setfield $tiddler="$:/temp/current-filter" text=<<tag>>/>          
+          <$action-setfield $tiddler="$:/temp/filter-type" text="tag"/>          
+        </$button>          
+      </$list>          
+    </div>          
+  <%endif%>          
+  <%if [<book>!is[blank]] %>          
+    <div class="excerpt-book-info">          
+      ——《          
+      <$button class="tc-btn-invisible" tooltip="点击筛选此书名的内容">          
+        <<book>>          
+        <$action-setfield $tiddler="$:/temp/current-filter" text=<<book>>/>          
+        <$action-setfield $tiddler="$:/temp/filter-type" text="book"/>          
+      </$button>          
+      》<%if [<author>!is[blank]] %>by          
+      <$button class="tc-btn-invisible" tooltip="点击筛选此作者的内容">          
+        <<author>>          
+        <$action-setfield $tiddler="$:/temp/current-filter" text=<<author>>/>          
+        <$action-setfield $tiddler="$:/temp/filter-type" text="author"/>          
+      </$button>          
+      <%endif%>          
+    </div>          
+  <%endif%>    
+<%if [<chapter>!is[blank]] %>    
+<div class="excerpt-book-chapter"><<chapter>></div>    
+<%endif%>    
+  <%if [<recordTime>!is[blank]] %>          
+    <div class="excerpt-record-time">          
+      <<recordTime>>    
+      <$button actions=<<edit-excerpt-actions>> class="tc-btn-invisible edit-excerpt-btn" tooltip="编辑此摘录">    
+        {{$:/core/images/edit-button}}    
+      </$button>          
+    </div>          
+  <%endif%>          
+</div>    
+<%if [<comment>!is[blank]] %>    
+<div class="book-excerpt-comment-right"><<comment>></div>    
+<%endif%>       
+</div>    
+</$reveal>    
+    
+</div>    
+</$let>    
+\end
