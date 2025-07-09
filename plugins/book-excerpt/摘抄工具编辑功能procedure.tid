@@ -36,7 +36,7 @@ title: 摘抄工具编辑功能procedure
   commentCacheTitle={{{ [[$:/temp/excerpt-comment-]addsuffix<recordTimeEncoded>] }}}    
   currentText={{{ [<currentTiddler>get[text]] }}}    
 >    
-  <$set name="newExcerptCall" value={{{ [<contentCacheTitle>get[text]!is[blank]then{!!text}else[内容]] [<tagsCacheTitle>get[text]else!is[blank]then{!!text}else[未分类]>] [<bookCacheTitle>get[text]!is[blank]then{!!text}else[书名]] [<authorCacheTitle>get[text]!is[blank]then{!!text}else[作者]] [<chapterCacheTitle>get[text]!is[blank]then{!!text}else[]] [<recordTime>] [<commentCacheTitle>get[text]!is[blank]then{!!text}else[]] +[join[" "]] +[addprefix[<<tagged-excerpt-content "]] +[addsuffix[">>]] }}}>    
+  <$set name="newExcerptCall" value={{{ [<contentCacheTitle>get[text]else<text>] [<tagsCacheTitle>get[text]else<tags>] [<bookCacheTitle>get[text]else<book>] [<authorCacheTitle>get[text]else<author>] [<chapterCacheTitle>get[text]else<chapter>] [<recordTime>] [<commentCacheTitle>get[text]!is[blank]then{!!text}else[]] +[join[" "]] +[addprefix[<<tagged-excerpt-content "]] +[addsuffix[">>]] }}}>    
     <$set name="oldExcerptCall" value={{{ [<text>] [<tags>] [<book>] [<author>] [<chapter>] [<recordTime>] [<comment>] +[join[" "]] +[addprefix[<<tagged-excerpt-content "]] +[addsuffix[">>]] }}}>    
       <$action-setfield $tiddler=<<currentTiddler>> text={{{ [<currentText>search-replace<oldExcerptCall>,<newExcerptCall>] }}}/>    
     </$set>    
