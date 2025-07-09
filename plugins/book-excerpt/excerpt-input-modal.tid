@@ -1,10 +1,10 @@
+class: tc-excerpt-modal-body
 created: 20250705073501478
 modified: 20250705083025025
 subtitle: 新建摘抄
 tags: 摘抄
 title: excerpt-input-modal
 
-<div class="tc-excerpt-modal-body">  
   <table class="excerpt-modal-table">  
     <tr>  
       <td class="tc-modal-title">内容：</td>  
@@ -34,5 +34,4 @@ title: excerpt-input-modal
 <div class="excerpt-modal-buttons"> 
   <$button actions=<<add-excerpt-actions>>> 确认添加 </$button>   
   <$button> <$action-sendmessage $message="tm-close-tiddler" $param="excerpt-input-modal"/> 取消 </$button>
-</div>
 </div>
