@@ -78,13 +78,7 @@ title: 新建摘抄弹出模块样式css
   background-color: #c82333;
 }
 
-@media (max-width: 55em) {  
-    .tc-modal {  
-        top: 0.5em; /* 减少顶部边距 */  
-        left: 0.5em; /* 减少左边距 */  
-        right: 0.5em; /* 减少右边距 */  
-    }  
-
+@media (max-width: 55em) {
 .tc-modal-title {
   font-size: 0.9em;
   width: 100px !important;
