@@ -1,6 +1,6 @@
 {
     "title": "$:/plugins/dyp/contextmenu-highlight&bookmark",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "stability": "STABILITY_2_STABLE",
     "name": "contextmenu-highlight&bookmark",
     "description": "右键增强菜单-高亮和书签等",
