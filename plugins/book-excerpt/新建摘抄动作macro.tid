@@ -13,7 +13,7 @@ title: 新建摘抄动作macro
 <$set name="current-text" tiddler=<<currentTiddler>> field="text">
 
 <$vars timestamp=<<now "YYYY-0MM-0DD 0hh:0mm:0ss">>>
-<$set name="add-excerpt-all" value={{{ [[$:/temp/excerpt-content]get[text]else[内容]] [[$:/temp/excerpt-tags]get[text]else[未分类]] [[$:/temp/excerpt-book]get[text]else[书名]] [[$:/temp/excerpt-author]get[text]else[作者]] [[$:/temp/excerpt-chapter]get[text]else[]] [<timestamp>] [[$:/temp/excerpt-comment]get[text]else[]]+[join[" "]] +[addprefix[<<tagged-excerpt-content "]] +[addsuffix[">>]]}}}>
+<$set name="add-excerpt-all" value={{{ [[$:/temp/excerpt-content]get[text]else[内容]] [[$:/temp/excerpt-tags]get[text]else[未分类]] [[$:/temp/excerpt-book]get[text]else[书名]] [[$:/temp/excerpt-author]get[text]else[作者]] [[$:/temp/excerpt-chapter]get[text]else[​]] [<timestamp>] [[$:/temp/excerpt-comment]get[text]else[]]+[join[" "]] +[addprefix[<<tagged-excerpt-content "]] +[addsuffix[">>]]}}}>
 </$vars>
 
 <$action-setfield $tiddler=<<currentTiddler>> text={{{ [<add-excerpt-all>][[
