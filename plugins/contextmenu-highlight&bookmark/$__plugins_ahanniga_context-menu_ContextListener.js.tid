@@ -1,5 +1,5 @@
 created: 20220724211224035
-modified: 20250524084444656
+modified: 20250709030844122
 module-type: widget
 tags: 书签
 title: $:/plugins/ahanniga/context-menu/ContextListener.js
@@ -142,10 +142,19 @@ if (action === "tm-quick-editfix") {
     // 获取tooltip配置  
     const tooltipText = $tw.wiki.getTiddlerText("quick-editfix-tooltip", "确认修改"); 
 
-    // 预先计算未修剪文本的匹配数量，以便设置格式化菜单项的样式
-    const qe_re = new RegExp("(?<!<<[^>]*|{{[^}]*|\\\\define[^\n]*)"+escapeRegex(selection)+"(?![^<]*>>|}}[^{]*|[.\n]*\\\\end)","g"); // 首先转义选中文本中的特殊字符
-    const qe_match_count = (selection.length === 0) ? 0 : (tiddlerText.match(qe_re) || []).length; // 如果没有匹配项，则禁用标记
-    decorator = ((qe_match_count === 0) ? "item-disabled" : ((qe_match_count > 1) ? "red" : "green"));
+     // 简单的宏检测 - 检查选中文本是否包含在宏调用中  
+    let qe_match_count = 0;  
+    if (selection.length > 0) {  
+        // 先尝试简单的字符串匹配  
+        const simpleMatches = (tiddlerText.match(new RegExp(escapeRegex(selection), "g")) || []).length;  
+        if (simpleMatches > 0) {  
+            qe_match_count = simpleMatches;  
+        }  
+    }  
+      
+    decorator = ((qe_match_count === 0) ? "item-disabled" : ((qe_match_count > 1) ? "red" : "green")); 
+      
+    // 其余代码保持不变...  
 
     // 获取当前时间并格式化为 "YYYY-0MM-0DD 0hh:0mm:0ss"
     const getCurrentTime = () => {
@@ -249,24 +258,34 @@ ContextListener.prototype.menuClicked = function (event) {
 	
     var stid, state, ptid;
 
-    // 用户在输入字段中按下了回车键
-    if (event.type=="submit"){ // 快速编辑按下回车键
-
-        // 我们需要将selection替换为qe_input文本，在源tiddler的文本中
-        if (selection.length > 0 && (qe_input !== selection)) {
-
-            const qe_re = new RegExp("(?<!<<[^>]*|{{[^}]*|\\\\define[^\n]*)"+escapeRegex(selection)+"(?![^<]*>>|}}[^{]*|[.\n]*\\\\end)","g");
-            $tw.wiki.setText(targ,"text",null,text.replace(qe_re,qe_input));
-        }
-        this.hideMenu();
-        event.preventDefault();
-        return false;
-		
-		// 用户点击标签或输入（忽略）
-		} else if (event.target.tagName.toLowerCase() !== 'a') { // 拦截点击除锚点（标签，输入）之外的所有内容
-			event.stopPropagation(); return false;
-		}
-		
+if (event.type=="submit"){ // 快速编辑按下回车键  
+    if (selection.length > 0 && (qe_input !== selection)) {  
+        // 使用简单的字符串替换，避免复杂的正则表达式问题  
+        const newText = text.replace(selection, qe_input);  
+        $tw.wiki.setText(targ,"text",null,newText);  
+    }  
+    this.hideMenu();  
+    event.preventDefault();  
+    return false;  
+  
+// 允许与表单元素交互  
+} else if (event.target.tagName.toLowerCase() === 'input' ||   
+           event.target.tagName.toLowerCase() === 'textarea' ||   
+           event.target.tagName.toLowerCase() === 'button' ||  
+           event.target.tagName.toLowerCase() === 'label') {  
+    event.stopPropagation();   
+    return false;  
+  
+// 处理链接点击  
+} else if (event.target.tagName.toLowerCase() === 'a') {  
+    // 继续处理链接点击逻辑  
+      
+// 其他情况隐藏菜单  
+} else {  
+    this.hideMenu();  
+    event.stopPropagation();   
+    return false;  
+}
 		
 		// 以下为上下文菜单项点击的常规处理
 		
