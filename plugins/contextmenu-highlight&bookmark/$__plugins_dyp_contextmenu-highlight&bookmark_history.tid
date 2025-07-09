@@ -6,7 +6,7 @@ type: text/vnd.tiddlywiki
 
 ; v.0.0.3 2025-07-09
 
-# 优化了 `$:/plugins/ahanniga/context-menu/ContextListener.js`，文字被宏符号 `<<>>` 包裹也能快速修改；
+# 优化了 [[$:/plugins/ahanniga/context-menu/ContextListener.js]]，文字被宏符号 `<<>>` 包裹也能快速修改；
 
 ; v.0.0.2 2025-06-13
 
