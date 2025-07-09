@@ -79,11 +79,6 @@ title: 新建摘抄弹出模块样式css
 }
 
 @media (max-width: 55em) {  
-    .tc-excerpt-modal-body {  
-        max-height: 90vh; /* 增加最大高度 */  
-        min-height: 400px; /* 设置最小高度 */  
-    }  
-      
     .tc-modal {  
         top: 0.5em; /* 减少顶部边距 */  
         left: 0.5em; /* 减少左边距 */  
@@ -97,7 +92,7 @@ title: 新建摘抄弹出模块样式css
 }
 
 /* 移除模态框高度限制，实现自适应 */  
-.tc-excerpt-modal-body {  
+.tc-excerpt-modal-body .tc-modal-body {  
     max-height: none;  
     overflow-y: visible;  
 }  
