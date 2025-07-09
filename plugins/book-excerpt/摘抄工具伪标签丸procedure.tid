@@ -1,7 +1,9 @@
 created: 20250705032808669
 modified: 20250705064126832
-tags: 摘抄 $:/tags/Macro
+tags: 摘抄
 title: 摘抄工具伪标签丸procedure
+
+<!-- 无编辑功能，已弃用，仅供参考 -->
 
 \procedure tagged-excerpt-content(text, tags:"", book:"", author:"", chapter:"", recordTime:"", comment:"")      
 <div class="filtered-excerpt-btn excerpt-content-item" data-tags=<<tags>> data-book=<<book>> data-author=<<author>> data-chapter=<<chapter>> data-record-time=<<recordTime>> data-comment=<<comment>>>      
