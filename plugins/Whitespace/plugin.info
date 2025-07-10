@@ -3,7 +3,7 @@
     "version": "0.0.1",
     "title": "$:/themes/dyp/Whitespace",
     "name": "Whitespace",
-    "list": "readme usage config",
+    "list": "readme usage history config",
     "source": "https://github.com/dyp1121054136/dyp-plugins-library",
     "description": "Whitespace布局主题中文预设版",
     "dependents": "$:/themes/tiddlywiki/vanilla",
