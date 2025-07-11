@@ -46,7 +46,7 @@ title: 摘抄工具样式css
   font-size: 0.8em;
   color: <<colour foreground>>;
   filter: opacity(75%); /* 透明度 */
-  margin-top: 0.2em;
+  margin-top: 0em;
 }
 
 .excerpt-book-chapter {
