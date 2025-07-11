@@ -52,7 +52,7 @@ $(config-base)$$(currentTiddler)$
 侧边栏顶部按钮区域高度：
 </td>
 <td>
-<$edit-text tiddler="$:/w/config/jd-sidebar-top-buttons-height" tag="input" placeholder="42px" default=""/>
+<$edit-text tiddler="$:/w/config/jd-sidebar-top-buttons-height" tag="input" placeholder="85px" default="85px"/>
 </td>
 </tr>
 <tr>
@@ -60,7 +60,7 @@ $(config-base)$$(currentTiddler)$
 侧边栏上内边距：
 </td>
 <td>
-<$edit-text tiddler="$:/w/config/jd-sidebar-top-padding" tag="input" placeholder="39px" default=""/>
+<$edit-text tiddler="$:/w/config/jd-sidebar-top-padding" tag="input" placeholder="100px" default="100px"/>
 </td>
 </tr>
 <tr>
