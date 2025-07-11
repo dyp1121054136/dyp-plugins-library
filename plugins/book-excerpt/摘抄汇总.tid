@@ -5,7 +5,7 @@ tags: 摘抄 $:/tags/SideBar
 title: 摘抄汇总
 type: 
 
-<<filter-pill "[all[tiddlers+shadows]excerpt[yes]]" 摘抄汇总>><div style="text-align: right; display: inline-block; margin-left: 20px;"><$transclude tiddler="新建摘抄条目按钮"/></div>
+<<filter-pill "[all[tiddlers+shadows]excerpt[yes]]" 摘抄汇总>><div style="text-align: right; display: inline-block; margin-left: 140px;"><$transclude tiddler="新建摘抄条目按钮"/></div>
 
 <$list filter="[all[tiddlers+shadows]excerpt[yes]]">  
 <$link to={{!!title}}>{{!!title}}</$link><br/>
