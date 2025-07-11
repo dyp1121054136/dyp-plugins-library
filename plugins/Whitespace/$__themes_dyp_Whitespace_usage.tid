@@ -4,3 +4,25 @@ tags:
 title: $:/themes/dyp/Whitespace/usage
 type: text/vnd.tiddlywiki
 
+如果修改过条目内容，影子条目要删除干净才能切换别的主题，不然会造成样式冲突
+
+修改版条目列表
+
+```tw
+$:/themes/dyp/Whitespace/config
+$:/themes/dyp/Whitespace/history
+$:/themes/dyp/Whitespace/readme
+$:/themes/dyp/Whitespace/Stylesheet
+$:/themes/dyp/Whitespace/template/sidebar
+$:/themes/dyp/Whitespace/usage
+调整tc-tiddler-frame和tc-tiddler-body边距
+```
+
+原版条目列表
+
+```tw
+$:/themes/jd/Whitespace/config
+$:/themes/jd/Whitespace/readme
+$:/themes/jd/Whitespace/Stylesheet
+$:/themes/jd/Whitespace/template/sidebar
+```
