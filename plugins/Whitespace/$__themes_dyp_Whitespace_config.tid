@@ -110,7 +110,7 @@ $(config-base)$$(currentTiddler)$
 </td>
 <td>
 <$radio tiddler=<<wsconfig "sidebar">> value="left"> 左边</$radio><br>
-<$radio tiddler=<<wsconfig "sidebar">> value="right"> 右边</$radio>
+<$radio tiddler=<<wsconfig "sidebar">> value="right" default="right"> 右边</$radio>
 </td>
 </tr>
 </table>
