@@ -22,6 +22,11 @@ title: 调整tc-tiddler-frame和tc-tiddler-body边距
   transform: translateX(0px); /* 向右移动 */
   width: calc(100% + 25px);  /* 增加当前条目宽度 */
 }
+
+body.tc-body .tc-story-river {  
+  left: 0 !important;  
+  margin-left: 0 !important;  
+}
 }
 
 /* 媒体查询，小屏 */
