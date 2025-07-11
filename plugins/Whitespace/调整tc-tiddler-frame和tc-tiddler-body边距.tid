@@ -1,0 +1,29 @@
+created: 20250711013157768
+modified: 20250711021812361
+tags: 样式 $:/tags/Stylesheet
+title: 调整tc-tiddler-frame和tc-tiddler-body边距
+
+/* 定义大屏宽度 */
+.large-screen {
+  width: 1000px;
+}
+
+/* 定义小屏宽度 */
+.small-screen {
+  width: 350px;
+}
+
+/* 媒体查询，大屏 */
+@media (min-width: 768px) {
+/* 新增内容 */
+
+.tc-tiddler-body {
+  padding-right: 25px;
+  transform: translateX(15px);  /* 向右移动 */
+}
+}
+
+/* 媒体查询，小屏 */
+@media (max-width: 767px) {
+
+}
