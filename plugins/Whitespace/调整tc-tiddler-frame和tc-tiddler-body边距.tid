@@ -19,7 +19,8 @@ title: 调整tc-tiddler-frame和tc-tiddler-body边距
 
 .tc-tiddler-body {
   padding-right: 25px;
-  transform: translateX(15px);  /* 向右移动 */
+  transform: translateX(0px); /* 向右移动 */
+  width: calc(100% + 25px);  /* 增加当前条目宽度 */
 }
 }
 
