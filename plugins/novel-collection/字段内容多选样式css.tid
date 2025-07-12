@@ -29,6 +29,37 @@ title: 字段内容多选样式css
   background-color: #CCE7E8 !important; /* 柔和的浅青色背景 */
   color: #004040 !important; /* 沉稳的深绿色文字 */
 }
+
+
+.category-tags-container [data-tag-title="系统"] .tc-tag-label {
+ background-color: #E6F3F5 !important; /* 柔和的浅蓝色 */
+ color: #2C5282 !important; /* 深蓝色文字 */
+}
+
+.category-tags-container [data-tag-title="读心术"] .tc-tag-label {
+ background-color: #F0E6F6 !important; /* 淡紫色背景 */
+ color: #6B4C9A !important; /* 紫色文字 */
+}
+
+.category-tags-container [data-tag-title="强强"] .tc-tag-label {
+ background-color: #F2F7E6 !important; /* 柔和的浅绿色 */
+ color: #4A6D31 !important; /* 深绿色文字 */
+}
+
+.category-tags-container [data-tag-title="江湖"] .tc-tag-label {
+ background-color: #F5E6E6 !important; /* 淡粉色背景 */
+ color: #7B2C5A !important; /* 深粉色文字 */
+}
+
+.category-tags-container [data-tag-title="爽文"] .tc-tag-label {
+ background-color: #E6F9F0 !important; /* 淡青色背景 */
+ color: #2C6D4A !important; /* 深青色文字 */
+}
+
+.category-tags-container [data-tag-title="先婚后爱"] .tc-tag-label {
+ background-color: #FFF0E6 !important; /* 淡橙色背景 */
+ color: #7A4C2C !important; /* 深橙色文字 */
+}
   
 /* 字段标签丸添加轻微的阴影效果 */  
 .category-tags-container .tc-tag-label {  
