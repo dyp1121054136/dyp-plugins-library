@@ -47,7 +47,12 @@ title: $:/custom/ui/ViewTemplate/body/novel-collection
     <div class="tag-section">      
       <span class="tag-label">文章长度：</span>      
       <span class="tag-value"><$transclude tiddler="小说收藏参数-文章长度"/></span>      
-    </div>  
+    </div>
+
+    <div class="tag-section">      
+      <span class="tag-label">全文字数：</span>      
+      <span class="tag-value"><$transclude tiddler="小说收藏参数-全文字数"/></span>      
+    </div>
       
     <div class="tag-section">      
       <span class="tag-label">分类标签：</span>      
