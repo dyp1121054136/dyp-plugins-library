@@ -117,6 +117,36 @@ title: 字段内容多选样式css
  background-color: #F5F5DC !important; /* 淡米色背景 */
  color: #8B7500 !important; /* 深米色文字 */
 }
+
+.category-tags-container [data-tag-title="男主言情"] .tc-tag-label {
+  background-color: #FFE4E1 !important; /* 淡红色背景 */
+  color: #B22222 !important; /* 深红色文字 */
+}
+
+.category-tags-container [data-tag-title="年上"] .tc-tag-label {
+  background-color: #F5F5DC !important; /* 米白色背景 */
+  color: #8B4513 !important; /* 棕色文字 */
+}
+
+.category-tags-container [data-tag-title="年下"] .tc-tag-label {
+  background-color: #F0FFF0 !important; /* 淡绿色背景 */
+  color: #2E8B57 !important; /* 深绿色文字 */
+}
+
+.category-tags-container [data-tag-title="神话"] .tc-tag-label {
+  background-color: #F0E68C !important; /* 淡金色背景 */
+  color: #8B7500 !important; /* 橄榄色文字 */
+}
+
+.category-tags-container [data-tag-title="全息"] .tc-tag-label {
+  background-color: #E0FFFF !important; /* 浅青色背景 */
+  color: #008080 !important; /* 青色文字 */
+}
+
+.category-tags-container [data-tag-title="网游"] .tc-tag-label {
+ background-color: #B0E0E6 !important; /* 薰衣草蓝背景，比之前的更柔和 */
+ color: #4169E1 !important; /* 皇家蓝，比之前的 #003399 更浅且更明亮 */
+}
   
 /* 字段标签丸添加轻微的阴影效果 */  
 .category-tags-container .tc-tag-label {  
