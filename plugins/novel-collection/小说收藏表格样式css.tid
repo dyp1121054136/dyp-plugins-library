@@ -26,6 +26,14 @@ title: 小说收藏表格样式css
   width: 100px;
 }
 
+/* 书名、星级等不换行 */
+.tw-novel-table-name {
+  white-space: nowrap; / 防止内容换行 /
+  overflow-x: auto; / 水平滚动条 /
+  scrollbar-width: none; / 隐藏滚动条 /
+  -ms-overflow-style: none; / IE和Edge /
+}
+
 /* 作者 */
 .tw-novel-table-author {
   font-size: 0.9em;
