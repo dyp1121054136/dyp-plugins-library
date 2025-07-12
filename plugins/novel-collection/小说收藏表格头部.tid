@@ -29,7 +29,10 @@ title: 小说收藏表格头部
       </$list>  
       <$list filter="[[$:/config/novel-table/columns/文章长度]get[visible]else[no]match[yes]]" variable="ignore">  
         <th>文章长度</th>  
-      </$list>  
+      </$list>
+      <$list filter="[[$:/config/novel-table/columns/全文字数]get[visible]else[no]match[yes]]" variable="ignore">  
+        <th>全文字数</th>  
+      </$list>
       <$list filter="[[$:/config/novel-table/columns/分类标签]get[visible]else[yes]match[yes]]" variable="ignore">  
         <th>分类标签</th>  
       </$list>  
@@ -106,7 +109,12 @@ title: 小说收藏表格头部
           <td>  
  <$transclude tiddler="小说收藏参数-文章长度"/>
           </td>  
-        </$list>  
+        </$list>
+        <$list filter="[[$:/config/novel-table/columns/全文字数]get[visible]else[no]match[yes]]" variable="ignore">  
+          <td>  
+ <$transclude tiddler="小说收藏参数-全文字数"/>
+          </td>  
+        </$list>
         <$list filter="[[$:/config/novel-table/columns/分类标签]get[visible]else[yes]match[yes]]" variable="ignore">  
 <td class="category-tags-container"> 
 <$transclude tiddler="编辑分类标签多选框"/>
