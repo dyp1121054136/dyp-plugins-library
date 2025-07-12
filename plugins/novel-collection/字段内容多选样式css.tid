@@ -87,6 +87,36 @@ title: 字段内容多选样式css
  background-color: #FFF8DC !important; /* 淡黄色背景 */
  color: #8B6914 !important; /* 棕黄色文字 */
 }
+
+.category-tags-container [data-tag-title="召唤流"] .tc-tag-label {
+ background-color: #F0E68C !important; /* 淡金色背景 */
+ color: #8B7500 !important; /* 深金色文字 */
+}
+
+.category-tags-container [data-tag-title="轻松"] .tc-tag-label {
+ background-color: #DFF0D8 !important; /* 淡绿色背景 */
+ color: #3C763D !important; /* 深绿色文字 */
+}
+
+.category-tags-container [data-tag-title="历史衍生"] .tc-tag-label {
+ background-color: #E6F7FF !important; /* 淡蓝色背景 */
+ color: #005A9C !important; /* 深蓝色文字 */
+}
+
+.category-tags-container [data-tag-title="炮灰"] .tc-tag-label {
+ background-color: #F8D7DA !important; /* 淡红色背景 */
+ color: #721C24 !important; /* 深红色文字 */
+}
+
+.category-tags-container [data-tag-title="开挂"] .tc-tag-label {
+ background-color: #FFE4E1 !important; /* 淡珊瑚色背景 */
+ color: #B22222 !important; /* 深珊瑚色文字 */
+}
+
+.category-tags-container [data-tag-title="宋穿"] .tc-tag-label {
+ background-color: #F5F5DC !important; /* 淡米色背景 */
+ color: #8B7500 !important; /* 深米色文字 */
+}
   
 /* 字段标签丸添加轻微的阴影效果 */  
 .category-tags-container .tc-tag-label {  
