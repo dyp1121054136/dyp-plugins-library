@@ -7,6 +7,28 @@ title: 小说收藏表格样式css
 .tw-novel-table-x {
   overflow-x: auto; /* 启用水平滚动 */
   width: 100%; /* 确保表格宽度占满容器 */
+
+  table-layout: fixed; /* 固定表格布局，防止单元格自动调整 */
+}
+
+/* 普通单元格的样式（可选，用于统一其他单元格） */
+.tw-novel-table-x td {
+  white-space: nowrap; /* 防止文本换行，保持单元格内容在一行 */
+  /* overflow: hidden; */ /* 超出内容隐藏（可选） */
+  /* text-overflow: ellipsis; */ /* 超出部分显示省略号（可选） */
+}
+
+/* 特定单元格的样式（允许换行） */
+td.category-tags-container {
+  white-space: normal;
+  word-wrap: break-word;
+  overflow: visible;
+}
+
+.tw-novel-table-tags {
+  width: 200px;
+  min-width: 150px; /* 最小宽度 */
+  max-width: 300px; /* 最大宽度 */
 }
 
 /* 表格样式 */
