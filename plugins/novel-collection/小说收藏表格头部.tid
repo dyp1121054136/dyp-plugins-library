@@ -67,7 +67,7 @@ title: 小说收藏表格头部
 <$list filter=<<novel-collection-filter>>>
       <tr>      
         <$list filter="[[$:/config/novel-table/columns/书名]get[visible]else[yes]match[yes]]" variable="ignore">  
-<td>
+<td class="tw-novel-table-name">
 <$link to=<<currentTiddler>>>  
 <$list filter="[<currentTiddler>has[书名]]" emptyMessage="未命名">  
 <$view field="书名"/>  
@@ -111,7 +111,7 @@ title: 小说收藏表格头部
           </td>  
         </$list>
         <$list filter="[[$:/config/novel-table/columns/全文字数]get[visible]else[no]match[yes]]" variable="ignore">  
-          <td class="tw-novel-table-author">  
+          <td  class="tw-novel-table-name">  
  <$transclude tiddler="小说收藏参数-全文字数"/>
           </td>  
         </$list>
@@ -136,7 +136,7 @@ title: 小说收藏表格头部
           </td>  
         </$list>
         <$list filter="[[$:/config/novel-table/columns/星级]get[visible]else[no]match[yes]]" variable="ignore">  
-          <td>  
+          <td class="tw-novel-table-name">  
  <$transclude tiddler="小说收藏参数-星级"/>  
           </td>  
         </$list> 
