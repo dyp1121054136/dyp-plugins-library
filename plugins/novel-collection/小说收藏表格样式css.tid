@@ -19,7 +19,8 @@ title: 小说收藏表格样式css
 }
 
 /* 特定单元格的样式（允许换行） */
-td.category-tags-container {
+td.category-tags-container,
+td.tw-novel-table-comment {
   white-space: normal;
   word-wrap: break-word;
   overflow: visible;
@@ -29,6 +30,13 @@ td.category-tags-container {
   width: 200px;
   min-width: 150px; /* 最小宽度 */
   max-width: 300px; /* 最大宽度 */
+}
+
+.tw-novel-table-comment {
+  width: 200px;
+  min-width: 150px; /* 最小宽度 */
+  max-width: 300px; /* 最大宽度 */
+  font-size: 0.8em;
 }
 
 /* 表格样式 */
