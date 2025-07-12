@@ -30,13 +30,14 @@ title: 字段内容多选样式css
   color: #004040 !important; /* 沉稳的深绿色文字 */
 }
 
-
 .category-tags-container [data-tag-title="系统"] .tc-tag-label {
  background-color: #E6F3F5 !important; /* 柔和的浅蓝色 */
  color: #2C5282 !important; /* 深蓝色文字 */
 }
 
-.category-tags-container [data-tag-title="读心术"] .tc-tag-label {
+.category-tags-container [data-tag-title="读心术"] .tc-tag-label,
+.category-tags-container [data-tag-title="同人"] .tc-tag-label
+{
  background-color: #F0E6F6 !important; /* 淡紫色背景 */
  color: #6B4C9A !important; /* 紫色文字 */
 }
@@ -59,6 +60,32 @@ title: 字段内容多选样式css
 .category-tags-container [data-tag-title="先婚后爱"] .tc-tag-label {
  background-color: #FFF0E6 !important; /* 淡橙色背景 */
  color: #7A4C2C !important; /* 深橙色文字 */
+}
+
+
+.category-tags-container [data-tag-title="重生"] .tc-tag-label {
+ background-color: #F0E6E6 !important; /* 淡粉色背景 */
+ color: #993333 !important; /* 暗红色文字 */
+}
+
+.category-tags-container [data-tag-title="豪门世家"] .tc-tag-label {
+ background-color: #E6E6FA !important; /* 淡紫色背景 */
+ color: #4B0082 !important; /* 深紫色文字 */
+}
+
+.category-tags-container [data-tag-title="情有独钟"] .tc-tag-label {
+ background-color: #FFF0F5 !important; /* 淡粉色背景 */
+ color: #8A457D !important; /* 深玫瑰色文字 */
+}
+
+.category-tags-container [data-tag-title="悬疑推理"] .tc-tag-label {
+ background-color: #E0E0E0 !important; /* 灰色背景 */
+ color: #2E2E2E !important; /* 深灰色文字 */
+}
+
+.category-tags-container [data-tag-title="软饭流"] .tc-tag-label {
+ background-color: #FFF8DC !important; /* 淡黄色背景 */
+ color: #8B6914 !important; /* 棕黄色文字 */
 }
   
 /* 字段标签丸添加轻微的阴影效果 */  
