@@ -147,6 +147,11 @@ title: 字段内容多选样式css
  background-color: #B0E0E6 !important; /* 薰衣草蓝背景，比之前的更柔和 */
  color: #4169E1 !important; /* 皇家蓝，比之前的 #003399 更浅且更明亮 */
 }
+
+.category-tags-container [data-tag-title="星际"] .tc-tag-label {
+    background-color: #FFDAB9 !important; /* 淡橙色背景 */
+    color: #C26D21 !important; /* 深橙色文字，对比度更强，但依然柔和 */
+}
   
 /* 字段标签丸添加轻微的阴影效果 */  
 .category-tags-container .tc-tag-label {  
