@@ -13,7 +13,8 @@ title: 字段内容多选样式css
 }  
   
 /* 无限流标签 - 清新的蓝绿色系 */  
-.category-tags-container [data-tag-title="无限流"] .tc-tag-label {  
+.category-tags-container [data-tag-title="无限流"] .tc-tag-label,
+.category-tags-container [data-tag-title="末世"] .tc-tag-label {  
     background-color: #4ECDC4 !important;  
     color: #FFFFFF !important;  
 }  
