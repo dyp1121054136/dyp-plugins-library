@@ -111,7 +111,7 @@ title: 小说收藏表格头部
           </td>  
         </$list>
         <$list filter="[[$:/config/novel-table/columns/全文字数]get[visible]else[no]match[yes]]" variable="ignore">  
-          <td>  
+          <td class="tw-novel-table-author">  
  <$transclude tiddler="小说收藏参数-全文字数"/>
           </td>  
         </$list>
