@@ -6,7 +6,7 @@ title: 小说收藏参数-全文字数
 
 <$let editState={{{ [[$:/state/words-edit/]addsuffix<currentTiddler>] }}} originalValue={{{ [[$:/temp/words-original/]addsuffix<currentTiddler>] }}}>  
 <$reveal type="nomatch" state=<<editState>> text="yes">
-  <$view field="全文字数"/>字
+  <$view field="全文字数"/> 字
   <$button class="tc-btn-invisible tw-novel-table-edit" tooltip="编辑">    
     <$action-setfield $tiddler=<<editState>> text="yes"/>  
     <$action-setfield $tiddler=<<originalValue>> text={{!!全文字数}}/>  
