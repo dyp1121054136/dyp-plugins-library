@@ -18,7 +18,9 @@ title: 小说收藏汇总修改版
 <$transclude tiddler="修改小说收藏筛选公式"/>  
   
 [[筛选公式|novel-collection-filter]]：{{novel-collection-filter}}  
-  
+
+[[小说网站收藏]]
+
 </$reveal>
 <div style="text-align: right;"><span style="margin-right: 20px;">{{||$:/core/ui/Buttons/tw-novel-gallery}}</span><$transclude tiddler="新建小说收藏按钮"/></div>
 
