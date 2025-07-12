@@ -14,6 +14,7 @@ title: 小说收藏显示列设置
     <$checkbox tiddler="$:/config/novel-table/columns/性向" field="visible" checked="yes" unchecked="no" default="yes">性向</$checkbox>
     <$checkbox tiddler="$:/config/novel-table/columns/视角" field="visible" checked="yes" unchecked="no" default="yes">视角</$checkbox>
     <$checkbox tiddler="$:/config/novel-table/columns/文章长度" field="visible" checked="yes" unchecked="no" default="no">文章长度</$checkbox>
+    <$checkbox tiddler="$:/config/novel-table/columns/全文字数" field="visible" checked="yes" unchecked="no" default="no">全文字数</$checkbox>
     <$checkbox tiddler="$:/config/novel-table/columns/分类标签" field="visible" checked="yes" unchecked="no" default="yes">分类标签</$checkbox>
     <$checkbox tiddler="$:/config/novel-table/columns/特殊标签" field="visible" checked="yes" unchecked="no" default="yes">特殊标签</$checkbox>
     <$checkbox tiddler="$:/config/novel-table/columns/归档" field="visible" checked="yes" unchecked="no" default="no">归档</$checkbox>
