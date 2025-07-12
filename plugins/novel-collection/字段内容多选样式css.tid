@@ -24,6 +24,11 @@ title: 字段内容多选样式css
     background-color: #FFB347 !important;  
     color: #FFFFFF !important;  
 }  
+
+.category-tags-container [data-tag-title="历史"] .tc-tag-label {
+  background-color: #CCE7E8 !important; /* 柔和的浅青色背景 */
+  color: #004040 !important; /* 沉稳的深绿色文字 */
+}
   
 /* 字段标签丸添加轻微的阴影效果 */  
 .category-tags-container .tc-tag-label {  
