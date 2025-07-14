@@ -7,14 +7,14 @@ title: 修改小说收藏筛选公式
   
 特殊标签: <$edit-text tiddler="$:/temp/novel-filter/特殊标签" tag="input" placeholder="江湖" size="5" class="novel-filter-input"/>
   
-排序方式: <$select tiddler="$:/temp/novel-filter/sort" default="created">
-<option value="title">标题</option>
-<option value="书名">书名</option>
-<option value="created">创建时间</option>   
-<option value="modified">更新时间</option>
+排序方式: <$select tiddler="$:/temp/novel-filter/sort" default="created" class="novel-filter-select">
+<option value="title" class="novel-filter-option">标题</option>
+<option value="书名" class="novel-filter-option">书名</option>
+<option value="created" class="novel-filter-option">创建时间</option>   
+<option value="modified" class="novel-filter-option">更新时间</option>
 </$select>
 
-限制数量: <$edit-text tiddler="$:/temp/novel-filter/limit" tag="input" placeholder="10" size="5" class="novel-filter-input"/>
+限制数量: <$edit-text tiddler="$:/temp/novel-filter/limit" tag="input" placeholder="10" size="5" class="novel-filter-input" class="novel-filter-input"/>
 
 <$vars
     分类标签={{$:/temp/novel-filter/分类标签}}
@@ -22,7 +22,7 @@ title: 修改小说收藏筛选公式
     排序={{$:/temp/novel-filter/sort}}
     限制数量={{{ [{$:/temp/novel-filter/limit}!is[blank]] :else[[999]] }}}
 >
-<$button>
+<$button class="novel-filter-btn">
 <$action-setfield $tiddler="novel-collection-filter"
     text=`[all[tiddlers+shadows]field:类型[小说]search:分类标签[$(分类标签)$]search:特殊标签[$(特殊标签)$]sort[$(排序)$]limit[$(限制数量)$]]`/>
 确认设置
