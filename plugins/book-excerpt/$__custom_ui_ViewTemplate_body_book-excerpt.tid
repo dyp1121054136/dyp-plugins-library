@@ -5,7 +5,7 @@ modified: 20250705074632071
 tags: 摘抄 级联
 title: $:/custom/ui/ViewTemplate/body/book-excerpt
 
-<div style="text-align: right;"><$transclude tiddler="新建摘抄按钮"/></div>
+<div style="text-align: right; line-height: 1.0; margin: -1.2em 0 -0.5em 0; padding: -1em 0;"><$transclude tiddler="新建摘抄按钮"/></div>
 
 <$list filter="[<currentTiddler>!field:same[yes]]">
 <$transclude $variable="show-filtered-excerpt-content" source-tiddler=<<currentTiddler>> same="no"/>
