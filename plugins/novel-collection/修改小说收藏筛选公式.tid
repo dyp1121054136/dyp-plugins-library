@@ -12,16 +12,20 @@ title: 修改小说收藏筛选公式
 <option value="书名">书名</option>
 <option value="created">创建时间</option>   
 <option value="modified">更新时间</option>  
-</$select>  
-  
+</$select>
+
+限制数量: <$edit-text tiddler="$:/temp/novel-filter/limit" tag="input" placeholder="10" size="5"/>
+
 <$vars   
-    分类标签={{$:/temp/novel-filter/分类标签}}  
-    特殊标签={{$:/temp/novel-filter/特殊标签}}  
-    排序={{$:/temp/novel-filter/sort}}  
+    分类标签={{$:/temp/novel-filter/分类标签}}
+    特殊标签={{$:/temp/novel-filter/特殊标签}}
+    排序={{$:/temp/novel-filter/sort}}
+    限制数量={{$:/temp/novel-filter/limit}}
+    实际限制数量={{{ [<限制数量>!is[blank]then<限制数量>else[999999]] }}}
 >  
 <$button>  
 <$action-setfield $tiddler="novel-collection-filter"   
-    text=`[all[tiddlers+shadows]field:类型[小说]search:分类标签[$(分类标签)$]search:特殊标签[$(特殊标签)$]sort[$(排序)$]]`/>  
+    text=`[all[tiddlers+shadows]field:类型[小说]search:分类标签[$(分类标签)$]search:特殊标签[$(特殊标签)$]sort[$(排序)$]limit[$(实际限制数量)$]]`/>  
 确认设置  
 </$button>  
 </$vars>
