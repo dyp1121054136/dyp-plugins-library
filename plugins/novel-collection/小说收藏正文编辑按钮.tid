@@ -6,7 +6,7 @@ title: 小说收藏正文编辑按钮
 
 <$let editState={{{ [[$:/state/text-edit/]addsuffix<currentTiddler>] }}} originalValue={{{ [[$:/temp/text-original/]addsuffix<currentTiddler>] }}}>  
 <$reveal type="nomatch" state=<<editState>> text="yes">  
-<div style="text-align: right;"><$button class="tc-btn-invisible tw-novel-table-edit" tooltip="编辑内容">  
+<div style="text-align: right; line-height: 1.0; margin: -0.5em 0 -2em 0; padding: -1em 0;"><$button class="tc-btn-invisible tw-novel-table-edit" tooltip="编辑内容">  
     <$action-setfield $tiddler=<<editState>> text="yes"/>  
     <$action-setfield $tiddler=<<originalValue>> text={{!!text}}/>  
     {{$:/core/images/edit-button|18px}}  
