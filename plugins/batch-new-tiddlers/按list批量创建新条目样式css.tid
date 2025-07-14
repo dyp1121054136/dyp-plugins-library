@@ -2,7 +2,7 @@ created: 20240425174040446
 modified: 20240427143142382
 tags: 按list批量创建新条目 样式 $:/tags/Stylesheet
 title: 按list批量创建新条目样式css
-type: text/css
+type: 
 
 .list-tids {
   resize: none; /* 防止用户调整大小 */
@@ -19,7 +19,7 @@ type: text/css
 
   /* 调整背景和文字颜色 */
   background-color: <<colour tiddler-background>>; /* 背景色 */
-  color:  <<colour foreground>>/* 文字颜色 */
+  color:  <<colour foreground>>; /* 文字颜色 */
 
   /* 鼠标悬停和获取焦点时的样式 */
   &:hover, &:focus {
