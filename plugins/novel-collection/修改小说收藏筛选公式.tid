@@ -3,9 +3,9 @@ modified: 20250627071704992
 tags: 小说收藏
 title: 修改小说收藏筛选公式
 
-分类标签: <$edit-text tiddler="$:/temp/novel-filter/分类标签" tag="input" placeholder="武侠" size="5"/>
+分类标签: <$edit-text tiddler="$:/temp/novel-filter/分类标签" tag="input" placeholder="武侠" size="5" class="novel-filter-input"/>
   
-特殊标签: <$edit-text tiddler="$:/temp/novel-filter/特殊标签" tag="input" placeholder="江湖" size="5"/>
+特殊标签: <$edit-text tiddler="$:/temp/novel-filter/特殊标签" tag="input" placeholder="江湖" size="5" class="novel-filter-input"/>
   
 排序方式: <$select tiddler="$:/temp/novel-filter/sort" default="created">
 <option value="title">标题</option>
@@ -14,7 +14,7 @@ title: 修改小说收藏筛选公式
 <option value="modified">更新时间</option>
 </$select>
 
-限制数量: <$edit-text tiddler="$:/temp/novel-filter/limit" tag="input" placeholder="10" size="5"/>
+限制数量: <$edit-text tiddler="$:/temp/novel-filter/limit" tag="input" placeholder="10" size="5" class="novel-filter-input"/>
 
 <$vars
     分类标签={{$:/temp/novel-filter/分类标签}}
