@@ -152,6 +152,12 @@ title: 字段内容多选样式css
     background-color: #FFDAB9 !important; /* 淡橙色背景 */
     color: #C26D21 !important; /* 深橙色文字，对比度更强，但依然柔和 */
 }
+
+/* 默认配色 */  
+.category-tags-container .tc-tag-label {
+ background-color: #FFF8DC !important; /* 淡黄色背景 */
+ color: #8B6914 !important; /* 棕黄色文字 */
+}
   
 /* 字段标签丸添加轻微的阴影效果 */  
 .category-tags-container .tc-tag-label {  
