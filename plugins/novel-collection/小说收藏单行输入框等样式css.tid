@@ -27,3 +27,52 @@ title: 小说收藏单行输入框等样式css
 .novel-filter-input:hover {
   border-color: #666;
 }
+
+/* 下拉框样式 */
+.novel-filter-select {
+  width: 90px;
+  padding: 4px 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: <<colour tiddler-background>>;
+  color: <<colour foreground>>;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* 下拉选项样式 */
+.novel-filter-option {
+  background-color: <<colour tiddler-background>>;
+  color: <<colour foreground>>;
+  padding: 6px 10px;
+  font-size: 16px;
+}
+
+/* 悬停下拉选项 */
+.novel-filter-option:hover {
+  background-color: <<colour foreground>>;
+  color: <<colour tiddler-background>>;
+}
+
+/* 按钮样式 */
+.novel-filter-btn {
+  padding: 6px 12px;
+  font-size: 14px;
+  border: 1px solid #ddd; /* 使用浅灰色边框 */
+  border-radius: 4px;
+  background-color: transparent;
+  color: <<colour foreground>>; 
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+/* 按钮悬停效果 */
+.novel-filter-btn:hover {
+  background-color: <<colour foreground>>; 
+  color: <<colour tiddler-background>>;
+}
