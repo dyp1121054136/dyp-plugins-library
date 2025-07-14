@@ -61,8 +61,8 @@ title: 小说收藏单行输入框等样式css
 
 /* 按钮样式 */
 .novel-filter-btn {
-  padding: 6px 12px;
-  font-size: 14px;
+  padding: 2px 4px;
+  font-size: 16px;
   border: 1px solid #ddd; /* 使用浅灰色边框 */
   border-radius: 4px;
   background-color: transparent;
