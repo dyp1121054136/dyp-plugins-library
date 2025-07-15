@@ -20,7 +20,10 @@ title: 小说收藏表格头部
       </$list>  
       <$list filter="[[$:/config/novel-table/columns/平台]get[visible]else[no]match[yes]]" variable="ignore">  
         <th>平台</th>  
-      </$list>  
+      </$list>
+      <$list filter="[[$:/config/novel-table/columns/网址]get[visible]else[yes]match[yes]]" variable="ignore">  
+        <th>网址</th>  
+      </$list>
       <$list filter="[[$:/config/novel-table/columns/性向]get[visible]else[yes]match[yes]]" variable="ignore">  
         <th>性向</th>  
       </$list>  
@@ -94,7 +97,11 @@ title: 小说收藏表格头部
           <td>  
 <$transclude tiddler="小说收藏参数-平台"/>
           </td>  
-        </$list>  
+        </$list>
+        <$list filter="[[$:/config/novel-table/columns/网址]get[visible]else[yes]match[yes]]" variable="ignore">  
+<td>
+<$transclude tiddler="小说收藏参数-网址"/>
+</td>
         <$list filter="[[$:/config/novel-table/columns/性向]get[visible]else[yes]match[yes]]" variable="ignore">  
           <td>  
 <$transclude tiddler="小说收藏参数-性向"/>
