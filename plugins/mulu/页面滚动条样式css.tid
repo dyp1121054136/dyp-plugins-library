@@ -23,6 +23,11 @@ type: text/vnd.tiddlywiki
   border-radius: 3px; 
 }
 
+/* 条目内滚动条背景颜色透明 */
+.tc-tiddler-frame ::-webkit-scrollbar-thumb {
+  background: transparent;  
+}
+
 /* 鼠标悬停在滚动滑块上时的样式 */
 /* ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(270deg, <<colour primary>> 20%, white 20%, <<colour primary>> 20%, white 100%);
