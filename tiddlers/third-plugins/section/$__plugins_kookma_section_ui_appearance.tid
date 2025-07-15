@@ -21,7 +21,7 @@ type: text/vnd.tiddlywiki
 
 <$macrocall $name=selectMacro 
   title="Section style" filter="[all[shadows+tiddlers]tag[$:/tags/Section/Theme]sort[caption]]"
-	default="$:/plugins/kookma/section/styles/themes/yuanjiao"
+	default="$:/plugins/kookma/section/styles/themes/yuanjiao-003"
 	tiddler=<<se-styleTid>> field=text />
 	
 <$macrocall $name=selectMacro 
