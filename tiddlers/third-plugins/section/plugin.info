@@ -1,0 +1,16 @@
+{
+    "title": "$:/plugins/kookma/section",
+    "version": "1.2.2",
+    "stability": "",
+    "name": "Section Editor",
+    "description": "Sectionize tiddler, create patchworks, and manage sections",
+    "author": "Mohammad Rahmani",
+    "source": "https://github.com/kookma/TW-Section",
+    "list": "readme license history",
+    "plugin-priority": "",
+    "parent-plugin": "",
+    "dependents": "",
+    "plugin-type": "plugin",
+    "core-version": ">=5.2.5",
+    "packaged-by": "Gatha on 15th 七月 2025, 16:24:55"
+}
