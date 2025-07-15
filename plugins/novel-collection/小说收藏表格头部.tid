@@ -102,6 +102,7 @@ title: 小说收藏表格头部
 <td>
 <$transclude tiddler="小说收藏参数-网址"/>
 </td>
+        </$list>
         <$list filter="[[$:/config/novel-table/columns/性向]get[visible]else[yes]match[yes]]" variable="ignore">  
           <td>  
 <$transclude tiddler="小说收藏参数-性向"/>
