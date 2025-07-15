@@ -28,7 +28,7 @@ title: $:/custom/ui/ViewTemplate/body/novel-collection
           </div>      
           <div class="meta-row">      
             <span class="meta-label">平台：</span>      
-            <span class="meta-value"><$transclude tiddler="小说收藏参数-平台"/></span>      
+            <span class="meta-value"><$transclude tiddler="小说收藏参数-平台"/><span style="margin-left: 10px;"><$transclude tiddler="小说收藏参数-网址"/></span></span>      
           </div>      
           <div class="meta-row">      
             <span class="meta-label">性向：</span>      
