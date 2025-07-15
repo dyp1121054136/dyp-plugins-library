@@ -8,7 +8,7 @@
     "description": "部分编辑美化和快捷按钮",
     "author": "dyp",
     "dependents": "$:/plugins/kookma/section",
-    "list": "readme usage",
+    "list": "readme history usage",
     "source": "https://github.com/dyp1121054136/dyp-plugins-library",
     "packaged-by": "Gatha on 13th 五月 2025, 08:56:32",
     "plugin-type": "plugin"
