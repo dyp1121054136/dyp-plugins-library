@@ -1,8 +1,10 @@
 created: 20250715091322778
-modified: 20250715091731461
+modified: 20250715094110835
 tags: $:/tags/StartupAction
 title: $:/config/startup-actions/section-defaults
 
-<$action-setfield $tiddler=<<se-styleTid>> text="$:/plugins/kookma/section/styles/themes/yuanjiao-003"/>  
-<$action-setfield $tiddler=<<se-hlevelTid>> text="5"/>
-<$action-setfield $tiddler=<<se-editor>> text="main-editor"/>
+\import [[$:/plugins/kookma/section/macros/definition]] [[$:/plugins/kookma/section/ui/appearance]] [[$:/plugins/kookma/section/ui/ControlPanel/Settings]]
+
+<$action-setfield $tiddler=<<se-styleTid>> text="$:/plugins/kookma/section/styles/themes/yuanjiao-003" $timestamp="no"/>  
+<$action-setfield $tiddler=<<se-hlevelTid>> text="5"  $timestamp="no"/>
+<$action-setfield $tiddler=<<se-editor>> text="main-editor"  $timestamp="no"/>
