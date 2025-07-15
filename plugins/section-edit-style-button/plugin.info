@@ -3,7 +3,7 @@
     "title": "$:/plugins/dyp/section-edit-style-button",
     "stability": "STABILITY_2_STABLE",
     "modified": "20250513005601504",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "name": "section-edit-style-button",
     "description": "部分编辑美化和快捷按钮",
     "author": "dyp",
