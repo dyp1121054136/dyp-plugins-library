@@ -1,0 +1,34 @@
+created: 20250715063811537
+modified: 20250715074421369
+tags: 小说收藏
+title: 小说收藏参数-网址
+
+<$list filter="[<currentTiddler>has[网址]]">   
+  <$button
+    class="tc-btn-invisible tw-novel-table-download"
+    tooltip="跳转到源网址"
+    message="tm-open-external-window"
+    param={{{ [<currentTiddler>get[网址]] }}}
+  >  
+
+<%if [<currentTiddler>get[平台]match[不可能]] %>
+<$image source="图标-不可能文学.png" width="30px"/>
+
+<%elseif [<currentTiddler>get[平台]match[晋江]] %>
+<$image source="图标-晋江文学.png" width="30px"/>
+
+<%elseif [<currentTiddler>get[平台]match[长佩]] %>
+<$image source="图标-长佩文学.png" width="30px"/>
+
+<%elseif [<currentTiddler>get[平台]match[起点]] %>
+<$image source="图标-起点中文网.svg" width="30px"/>
+
+<%elseif [<currentTiddler>get[平台]match[番茄]] %>
+<$image source="图标-番茄小说网.png" width="30px"/>
+
+<%else%>
+{{$:/core/images/web-novel|18px}}  
+<%endif%>
+
+  </$button>
+</$list>
