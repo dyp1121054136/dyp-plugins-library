@@ -4,6 +4,11 @@ tags:
 title: $:/plugins/dyp/novel-collection/history
 type: text/vnd.tiddlywiki
 
+; v.0.0.8 2025-07-15
+
+# 增加了示例 [[小说-暗河传]]；
+# [[小说网站收藏]] 更新了官方阅读网站、免费外链网站、阅读软件等；
+
 ; v.0.0.7 2025-07-14
 
 # 筛选公式新增限制数量；
