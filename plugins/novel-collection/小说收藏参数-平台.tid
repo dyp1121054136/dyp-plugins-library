@@ -8,5 +8,5 @@ title: 小说收藏参数-平台
 <option value="番茄">番茄</option>
 <option value="长佩">长佩</option>
 <option value="起点">起点</option>
-<option value="不可能文学">不可能文学</option>
+<option value="不可能">不可能</option>
 </$select> 
