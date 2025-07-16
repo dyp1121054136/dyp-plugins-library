@@ -1,7 +1,7 @@
 created: 20250627070347158
-modified: 20250627071704992
-tags: 小说收藏
+modified: 20250716123326863
 reverse: yes
+tags: 小说收藏
 title: 修改小说收藏筛选公式
 
 分类标签：<$edit-text tiddler="$:/temp/novel-filter/分类标签" tag="input" placeholder="武侠" size="5" class="novel-filter-input"/>

@@ -1,18 +1,19 @@
 created: 20250716084129304
-modified: 20250716085237211
+modified: 20250716123408585
+reverse: yes
 tags: 小说收藏
 title: 小说收藏筛选排序
 
 <$button class="tc-btn-invisible" tooltip="切换为正序/倒序">
-<$action-listops $tiddler="修改小说收藏筛选公式" $field="reverse" $subfilter="+[toggle[yes],[no]]"/>
+<$action-listops $tiddler="小说收藏筛选排序" $field="reverse" $subfilter="+[toggle[yes],[no]]"/>
   
 <!-- 倒序时图标 -->
-<$list filter="[[修改小说收藏筛选公式]field:reverse[yes]]">  
+<$list filter="[[小说收藏筛选排序]field:reverse[yes]]">  
     {{$:/core/images/reverse-yes|22px}} 倒序
 </$list>
 
 <!-- 正序时图标 -->
-<$list filter="[[修改小说收藏筛选公式]field:reverse[no]]">  
+<$list filter="[[小说收藏筛选排序]field:reverse[no]]">  
     {{$:/core/images/reverse-no|22px}} 正序
 </$list>
   
