@@ -8,6 +8,7 @@ title: 小说收藏参数-作者
 <!-- 如果存在以该作者为标题的条目则可跳转 -->
 <$list filter="[{!!作者}is[tiddler]]" variable="ignore" emptyMessage="{{!!作者}}">
 <$link to={{!!作者}}>{{!!作者}}</$link>
+</$list>
   <$button class="tc-btn-invisible tw-novel-table-edit" tooltip="编辑">    
     <$action-setfield $tiddler=<<editState>> text="yes"/>  
     <$action-setfield $tiddler=<<originalValue>> text={{!!作者}}/>  
