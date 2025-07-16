@@ -6,7 +6,7 @@ title: 小说收藏参数-作者
 <$let editState={{{ [[$:/state/author-edit/]addsuffix<currentTiddler>] }}} originalValue={{{ [[$:/temp/author-original/]addsuffix<currentTiddler>] }}}>  
 <$reveal type="nomatch" state=<<editState>> text="yes">
 <!-- 如果存在以该作者为标题的条目则可跳转 -->
-<$list filter="[{!!作者}is[tiddler]]" variable="ignore" emptyMessage="{{!!作者}}">
+<$list filter="[{!!作者}] :intersection[all[tiddlers+shadows]]" variable="ignore" emptyMessage="{{!!作者}}">
 <$link to={{!!作者}}>{{!!作者}}</$link>
 </$list>
   <$button class="tc-btn-invisible tw-novel-table-edit" tooltip="编辑">    
