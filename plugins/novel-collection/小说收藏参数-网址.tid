@@ -18,7 +18,7 @@ title: 小说收藏参数-网址
 <$image source="图标-晋江文学.png" width="25px"/>
 
 <%elseif [<currentTiddler>get[平台]match[长佩]] %>
-<$image source="图标-长佩文学.png" width="25px"/>
+<$image source="图标-长佩文学.png" width="28px"/>
 
 <%elseif [<currentTiddler>get[平台]match[起点]] %>
 <$image source="图标-起点中文网.svg" width="25px"/>
