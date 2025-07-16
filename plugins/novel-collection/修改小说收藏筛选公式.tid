@@ -1,6 +1,7 @@
 created: 20250627070347158
 modified: 20250627071704992
 tags: 小说收藏
+reverse: yes
 title: 修改小说收藏筛选公式
 
 分类标签：<$edit-text tiddler="$:/temp/novel-filter/分类标签" tag="input" placeholder="武侠" size="5" class="novel-filter-input"/>
@@ -12,7 +13,7 @@ title: 修改小说收藏筛选公式
 <option value="书名" class="novel-filter-option">书名</option>
 <option value="created" class="novel-filter-option">创建时间</option>   
 <option value="modified" class="novel-filter-option">更新时间</option>
-</$select>
+</$select> <span style="margin-left: 10px;">{{||小说收藏筛选排序}}</span>
 
 限制数量：<$edit-text tiddler="$:/temp/novel-filter/limit" tag="input" placeholder="10" size="5" class="novel-filter-input" class="novel-filter-input"/>
 
