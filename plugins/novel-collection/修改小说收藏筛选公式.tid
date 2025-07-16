@@ -24,8 +24,16 @@ title: 修改小说收藏筛选公式
     限制数量={{{ [{$:/temp/novel-filter/limit}!is[blank]] :else[[999]] }}}
 >
 <$button class="novel-filter-btn" tooltip="修改筛选公式">
+<!-- 默认为倒序 -->
+<$list filter="[[小说收藏筛选排序]!field:same[yes]]">
 <$action-setfield $tiddler="novel-collection-filter"
-    text=`[all[tiddlers+shadows]field:类型[小说]search:分类标签[$(分类标签)$]search:特殊标签[$(特殊标签)$]sort[$(排序)$]limit[$(限制数量)$]]`/>
+text=`[all[tiddlers+shadows]field:类型[小说]search:分类标签[$(分类标签)$]search:特殊标签[$(特殊标签)$]!sort[$(排序)$]limit[$(限制数量)$]]`/>
+</$list>
+<!--  正序  -->
+<$list filter="[[小说收藏筛选排序]field:same[yes]]">
+<$action-setfield $tiddler="novel-collection-filter"
+text=`[all[tiddlers+shadows]field:类型[小说]search:分类标签[$(分类标签)$]search:特殊标签[$(特殊标签)$]sort[$(排序)$]limit[$(限制数量)$]]`/>
+</$list>
 确认设置
 </$button>  
 </$vars>
