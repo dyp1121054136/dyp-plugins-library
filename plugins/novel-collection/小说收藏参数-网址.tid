@@ -12,7 +12,7 @@ title: 小说收藏参数-网址
   >  
 
 <%if [<currentTiddler>get[平台]match[不可能]] %>
-<$image source="图标-不可能文学.png" width="21px"/>
+<$image source="图标-不可能文学.png" width="23px"/>
 
 <%elseif [<currentTiddler>get[平台]match[晋江]] %>
 <$image source="图标-晋江文学.png" width="25px"/>
