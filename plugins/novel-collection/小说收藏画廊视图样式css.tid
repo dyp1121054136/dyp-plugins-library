@@ -54,8 +54,14 @@ title: 小说收藏画廊视图样式css
 }  
 
 .tw-novel-gallery-comment {  
-  text-align: left;
+  text-align: right;
   color: <<colour foreground>>;
+}
+
+.tw-novel-gallery-modified {
+  text-align: right;
+  color: #333333;
+  filter: opacity(50%); /* 透明度 */
 }
   
 @media (max-width: 768px) {  
