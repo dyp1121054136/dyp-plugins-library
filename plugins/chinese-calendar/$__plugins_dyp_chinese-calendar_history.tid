@@ -4,6 +4,10 @@ tags:
 title: $:/plugins/dyp/chinese-calendar/history
 type: text/vnd.tiddlywiki
 
+; v.0.0.5 2025-07-17
+
+# 更新2025年8、9、10、11、12月农历和节气；
+
 ; v.0.0.4 2025-06-23
 
 # 新增天气小组件 [[天气小组件]]；
