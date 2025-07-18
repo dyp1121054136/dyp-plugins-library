@@ -15,7 +15,7 @@ title: 修改小说收藏筛选公式
 <option value="modified" class="novel-filter-option">更新时间</option>
 </$select> <span style="margin-left: 10px;">{{||小说收藏筛选排序}}</span>
 
-限制数量：<$edit-text tiddler="$:/temp/novel-filter/limit" tag="input" placeholder="10" size="5" class="novel-filter-input" class="novel-filter-input"/>
+限制数量：<$edit-text tiddler="$:/temp/novel-filter/limit" tag="input" placeholder="10" size="5" class="novel-filter-input"/>
 
 <$vars
     分类标签={{$:/temp/novel-filter/分类标签}}
