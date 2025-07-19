@@ -16,6 +16,6 @@ title: $:/core/ui/Buttons/tw-book-table
 </span>
 </$list>
 
-<$action-navigate $to="书籍收藏汇总修改版"/>
+<$action-navigate $to="书籍收藏汇总"/>
 
 </$button>
