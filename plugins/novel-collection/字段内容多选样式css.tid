@@ -2,7 +2,6 @@ created: 20250617074254572
 modified: 20250619091617711
 tags: 样式 $:/tags/Stylesheet 小说收藏
 title: 字段内容多选样式css
-分类标签: 仙侠 无限流 自定义分类标签
 
 /* 仙侠标签 - 温暖的紫色系 */  
 .category-tags-container [data-tag-title="仙侠"] .tc-tag-label,
