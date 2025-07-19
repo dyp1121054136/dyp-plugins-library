@@ -12,7 +12,7 @@ title: 小说收藏正文编辑按钮
     {{$:/core/images/edit-button|18px}}  
   </$button>
 </div>
-<div class="novel-content"><$transclude $tiddler={{!!title}} $field="text" $output="text/plain"/></div>
+<div class="novel-content"><$transclude $tiddler={{!!title}} $field="text" $output="text/html" $mode="block"/></div>
 </$reveal>  
 <$reveal type="match" state=<<editState>> text="yes">  
   <div class="edit-container">  
