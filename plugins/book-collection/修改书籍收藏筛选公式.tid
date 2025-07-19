@@ -1,0 +1,39 @@
+created: 20250718084631734
+modified: 20250718091316023
+reverse: yes
+tags: 书籍收藏
+title: 修改书籍收藏筛选公式
+
+分类标签：<$edit-text tiddler="$:/temp/book-filter/分类标签" tag="input" placeholder="人文社科" size="12" class="book-filter-input"/>
+  
+特殊标签：<$edit-text tiddler="$:/temp/book-filter/特殊标签" tag="input" placeholder="心理学" size="12" class="book-filter-input"/>
+  
+排序方式：<$select tiddler="$:/temp/book-filter/sort" default="created" class="book-filter-select">
+<option value="title" class="book-filter-option">标题</option>
+<option value="书名" class="book-filter-option">书名</option>
+<option value="created" class="book-filter-option">创建时间</option>   
+<option value="modified" class="book-filter-option">更新时间</option>
+</$select> <span style="margin-left: 10px;">{{||书籍收藏筛选排序}}</span>
+
+限制数量：<$edit-text tiddler="$:/temp/book-filter/limit" tag="input" placeholder="10" size="5" class="book-filter-input"/>
+
+<$vars
+    分类标签={{$:/temp/book-filter/分类标签}}
+    特殊标签={{$:/temp/book-filter/特殊标签}}
+    排序={{$:/temp/book-filter/sort}}
+    限制数量={{{ [{$:/temp/book-filter/limit}!is[blank]] :else[[999]] }}}
+>
+<$button class="book-filter-btn" tooltip="修改筛选公式">
+<!-- 默认为倒序 点击后切换为正序 -->
+<$list filter="[[书籍收藏筛选排序]!field:reverse[yes]]">
+<$action-setfield $tiddler="book-collection-filter"
+text=`[all[tiddlers+shadows]field:类型[书籍]search:分类标签[$(分类标签)$]search:特殊标签[$(特殊标签)$]sort[$(排序)$]limit[$(限制数量)$]]`/>
+</$list>
+<!--  正序 点击后切换为倒序  -->
+<$list filter="[[书籍收藏筛选排序]field:reverse[yes]]">
+<$action-setfield $tiddler="book-collection-filter"
+text=`[all[tiddlers+shadows]field:类型[书籍]search:分类标签[$(分类标签)$]search:特殊标签[$(特殊标签)$]!sort[$(排序)$]limit[$(限制数量)$]]`/>
+</$list>
+确认设置
+</$button>  
+</$vars>

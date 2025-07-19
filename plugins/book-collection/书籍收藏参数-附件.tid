@@ -1,0 +1,11 @@
+created: 20250719025017207
+modified: 20250719025150427
+tags: 书籍收藏
+title: 书籍收藏参数-附件
+
+<$list filter="[<currentTiddler>has[附件]]"> 
+  <$button class="tc-btn-invisible tw-book-table-download" tooltip="下载epub">
+{{$:/core/images/download-book|18px}}
+<$action-sendmessage $message="tm-open-external-window" $param={{{ [<currentTiddler>get[附件]] }}}/>
+  </$button>
+</$list>

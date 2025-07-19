@@ -1,0 +1,101 @@
+caption: 书籍收藏模版
+code-body: yes
+created: 20250719020232326
+modified: 20250719054229840
+tags: 书籍收藏
+title: $:/custom/ui/ViewTemplate/body/book-collection
+
+<div class="book-detail-container">      
+  <div class="book-header">      
+    <div class="book-cover book-cover-image">      
+<$transclude tiddler="书籍收藏参数-封面"/>  
+    </div>      
+    <div class="book-info">
+      <div class="book-meta">      
+        <!-- 基本信息组 -->    
+        <div class="meta-group">
+          <div class="meta-row">      
+            <span class="meta-label">书名：</span>      
+            <span class="meta-value"><$transclude tiddler="书籍收藏参数-书名"/></span>      
+          </div>      
+          <div class="meta-row">      
+            <span class="meta-label">作者：</span>      
+            <span class="meta-value"><$transclude tiddler="书籍收藏参数-作者"/></span>      
+          </div>
+          <div class="meta-row">      
+            <span class="meta-label">原作名：</span>      
+            <span class="meta-value"><$transclude tiddler="书籍收藏参数-原作名"/></span>      
+          </div>      
+          <div class="meta-row">      
+            <span class="meta-label">译者：</span>      
+            <span class="meta-value"><$transclude tiddler="书籍收藏参数-译者"/></span>      
+          </div>
+          <div class="meta-row">      
+            <span class="meta-label">出版社：</span>      
+            <span class="meta-value"><$transclude tiddler="书籍收藏参数-出版社"/></span>      
+          </div>
+          <div class="meta-row">      
+            <span class="meta-label">出版年：</span>      
+            <span class="meta-value"><$transclude tiddler="书籍收藏参数-出版年"/></span>      
+          </div>
+          <div class="meta-row">      
+            <span class="meta-label">ISBN：</span>      
+            <span class="meta-value"><$transclude tiddler="书籍收藏参数-ISBN"/><span style="margin-left: 10px;"><$transclude tiddler="书籍收藏参数-来源"/></span></span>      
+          </div>
+        </div>
+
+      </div>      
+    </div>      
+  </div>
+
+  <div class="novel-tags">
+    <div class="tag-section">      
+      <span class="tag-label">分类标签：</span>      
+      <div class="book-category-tags-container">    
+<$transclude tiddler="书籍收藏-编辑分类标签多选框"/>   
+      </div>      
+    </div>
+    <div class="tag-section">      
+      <span class="tag-label">特殊标签：</span>      
+      <div class="book-category-tags-container">      
+<$transclude tiddler="书籍收藏-编辑特殊标签多选框"/>   
+      </div>      
+    </div>
+  </div>      
+
+  <div class="book-status">
+    <div class="status-row">      
+      <span class="status-label">归档：</span>      
+      <span class="status-value"><$transclude tiddler="书籍收藏参数-归档"/></span>      
+    </div>      
+    <div class="status-row">      
+      <span class="status-label">淘汰：</span>      
+      <span class="status-value"><$transclude tiddler="书籍收藏参数-淘汰"/></span>      
+    </div>
+    <div class="status-row">      
+      <span class="status-label">星级：</span>      
+      <span class="status-value"><$transclude tiddler="书籍收藏参数-星级"/></span>      
+    </div>  
+    <div class="status-row">      
+      <span class="status-label">评价：</span>      
+      <span class="status-value"><$transclude tiddler="书籍收藏参数-评价"/></span>      
+    </div>    
+    <div class="status-row">      
+      <span class="status-label">创建时间：</span>      
+      <span class="status-value"><$transclude tiddler="书籍收藏参数-创建时间"/></span>      
+    </div>      
+    <div class="status-row">      
+      <span class="status-label">更新时间：</span>      
+      <span class="status-value"><$transclude tiddler="书籍收藏参数-更新时间"/></span>      
+    </div>      
+    <div class="status-row">      
+      <span class="status-label">附件：</span>      
+      <span class="status-value">      
+<$transclude tiddler="书籍收藏参数-附件"/>   
+      </span>      
+    </div>      
+  </div>
+
+<$transclude tiddler="书籍收藏正文编辑按钮"/>
+
+</div>

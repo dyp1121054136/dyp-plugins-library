@@ -1,0 +1,7 @@
+created: 20250719021054520
+modified: 20250719021110517
+tags: 图标 $:/tags/Image 书籍收藏
+title: $:/core/images/book-collection-dot
+
+\parameters (size:"22pt")
+<svg width=<<size>> height=<<size>> class="tc-image-button" viewBox="0 0 1024 1024"><path fill-rule="evenodd" d="M512 512m-320 0a320 320 0 1 0 640 0 320 320 0 1 0-640 0Z"/></svg>

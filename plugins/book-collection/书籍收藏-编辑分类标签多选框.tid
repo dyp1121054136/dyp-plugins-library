@@ -1,0 +1,66 @@
+created: 20250719020327986
+modified: 20250719060520171
+tags: 书籍收藏
+title: 书籍收藏-编辑分类标签多选框
+
+  <$let editState={{{ [[$:/state/category-tags-edit/]addsuffix<currentTiddler>] }}} originalValue={{{ [[$:/temp/category-tags-original/]addsuffix<currentTiddler>] }}}>    
+    <$reveal type="nomatch" state=<<editState>> text="yes">    
+      <!-- 显示模式 -->    
+      <$list filter="[<currentTiddler>has[分类标签]]">    
+<$list filter="[{!!分类标签}split[ ]]" join=" " variable="tagItem">      
+  <$button class="tc-btn-invisible" tooltip="点击设置为过滤条件">  
+    <$vars   
+        当前特殊标签={{$:/temp/book-filter/特殊标签}}  
+        当前排序={{$:/temp/book-filter/sort}}  
+    >  
+      <$action-setfield $tiddler="book-collection-filter"   
+          text=`[all[tiddlers+shadows]field:类型[书籍]search:分类标签[$(tagItem)$]search:特殊标签[$(当前特殊标签)$]sort[$(当前排序)$]]`/>  
+    </$vars>
+<!-- 新增跳转功能 -->
+<%if [[$:/StoryList]!contains:list[书籍收藏汇总]] +[[$:/StoryList]!contains:list[书籍收藏画廊视图]] %>  
+  <$action-navigate $to="书籍收藏汇总"/>  
+<%endif%>
+    <$transclude $variable="tag-pill" tag=<<tagItem>>/>  
+  </$button>  
+</$list>
+      </$list>    
+      <$button class="tc-btn-invisible tw-book-table-edit" tooltip="编辑">    
+        <$action-setfield $tiddler=<<editState>> text="yes"/>    
+        <$action-setfield $tiddler=<<originalValue>> text={{!!分类标签}}/>    
+        <span class="book-collection-muted">{{$:/core/images/book-collection-dot}}</span>    
+      </$button>    
+    </$reveal>    
+        
+    <$reveal type="match" state=<<editState>> text="yes">
+      <!-- 直接编辑字段内容 -->    
+      <$edit-text field="分类标签" placeholder="输入标签，用空格分隔" tag="textarea" class="book-collection-textarea"/> 
+
+      <!-- 编辑模式 -->    
+      <div class="tw-book-table-edit-container" style="float: right;">    
+        <$button class="tc-btn-invisible tw-book-table-edit-cancel" tooltip="取消编辑">    
+          <$action-setfield $tiddler=<<currentTiddler>> 分类标签={{{ [<originalValue>get[text]] }}}/>    
+          <$action-deletetiddler $tiddler=<<editState>>/>    
+          <$action-deletetiddler $tiddler=<<originalValue>>/>    
+          {{$:/core/images/cancel-button|18px}}    
+        </$button>    
+        <$button class="tc-btn-invisible tw-book-table-edit-done" tooltip="完成编辑">    
+          <$action-deletetiddler $tiddler=<<editState>>/>    
+          <$action-deletetiddler $tiddler=<<originalValue>>/>    
+          {{$:/core/images/done-button|18px}}    
+        </$button>    
+      </div>
+          
+      <!-- 按钮式编辑 -->    
+      <div class="category-tags-edit">    
+        <$list filter="[{!!分类标签}split[ ]]" variable="tagItem">    
+          <span class="tag-item">    
+            <$transclude $variable="tag-pill" tag=<<tagItem>>/>    
+            <$button class="tc-btn-invisible tag-remove" tooltip="移除">    
+              <$action-listops $field="分类标签" $subfilter="+[remove<tagItem>]"/>    
+              ×    
+            </$button>    
+          </span>    
+        </$list>    
+      </div>    
+    </$reveal>    
+  </$let>    

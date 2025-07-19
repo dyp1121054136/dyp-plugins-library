@@ -1,0 +1,21 @@
+caption: {{$:/core/images/book-collection}} 打开书籍收藏
+created: 20250718084822875
+description: 打开书籍收藏
+modified: 20250718085739428
+tags: 按钮 $:/tags/PageControls 书籍收藏
+title: $:/core/ui/Buttons/book-collection
+
+\whitespace trim
+<$button tooltip="打开书籍收藏" class=<<tv-config-toolbar-class>>>
+<$list filter="[<tv-config-toolbar-icons>match[yes]]">
+<div style="transform: translateY(0.1em);">{{$:/core/images/book-collection}}</div>
+</$list>
+<$list filter="[<tv-config-toolbar-text>match[yes]]">
+<span class="tc-btn-text">
+<$text text=打开书籍收藏/>
+</span>
+</$list>
+
+<$action-navigate $to="书籍收藏汇总"/>
+
+</$button>

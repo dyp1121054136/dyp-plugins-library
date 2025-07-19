@@ -1,0 +1,80 @@
+created: 20250718090156494
+modified: 20250718090356121
+tags: $:/tags/Stylesheet 样式 书籍收藏
+title: 书籍收藏单行输入框等样式css
+
+.book-filter-input {
+  width: 90px; /* 你可以根据需要调整 */
+  padding: 4px 8px; /* 减小内边距，让高度更紧凑 */
+  font-size: 16px; /* 更小的字体，适合短文本 */
+  line-height: 1.2; /* 文字垂直居中 */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+  color: #333;
+}
+
+/* 聚焦时样式 */
+.book-filter-input:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}
+
+/* 鼠标悬停时样式 */
+.book-filter-input:hover {
+  border-color: #666;
+}
+
+/* 下拉框样式 */
+.book-filter-select {
+  width: 90px;
+  padding: 4px 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: <<colour tiddler-background>>;
+  color: <<colour foreground>>;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* 下拉选项样式 */
+.book-filter-option {
+  background-color: <<colour tiddler-background>>;
+  color: <<colour foreground>>;
+  padding: 6px 10px;
+  font-size: 16px;
+}
+
+/* 悬停下拉选项 */
+.book-filter-option:hover {
+  background-color: <<colour foreground>>;
+  color: <<colour tiddler-background>>;
+}
+
+/* 按钮样式 */
+.book-filter-btn {
+  padding: 2px 4px;
+  font-size: 16px;
+  border: 1px solid <<colour foreground>>;
+  border-radius: 4px;
+  background-color: transparent;
+  color: <<colour foreground>>; 
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* 按钮悬停效果 */
+.book-filter-btn:hover {
+  background-color: transparent; 
+  color: <<colour foreground>>;
+  opacity: 1;
+}

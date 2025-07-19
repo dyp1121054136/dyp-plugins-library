@@ -1,0 +1,9 @@
+created: 20250719054554282
+modified: 20250719054605659
+tags: 样式 $:/tags/Stylesheet 书籍收藏
+title: 书籍收藏字段内容多选样式css
+
+.book-category-tags-container [data-tag-title="人文社科"] .tc-tag-label {
+  background-color: #CCE7E8 !important; /* 柔和的浅青色背景 */
+  color: #004040 !important; /* 沉稳的深绿色文字 */
+}

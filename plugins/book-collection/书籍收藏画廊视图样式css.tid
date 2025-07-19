@@ -1,0 +1,71 @@
+created: 20250719033502869
+modified: 20250719033518827
+tags: 样式 $:/tags/Stylesheet 书籍收藏
+title: 书籍收藏画廊视图样式css
+
+.tw-book-gallery {  
+  display: grid;  
+  grid-template-columns: repeat(5, 1fr);  
+  gap: 1rem;  
+  width: 100%;  
+}  
+  
+.tw-book-gallery-item {  
+  border: 1px solid <<colour table-border>>;  
+  border-radius: 8px;  
+  padding: 1rem;  
+  text-align: center;  
+  background: <<colour tiddler-background>>;  
+}  
+  
+.tw-book-gallery-cover {  
+  width: 100%;  
+  height: 200px;  
+  margin-bottom: 0.5rem;  
+  overflow: hidden;  
+  border-radius: 4px;  
+  display: flex;  
+  align-items: center;  
+  justify-content: center;  
+  background-color: <<colour tiddler-background>>;  
+}  
+  
+.tw-book-gallery-cover img {  
+  max-width: 100%;  
+  max-height: 100%;  
+  object-fit: contain;  
+  width: auto;  
+  height: auto;  
+}
+  
+.tw-book-gallery-title {  
+  font-weight: bold;  
+  margin-bottom: 0.5rem;  
+  font-size: 0.9rem;  
+}  
+  
+.tw-book-gallery-info {  
+  font-size: 0.8rem;  
+  color: <<colour muted-foreground>>;  
+}  
+  
+.tw-book-gallery-author {  
+  margin-bottom: 0.25rem;  
+}  
+
+.tw-book-gallery-comment {  
+  text-align: right;
+  color: <<colour foreground>>;
+}
+
+.tw-book-gallery-modified {
+  text-align: right;
+  color: #333333;
+  filter: opacity(50%); /* 透明度 */
+}
+  
+@media (max-width: 768px) {  
+  .tw-book-gallery {  
+    grid-template-columns: repeat(2, 1fr);  
+  }  
+}

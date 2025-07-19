@@ -1,0 +1,20 @@
+created: 20250718090850750
+modified: 20250719033709781
+reverse: yes
+tags: 书籍收藏
+title: 书籍收藏筛选排序
+
+<$button class="tc-btn-invisible" tooltip="切换为正序/倒序">
+<$action-listops $tiddler="书籍收藏筛选排序" $field="reverse" $subfilter="+[toggle[yes],[no]]"/>
+  
+<!-- 倒序时图标 -->
+<$list filter="[[书籍收藏筛选排序]field:reverse[yes]]">  
+    {{$:/core/images/reverse-yes-book|22px}} 倒序
+</$list>
+
+<!-- 正序时图标 -->
+<$list filter="[[书籍收藏筛选排序]field:reverse[no]]">  
+    {{$:/core/images/reverse-no-book|22px}} 正序
+</$list>
+  
+</$button>

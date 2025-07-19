@@ -1,0 +1,145 @@
+created: 20250719020812459
+modified: 20250719030851761
+tags: 样式 $:/tags/Stylesheet 书籍收藏
+title: 书籍收藏模板样式css
+
+.tag-value {  
+  flex: 1;  
+  font-weight: normal;  
+}
+
+.book-detail-container {    
+  margin: 0  auto;    
+  padding: 0; /* 移除内边距 */
+  font-family: inherit;
+}    
+    
+.book-header {    
+  display: flex;    
+  gap: 20px;    
+  margin-bottom: 20px;    
+  align-items: flex-start;    
+}    
+    
+.book-cover {    
+  flex-shrink: 0;    
+}    
+    
+.book-cover-image {    
+  width: 150px;    
+  height: auto;    
+  max-height: 200px;    
+  object-fit: cover;    
+  border-radius: 8px;    
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);    
+}    
+    
+.book-info {    
+  flex: 1;    
+  min-height: 200px;    
+  display: flex;    
+  flex-direction: column; 
+  font-size: 0.9em; 
+}    
+    
+.book-meta {    
+  flex: 1;    
+}    
+  
+.meta-columns {  
+  display: flex;  
+  gap: 30px;  
+}  
+  
+.meta-column-left {  
+  flex: 2;  
+}  
+  
+.meta-column-right {  
+  flex: 1;  
+}  
+    
+.meta-row, .status-row {    
+  display: flex;    
+  margin-bottom: 8px;    
+  align-items: center;    
+}    
+    
+.meta-label, .status-label, .tag-label {    
+  font-weight: bold;
+  min-width: 50px; 
+  flex-shrink: 0;
+  color: <<colour foreground>>;
+  filter: opacity(75%); /* 透明度 */
+}    
+    
+.meta-value, .status-value {    
+  flex: 1;    
+}    
+    
+.book-tags {    
+  margin: 20px 0;    
+  padding: 2px 15px;    
+  background-color: <<colour pre-background>>; /* #f8f9fa */
+  border-radius: 6px;    
+}    
+    
+.tag-section {    
+  display: flex;    
+  align-items: flex-start;    
+  margin-bottom: 10px;    
+}    
+    
+.tag-section:last-child {    
+  margin-bottom: 0;    
+}    
+   
+.book-status {    
+  margin: 20px 0;    
+  padding: 15px;    
+  border: 1px solid <<colour muted-foreground>>;    
+  border-radius: 6px;    
+}    
+
+/* 正文排版 */
+.book-content {    
+  border-top: 0px solid <<colour muted-foreground>>;   /* 移除上分隔线 */
+
+  font-family: "FZYUEKZJW-H";
+  text-align: justify; /* 两端对齐 */
+  line-height: 1.5; /* 行高*/
+  letter-spacing: 0em; /* 增加字符间距 */
+
+/* 硬式换行 */
+  word-break: normal; 
+  word-wrap: break-word; 
+  /* white-space: pre-wrap; 保留空白字符，包括空格、制表符和换行符。 */
+  white-space:pre-line; /* 连续的空白字符合并成一个空格 */ 
+
+  margin-bottom: 0; /* 确保没有底部边距 */  
+  padding-bottom: 0; /* 确保没有底部内边距 */  
+  margin-top: 1em;
+}    
+    
+@media (max-width: 600px) {    
+  .book-header {    
+    flex-direction: column;    
+  }    
+      
+  .book-cover {    
+    align-self: center;    
+  }    
+      
+  .book-info {    
+    min-height: auto;    
+  }    
+      
+  .meta-columns {  
+    flex-direction: column;  
+    gap: 15px;  
+  }  
+      
+  .meta-label, .status-label, .tag-label {    
+    min-width: 80px;    
+  }    
+}

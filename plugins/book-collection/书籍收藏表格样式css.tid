@@ -1,0 +1,128 @@
+created: 20250718092118713
+modified: 20250719060016903
+tags: 样式 $:/tags/Stylesheet 书籍收藏
+title: 书籍收藏表格样式css
+
+/* 水平滚动样式 */
+.tw-book-table-x {
+  overflow-x: auto; /* 启用水平滚动 */
+  width: 100%; /* 确保表格宽度占满容器 */
+
+  table-layout: fixed; /* 固定表格布局，防止单元格自动调整 */
+}
+
+/* 普通单元格的样式（可选，用于统一其他单元格） */
+.tw-book-table-x td {
+  white-space: nowrap; /* 防止文本换行，保持单元格内容在一行 */
+  /* overflow: hidden; */ /* 超出内容隐藏（可选） */
+  /* text-overflow: ellipsis; */ /* 超出部分显示省略号（可选） */
+}
+
+/* 特定单元格的样式（允许换行） */
+td.book-category-tags-container,
+td.tw-book-table-comment {
+  white-space: normal;
+  word-wrap: break-word;
+  overflow: visible;
+}
+
+.tw-book-table-tags {
+  width: 200px;
+  min-width: 150px; /* 最小宽度 */
+  max-width: 300px; /* 最大宽度 */
+}
+
+.tw-book-table-comment {
+  width: 200px;
+  min-width: 150px; /* 最小宽度 */
+  max-width: 300px; /* 最大宽度 */
+  font-size: 0.8em;
+}
+
+/* 表格样式 */
+.tw-book-table {
+  text-align: center;
+}
+
+/* 表头样式 */
+.tw-book-table thead {
+  font-size: 16px;
+  height: 50px;
+}
+
+/* 日期 */
+.tw-book-table-date {
+  font-size: 0.8em;
+  width: 100px;
+}
+
+/* 书名、星级等不换行 */
+.tw-book-table-name {
+  white-space: nowrap; / 防止内容换行 /
+  overflow-x: auto; / 水平滚动条 /
+  scrollbar-width: none; / 隐藏滚动条 /
+  -ms-overflow-style: none; / IE和Edge /
+}
+
+/* 作者 */
+.tw-book-table-author {
+  font-size: 0.9em;
+  width: 100px;
+  white-space: nowrap;
+}
+
+/* 封面 */  
+.tw-book-table-cover {  
+  width: 60px;  
+  transition: transform 0.3s ease;  
+  transform-origin: 50% 50%;   
+  overflow: visible; /* 改为visible，允许放大内容显示 */  
+  position: relative;    
+}  
+  
+/* 悬停时放大 */  
+.tw-book-table-cover:hover {  
+  transform: scale(1.5);  /* 放大倍数 */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);  
+  z-index: 999;  
+}
+
+/* 编辑按钮 */
+.tw-book-table-edit-container {
+  border: none; 
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: none;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+td .tw-book-table-edit-container {
+  display: block;
+  text-align: right;
+}
+
+.tw-book-table-edit {
+  opacity: 0.2;
+  transition: opacity 0.5s ease-in-out;
+  display: inline;
+}
+
+.tw-book-table-edit-done {
+  margin-left: 10px;
+}
+
+.tw-book-table-edit-done,
+.tw-book-table-edit-cancel,
+.tw-book-table-download
+ {
+  opacity: 0.5;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.tw-book-table-edit:hover,
+.tw-book-table-edit-done:hover,
+.tw-book-table-edit-cancel:hover,
+.tw-book-table-download:hover
+ {
+  opacity: 1;
+}

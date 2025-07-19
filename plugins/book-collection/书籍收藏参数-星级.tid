@@ -1,0 +1,41 @@
+created: 20250719024754341
+modified: 20250719024810491
+tags: 书籍收藏
+title: 书籍收藏参数-星级
+星级: 
+
+<style>    
+.star-rating {    
+  display: inline-block;  
+  vertical-align: baseline; /* 与文本基线对齐 */  
+}    
+    
+.star-rating button {    
+  background: none;    
+  border: none;    
+  font-size: 0.9em;    
+  cursor: pointer;    
+  color: #ddd;    
+  padding: 0px;  
+  margin: 0px; /* 移除默认边距 */  
+  vertical-align: baseline; /* 确保按钮与文本对齐 */  
+  line-height: 1; /* 减少行高影响 */  
+}    
+    
+.star-rating button.filled {    
+  color: #FED150;    
+}    
+    
+.star-rating button:hover {    
+  color: #FED150;    
+}    
+</style>
+  
+<div class="star-rating">  
+<$list filter="[range[1],[5]]" variable="starNum">  
+<$button class={{{ [<starNum>compare:number:lteq{!!星级}then[filled]] }}}>  
+<$action-setfield $field="星级" $value=<<starNum>>/>  
+★  
+</$button>  
+</$list>  
+</div>

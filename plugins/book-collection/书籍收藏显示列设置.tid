@@ -1,0 +1,28 @@
+created: 20250719015823830
+modified: 20250719034803863
+tags: 书籍收藏
+title: 书籍收藏显示列设置
+
+<!-- 列显示控制面板 -->  
+<div class="column-controls">
+  <div class="control-grid">  
+    <$checkbox tiddler="$:/config/book-table/columns/书名" field="visible" checked="yes" unchecked="no" default="yes">书名</$checkbox>
+    <$checkbox tiddler="$:/config/book-table/columns/封面" field="visible" checked="yes" unchecked="no" default="yes">封面</$checkbox>
+    <$checkbox tiddler="$:/config/book-table/columns/作者" field="visible" checked="yes" unchecked="no" default="yes">作者</$checkbox>
+    <$checkbox tiddler="$:/config/book-table/columns/原作名" field="visible" checked="yes" unchecked="no" default="no">原作名</$checkbox>
+    <$checkbox tiddler="$:/config/book-table/columns/译者" field="visible" checked="yes" unchecked="no" default="no">译者</$checkbox>
+    <$checkbox tiddler="$:/config/book-table/columns/出版社" field="visible" checked="yes" unchecked="no" default="yes">出版社</$checkbox>
+    <$checkbox tiddler="$:/config/book-table/columns/出版年" field="visible" checked="yes" unchecked="no" default="yes">出版年</$checkbox>
+    <$checkbox tiddler="$:/config/book-table/columns/ISBN" field="visible" checked="yes" unchecked="no" default="no">ISBN</$checkbox>
+    <$checkbox tiddler="$:/config/book-table/columns/来源" field="visible" checked="yes" unchecked="no" default="no">来源</$checkbox>
+    <$checkbox tiddler="$:/config/book-table/columns/分类标签" field="visible" checked="yes" unchecked="no" default="yes">分类标签</$checkbox>
+    <$checkbox tiddler="$:/config/book-table/columns/特殊标签" field="visible" checked="yes" unchecked="no" default="yes">特殊标签</$checkbox>
+    <$checkbox tiddler="$:/config/book-table/columns/归档" field="visible" checked="yes" unchecked="no" default="no">归档</$checkbox>
+    <$checkbox tiddler="$:/config/book-table/columns/淘汰" field="visible" checked="yes" unchecked="no" default="no">淘汰</$checkbox>
+    <$checkbox tiddler="$:/config/book-table/columns/星级" field="visible" checked="yes" unchecked="no" default="no">星级</$checkbox>
+    <$checkbox tiddler="$:/config/book-table/columns/评价" field="visible" checked="yes" unchecked="no" default="no">评价</$checkbox>
+    <$checkbox tiddler="$:/config/book-table/columns/创建时间" field="visible" checked="yes" unchecked="no" default="no">创建时间</$checkbox>
+    <$checkbox tiddler="$:/config/book-table/columns/更新时间" field="visible" checked="yes" unchecked="no" default="yes">更新时间</$checkbox>
+    <$checkbox tiddler="$:/config/book-table/columns/附件" field="visible" checked="yes" unchecked="no" default="yes">附件</$checkbox>
+  </div>  
+</div>

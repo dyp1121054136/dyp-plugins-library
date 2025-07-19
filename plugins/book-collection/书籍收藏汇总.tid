@@ -1,0 +1,27 @@
+class: tc-book-collection-width
+created: 20250718084519928
+modified: 20250719032307901
+tags: 书籍收藏
+title: 书籍收藏汇总
+
+<$button class="tc-btn-invisible">  
+<$action-setfield $tiddler="$:/state/book-collection-settings" text={{{ [[$:/state/book-collection-settings]get[text]else[hide]match[show]then[hide]else[show]] }}}/>  
+<$list filter="[[$:/state/book-collection-settings]get[text]else[hide]match[show]]" variable="ignore" emptyMessage="{{$:/core/images/right-arrow}} 书籍收藏设置">  
+{{$:/core/images/down-arrow}} 书籍收藏设置  
+</$list>  
+</$button>  
+  
+<$reveal state="$:/state/book-collection-settings" text="show" type="match" default="hide" animate="yes">  
+  
+<$transclude tiddler="书籍收藏显示列设置"/>  
+  
+<$transclude tiddler="修改书籍收藏筛选公式"/>  
+  
+[[筛选公式|book-collection-filter]]：{{book-collection-filter}}  
+
+[[书籍网站收藏]]
+
+</$reveal>
+<div style="text-align: right;"><span style="margin-right: 20px;">{{||$:/core/ui/Buttons/tw-book-gallery}}</span><$transclude tiddler="新建书籍收藏按钮"/></div>
+
+<div class="tw-book-table-x"><$transclude tiddler="书籍收藏表格头部"/></div>

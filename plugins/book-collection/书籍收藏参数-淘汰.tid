@@ -1,0 +1,6 @@
+created: 20250719024724452
+modified: 20250719024736607
+tags: 书籍收藏
+title: 书籍收藏参数-淘汰
+
+<$checkbox field="淘汰" checked="yes" unchecked="no"/>

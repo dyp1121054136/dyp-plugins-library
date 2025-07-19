@@ -1,0 +1,35 @@
+code-body: yes
+created: 20250719023608392
+modified: 20250719061804680
+tags: 书籍收藏
+title: 书籍收藏正文编辑按钮
+
+<$let editState={{{ [[$:/state/text-edit/]addsuffix<currentTiddler>] }}} originalValue={{{ [[$:/temp/text-original/]addsuffix<currentTiddler>] }}}>  
+<$reveal type="nomatch" state=<<editState>> text="yes">  
+<div style="text-align: right; line-height: 1.0; margin: -0.5em 0 -2em 0; padding: -1em 0;"><$button class="tc-btn-invisible tw-book-table-edit" tooltip="编辑内容">  
+    <$action-setfield $tiddler=<<editState>> text="yes"/>  
+    <$action-setfield $tiddler=<<originalValue>> text={{!!text}}/>  
+    {{$:/core/images/edit-button|18px}}  
+  </$button>
+</div>
+<div class="book-content"><$transclude $tiddler={{!!title}} $field="text" $output="text/html" $mode="block"/></div>
+</$reveal>  
+<$reveal type="match" state=<<editState>> text="yes">  
+  <div class="edit-container">  
+<div style="text-align: right;"><$button class="tc-btn-invisible tw-book-table-edit-cancel" tooltip="取消编辑">  
+      <$action-setfield $tiddler=<<currentTiddler>> text={{{ [<originalValue>get[text]] }}}/>  
+      <$action-deletetiddler $tiddler=<<editState>>/>  
+      <$action-deletetiddler $tiddler=<<originalValue>>/>  
+      {{$:/core/images/cancel-button|18px}}  
+    </$button>  
+    <$button class="tc-btn-invisible tw-book-table-edit-done" tooltip="完成编辑">  
+      <$action-deletetiddler $tiddler=<<editState>>/>  
+      <$action-deletetiddler $tiddler=<<originalValue>>/>  
+      {{$:/core/images/done-button|18px}}  
+    </$button>
+</div>
+  </div>  
+  <!-- 使用完整的编辑器组件，包含工具栏 -->  
+  <$transclude tiddler="$:/core/ui/EditTemplate/body/editor" mode="inline"/>
+</$reveal>  
+</$let>

@@ -1,0 +1,23 @@
+created: 20250719040102548
+modified: 20250719040118277
+tags: 样式 $:/tags/Stylesheet 书籍收藏
+title: 书籍收藏文本框样式css
+
+.book-collection-textarea {
+  width: 100%; /* 宽度 */
+  padding: 6px 7px; /* 内边距 */
+  border: 2px solid #ccc; /* 边框 */
+  border-radius: 8px; /* 圆角 */
+  resize: vertical; /* 允许垂直调整大小 */
+  box-sizing: border-box; /* 确保 padding 和 border 不会增加宽度 */
+  background-color: <<colour tiddler-background>>; /* 背景色 */
+  color:  <<colour foreground>>/* 文字颜色 */
+  outline: none; /* 移除焦点边框 */
+  transition: border-color 0.3s ease; /* 过渡效果 */
+}
+
+/* 聚焦时的样式 */
+.book-collection-textarea:focus {
+  border-color: #007BFF; /* 聚焦边框颜色 */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3); /* 聚焦阴影 */
+}

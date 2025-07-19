@@ -1,0 +1,33 @@
+created: 20250718091346887
+modified: 20250718091738758
+tags: 书籍收藏
+title: 新建书籍收藏按钮
+
+<$button class="tc-btn-invisible" tooltip=新建书籍收藏>
+<$list filter="[<tv-config-toolbar-icons>match[yes]]">
+{{$:/core/images/new-button}}
+</$list>
+<$list filter="[<tv-config-toolbar-text>match[yes]]">
+<span class="tc-btn-text">
+<$text text=新建书籍收藏/>
+</span>
+</$list>
+
+<$action-sendmessage $message="tm-new-tiddler" title={{{ [[书籍-]] [<now YYYY-0MM-0DD-hh0mm0ss0XXX>] +[join[]] }}} tags="" text="" 类型="书籍" 
+书名="" 
+封面="" 
+作者="" 
+分类标签="" 
+特殊标签="" 
+归档="" 
+淘汰="" 
+附件=""
+评价=""
+星级=""
+出版社=""
+出版年=""
+ISBN=""
+来源=""
+/>
+
+</$button>

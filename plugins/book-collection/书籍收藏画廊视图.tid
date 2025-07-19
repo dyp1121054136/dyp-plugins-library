@@ -1,0 +1,66 @@
+class: tc-book-collection-width
+created: 20250719033412110
+modified: 20250719060724793
+tags: 书籍收藏
+title: 书籍收藏画廊视图
+
+<$button class="tc-btn-invisible">  
+<$action-setfield $tiddler="$:/state/book-collection-settings" text={{{ [[$:/state/book-collection-settings]get[text]else[hide]match[show]then[hide]else[show]] }}}/>  
+<$list filter="[[$:/state/book-collection-settings]get[text]else[hide]match[show]]" variable="ignore" emptyMessage="{{$:/core/images/right-arrow}} 书籍收藏设置">  
+{{$:/core/images/down-arrow}} 书籍收藏设置  
+</$list>  
+</$button>  
+  
+<$reveal state="$:/state/book-collection-settings" text="show" type="match" default="hide" animate="yes">  
+  
+<$transclude tiddler="修改书籍收藏筛选公式"/>  
+  
+[[筛选公式|book-collection-filter]]：{{book-collection-filter}}  
+
+[[书籍网站收藏]]
+  
+</$reveal>
+<div style="text-align: right;"><span style="margin-right: 20px;">{{||$:/core/ui/Buttons/tw-book-table}}</span><$transclude tiddler="新建书籍收藏按钮"/></div>
+
+<div class="tw-book-gallery">  
+<$set name="book-collection-filter" tiddler="book-collection-filter" field="text">  
+<$list filter=<<book-collection-filter>>>  
+  <div class="tw-book-gallery-item">  
+    <!-- 封面作为主要元素 -->  
+    <div class="tw-book-gallery-cover">  
+      <$transclude tiddler="书籍收藏参数-封面"/>  
+    </div>  
+      
+    <!-- 书名 -->  
+    <div class="tw-book-gallery-title">  
+      <$link to=<<currentTiddler>>>  
+        <$list filter="[<currentTiddler>has[书名]]" emptyMessage="未命名">  
+          <$view field="书名"/>  
+        </$list>  
+      </$link>  
+    </div>  
+      
+    <!-- 其他信息 -->  
+    <div class="tw-book-gallery-info">  
+      <div class="tw-book-gallery-author">  
+        <$transclude tiddler="书籍收藏参数-作者"/>  
+      </div>  
+      <div class="book-category-tags-container">  
+        <$transclude tiddler="书籍收藏-编辑分类标签多选框"/>  
+      </div>
+<br/>
+      <div class="book-category-tags-container">  
+        <$transclude tiddler="书籍收藏-编辑特殊标签多选框"/>  
+      </div>
+<br/>
+      <div class="tw-book-gallery-modified">  
+        <$transclude tiddler="书籍收藏参数-更新时间"/>  
+      </div>
+      <div class="tw-book-gallery-comment">  
+        <$transclude tiddler="书籍收藏参数-评价"/>  
+      </div> 
+    </div>  
+  </div>  
+</$list>  
+</$set>  
+</div>

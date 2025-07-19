@@ -1,0 +1,7 @@
+created: 20250719020156196
+list-before: $:/config/ViewTemplateBodyFilters/default
+modified: 20250719020221041
+tags: 级联 $:/tags/ViewTemplateBodyFilter 书籍收藏
+title: $:/config/ViewTemplateBodyFilters/book-collection
+
+[field:类型[书籍]then[$:/custom/ui/ViewTemplate/body/book-collection]]

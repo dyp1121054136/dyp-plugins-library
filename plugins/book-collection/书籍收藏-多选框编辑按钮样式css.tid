@@ -1,0 +1,16 @@
+created: 20250719021016096
+modified: 20250719021034127
+tags: $:/tags/Stylesheet 样式 书籍收藏
+title: 书籍收藏-多选框编辑按钮样式css
+
+.book-collection-muted svg {
+    height: 1em;
+    width: 1em;
+    color: <<colour tiddler-controls-foreground>>;
+    fill: <<colour tiddler-controls-foreground>>;
+}
+
+.book-collection-muted:hover svg {
+    color: <<colour tiddler-controls-foreground-hover>>;
+    fill: <<colour tiddler-controls-foreground-hover>>;
+}

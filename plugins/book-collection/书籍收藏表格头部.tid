@@ -1,0 +1,167 @@
+created: 20250718084734203
+modified: 20250719055531406
+tags: 书籍收藏
+title: 书籍收藏表格头部
+
+<table class="tw-book-table">    
+  <thead>    
+    <tr>    
+      <$list filter="[[$:/config/book-table/columns/书名]get[visible]else[yes]match[yes]]" variable="ignore">  
+        <th>书名</th>  
+      </$list>  
+      <$list filter="[[$:/config/book-table/columns/封面]get[visible]else[yes]match[yes]]" variable="ignore">  
+        <th>封面</th>  
+      </$list>  
+      <$list filter="[[$:/config/book-table/columns/作者]get[visible]else[yes]match[yes]]" variable="ignore">  
+        <th>作者</th>  
+      </$list>
+      <$list filter="[[$:/config/book-table/columns/原作名]get[visible]else[no]match[yes]]" variable="ignore">  
+        <th>原作名</th>  
+      </$list>
+      <$list filter="[[$:/config/book-table/columns/译者]get[visible]else[no]match[yes]]" variable="ignore">  
+        <th>译者</th>  
+      </$list>
+      <$list filter="[[$:/config/book-table/columns/出版社]get[visible]else[yes]match[yes]]" variable="ignore">  
+        <th>出版社</th>  
+      </$list>
+      <$list filter="[[$:/config/book-table/columns/出版年]get[visible]else[yes]match[yes]]" variable="ignore">  
+        <th>出版年</th>  
+      </$list>
+      <$list filter="[[$:/config/book-table/columns/ISBN]get[visible]else[no]match[yes]]" variable="ignore">  
+        <th>ISBN</th>  
+      </$list>
+      <$list filter="[[$:/config/book-table/columns/来源]get[visible]else[no]match[yes]]" variable="ignore">  
+        <th>来源</th>  
+      </$list>
+      <$list filter="[[$:/config/book-table/columns/分类标签]get[visible]else[yes]match[yes]]" variable="ignore">  
+        <th>分类标签</th>  
+      </$list>  
+      <$list filter="[[$:/config/book-table/columns/特殊标签]get[visible]else[yes]match[yes]]" variable="ignore">  
+        <th>特殊标签</th>  
+      </$list>  
+      <$list filter="[[$:/config/book-table/columns/归档]get[visible]else[no]match[yes]]" variable="ignore">  
+        <th>归档</th>  
+      </$list>  
+      <$list filter="[[$:/config/book-table/columns/淘汰]get[visible]else[no]match[yes]]" variable="ignore">  
+        <th>淘汰</th>  
+      </$list>
+      <$list filter="[[$:/config/book-table/columns/星级]get[visible]else[no]match[yes]]" variable="ignore">  
+        <th>星级</th>  
+      </$list>
+      <$list filter="[[$:/config/book-table/columns/评价]get[visible]else[no]match[yes]]" variable="ignore">  
+        <th>评价</th>  
+      </$list>  
+      <$list filter="[[$:/config/book-table/columns/创建时间]get[visible]else[no]match[yes]]" variable="ignore">  
+        <th>创建时间</th>  
+      </$list>  
+      <$list filter="[[$:/config/book-table/columns/更新时间]get[visible]else[yes]match[yes]]" variable="ignore">  
+        <th>更新时间</th>  
+      </$list>  
+      <$list filter="[[$:/config/book-table/columns/附件]get[visible]else[yes]match[yes]]" variable="ignore">  
+        <th>附件</th>  
+      </$list>  
+    </tr>    
+  </thead>    
+  <tbody>    
+<$set name="book-collection-filter" tiddler="book-collection-filter" field="text">
+<$list filter=<<book-collection-filter>>>
+      <tr>      
+        <$list filter="[[$:/config/book-table/columns/书名]get[visible]else[yes]match[yes]]" variable="ignore">  
+<td class="tw-book-table-name">
+<$link to=<<currentTiddler>>>  
+<$list filter="[<currentTiddler>has[书名]]" emptyMessage="未命名">  
+<$view field="书名"/>  
+</$list>  
+</$link>
+</td>  
+        </$list>  
+        <$list filter="[[$:/config/book-table/columns/封面]get[visible]else[yes]match[yes]]" variable="ignore">  
+          <td class="tw-book-table-cover">  
+<$transclude tiddler="书籍收藏参数-封面"/>
+          </td>  
+        </$list>  
+        <$list filter="[[$:/config/book-table/columns/作者]get[visible]else[yes]match[yes]]" variable="ignore">  
+<td class="tw-book-table-author">
+<$transclude tiddler="书籍收藏参数-作者"/>
+</td>  
+        </$list>
+        <$list filter="[[$:/config/book-table/columns/原作名]get[visible]else[no]match[yes]]" variable="ignore">  
+<td class="tw-book-table-author">
+<$transclude tiddler="书籍收藏参数-原作名"/>
+</td>  
+        </$list>
+        <$list filter="[[$:/config/book-table/columns/译者]get[visible]else[no]match[yes]]" variable="ignore">  
+<td class="tw-book-table-author">
+<$transclude tiddler="书籍收藏参数-译者"/>
+</td>  
+        </$list>
+        <$list filter="[[$:/config/book-table/columns/出版社]get[visible]else[yes]match[yes]]" variable="ignore">  
+<td class="tw-book-table-author">
+<$transclude tiddler="书籍收藏参数-出版社"/>
+</td>  
+        </$list>
+        <$list filter="[[$:/config/book-table/columns/出版年]get[visible]else[yes]match[yes]]" variable="ignore">  
+<td class="tw-book-table-author">
+<$transclude tiddler="书籍收藏参数-出版年"/>
+</td>  
+        </$list>
+        <$list filter="[[$:/config/book-table/columns/ISBN]get[visible]else[no]match[yes]]" variable="ignore">  
+<td class="tw-book-table-author">
+<$transclude tiddler="书籍收藏参数-ISBN"/>
+</td>  
+        </$list>
+        <$list filter="[[$:/config/book-table/columns/来源]get[visible]else[no]match[yes]]" variable="ignore">  
+<td class="tw-book-table-author">
+<$transclude tiddler="书籍收藏参数-来源"/>
+</td>  
+        </$list>
+        <$list filter="[[$:/config/book-table/columns/分类标签]get[visible]else[yes]match[yes]]" variable="ignore">  
+<td class="tw-book-table-tags book-category-tags-container"> 
+<$transclude tiddler="书籍收藏-编辑分类标签多选框"/>
+</td>
+        </$list>  
+        <$list filter="[[$:/config/book-table/columns/特殊标签]get[visible]else[yes]match[yes]]" variable="ignore">  
+<td class="tw-book-table-tags book-category-tags-container"> 
+<$transclude tiddler="书籍收藏-编辑特殊标签多选框"/>
+</td>
+        </$list>  
+        <$list filter="[[$:/config/book-table/columns/归档]get[visible]else[no]match[yes]]" variable="ignore">  
+          <td>  
+ <$transclude tiddler="书籍收藏参数-归档"/>
+          </td>  
+        </$list>  
+        <$list filter="[[$:/config/book-table/columns/淘汰]get[visible]else[no]match[yes]]" variable="ignore">  
+          <td>  
+ <$transclude tiddler="书籍收藏参数-淘汰"/>  
+          </td>  
+        </$list>
+        <$list filter="[[$:/config/book-table/columns/星级]get[visible]else[no]match[yes]]" variable="ignore">  
+          <td class="tw-book-table-name">  
+ <$transclude tiddler="书籍收藏参数-星级"/>  
+          </td>  
+        </$list> 
+        <$list filter="[[$:/config/book-table/columns/评价]get[visible]else[no]match[yes]]" variable="ignore">  
+          <td class="tw-book-table-comment">  
+ <$transclude tiddler="书籍收藏参数-评价"/>  
+          </td>  
+        </$list>  
+        <$list filter="[[$:/config/book-table/columns/创建时间]get[visible]else[no]match[yes]]" variable="ignore">  
+<td class="tw-book-table-date">
+<$transclude tiddler="书籍收藏参数-创建时间"/>
+</td>  
+        </$list>  
+        <$list filter="[[$:/config/book-table/columns/更新时间]get[visible]else[yes]match[yes]]" variable="ignore">  
+<td class="tw-book-table-date">
+<$transclude tiddler="书籍收藏参数-更新时间"/>
+</td>  
+        </$list>  
+        <$list filter="[[$:/config/book-table/columns/附件]get[visible]else[yes]match[yes]]" variable="ignore">  
+<td>
+<$transclude tiddler="书籍收藏参数-附件"/>
+</td>  
+        </$list>  
+      </tr>      
+    </$list>
+</$set>
+  </tbody>    
+</table>

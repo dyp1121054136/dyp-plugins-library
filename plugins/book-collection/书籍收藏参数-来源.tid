@@ -1,0 +1,15 @@
+created: 20250719034140972
+modified: 20250719060132338
+tags: 书籍收藏
+title: 书籍收藏参数-来源
+
+<$list filter="[<currentTiddler>has[来源]]">   
+  <$button
+    class="tc-btn-invisible tw-book-table-download"
+    tooltip="跳转到源网址"
+    message="tm-open-external-window"
+    param={{{ [<currentTiddler>get[来源]] }}}
+  >  
+{{$:/core/images/web-book|18px}}
+  </$button>
+</$list>

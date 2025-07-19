@@ -1,0 +1,8 @@
+created: 20250719022654285
+modified: 20250719022708353
+tags: 书籍收藏
+title: 书籍收藏参数-封面
+
+<$list filter="[<currentTiddler>has[封面]]">    
+<img src={{!!封面}}/>  
+</$list>
