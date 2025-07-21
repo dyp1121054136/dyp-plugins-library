@@ -1,0 +1,119 @@
+author: dyp
+color-scheme: dark
+created: 20240820134349441
+description: 低调奢华的黑金加紫绿调色板
+list: #35393C #434748 #656356 #C1BA8C #EFE6AB
+modified: 20250721072941863
+name: 我的自定义主题 Daisy Black Gold - Purple Green
+tags: $:/tags/Palette
+title: $:/palettes/DaisyBlackGold-PurpleGreen
+type: application/x-tiddler-dictionary
+
+primary: #C1BA8C
+alert-background: <<colour notification-background>>
+alert-border: <<colour alert-background>>
+alert-highlight: #EA9944
+alert-muted-foreground: <<colour muted-foreground>>
+background: #35393C
+blockquote-bar: <<colour pre-background>>
+button-foreground: <<colour muted-foreground>>
+code-background: #4e446f
+code-border: transparent
+code-foreground: #dfff80
+dirty-indicator: #ccaeea
+download-background: <<colour primary>>
+download-foreground: #434748
+dragger-background: <<colour foreground>>
+dragger-foreground: <<colour background>>
+dropdown-background: <<colour tiddler-background>>
+dropdown-border: <<colour dropdown-background>>
+dropdown-tab-background-selected: <<colour tab-background-selected>>
+dropdown-tab-background: <<colour tab-background>>
+dropzone-background: #EFE6AB
+external-link-background-hover: inherit
+external-link-background-visited: inherit
+external-link-background: inherit
+external-link-foreground-hover: #0099cc
+external-link-foreground-visited: #88aa99
+external-link-foreground: #c1aeea
+foreground: #ebe0c7
+highlight-background: #EA9944
+highlight-foreground: #434748
+message-background: <<colour tiddler-background>>
+message-border: <<colour table-border>>
+message-foreground: <<colour foreground>>
+modal-backdrop: <<colour foreground>>
+modal-background: <<colour tiddler-background>>
+modal-border: <<colour modal-background>>
+modal-footer-background: <<colour table-header-background>>
+modal-footer-border: <<colour modal-header-border>>
+modal-header-border: <<colour table-border>>
+muted-foreground: #b5afd0
+network-activity-foreground: 
+notification-background: #656356
+notification-border: <<colour notification-background>>
+page-background: #434748
+pre-background: rgba(30, 30, 30, 0.5)
+pre-border: <<colour primary>>
+selection-background: #ffffcc
+selection-foreground: #990099
+select-tag-background: 
+select-tag-foreground: 
+sidebar-button-foreground: <<colour muted-foreground>>
+sidebar-controls-foreground-hover: #e5e600
+sidebar-controls-foreground: #848462
+sidebar-foreground-shadow: transparent
+sidebar-foreground: <<colour sidebar-tiddler-link-foreground>>
+sidebar-muted-foreground-hover: #e0d6f5
+sidebar-muted-foreground: #9d959d
+sidebar-tab-background-selected: #434748
+sidebar-tab-background: #656356
+sidebar-tab-border-selected: <<colour sidebar-tab-border>>
+sidebar-tab-border: #656356
+sidebar-tab-divider: <<colour sidebar-tab-border>>
+sidebar-tab-foreground-selected: #EFE6AB
+sidebar-tab-foreground: #c1aeea
+sidebar-tiddler-link-foreground-hover: #e5e600
+sidebar-tiddler-link-foreground: #c1aeea
+site-title-foreground: #EFE6AB
+static-alert-foreground: <<colour very-muted-foreground>>
+tab-background-selected: <<colour tiddler-background>>
+tab-background: #656356
+tab-border-selected: <<colour tab-border>>
+tab-border: #656356
+tab-divider: <<colour tab-border>>
+tab-foreground-selected: #EFE6AB
+tab-foreground: #EFE6AB
+table-border: #c1aeea
+table-footer-background: #615590
+table-header-background: rgba(77, 0, 76, 0.2)
+tag-background: #656356
+tag-foreground: #EFE6AB
+tiddler-background: #35393C
+tiddler-border: <<colour tiddler-background>>
+tiddler-controls-foreground-hover: #C1BA8C
+tiddler-controls-foreground-selected: #d2cdac
+tiddler-controls-foreground: #575742
+tiddler-editor-background: <<colour background>>
+tiddler-editor-border-image: #ffffff
+tiddler-editor-border: <<colour pre-background>>
+tiddler-editor-fields-even: <<colour pre-background>>
+tiddler-editor-fields-odd: 
+tiddler-info-background: <<colour tiddler-background>>
+tiddler-info-border: <<colour tiddler-info-background>>
+tiddler-info-tab-background: <<colour tab-background-selected>>
+tiddler-link-background: white
+tiddler-link-foreground: <<colour primary>>
+tiddler-subtitle-foreground: <<colour muted-foreground>>
+tiddler-title-foreground: <<colour foreground>>
+toolbar-new-button: 
+toolbar-options-button: 
+toolbar-save-button: 
+toolbar-info-button: 
+toolbar-edit-button: 
+toolbar-close-button: 
+toolbar-delete-button: 
+toolbar-cancel-button: 
+toolbar-done-button: 
+untagged-background: <<colour pre-background>>
+very-muted-foreground: #7E8286
