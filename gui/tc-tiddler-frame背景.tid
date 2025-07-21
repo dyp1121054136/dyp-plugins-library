@@ -2,7 +2,7 @@ created: 20220816192518240
 modified: 20250522034335701
 tags: 样式 $:/tags/Stylesheet
 title: tc-tiddler-frame背景
-type: text/css
+type: 
 
 .tc-tiddler-frame { 
   border-radius: 10px; /* 条目背景添加圆角 */
