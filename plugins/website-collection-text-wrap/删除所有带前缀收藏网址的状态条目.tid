@@ -1,0 +1,9 @@
+created: 20250723081543394
+modified: 20250723092433518
+tags: 备份 网址收藏
+title: 删除所有带前缀收藏网址的状态条目
+
+<$button class="tc-btn-invisible website-collection-edit" tooltip="删除所有收藏网址状态条目">  
+<$action-deletetiddler $filter="[prefix[$:/state/收藏网址/]]"/>  
+{{$:/core/images/website-collection-delete-state|16px}}
+</$button>

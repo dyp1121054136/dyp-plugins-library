@@ -1,0 +1,8 @@
+created: 20250718070721527
+modified: 20250724020821972
+tags: 参考 网址收藏
+title: 收藏网址
+
+<<filter-pill "[tag[收藏网址]][[收藏网址]]" 收藏网址>><div style="text-align: right; display: inline-block; margin-left: 140px;"><$transclude tiddler="删除所有带前缀收藏网址的状态条目"/><span style="margin-left: 15px;"><$transclude tiddler="新建网址收藏按钮"/></span></div>
+
+<$transclude tiddler="收藏网址汇总" mode="block"/>

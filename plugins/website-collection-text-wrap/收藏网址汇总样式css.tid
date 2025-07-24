@@ -1,0 +1,34 @@
+created: 20250722063530746
+modified: 20250723083404805
+tags: 样式 $:/tags/Stylesheet 网址收藏
+title: 收藏网址汇总样式css
+
+.website-collection {    
+  border-top: 0px solid #A0956B;   /* 移除上分隔线 */font-family: "FZYUEKZJW-H";
+  text-align: justify; /* 两端对齐 */
+  line-height: 1.5; /* 行高*/
+  letter-spacing: 0em; /* 增加字符间距 */
+
+/* 硬式换行 */
+  word-break: normal; 
+  word-wrap: break-word; 
+  /* white-space: pre-wrap; 保留空白字符，包括空格、制表符和换行符。 */
+  white-space:pre-line; /* 连续的空白字符合并成一个空格 */
+  margin-bottom: 0; /* 确保没有底部边距 */  
+  padding-bottom: 0; /* 确保没有底部内边距 */  
+  margin-top: 1em;
+}
+
+.website-collection-edit,
+.website-collection-edit-done,
+.website-collection-edit-cancel {
+  opacity: 0.5;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.website-collection-edit:hover,
+.website-collection-edit-done:hover,
+.website-collection-edit-cancel:hover
+ {
+  opacity: 1;
+}

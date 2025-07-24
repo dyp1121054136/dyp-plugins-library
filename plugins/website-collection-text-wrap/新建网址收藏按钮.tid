@@ -1,0 +1,19 @@
+created: 20250724020406049
+modified: 20250724020843305
+tags: 网址收藏
+title: 新建网址收藏按钮
+
+<$button class="tc-btn-invisible website-collection-edit" tooltip=新建网址收藏>
+<$list filter="[<tv-config-toolbar-icons>match[yes]]">
+{{$:/core/images/new-button}}
+</$list>
+<$list filter="[<tv-config-toolbar-text>match[yes]]">
+<span class="tc-btn-text">
+<$text text=新建网址收藏/>
+</span>
+</$list>
+
+<$action-sendmessage $message="tm-new-tiddler" title=<<now YYYY-0MM-0DD-hh0mm0ss0XXX>> tags="收藏网址" text="" br="yes"
+/>
+
+</$button>

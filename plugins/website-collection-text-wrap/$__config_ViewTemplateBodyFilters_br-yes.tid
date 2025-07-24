@@ -1,0 +1,7 @@
+created: 20240329014105058
+list-before: $:/config/ViewTemplateBodyFilters/default
+modified: 20250724011355317
+tags: $:/tags/ViewTemplateBodyFilter 级联 硬式换行级联
+title: $:/config/ViewTemplateBodyFilters/br-yes
+
+[field:br[yes]!has:field[se-type]then[$:/custom/ui/ViewTemplate/body/br-yes]]

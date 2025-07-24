@@ -1,0 +1,27 @@
+caption: {{$:/core/images/website-collection-text-wrap-no}} 硬式换行
+created: 20250724011852152
+description: 开启/关闭硬式换行
+modified: 20250724015522981
+tags: 按钮 $:/tags/ViewToolbar 硬式换行级联
+title: $:/core/ui/Buttons/website-collection-text-wrap
+
+<$button class="tc-btn-invisible" tooltip="开启/关闭硬式换行">
+<$list filter="[<currentTiddler>field:br[yes]]">
+<$action-deletefield $field="br"/>
+</$list>
+<$list filter="[<currentTiddler>!has:field[br]]">
+<$action-setfield $field="br" $value="yes"/>
+</$list>
+
+<!-- br=yes时图标 -->
+<$list filter="[<currentTiddler>field:br[yes]]">
+{{$:/core/images/website-collection-text-wrap|30px}}
+</$list>
+
+<!-- 无字段br时图标 -->
+<$list filter="[<currentTiddler>!has:field[br]]">
+{{$:/core/images/website-collection-text-wrap-no|30px}}
+</$list>
+
+<$list filter="[<tv-config-toolbar-text>match[yes]]"><span class="tc-btn-text">开启/关闭硬式换行</span></$list>
+</$button>

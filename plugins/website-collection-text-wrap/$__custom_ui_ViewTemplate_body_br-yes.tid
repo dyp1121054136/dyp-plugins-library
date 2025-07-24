@@ -1,0 +1,20 @@
+code-body: yes
+created: 20240329014222972
+modified: 20250723065942000
+tags: 级联 硬式换行级联
+title: $:/custom/ui/ViewTemplate/body/br-yes
+
+\define blank-line-all() (?:\r\n|\r|\n)
+\define blank-line() 
+\define br-yes() <br/>
+\define br-n-br() <br/>\r?\n<br/>
+\define br-br() <br/><br/>
+\define br-n() <br/>\r?\n
+
+<$let step1={{{ [<currentTiddler>get[text]search-replace:g:regexp<blank-line-all>,<br-yes>] }}}>  
+<$let brText={{{ [<step1>search-replace:g:regexp<br-n-br>,[]search-replace:g:regexp<br-br>,[
+
+]search-replace:g:regexp<br-n>,[]] }}}>  
+<$transclude $variable="brText" $output="text/html" $mode="block"/>  
+</$let>  
+</$let>
