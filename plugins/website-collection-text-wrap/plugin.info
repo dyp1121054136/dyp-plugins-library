@@ -1,0 +1,16 @@
+{
+    "title": "$:/plugins/dyp/website-collection-text-wrap",
+    "version": "0.0.1",
+    "stability": "STABILITY_2_STABLE",
+    "name": "website-collection-text-wrap",
+    "description": "网址收藏和硬式换行级联",
+    "author": "dyp",
+    "source": "https://github.com/dyp1121054136/dyp-plugins-library",
+    "list": "readme usage history",
+    "plugin-priority": "",
+    "parent-plugin": "",
+    "dependents": "",
+    "plugin-type": "plugin",
+    "core-version": "5.3.7-prerelease",
+    "packaged-by": "Gatha on 24th 七月 2025, 10:11:38"
+}
