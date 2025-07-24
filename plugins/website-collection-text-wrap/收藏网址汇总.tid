@@ -27,12 +27,13 @@ title: 收藏网址汇总
 </h4>
 <$reveal type="match" stateTitle=<<state>> text="open" retain="yes">
 <div style="padding-left: 1.3em; position: relative; margin: 0.5em 0;">
-  <$let editState={{{ [[$:/state/text-edit/]addsuffix<currentTiddler>] }}}>
+  <$let editState={{{ [[$:/state/text-edit/]addsuffix<currentTiddler>] }}} originalValue={{{ [[$:/temp/text-original/]addsuffix<currentTiddler>] }}}>
 <!-- 编辑按钮 - 右上角 -->
 <div style="position: absolute; top: 0; right: 0; z-index: 10;">
   <$reveal type="nomatch" state=<<editState>> text="yes">
     <$button class="tc-btn-invisible website-collection-edit" tooltip="编辑内容">
       <$action-setfield $tiddler=<<editState>> text="yes"/>
+      <$action-setfield $tiddler=<<originalValue>> text={{!!text}}/>
       {{$:/core/images/edit-button|16px}}
     </$button>
   </$reveal>
@@ -54,12 +55,15 @@ title: 收藏网址汇总
     <$transclude tiddler="$:/core/ui/EditTemplate/body/editor" mode="inline"/>
   </div>
 <div style="text-align: right; margin-bottom: -2em;">
-          <$button class="tc-btn-invisible website-collection-edit-done" tooltip="取消编辑">
+          <$button class="tc-btn-invisible website-collection-edit-cancel" tooltip="取消编辑">
+            <$action-setfield $tiddler=<<currentTiddler>> text={{{ [<originalValue>get[text]] }}}/>
             <$action-deletetiddler $tiddler=<<editState>>/>
+            <$action-deletetiddler $tiddler=<<originalValue>>/>
             {{$:/core/images/cancel-button|16px}}
           </$button>
-          <$button class="tc-btn-invisible website-collection-edit-cancel" tooltip="完成编辑" style="margin-left: 0.5em;">
+          <$button class="tc-btn-invisible website-collection-edit-done" tooltip="完成编辑" style="margin-left: 0.5em;">
             <$action-deletetiddler $tiddler=<<editState>>/>
+            <$action-deletetiddler $tiddler=<<originalValue>>/>
             {{$:/core/images/done-button|16px}}
           </$button>
 </div>
