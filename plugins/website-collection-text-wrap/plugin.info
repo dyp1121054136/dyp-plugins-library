@@ -1,6 +1,6 @@
 {
     "title": "$:/plugins/dyp/website-collection-text-wrap",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "stability": "STABILITY_2_STABLE",
     "name": "website-collection-text-wrap",
     "description": "网址收藏和硬式换行级联",
