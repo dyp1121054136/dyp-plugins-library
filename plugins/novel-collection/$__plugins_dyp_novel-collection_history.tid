@@ -4,6 +4,10 @@ tags:
 title: $:/plugins/dyp/novel-collection/history
 type: text/vnd.tiddlywiki
 
+; v.0.1.2 2025-07-25
+
+# 新增列表视图 [[最近新增的小说收藏]]；
+
 ; v.0.1.1 2025-07-18
 # 优化了 [[小说收藏正文编辑按钮]]，解决了首段首行两空格丢失的问题；
 
