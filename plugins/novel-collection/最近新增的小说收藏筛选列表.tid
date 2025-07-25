@@ -1,0 +1,30 @@
+created: 20250725062316484
+modified: 20250725063557921
+tags: 小说收藏
+title: 最近新增的小说收藏筛选列表
+
+<div class="novel-collection-flex-table">
+  <div class="novel-collection-flex-table-row novel-collection-flex-table-header">
+    <div class="novel-collection-title-column header"></div>
+    <div class="novel-collection-date-column header"></div>
+  </div>
+<$list filter="[all[tiddlers+shadows]!sort[modified]field:类型[小说]days:modified[-7]]">
+     <div class="novel-collection-flex-table-row">
+       <div class="novel-collection-title-column"><$link to={{!!title}}>{{!!书名}}</$link></div>
+       <div class="novel-collection-date-column"><div class="category-tags-container" style="text-align: right; display: inline"><$transclude tiddler="编辑分类标签多选框"/></div></div>
+     </div>
+  </$list>
+</div>
+
+<!-- 
+今天
+days:modified[0]
+昨天
+days:modified[-1]
+明天
+days:modified[1]
+过去7天
+days:modified[-7]
+某个日期
+sameday:modified[20250723]
+ -->

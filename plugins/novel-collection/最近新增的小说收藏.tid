@@ -1,0 +1,9 @@
+caption: 小说
+created: 20250723112252754
+modified: 20250725065413512
+tags: $:/tags/SideBar 导出 小说收藏
+title: 最近新增的小说收藏
+
+<<filter-pill "[!is[system]!sort[modified]field:类型[小说]days:modified[-7]]" 小说收藏>> <div style="display: inline-block; margin-left: 20px;"><span style="margin-right: 20px;">{{||$:/core/ui/Buttons/tw-novel-gallery}}</span><span style="margin-right: 20px;">{{||$:/core/ui/Buttons/tw-novel-table}}</span><$transclude tiddler="新建小说收藏按钮"/></div>
+
+<$transclude tiddler="最近新增的小说收藏筛选列表"/>

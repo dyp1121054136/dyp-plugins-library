@@ -1,0 +1,52 @@
+created: 20250725061909821
+modified: 20250725063418540
+tags: $:/tags/Stylesheet 样式 小说收藏
+title: 最近新增的小说收藏样式css
+type: text/css
+
+/* 使用flexbox来创建一个灵活的表格布局 */
+.novel-collection-flex-table {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* padding-right: 10%; */
+}
+
+/* flexbox的行样式 */
+.novel-collection-flex-table-row {
+  display: flex;
+  width: 100%;
+}
+
+/* 设置“条目名称”列样式 */
+.novel-collection-title-column {
+  flex-grow: 1; /* 动态增长以填充可用空间 */
+  text-align: left; /* 靠左对齐 */
+}
+
+/* 设置“编辑时间”列样式 */
+.novel-collection-date-column {
+  text-align: right; /* 靠右对齐 */
+  font-size: 0.9em; /* 字号大小 */
+  /* opacity: 0.6; */
+  /* width: 150px; */ /* 可以设置一个最大宽度，或者根据需要调整 */
+  line-height: 1.8;
+}
+
+.novel-collection-date-column .novel-collection-muted svg {
+  display: none;
+}
+
+/* 标题行的样式 */
+.novel-collection-flex-table-header {
+  opacity: 1;
+  margin-bottom: 0.5em;
+}
+
+/* 保持标题项本身的样式不变 */
+.novel-collection-title-column.header,
+.novel-collection-date-column.header {
+  font-size: 0.9em; 
+  opacity: 1;
+  background-color: transparent !important;
+}
