@@ -1,0 +1,6 @@
+created: 20250725071525412
+modified: 20250725072635487
+tags: 小说收藏
+title: novel-collection-filter-list
+
+[all[tiddlers+shadows]!sort[modified]field:类型[小说]days:modified[-7]]
