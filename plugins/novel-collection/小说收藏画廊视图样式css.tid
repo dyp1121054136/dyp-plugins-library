@@ -57,6 +57,8 @@ title: 小说收藏画廊视图样式css
   float: right;
   text-align: left;
   color: <<colour foreground>>;
+  font-family: "FZYUEKZJW-H";
+  margin-top: 0.2em;
 }
 
 .tw-novel-gallery-modified {
