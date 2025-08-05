@@ -4,6 +4,10 @@ tags:
 title: $:/themes/dyp/Whitespace/history
 type: text/vnd.tiddlywiki
 
+; v.0.0.3 2025-08-05
+
+# 减少条目框架的底部内边距；
+
 ; v.0.0.2 2025-07-11
 
 # 调整电脑端 `tc-tiddler-frame` 和 `tc-tiddler-body` 边距，避免遮挡；
