@@ -27,6 +27,11 @@ body.tc-body .tc-story-river {
   left: 0 !important;  
   margin-left: 0 !important;  
 }
+
+/* 减少条目框架的底部内边距 */  
+div.tc-tiddler-frame.tc-tiddler-view-frame.tc-tiddler-exists {  
+  padding-bottom: 25px !important; /* 从默认的 42px 减少到 */  
+}
 }
 
 /* 媒体查询，小屏 */
