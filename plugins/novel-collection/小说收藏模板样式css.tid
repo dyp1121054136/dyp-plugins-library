@@ -115,7 +115,7 @@ title: 小说收藏模板样式css
   /* white-space: pre-wrap; 保留空白字符，包括空格、制表符和换行符。 */
   white-space:pre-line; /* 连续的空白字符合并成一个空格 */ 
 
-  margin-bottom: 0; /* 确保没有底部边距 */  
+  margin-bottom: -1em; /* 确保没有底部边距 */  
   padding-bottom: 0; /* 确保没有底部内边距 */  
   margin-top: 1em;
 }    
