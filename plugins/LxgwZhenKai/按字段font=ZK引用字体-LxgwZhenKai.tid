@@ -1,0 +1,11 @@
+code-body: yes
+created: 20260626115240710
+modified: 20260626115250582
+tags: 字体 $:/tags/Stylesheet
+title: 按字段font=ZK引用字体-LxgwZhenKai
+
+<$list filter="[font[ZK]]"> 
+[data-tiddler-title^="<$view field=title/>"] .tc-tiddler-body {
+  font-family: "LxgwZhenKai";
+}
+</$list>

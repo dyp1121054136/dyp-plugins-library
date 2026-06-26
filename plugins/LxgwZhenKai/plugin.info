@@ -1,0 +1,16 @@
+{
+    "title": "$:/plugins/dyp/LxgwZhenKai",
+    "version": "0.0.1",
+    "stability": "STABILITY_2_STABLE",
+    "name": "Font",
+    "description": "LxgwZhenKai",
+    "author": "dyp",
+    "source": "https://github.com/dyp1121054136/dyp-plugins-library",
+    "list": "readme usage",
+    "plugin-priority": "",
+    "parent-plugin": "",
+    "dependents": "",
+    "plugin-type": "plugin",
+    "core-version": "5.3.7-prerelease",
+    "packaged-by": "Gatha on 26th 六月 2026, 19:50:57"
+}
