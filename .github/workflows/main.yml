@@ -15,6 +15,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
+        # 保持为22，这是您的项目构建环境，与警告无关
           node-version: '22'
       - run: npm install tiddlywiki
       - run: mkdir -p node_modules/tiddlywiki/plugins/dyp/
@@ -24,7 +25,8 @@ jobs:
       - run: ./node_modules/.bin/tiddlywiki .  --output output --build gui
       - name: Deploy to GitHub Pages
         if: success()
-        uses: crazy-max/ghaction-github-pages@v2
+        # 关键修改：将 Action 从 v2 升级到 v4，解决 Node.js 20 弃用警告
+        uses: crazy-max/ghaction-github-pages@v4
         with:
           target_branch: gh-pages
           build_dir: output
